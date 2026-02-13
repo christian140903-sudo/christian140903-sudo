@@ -2,9 +2,9 @@
 
 # Hey, I'm Christian 👋
 
-**Solo developer from Austria** building [220+ free developer tools](https://nextool.app/free-tools/) that respect your privacy.
+**Solo developer from Austria** building [225+ free developer tools](https://nextool.app/free-tools/) that respect your privacy.
 
-[![NexTool](https://img.shields.io/badge/NexTool-220%2B%20Free%20Tools-6366f1?style=for-the-badge)](https://nextool.app)
+[![NexTool](https://img.shields.io/badge/NexTool-213%2B%20Free%20Tools-6366f1?style=for-the-badge)](https://nextool.app)
 [![Client-Side](https://img.shields.io/badge/100%25-Client--Side-22c55e?style=for-the-badge)](#)
 
 </div>
@@ -13,7 +13,7 @@
 
 ### 🛠️ NexTool — My Main Project
 
-**[nextool.app](https://nextool.app)** — 220+ free browser-based developer tools.
+**[nextool.app](https://nextool.app)** — 225+ free browser-based developer tools.
 
 Every tool runs 100% in your browser. No server processing. No data collection. No signup.
 
@@ -23,13 +23,10 @@ Every tool runs 100% in your browser. No server processing. No data collection. 
 - [Regex Tester](https://nextool.app/free-tools/regex-tester.html) — Live pattern matching
 - [UUID Generator](https://nextool.app/free-tools/uuid-generator.html) — Generate UUIDs in bulk
 - [Hash Generator](https://nextool.app/free-tools/hash-generator.html) — MD5, SHA-1, SHA-256
-- [Password Generator](https://nextool.app/free-tools/password-generator.html) — Cryptographically secure
-- [Color Palette Generator](https://nextool.app/free-tools/color-palette-generator.html) — 7 harmony modes
-- [SVG Editor](https://nextool.app/free-tools/svg-editor.html) — Optimize & minify SVGs
 
 **Tech:** Vanilla HTML/CSS/JS. Zero frameworks. Zero dependencies. Loads in milliseconds.
 
-[→ Browse all 220+ tools](https://nextool.app/free-tools/) · [→ NexTool Pro ($29)](https://nextool.app/pro.html) · [→ Blog (72+ articles)](https://nextool.app/blog/)
+[→ Browse all 225+ tools](https://nextool.app/free-tools/) · [→ NexTool Pro ($29)](https://nextool.app/pro.html) · [→ Blog (81+ articles)](https://nextool.app/blog/)
 
 ---
 
