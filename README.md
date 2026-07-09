@@ -1,53 +1,32 @@
-<div align="center">
+<h1 align="center">Christian Bucher</h1>
+<p align="center"><b>Selbstgelernter Systembauer aus Wien.</b><br>
+Ich dirigiere KI-Systeme, um echte, laufende Software zu bauen — und bin ehrlich über echt vs. geplant.</p>
 
-# Hey, I'm Christian 👋
-
-**Solo developer from Austria** building [228+ free developer tools](https://nextool.app/free-tools/) that respect your privacy.
-
-[![NexTool](https://img.shields.io/badge/NexTool-228%2B%20Free%20Tools-6366f1?style=for-the-badge)](https://nextool.app)
-[![Client-Side](https://img.shields.io/badge/100%25-Client--Side-22c55e?style=for-the-badge)](#)
-
-</div>
+<p align="center">
+🌐 <a href="https://nextool.app">nextool.app</a> &nbsp;·&nbsp; 📄 <a href="https://nextool.app/about.html">Werdegang</a> &nbsp;·&nbsp; 📫 christian140903@gmail.com
+</p>
 
 ---
 
-### 🛠️ NexTool — My Main Project
+### Was ich baue
 
-**[nextool.app](https://nextool.app)** — 228+ free browser-based developer tools.
+- **Miguel** — persönliche KI-Betriebsschicht (Python-Daemon), läuft seit Wochen durchgehend: ~50.000 Zeilen Code, 128 Endpoints, eigenes Gedächtnis, Sprachsteuerung, Multi-Modell-Orchestrierung.
+- **[NexTool](https://nextool.app)** — 271 selbst gebaute Browser-Tools + 132 technische Fachartikel, live.
+- **anima-kernel** — Python-Paket mit 442 grünen Tests (quelloffen, läuft lokal — noch nicht auf PyPI).
+- **[soul-mcp](https://www.npmjs.com/package/soul-mcp)** — veröffentlichtes npm-Paket: Gedächtnis-Server für KI-Assistenten.
 
-Every tool runs 100% in your browser. No server processing. No data collection. No signup.
+### Wie ich arbeite
 
-**Popular tools:**
-- [JSON Formatter](https://nextool.app/free-tools/json-formatter.html) — Format & validate JSON
-- [JWT Decoder](https://nextool.app/free-tools/jwt-decoder.html) — Decode tokens client-side
-- [Regex Tester](https://nextool.app/free-tools/regex-tester.html) — Live pattern matching
-- [UUID Generator](https://nextool.app/free-tools/uuid-generator.html) — Generate UUIDs in bulk
-- [Hash Generator](https://nextool.app/free-tools/hash-generator.html) — MD5, SHA-1, SHA-256
+Ich schreibe nicht jede Zeile — ich **dirigiere mehrere KI-Modelle arbeitsteilig** und verantworte Architektur, Orchestrierung und Qualitätsurteil. Mein Anspruch: Alles, was ich behaupte, ist verlinkt oder überprüfbar.
 
-**Tech:** Vanilla HTML/CSS/JS. Zero frameworks. Zero dependencies. Loads in milliseconds.
+### Stack
 
-[→ Browse all 228+ tools](https://nextool.app/free-tools/) · [→ NexTool Pro ($29)](https://nextool.app/pro.html) · [→ Blog (106+ articles)](https://nextool.app/blog/)
+`Python` · `Multi-Agent-Orchestrierung` · `Model Context Protocol` · `Vanilla JS` · `Automatisierung` · `SAP/ERP`
 
----
+### Aktuell
 
-### Other Projects
-
-| Project | What it does |
-|---------|-------------|
-| [DevToolkit](https://christian140903-sudo.github.io/devtoolkit) | 8 standalone developer tools |
-| [TemplateForge](https://christian140903-sudo.github.io/template-forge) | Premium website templates |
-| [PromptVault](https://christian140903-sudo.github.io/prompt-vault) | 250+ curated AI prompts |
+Vollzeit im Handel (finanziert mein Bauen), hole die Studienberechtigungsprüfung nach → Wirtschaftsinformatik ab 2027. Ich suche eine Rolle, in der ich bauen, automatisieren und dazulernen kann — remote-fähig, Raum Wien.
 
 ---
 
-### Tech Stack
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-
----
-
-*Building useful tools, one HTML file at a time.*
+<p align="center"><i>Prüf mich an dem, worauf du klicken kannst.</i></p>
