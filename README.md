@@ -11,8 +11,8 @@ Ich orchestriere mehrere KI-Modelle zu Software, die läuft — präzise dokumen
 ### Was ich baue
 
 - **Miguel** — persönliche KI-Betriebsschicht (Python-Daemon), läuft seit Wochen durchgehend: ~50.000 Zeilen Code, 128 Endpoints, eigenes Gedächtnis, Sprachsteuerung, Multi-Modell-Orchestrierung.
-- **[NexTool](https://nextool.app)** — 271 selbst gebaute Browser-Tools + 132 technische Fachartikel, live.
-- **anima-kernel** — Python-Paket mit 442 grünen Tests (quelloffen, läuft lokal — noch nicht auf PyPI).
+- **[NexTool](https://nextool.app)** — 260+ selbst gebaute Browser-Tools + 132 technische Fachartikel, live.
+- **anima-kernel** — Python-Paket mit 446 grünen Tests (quelloffen, läuft lokal — noch nicht auf PyPI).
 - **[soul-mcp](https://www.npmjs.com/package/soul-mcp)** — veröffentlichtes npm-Paket: Gedächtnis-Server für KI-Assistenten.
 
 ### Wie ich arbeite
