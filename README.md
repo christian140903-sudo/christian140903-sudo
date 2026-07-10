@@ -1,6 +1,6 @@
 <h1 align="center">Christian Bucher</h1>
-<p align="center"><b>Selbstgelernter Systembauer aus Wien.</b><br>
-Ich dirigiere KI-Systeme, um echte, laufende Software zu bauen — und bin ehrlich über echt vs. geplant.</p>
+<p align="center"><b>KI-Systeme &amp; Automatisierung · Wien</b><br>
+Ich orchestriere mehrere KI-Modelle zu Software, die läuft — präzise dokumentiert, was echt ist und was in Entwicklung.</p>
 
 <p align="center">
 🌐 <a href="https://nextool.app">nextool.app</a> &nbsp;·&nbsp; 📄 <a href="https://nextool.app/about.html">Werdegang</a> &nbsp;·&nbsp; 📫 christian140903@gmail.com
