@@ -24,7 +24,7 @@ silently alter behavior? Did a critical rule remain true?
 
 | Failure to prevent | Project | Public evidence |
 |---|---|---|
-| Lost context and provenance | **[Soul MCP](https://github.com/christian140903-sudo/soul-mcp)** | npm · 23 MCP tools · 358 tests |
+| Lost context and provenance | **[Soul MCP](https://github.com/christian140903-sudo/soul-mcp)** | npm · 23 MCP tools · 373 tests |
 | Tool success without real outcome | **[Postcondition](https://github.com/christian140903-sudo/postcondition-mcp)** | npm · MCP + SDK + CLI · 53 tests |
 | Unsupported README or release claims | **[Proofspec](https://github.com/christian140903-sudo/proofspec)** | source release · five reports · 70 tests |
 | Silent behavior drift after an upgrade | **[Behaviorlock](https://github.com/christian140903-sudo/behaviorlock)** | source release · nine matchers · 73 tests |
@@ -44,6 +44,10 @@ Proofspec ── binds public claims to narrow evidence contracts
 
 Behaviorlock ── compares observable behavior before and after upgrades
 ```
+
+Soul is the long-running flagship (on npm since February 2026, seven releases).
+Postcondition, Proofspec, Behaviorlock and Agent Invariants are young v0.1
+releases from July 2026: small, tested, and early.
 
 These projects can work together, but none pretends to be the whole agent
 stack. Each has a narrow promise, tests for that promise, a security or evidence
@@ -123,7 +127,7 @@ quality. These are narrow, inspectable facts about the current public surfaces:
 
 | Surface | Current public fact |
 |---|---|
-| Soul MCP | 358 automated tests; CI on Node 20, 22, and 24 |
+| Soul MCP | 373 automated tests; CI on Node 20, 22, and 24 |
 | Postcondition | 53 automated tests; clean-install and MCP handshake checks |
 | Proofspec | 70 automated tests; 98.05% line coverage; five report formats |
 | Behaviorlock | 73 automated tests; 99.06% line coverage; nine deterministic matchers |
@@ -146,6 +150,14 @@ identity state, credentials, machine paths, and raw session history stay private
 
 The public products are rebuilt as small, documented, testable systems with
 portable schemas and explicit security boundaries.
+
+## About me
+
+I am a self-taught developer in Vienna. I have a full-time job and build these
+projects in the evenings and on weekends, without funding so far. In earlier
+jobs I dispatched a fleet of 50+ vehicles; I bring the same habit to software:
+deliver what was promised and say plainly what is not done yet. No degree yet;
+I plan to start university (business informatics) in autumn 2027.
 
 ## How I build
 
