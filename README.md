@@ -5,7 +5,7 @@
 <p align="center">Claude Code · MCP · evals · Vienna</p>
 
 <p align="center">
-  <strong>For teams:</strong> talks and workshops on running Claude Code — for engineering teams and for non-engineering teams that maintain their own skills. <a href="https://nextool.app/en/workshops/">Workshops</a><br>
+  <strong>For teams:</strong> talks and workshops on running Claude Code — for engineering teams and for non-engineering teams that maintain their own skills.<br>
   <strong>Hiring me:</strong> looking for an AI engineering role focused on agent reliability — evals, agent tooling, MCP. Vienna or EU-remote, full-time. <a href="https://nextool.app/en/hire/">CV &amp; evidence</a>
 </p>
 
