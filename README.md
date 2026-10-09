@@ -39,15 +39,21 @@ npm ci && npm test
 
 | Failure it catches | Project | Tests (last run 2026-10-08, Node 22) |
 |---|---|---|
-| Agent memory that loses its history or keeps injected instructions as if they were facts | **[soul-mcp](https://github.com/christian140903-sudo/soul-mcp)** — memory server for MCP clients; quarantines injected instructions, records provenance; [on npm](https://www.npmjs.com/package/soul-mcp) | 374 passing |
+| Agent memory that loses its history or keeps injected instructions as if they were facts | **[soul-mcp](https://github.com/christian140903-sudo/soul-mcp)** — memory server for MCP clients; quarantines injected instructions, records provenance; [on npm](https://www.npmjs.com/package/soul-mcp) | 373 passing |
 | An agent reports `success: true`, but nothing changed | **[postcondition-mcp](https://github.com/christian140903-sudo/postcondition-mcp)** — checks whether the world changed, not whether the agent said so; [on npm](https://www.npmjs.com/package/postcondition-mcp) | 53 passing |
-| A skill or agent behaves differently after a model update and nobody notices | **[behaviorlock](https://github.com/christian140903-sudo/behaviorlock)** — drift gate that compares recorded runs against contracts, without an LLM judge; referenced by [MediaPlural/agent-proven](https://github.com/MediaPlural/agent-proven) | 73 passing |
+| A skill or agent behaves differently after a model update and nobody notices | **[behaviorlock](https://github.com/christian140903-sudo/behaviorlock)** — drift gate that compares recorded runs against contracts, without an LLM judge | 73 passing |
 | A rule that must hold during an agent run is broken silently | **[agent-invariants](https://github.com/christian140903-sudo/agent-invariants)** — fail-closed checks for conditions that must stay true | 36 passing |
-| A README or release claim with nothing behind it | **[proofspec](https://github.com/christian140903-sudo/proofspec)** — binds public claims to evidence contracts that run in CI | 74 passing |
+| A skill silently answers differently after an edit or a model update | **[team-skills-kit](https://github.com/christian140903-sudo/team-skills-kit)** — an open template for teams that maintain Claude Code skills together: test cases, review, a version rule and CI; one example shows, with recorded model runs, how test cases catch a harmless-sounding change | tests cover its checking code; how reliably a model follows the example skills is not measured |
 
-Status, plainly: soul-mcp has had seven releases on npm since February 2026;
-the other four are small v0.1 releases from July 2026. No external users are
-documented for any of them yet. Passing tests establish only what they cover.
+Referenced by [MediaPlural/agent-proven](https://github.com/MediaPlural/agent-proven)
+(its `agent-regression` skill points to behaviorlock) — a pointer in another
+project's documentation, not a usage report.
+
+Status, plainly: built since February 2026, next to a full-time job outside IT.
+soul-mcp is on npm (current release 4.0.2); postcondition-mcp, behaviorlock and
+agent-invariants are small v0.1 releases from July 2026; team-skills-kit is a
+template repository. No external users are documented for any of them yet.
+Passing tests establish only what they cover.
 
 ## Measurement
 
