@@ -76,10 +76,10 @@ my current standards — what changed and why:
 
 ## About
 
-Self-taught, based in Vienna, no degree yet. I work full-time outside IT, in
-sales and advisory work, and before that in truck dispatching — explaining
-technical things to non-experts is my day job. I started building with Claude
-Code in February 2026.
+Self-taught, based in Vienna. I work full-time outside IT, in sales and
+advisory work, and before that in dispatching — explaining technical things to
+non-experts is my day job. I started building with Claude Code in February
+2026.
 
 ## Contact
 
