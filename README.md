@@ -70,17 +70,9 @@ Passing tests establish only what they cover.
 
 ## Corrections
 
-- **Oct 2026** — archived the February 2026 pages on nextool.app (an
-  agent-generated tool farm and shop prototypes) and 384 promotional gists.
-- **Aug 2026** — withdrew a benchmark number the same day it was registered
-  (see *Measurement*).
-- **Jul 2026** — withdrew a side project's launch claim of a "57–81 %"
-  improvement: none of those figures is backed by the stored results. The one
-  measurement showed +0.92 % on a self-defined score — a single run against a
-  variant of the same system, with no significance test (ANIMA, now parked).
-- **Jul 2026** — replaced a github.io page that contained invented client
-  testimonials ([`4635f92`](https://github.com/christian140903-sudo/christian140903-sudo.github.io/commit/4635f92));
-  that address now redirects to nextool.app.
+Earlier experiments (February to September 2026) are archived and do not meet
+my current standards — what changed and why:
+[nextool.app/en/archive/](https://nextool.app/en/archive/).
 
 ## About
 
