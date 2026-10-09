@@ -1,12 +1,12 @@
 <h1 align="center">Christian Bucher</h1>
 
-<p align="center"><strong>I direct AI coding agents to ship tested software — and I measure whether what I built actually worked.</strong></p>
+<p align="center"><strong>I direct AI coding agents to ship tested software — and I measure whether what I build actually works.</strong></p>
 
 <p align="center">Claude Code · MCP · evals · Vienna</p>
 
 <p align="center">
-  <strong>For teams:</strong> talks and workshops on running Claude Code — for engineering teams and for non-engineering teams that maintain their own skills.<br>
-  <strong>Hiring me:</strong> looking for an AI engineering role focused on agent reliability — evals, agent tooling, MCP. Vienna or EU-remote, full-time. <a href="https://nextool.app/en/hire/">CV &amp; evidence</a>
+  <strong>Hiring me:</strong> an AI engineering role where I build with coding agents and verify what they ship — evals, MCP, agent tooling. Vienna or EU-remote. <a href="https://nextool.app/en/hire/">CV &amp; evidence</a><br>
+  <strong>For teams</strong> that maintain Claude Code skills: <a href="https://github.com/christian140903-sudo/team-skills-kit">team-skills-kit</a> — an open template with test cases and a drift example.
 </p>
 
 <p align="center"><a href="https://nextool.app/en/">Website</a> · <a href="https://www.npmjs.com/~mr_bucher003">npm</a> · <a href="mailto:hello@nextool.app">hello@nextool.app</a></p>
