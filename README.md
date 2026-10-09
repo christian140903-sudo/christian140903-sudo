@@ -21,13 +21,12 @@ constraints (project instructions, hooks, permissions), decide what gets
 tested, review the result and reject what does not hold. Release decisions and
 every claim on this page are mine.
 
-I also point agents at my own work. My rule since August 2026: before a number
-or a plan is accepted, a separate review round with adversarial instructions
-tries to break it. That round is how the withdrawn result under *Measurement*
-was caught.
-
-My setup is private for now. I have not yet run it inside an engineering team —
-that is the job I am looking for.
+Before a number or a plan is accepted, a separate review round with adversarial
+instructions tries to break it; that is how the withdrawn result under
+*Measurement* was caught. I have not yet run this setup inside an engineering
+team — that is the job I am looking for. The mechanics for teams — hooks,
+permissions, a version rule and CI for skills — are in
+[team-skills-kit](https://github.com/christian140903-sudo/team-skills-kit).
 
 ## Evidence
 
