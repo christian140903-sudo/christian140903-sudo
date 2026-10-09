@@ -57,16 +57,16 @@ Passing tests establish only what they cover.
 
 ## Measurement
 
+- **Two flaws found in my own evaluation harness (Aug 2026):** a grader bug,
+  which was fixable, and unequal format instructions between the two arms,
+  which were not. I withdrew the registered result the same day, before it
+  left the project, and discarded the experiment. One registered number I
+  still cannot reproduce exactly from the stored answers.
+  [Case study](https://nextool.app/en/case-study/) · raw data not yet published.
 - **A null result from my own evidence inventory (Aug 2026):** plain runtime
   attachment without skills gave no quality gain on 20 tasks at 2.7× the cost
   (one model, descriptive); the skill effect is unmeasured. Raw artefacts not
   yet published.
-- **A large effect I registered and withdrew the same day (Aug 2026), before
-  it left the project:** the review round found a grader bug, which was
-  fixable, and unequal format instructions between the two arms, which were
-  not — so the experiment was discarded. One registered number I still cannot
-  reproduce exactly from the stored answers.
-  [Case study](https://nextool.app/en/case-study/) · raw data not yet published.
 
 ## Corrections
 
