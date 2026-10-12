@@ -813,7 +813,8 @@ DET_COLS = ['kind', 'inj_id', 'split', 'tile', 'petal', 'fiber', 'targetid', 'z'
             'line_flux', 'cont', 'width_ratio', 'dchi2_width', 'chi2_lsf', 'lsf_sig', 'peak_excess',
             'ref_depth', 'corr_rel', 'nmask2', 'edge', 'snr_other', 'ew_other', 'ew_err_other', 'gal_hyp',
             'gal_partner_snr', 'gal_npartner', 'd_known', 'sky_line', 'sky_cont', 'rob', 'chi_nn', 'n_cross4', 'n_cross4_sky',
-            'adj1', 'adj2', 'numexp', 'mjd', 'cross_excess', 'n_sky_petal']
+            'adj1', 'adj2', 'numexp', 'mjd', 'cross_excess', 'n_sky_petal', 'expids', 'chi_nexp', 'chi_rel_max',
+            'chi_rel_min', 'chi_nhi', 'chi_frac_fibers_min', 'chi_fmask', 'chi_err', 'vetoes']
 INJ_COLS = ['inj_id', 'split', 'tile', 'petal', 'fiber', 'targetid', 'gmag', 'snr_r', 'cam', 'pix_true',
             'lam_obs', 'ew_true', 'flux_true', 'snr_exp', 'found', 'snr_found', 'z', 'subtype', 'parallax',
             'cont', 'ew_err_pix']
@@ -839,7 +840,7 @@ def process_petal(D, lib, args, sky_tpl, seed):
     hot3 = np.zeros_like(hot)
     det_rows, inj_rows, spec_rows, sky_rows = [], [], [], []
     pending = []                                      # (kind, row-index, dict) -> Querzählung danach
-    base = dict(split=str(D['split']), tile=int(D['tile']), petal=int(D['petal']))
+    base = dict(split=str(D['split']), tile=int(D['tile']), petal=int(D['petal']), expids=str(D['expids']))
     helio = float(D['heliocor'])
     mjd = float(D['mjd'])
     expids = str(D['expids'])
@@ -994,6 +995,120 @@ def process_petal(D, lib, args, sky_tpl, seed):
         rowd['adj2'] = int(any(hd3[k, j] for k in a2))
         det_rows.append(rowd)
     return det_rows, inj_rows, spec_rows, sky_rows
+
+
+
+
+# ---------------------------------------------------------------- Stufe A (eingefrorene Regeln aus dem Pilot)
+def _in_windows(lam, centers, half):
+    if not centers:
+        return False
+    c = np.asarray(centers)
+    return bool(np.min(np.abs(c - lam)) <= half)
+
+
+def stage_a_flags(d, R):
+    """Vetos der Stufe A für eine Detektion (dict). Spiegelbild von analysis/W1-laser/gate.py:veto_flags
+    (ohne chi2pix, das erst Pass 3 liefert). Rückgabe: Liste der greifenden Vetos (leer = überlebt)."""
+    f = []
+    g = lambda k, dflt=np.nan: d.get(k, dflt) if d.get(k, dflt) is not None else dflt
+    num = lambda k: float(g(k)) if g(k) == g(k) and g(k) != '' else np.nan
+    if num('snr') < R['T']: f.append('snr')
+    if num('nmask2') > 0: f.append('mask')
+    if num('d_known') <= R['known_half']: f.append('known')
+    if num('sky_line') / max(num('sky_cont'), 1e-3) > R['sky_ratio']: f.append('sky')
+    if num('n_cross4_sky') >= R['cross_sky_max'] + 1 or num('cross_excess') >= R['cross_excess']: f.append('cross')
+    if num('adj1') > 0 or num('adj2') > 0: f.append('adjacent')
+    so, eo = num('snr_other'), num('ew_err_other')
+    if so == so and eo == eo and eo > 0 and num('ew') / eo >= 3 and so < R['overlap_min']: f.append('overlap')
+    w = num('width_ratio')
+    if w < R['w_lo'] or w > R['w_hi']: f.append('width')
+    if num('gal_partner_snr') >= R['gal_partner'] or num('gal_npartner') >= R['gal_npartner']: f.append('galaxy')
+    if abs(num('corr_rel')) > R['corr_max']: f.append('mismatch')
+    if _in_windows(num('lam_rest'), R['clus_rest'], R['clus_half']): f.append('clus_rest')
+    if _in_windows(num('lam_topo'), R['clus_topo'], R['clus_half']): f.append('clus_topo')
+    if num('peak_excess') < R['peak_excess_min']: f.append('emission_shape')
+    if num('edge') < R['edge_min']: f.append('edge')
+    if w < 1 and num('dchi2_width') > R['narrow_dchi2']: f.append('narrow')
+    return f
+
+# ---------------------------------------------------------------- Pass 3: Extraktions-chi2 der Einzelbelichtungen
+def exposure_nights():
+    """EXPID -> NIGHT aus der öffentlichen Belichtungstabelle."""
+    t = np.genfromtxt(io.StringIO(_get(BASE + '/exposures-iron.csv').text), delimiter=',', names=True,
+                      usecols=(0, 1, 2), dtype=None, encoding='utf-8')
+    return {int(e): int(n) for n, e in zip(t['NIGHT'], t['EXPID'])}
+
+
+def _chi2_file(task):
+    """Ein frame-File (Kamera, Petal, Belichtung): CHI2PIX-Merkmale für alle Kandidaten darin."""
+    import gzip
+    night, expid, cam, petal, cands = task
+    url = f'{BASE}/exposures/{night}/{expid:08d}/frame-{cam.lower()}{petal}-{expid:08d}.fits.gz'
+    try:
+        h = fits.open(io.BytesIO(gzip.decompress(_get(url, timeout=600).content)), memmap=False)
+        chi = h['CHI2PIX'].data
+        wl = h['WAVELENGTH'].data
+        fib = np.asarray(h['FIBERMAP'].data['FIBER'])
+        msk = h['MASK'].data
+    except Exception as exc:
+        return [(c[0], expid, dict(chi_err=repr(exc)[:80])) for c in cands]
+    out = []
+    pos = {int(f): k for k, f in enumerate(fib)}
+    for cid, fiber, lam in cands:
+        if int(fiber) not in pos:
+            out.append((cid, expid, dict(chi_err='fiber'))); continue
+        r = pos[int(fiber)]
+        jj = int(np.argmin(np.abs(wl - lam)))
+        c = chi[r]
+        loc = np.r_[c[max(0, jj - 30):max(0, jj - 4)], c[jj + 5:jj + 31]]
+        loc = loc[loc > 0]
+        cm = float(np.max(c[max(0, jj - 2):jj + 3]))
+        cl = float(np.median(loc)) if loc.size > 5 else np.nan
+        # Rang des Kandidaten unter allen Fasern derselben Spalte (Instrumentenmerkmal?)
+        allc = chi[:, max(0, jj - 2):jj + 3].max(1)
+        out.append((cid, expid, dict(chi_max=cm, chi_loc=cl, chi_rel=cm / max(cl, 0.05) if np.isfinite(cl) else np.nan,
+                                     chi_frac_fibers=float((allc >= cm).mean()),
+                                     fmask=int((msk[r, max(0, jj - 2):jj + 3] != 0).sum()))))
+    return out
+
+
+def chi2pix_pass(dets, nights, threads=8, tmin=5.0, log_args=None):
+    """Ergänzt Detektionen (kind real/sky, S/N >= tmin, ohne Maske) um CHI2PIX aus allen Einzelbelichtungen.
+    Spalten: chi_rel_max, chi_rel_min, chi_nexp, chi_nhi (Belichtungen mit chi_rel > 3), chi_frac_fibers_min."""
+    groups = {}
+    for k, d in enumerate(dets):
+        d['cid'] = k
+        if d['kind'] not in ('real', 'sky') or d['snr'] < tmin or d.get('nmask2', 0) > 0:
+            continue
+        for e in str(d.get('expids', '')).split(';'):
+            if not e:
+                continue
+            e = int(e)
+            if e not in nights:
+                continue
+            groups.setdefault((nights[e], e, d['cam'], int(d['petal'])), []).append((k, int(d['fiber']), float(d['lam_obs'])))
+    tasks = [(n, e, c, p, cands) for (n, e, c, p), cands in groups.items()]
+    per = {}
+    with ThreadPoolExecutor(threads) as pool:
+        for m, res in enumerate(pool.map(_chi2_file, tasks)):
+            for cid, e, v in res:
+                per.setdefault(cid, []).append(v)
+            if log_args is not None and m % 50 == 0:
+                _log(log_args, f'pass3 {m + 1}/{len(tasks)}')
+    for cid, vals in per.items():
+        good = [v for v in vals if 'chi_rel' in v and np.isfinite(v['chi_rel'])]
+        d = dets[cid]
+        d['chi_nexp'] = len(good)
+        if good:
+            rel = [v['chi_rel'] for v in good]
+            d['chi_rel_max'], d['chi_rel_min'] = float(max(rel)), float(min(rel))
+            d['chi_nhi'] = int(sum(x > 3 for x in rel))
+            d['chi_frac_fibers_min'] = float(min(v['chi_frac_fibers'] for v in good))
+            d['chi_fmask'] = int(max(v['fmask'] for v in good))
+        else:
+            d['chi_err'] = ';'.join(v.get('chi_err', '') for v in vals)[:80]
+    return len(tasks)
 
 
 # ---------------------------------------------------------------- Shard-Steuerung
@@ -1157,6 +1272,17 @@ def run(args, shard, nshards, out):
                 return False
             return True
         dets = [d for d in dets if keep(d)]
+    R = args.get('rules')
+    if R:  # eingefrorene Stufe-A-Regeln: echte Detektionen nur behalten, wenn sie alle Coadd-Vetos überstehen
+        for d in dets:
+            d['vetoes'] = ','.join(stage_a_flags(d, R)) if d['kind'] != 'inj' else ''
+        dets = [d for d in dets if d['kind'] == 'inj' or d['vetoes'] == '']
+    n_chi_files = 0
+    if args.get('chi2pix', False):
+        n_chi_files = chi2pix_pass(dets, exposure_nights(), threads=threads, tmin=float(args.get('chi_tmin', 5.0)),
+                                   log_args=args)
+        _log(args, f'pass3 fertig: {n_chi_files} frame-Dateien, {time.time() - t3:.0f} s')
+    t4 = time.time()
     _write(os.path.join(out, f'detections_{sfx}.csv'), DET_COLS, dets)
     _write(os.path.join(out, f'injections_{sfx}.csv'), INJ_COLS, injs)
     _write(os.path.join(out, f'skyfibers_{sfx}.csv'), SKY_COLS, skys)
@@ -1187,4 +1313,4 @@ def run(args, shard, nshards, out):
                 n_star_spec=sum(1 for r in specs if r.get('status') == 'ok'), n_sky=len(skys),
                 n_det_real=n_det_raw, n_det_written=sum(1 for d in dets if d['kind'] == 'real'), n_inj=len(injs),
                 n_lib=int(len(_LIB.TID)), t_pass1=round(t1 - t0, 1), t_lib=round(t2 - t1, 1),
-                t_pass2=round(t3 - t2, 1), errors=errors[:5] + [s['error'] for s in pstat if s['error']][:5])
+                t_pass2=round(t3 - t2, 1), t_pass3=round(t4 - t3, 1), n_chi_files=n_chi_files, errors=errors[:5] + [s['error'] for s in pstat if s['error']][:5])
