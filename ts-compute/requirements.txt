@@ -2,3 +2,5 @@ numpy
 scipy
 astropy
 requests
+scikit-learn
+numba
