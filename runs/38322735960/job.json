@@ -1,0 +1,6 @@
+{
+  "job": "gaia_xp_extract",
+  "nshards": 20,
+  "note": "W3: Gaia-DR3-XP-Spektren (continuous) der 10.665 FGK-Zwerge <= 100 pc aus den CDN-Massendateien filtern, synthetische Hipparcos/Tycho-Photometrie rechnen",
+  "args": {"ids_file": "jobs/w3_source_ids.txt", "dataset": "continuous", "photometry": true, "threads": 4}
+}
