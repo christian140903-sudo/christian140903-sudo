@@ -1,0 +1,84 @@
+# Verteilte Rechenläufe für das Technosignatur-Projekt.
+# Auslöser: Push von ts-compute/jobs/current.json auf diesen Branch.
+# Jeder Shard rechnet einen Teil, "gather" legt alles auf Branch ts-results ab.
+name: ts-compute
+on:
+  push:
+    branches: [claude/technosignatures-archive-analysis-nxoino]
+    paths: ['ts-compute/jobs/current.json']
+permissions:
+  contents: write
+concurrency:
+  group: ts-compute
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      shards: ${{ steps.p.outputs.shards }}
+      nshards: ${{ steps.p.outputs.nshards }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        run: |
+          python3 - >> "$GITHUB_OUTPUT" <<'PY'
+          import json
+          c = json.load(open('ts-compute/jobs/current.json'))
+          n = int(c['nshards'])
+          print('shards=' + json.dumps(list(range(n))))
+          print('nshards=' + str(n))
+          PY
+  work:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: ${{ fromJson(needs.plan.outputs.shards) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: ts-compute/requirements.txt
+      - run: pip install -r ts-compute/requirements.txt
+      - name: run shard
+        working-directory: ts-compute
+        run: python -m tsjobs.run --config jobs/current.json --shard ${{ matrix.shard }} --nshards ${{ needs.plan.outputs.nshards }} --out ../out
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shard-${{ matrix.shard }}
+          path: out/
+          if-no-files-found: warn
+          retention-days: 7
+  gather:
+    needs: [plan, work]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: shards
+      - name: push results to ts-results
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "ts-compute"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          url="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}"
+          if git ls-remote --exit-code --heads "$url" ts-results >/dev/null; then
+            git clone -q --depth 1 --branch ts-results "$url" res
+          else
+            mkdir res && cd res && git init -q -b ts-results && git remote add origin "$url" && cd ..
+          fi
+          dest="res/runs/${{ github.run_id }}"
+          mkdir -p "$dest"
+          cp ts-compute/jobs/current.json "$dest/job.json"
+          python3 ts-compute/tsjobs/merge.py shards "$dest"
+          echo "${{ needs.work.result }}" > "$dest/work_result.txt"
+          cd res && git add -A && git commit -q -m "results run ${{ github.run_id }}" && git push -q origin ts-results
