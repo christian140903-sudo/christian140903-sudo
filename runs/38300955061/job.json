@@ -1,0 +1,6 @@
+{
+  "job": "tess_dipscan",
+  "nshards": 20,
+  "note": "Belastungstest + Rohliste: ganzer TESS-Sektor 91 (2-min SPOC), aperiodische Einbrüche >= 4 sigma, >= 3 Kadenzen",
+  "args": {"sector": 91, "k": 4.0, "min_run": 3, "window": 361, "threads": 16}
+}
