@@ -1092,11 +1092,11 @@ def aggregate_chi(dets, per):
             d['chi_err'] = ';'.join(v.get('chi_err', '') for v in vals)[:80]
 
 
-def chi_groups(dets, nights, tmin):
+def chi_groups(dets, nights, tmin, kinds=('real', 'sky')):
     groups = {}
     for k, d in enumerate(dets):
         d['cid'] = k
-        if d['kind'] not in ('real', 'sky') or d['snr'] < tmin or d.get('nmask2', 0) > 0:
+        if d['kind'] not in kinds or d['snr'] < tmin or d.get('nmask2', 0) > 0:
             continue
         for e in str(d.get('expids', '')).split(';'):
             if not e:
@@ -1108,10 +1108,10 @@ def chi_groups(dets, nights, tmin):
     return groups
 
 
-def chi2pix_pass(dets, nights, threads=8, tmin=5.0, log_args=None):
+def chi2pix_pass(dets, nights, threads=8, tmin=5.0, log_args=None, kinds=('real', 'sky')):
     """Ergänzt Detektionen (kind real/sky, S/N >= tmin, ohne Maske) um CHI2PIX aus allen Einzelbelichtungen.
     Spalten: chi_rel_max, chi_rel_min, chi_nexp, chi_nhi (Belichtungen mit chi_rel > 3), chi_frac_fibers_min."""
-    groups = chi_groups(dets, nights, tmin)
+    groups = chi_groups(dets, nights, tmin, kinds)
     tasks = [(n, e, c, p, cands) for (n, e, c, p), cands in groups.items()]
     per = {}
     with ThreadPoolExecutor(threads) as pool:
@@ -1306,8 +1306,9 @@ def run(args, shard, nshards, out):
         dets = [d for d in dets if d['kind'] == 'inj' or d['vetoes'] == '']
     n_chi_files = 0
     if args.get('chi2pix', False):
+        kinds = ('real', 'sky') if args.get('chi_sky', True) else ('real',)
         n_chi_files = chi2pix_pass(dets, exposure_nights(), threads=threads, tmin=float(args.get('chi_tmin', 5.0)),
-                                   log_args=args)
+                                   log_args=args, kinds=kinds)
         _log(args, f'pass3 fertig: {n_chi_files} frame-Dateien, {time.time() - t3:.0f} s')
     t4 = time.time()
     _write(os.path.join(out, f'detections_{sfx}.csv'), DET_COLS, dets)
