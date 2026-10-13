@@ -16,6 +16,8 @@ Blind test: Gaia DR4 (archive opens 2026-12-02). Predictions resolve 2026-12-31.
 | `151ad8927e1b05417b2b8c1ab355a36c2559a36b2fb940f13b0ffb5016b65e81` | `SPIEGEL-W3.csv` | Mirror sample (brightening stars), null reference for DR4 |
 | `404f9144aa5eb0c4481f3717ae62a605e70c0b87ddaed58b2dc0aa3f43e6a0b8` | `INJEKTION-W3.csv` | Injection-recovery table behind the rate limit |
 | `3843f8ca2f21ff707c61b8c67498fe136fa12baddffa8c5d4cc111d96c1e164a` | `PRAEREG-W3.md` (whole file incl. addendum 5, 2026-10-13 00:06 UTC) | Added DR4 tests fixed before release: color slope Δ(BP−RP)/ΔG and 1–30 d periodogram per candidate |
+| `64ee8ab88dc283e5189cad29c1105a8e2ebee7f9c7a84c4093b76c309dcf70b1` | `NACHTRAG-7-XP-VOLL.md` (2026-10-13) | Addendum 7: the preregistered XP method applied to all 9,444 stars with Gaia DR3 XP spectra; candidate classes, limits and DR4 predictions unchanged (committed files regenerated bit-identically) |
+| `af137b74b62a388cfea53dba8860f3c486ab45a207be0a05239257fc9aebd124` | `BEOBACHTUNG-XP-W3.csv` | Watch list (not candidates): 22 clean stars with \|z1\| ≥ 4 in XP (9 fading, 13 brightening), fixed before DR4 |
 
 A candidate on this list is a star whose brightness changed more than the
 measurement model expects. It is not a claim of anything artificial; natural
