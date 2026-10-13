@@ -49,6 +49,18 @@ any look at results; any change from the file below will be listed with its reas
 | `99d960dec984a4ed837a6deff6d014248f010dc8e70cf958d66cce2ee55fa593` | `ts-compute/tsjobs/desi_laser.py` | Job code (v3 logic active only for `rules.version >= 3`; v2 output bit-identical) |
 | `275898c5b4cde88fc82b242b213fce66eaf195b63ffeca45cf1b3d601e83d63a` | `ts-compute/jobs/current.json` | Wave-A job configuration (main/bright, 50 shards, rules v3 embedded) |
 
+**Final freeze of v3 (2026-10-13T03:34:46Z), after the adversarial review and before any result of run 4 (wave 1)
+or run 5 (wave A) was looked at.** The vetoes are unchanged (`rules_v3.json` as above). The freeze adds evaluation
+rules: CHI2PIX must have been computed for a clean survivor; two development tiles are excluded like pilot tiles;
+three pre-declared null tests (camera mix of survivors versus sky-fibre survivors and injections, which estimates the
+fraction of real lines; clustering per tile; a two-stage ranking). The false-alarm gate is expected to pass and says
+nothing about the purity of the list.
+
+| SHA-256 | File | Content |
+|---|---|---|
+| `861ae3aa573e9b318a07fe7a9b1fcae16b98f8b725b06e1b3dcdaba230f607c7` | `EINFRIEREN-V3.md` | Freeze record: hashes, evaluation addendum v3-A, predictions, known limits |
+| `7fb28206a7b592a5e32af527b61814ca120a4264b2be5d5bcd6fb46bf829def7` | `welleA_eval.py` | Evaluation code for v3 runs |
+
 Survivors of the search are candidates for further vetting, not detections.
 
 ## L1 — Earth-shadow test of POSS-I transients (within-plate, preregistered)
