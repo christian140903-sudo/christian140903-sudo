@@ -1,0 +1,26 @@
+{
+ "job": "gaia_xp_extract",
+ "nshards": 12,
+ "note": "W3 Nachlauf zu Lauf 38322735960: nur die 12 abgebrochenen XP-Dateien (82 Zielsterne), 1 Strom je Maschine, 8 Versuche",
+ "args": {
+  "ids_file": "jobs/w3_source_ids.txt",
+  "dataset": "continuous",
+  "photometry": true,
+  "threads": 1,
+  "tries": 8,
+  "only_files": [
+   "XpContinuousMeanSpectrum_221397-221705.csv.gz",
+   "XpContinuousMeanSpectrum_225065-225139.csv.gz",
+   "XpContinuousMeanSpectrum_519248-519942.csv.gz",
+   "XpContinuousMeanSpectrum_647187-647310.csv.gz",
+   "XpContinuousMeanSpectrum_161703-163359.csv.gz",
+   "XpContinuousMeanSpectrum_323755-325433.csv.gz",
+   "XpContinuousMeanSpectrum_347544-347757.csv.gz",
+   "XpContinuousMeanSpectrum_510517-510851.csv.gz",
+   "XpContinuousMeanSpectrum_331031-331736.csv.gz",
+   "XpContinuousMeanSpectrum_256330-257285.csv.gz",
+   "XpContinuousMeanSpectrum_238461-238723.csv.gz",
+   "XpContinuousMeanSpectrum_491480-491562.csv.gz"
+  ]
+ }
+}
