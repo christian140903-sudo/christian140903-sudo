@@ -1,15 +1,17 @@
 {
  "job": "desi_laser",
  "nshards": 50,
- "note": "W1-Volllauf v2: main bright (Welle 1) (DESI DR1 iron), Sterne = SPECTYPE STAR ohne ausgedehnte LS-Morphologie, Regeln v1 (SHA-256 fdcb015e...) + Einzelbelichtungs-Maskenveto, CHI2PIX fuer Coadd-Ueberlebende, Injektion 2 %. Ergebnis = Kandidatenliste fuer Stufe B, kein Befund. Erste Welle als blinde v2-Validierung auswerten.",
+ "note": "W1-Volllauf v3, Welle A: DESI DR1 main/bright (DESI DR1 iron), Regeln v3 (rules_v3.json SHA-256 ad7e27a9..., REGELN-V3.md). Verworfen vor dem Schreiben nur snr/mask/known; uebrige Vetos in Spalte vetoes, nachtraeglich pruefbar. Pilot-Kacheln split=pilot (blinde FAR nur split=test). threads 6 statt 8 (Last auf data.desi.lbl.gov); backup+dark als Welle B danach. Ergebnis = Kandidatenliste fuer Stufe B, kein Befund. Endgueltiges Einfrieren der Regeln nach Gegencheck, vor jedem Blick auf Ergebnisse.",
  "args": {
   "survey": "main",
-  "program": "bright",
+  "program": [
+   "bright"
+  ],
   "seed": 7,
   "lib_snr": 15,
   "lib_max": 30000,
   "workers": 4,
-  "threads": 8,
+  "threads": 6,
   "inj_frac": 0.02,
   "t_pre": 5.0,
   "tune_frac": 0.0,
@@ -677,25 +679,333 @@
     12,
     20,
     30,
+    50,
+    100,
+    200,
+    300,
     1000000000.0
    ],
    "chi_eff": [
-    0.9953886693017128,
-    0.9917355371900827,
-    0.9772727272727273,
-    1.0,
-    1.0
+    0.9969160655850052,
+    0.99644128113879,
+    0.9965901572599114,
+    0.9921607055365017,
+    0.9973670352817272,
+    0.9970472984160273,
+    0.9972626246118647,
+    0.9997611655123,
+    0.9969160655850052
    ],
    "sys_ew": 0.0,
-   "expmask": true
+   "expmask": true,
+   "version": 3,
+   "narrow_wmin_bins": [
+    0.0,
+    12.0
+   ],
+   "narrow_wmin": [
+    0.4,
+    0.49
+   ],
+   "chi_bins": [
+    0.0,
+    30.0,
+    50.0,
+    100.0,
+    200.0
+   ],
+   "chi_thr": [
+    3.0,
+    4.51,
+    8.14,
+    26.14,
+    60.86
+   ],
+   "airglow_topo": [
+    5578.89,
+    5891.58,
+    5897.56,
+    6302.05,
+    6365.54,
+    7774.08,
+    7776.3,
+    7777.53,
+    8448.68,
+    9263.4,
+    9265.3,
+    9268.5
+   ],
+   "lamp_topo": [
+    4047.7,
+    4359.6,
+    4512.6,
+    5351.9,
+    5462.3,
+    5684.2,
+    5689.8,
+    5771.2,
+    5792.3,
+    6155.9,
+    6162.5,
+    6709.6,
+    8185.5,
+    8197.1,
+    8233.9,
+    8282.4,
+    8349.1,
+    8411.5,
+    8821.8,
+    8954.7,
+    9047.9,
+    9165.2
+   ],
+   "meteor_groups": {
+    "mg_b": [
+     5168.8,
+     5174.1,
+     5185.0
+    ],
+    "mg_8809": [
+     8809.2
+    ],
+    "na_d": [
+     5891.58,
+     5897.56
+    ],
+    "oi_7774": [
+     7774.08,
+     7776.3,
+     7777.53
+    ],
+    "oi_8448": [
+     8448.68
+    ],
+    "oi_9265": [
+     9263.4,
+     9265.3,
+     9268.5
+    ],
+    "ni_868": [
+     8682.7,
+     8685.8,
+     8688.6,
+     8705.6,
+     8714.1,
+     8721.22
+    ]
+   },
+   "known_add": [
+    6149.4,
+    6418.7,
+    6458.2,
+    7157.15,
+    7293.48,
+    7325.91,
+    7379.86,
+    7444.3,
+    7470.4,
+    7713.6,
+    7776.3,
+    7777.53,
+    8361.35,
+    8376.83,
+    8394.75,
+    8415.68,
+    8440.32,
+    8619.32,
+    8682.7,
+    8685.8,
+    8688.6,
+    8705.6,
+    8714.1,
+    8721.22,
+    8809.2,
+    9097.33,
+    9114.3,
+    9408.31
+   ],
+   "topo_tol": 1.6,
+   "meteor_tol": 1.6,
+   "meteor_snr": 5.0,
+   "meteor_min_groups": 2,
+   "pair_list": [
+    [
+     "ha",
+     "oiii5"
+    ],
+    [
+     "ha",
+     "hb"
+    ],
+    [
+     "oiii5",
+     "oiii4"
+    ],
+    [
+     "ha",
+     "nii5"
+    ],
+    [
+     "ha",
+     "nii4"
+    ],
+    [
+     "ha",
+     "sii1"
+    ],
+    [
+     "ha",
+     "sii2"
+    ],
+    [
+     "oii",
+     "oiii5"
+    ],
+    [
+     "hb",
+     "oiii5"
+    ]
+   ],
+   "pair_dv": 50.0,
+   "pair_zmin": 0.003,
+   "pair_partner_snr": 5.0,
+   "pair_snr_min": 5.0,
+   "exclude_morph": [
+    "SER",
+    "REX",
+    "EXP",
+    "DEV",
+    "DUP"
+   ],
+   "write_cheap": [
+    "snr",
+    "mask",
+    "known"
+   ],
+   "post_checkable": [
+    "narrow",
+    "width",
+    "adjacent",
+    "cross",
+    "galaxy",
+    "known3",
+    "pair",
+    "meteor",
+    "airglow",
+    "lamp"
+   ],
+   "gal_rel_snr": 30.0,
+   "gal_rel": 0.3,
+   "chi_compact_factor": 3.0
   },
-  "chi_sky": false,
+  "chi_sky": true,
   "exclude_morph": [
    "SER",
    "REX",
    "EXP",
    "DEV",
    "DUP"
-  ]
+  ],
+  "chi_post_tmin": 8.5,
+  "pilot_tiles": [
+   20089,
+   20102,
+   20135,
+   20212,
+   20242,
+   20254,
+   20263,
+   20269,
+   20321,
+   20377,
+   20394,
+   20396,
+   20399,
+   20422,
+   20477,
+   20506,
+   20583,
+   20722,
+   20750,
+   20822,
+   20882,
+   21052,
+   21070,
+   21164,
+   21201,
+   21234,
+   21331,
+   21374,
+   21528,
+   21531,
+   21784,
+   21785,
+   21795,
+   21837,
+   21920,
+   21948,
+   21978,
+   21993,
+   22146,
+   22160,
+   22205,
+   22350,
+   22378,
+   22483,
+   22602,
+   22642,
+   22781,
+   22870,
+   22942,
+   23105,
+   23116,
+   23235,
+   23339,
+   23352,
+   23398,
+   23401,
+   23448,
+   23460,
+   23710,
+   23715,
+   23717,
+   23722,
+   23814,
+   23961,
+   24162,
+   24274,
+   24355,
+   24419,
+   24424,
+   24450,
+   24643,
+   25015,
+   25029,
+   25090,
+   25150,
+   25261,
+   25289,
+   25361,
+   25494,
+   25542,
+   25567,
+   25589,
+   25618,
+   25750,
+   25814,
+   25902,
+   26041,
+   26075,
+   26217,
+   26255
+  ],
+  "inj_snr_hi": 300.0,
+  "inj_hi_frac": 0.3,
+  "inj_wscale": [
+   1.0,
+   1.0,
+   0.86
+  ],
+  "inj_line_noise": 0.33
  }
 }

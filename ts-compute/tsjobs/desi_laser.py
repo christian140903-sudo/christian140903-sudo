@@ -26,6 +26,16 @@ args: survey ('main'), program ('bright' oder Liste), tiles (Liste TILEID, optio
       t_pre (5.0), k_nn (25), m_pre (60), lib_snr (15), lib_max (30000), inj_frac (1.0),
       rows ('all'|'select'), cache (Pfad, optional, Pass-1-Cache), workers (4), threads (8),
       table ('full'|'agg'), tune_frac (0.3)
+v3 (nur wirksam mit rules.version >= 3, sonst bitgleich wie v1/v2): Schreibfilter nur snr/mask/known, übrige Vetos
+      als Spalte 'vetoes', Zeile geschrieben wenn Vetosatz ⊆ rules.post_checkable; Mehrlinien-Merkmale (Partner gleicher
+      Rotverschiebung, Meteorgruppen), feste topozentrische Listen, Schmalheit über w_eff, CHI2PIX-Schwelle je S/N-Bin;
+      eindeutige Einzelbelichtungs-Artefakte in Kurzform (detcompact_<s>.csv). chi_post_tmin: Pass 3 für Zeilen mit
+      nicht-leerem Vetosatz erst ab diesem S/N (Kostenknopf).
+      pilot_tiles (Liste TILEID): split = 'pilot' statt Hash-Split (für blinde FAR nur split == 'test' zählen);
+      exclude_tiles (Liste TILEID): Kacheln auslassen. Beide wirken unabhängig von der Regelversion, nur wenn gesetzt.
+Injektion (optional, sonst unverändert U(2,16)): inj_snr_hi (z. B. 300) + inj_hi_frac (Anteil log-gleichverteilt
+      16..inj_snr_hi), inj_wscale (Liste von Breitenfaktoren, je Injektion zufällig), inj_line_noise (Linien-
+      Photonenrauschen in der IVAR, photonenbegrenzt durch den Objektfluss = pessimistisch für schwache Sterne).
 """
 import csv, hashlib, io, json, os, re, shutil, time, zlib
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -320,6 +330,8 @@ def tile_list(args):
     if args.get('tiles'):
         want = set(int(x) for x in args['tiles'])
         t = t[np.isin(t['TILEID'], list(want))]
+    if args.get('exclude_tiles'):   # v3: z. B. Pilot-Kacheln ganz auslassen
+        t = t[~np.isin(t['TILEID'], [int(x) for x in args['exclude_tiles']])]
     rng = np.random.default_rng(int(args.get('seed', 42)))
     t = t[rng.permutation(len(t))]
     if args.get('max_tiles'):
@@ -836,6 +848,10 @@ def process_petal(D, lib, args, sky_tpl, seed):
     t_pre = float(args.get('t_pre', 5.0))
     k_nn, m_pre = int(args.get('k_nn', 25)), int(args.get('m_pre', 60))
     inj_frac = float(args.get('inj_frac', 1.0))
+    inj_hi = float(args['inj_snr_hi']) if args.get('inj_snr_hi') else 0.0
+    inj_hi_frac = float(args.get('inj_hi_frac', 0.25))
+    inj_ws = [float(x) for x in args.get('inj_wscale', [])]
+    inj_noise_p = float(args.get('inj_line_noise', 0.0))   # Anteil der Injektionen mit Linien-Photonenrauschen
     rng = np.random.default_rng(seed)
     n = len(D['m_fiber'])
     star_idx = np.flatnonzero(D['is_star'])
@@ -862,7 +878,7 @@ def process_petal(D, lib, args, sky_tpl, seed):
                    ref_cat=meta['ref_cat'], ref_id=meta['ref_id'], flux_r=meta['flux_r'],
                    fiberflux_r=meta['fiberflux_r'], fibertotflux_r=meta['fibertotflux_r'], ebv=meta['ebv'],
                    mws=meta['mws'], numexp=meta['numexp'], exptime=meta['exptime'], snr_b=snrs[0],
-                   snr_r=snrs[1], snr_z=snrs[2], mjd=mjd, expids=expids, heliocor=helio)
+                   snr_r=snrs[1], snr_z=snrs[2], mjd=mjd, expids=expids, heliocor=helio, morph=meta['morph'])
         res = residual_snr(fn, en, float(meta['z']), meta['targetid'], lib, k_nn, m_pre, LSF) \
             if np.isfinite(fn).sum() > 1000 else None
         if res is None:
@@ -898,10 +914,16 @@ def process_petal(D, lib, args, sky_tpl, seed):
                 jt = int(rng.choice(cand))
                 c = cam_of(jt)
                 snr_exp = float(rng.uniform(2.0, 16.0))
+                # v3-Optionen (Gegencheck Statistik §3/§4): helle Injektionen bis inj_snr_hi (log-gleichverteilt),
+                # schmaleres Profil (w_scale, echte Linien sind 0,76-0,88 x Schablone), Linien-Photonenrauschen
+                if inj_hi and rng.random() < inj_hi_frac:
+                    snr_exp = float(np.exp(rng.uniform(np.log(16.0), np.log(inj_hi))))
+                wsc = float(inj_ws[int(rng.integers(len(inj_ws)))]) if inj_ws else 1.0
+                inj_noise = bool(inj_noise_p > 0 and rng.random() < inj_noise_p)
                 ew_true = snr_exp * float(res['ew_err'][jt])
                 center = jt + float(rng.uniform(-0.5, 0.5))
                 sl = slice(OFF[c], OFF[c] + NPIX[c])
-                prof = pix_gauss(NPIX[c], center - OFF[c], float(LSF[jt]))
+                prof = pix_gauss(NPIX[c], center - OFF[c], wsc * float(LSF[jt]))
                 lf = ew_true * float(cont[jt])                 # 1e-17 erg/s/cm2
                 fi = flux.copy()
                 fi[sl] = fi[sl] + lf * prof / DW
@@ -912,8 +934,13 @@ def process_petal(D, lib, args, sky_tpl, seed):
                         po = (lam_c - W0[oc]) / DW
                         jo = OFF[oc] + int(round(po))
                         slo = slice(OFF[oc], OFF[oc] + NPIX[oc])
-                        fi[slo] = fi[slo] + lf * pix_gauss(NPIX[oc], po, float(LSF[min(jo, NTOT - 1)])) / DW
-                fn2, en2, cont2 = normalize(fi, ivar, mask)
+                        fi[slo] = fi[slo] + lf * pix_gauss(NPIX[oc], po, wsc * float(LSF[min(jo, NTOT - 1)])) / DW
+                iv2 = ivar
+                if inj_noise:  # Varianz ∝ Objektfluss (photonenbegrenzt, pessimistisch für schwache Sterne)
+                    addf = np.clip(fi - flux, 0, None)
+                    cs = np.where(np.isfinite(cont) & (cont > 0), cont, np.inf)
+                    iv2 = ivar / (1.0 + addf / cs)
+                fn2, en2, cont2 = normalize(fi, iv2, mask)
                 res2 = residual_snr(fn2, en2, float(meta['z']), meta['targetid'], lib, k_nn, m_pre, LSF)
                 inj_id = int(rng.integers(1, 2 ** 31))
                 found, snr_found = 0, np.nan
@@ -935,7 +962,7 @@ def process_petal(D, lib, args, sky_tpl, seed):
                                      lam_obs=round(lam_obs_of(jt), 3), ew_true=ew_true, flux_true=lf,
                                      snr_exp=snr_exp, found=found, snr_found=snr_found, z=meta['z'],
                                      subtype=meta['subtype'], parallax=meta['parallax'], cont=float(cont[jt]),
-                                     ew_err_pix=float(res['ew_err'][jt])))
+                                     ew_err_pix=float(res['ew_err'][jt]), w_scale=wsc, line_noise=int(inj_noise)))
     # --- Himmelsfasern (Null ohne Stern): Hochpass-Matched-Filter im obs-Gitter, gleiche Schwelle
     if sky_idx.size:
         ks = kp[sky_idx]
@@ -1034,8 +1061,143 @@ def stage_a_flags(d, R):
     if _in_windows(num('lam_topo'), R['clus_topo'], R['clus_half']): f.append('clus_topo')
     if num('peak_excess') < R['peak_excess_min']: f.append('emission_shape')
     if num('edge') < R['edge_min']: f.append('edge')
+    if int(R.get('version', 1)) >= 3:
+        return _stage_a_v3(f, d, R, num, w)
     if w < 1 and num('dchi2_width') > R['narrow_dchi2']: f.append('narrow')
     return f
+
+
+# ---------------------------------------------------------------- Regelsatz v3 (Gegencheck 2026-10-13)
+# Greift NUR bei eingebetteten Regeln mit version >= 3. v1/v2-Jobs laufen bitgleich wie vorher.
+# Herkunft: analysis/W1-laser/REGELN-V3.md (Kalibrierung an Himmelslinien zweier Tuning-Kacheln, NIST-Listen aus
+# GEGENCHECK-W1-physik.md §5).
+
+def weff_from_rd(rd):
+    """Effektives Breitenverhältnis aus dem relativen Δχ² rd = dchi2_width / S/N².
+    Für ein Gaußprofil der Breite r·σ gegen die Schablone σ gilt rd = (1 - ρ²)/ρ² mit ρ² = 2r/(1 + r²);
+    umgekehrt r = (1 - sqrt(1 - ρ⁴))/ρ². Monoton: kleines r = schmaler als das LSF."""
+    rd = np.clip(np.asarray(rd, float), 0, None)
+    rho2 = 1.0 / (1.0 + rd)
+    return (1.0 - np.sqrt(np.clip(1.0 - rho2 ** 2, 0, None))) / rho2
+
+
+def _step(x, edges, vals):
+    """Stufenfunktion: vals[i] für edges[i] <= x < edges[i+1]; unterhalb der ersten Kante vals[0], oberhalb der
+    letzten vals[-1]."""
+    i = np.clip(np.searchsorted(np.asarray(edges, float), np.asarray(x, float), side='right') - 1, 0, len(vals) - 1)
+    return np.asarray(vals, float)[i]
+
+
+def narrow_v3(w, dchi, snr, R):
+    """v3-Schmalheit: Gitterbreite < 1 UND effektives Breitenverhältnis unter der S/N-abhängigen Untergrenze
+    (q-Quantil echter unaufgelöster Linien je S/N-Bin). Ersetzt das v1-Kriterium Δχ² > 8, das mit S/N² wächst."""
+    w, dchi, snr = (np.asarray(v, float) for v in (w, dchi, snr))
+    weff = weff_from_rd(dchi / np.maximum(snr, 1e-3) ** 2)
+    return (w < 1) & (weff < _step(snr, R['narrow_wmin_bins'], R['narrow_wmin']))
+
+
+def chi_threshold_v3(snr, R):
+    """v3-CHI2PIX-Schwelle je S/N-Bin (aus Himmelslinien kalibriert); oberhalb der letzten Kante quadratisch."""
+    snr = np.asarray(snr, float)
+    e, v = R['chi_bins'], R['chi_thr']
+    thr = _step(snr, e, v)
+    top = float(e[-1])
+    return np.where(snr > top, float(v[-1]) * (snr / top) ** 2, thr)
+
+
+def _near_any(x, lines, tol):
+    if x != x or not lines:
+        return False
+    return bool(np.min(np.abs(np.asarray(lines, float) - x)) <= tol)
+
+
+def _stage_a_v3(f, d, R, num, w):
+    """v3-Ergänzungen zu stage_a_flags (f enthält bereits die v1/v2-Vetos ohne 'narrow')."""
+    # Residuums-Partner ('galaxy'): ab S/N >= gal_rel_snr nur noch relativ zur Linie (Regressionsfenster ±40 px
+    # erzeugt bei hellen Linien Artefakte an [N II]-/[S II]-Stellen, 0,03-0,25 x S/N; Lokaltest, helle Injektionen)
+    if 'gal_rel_snr' in R and num('snr') >= R['gal_rel_snr']:
+        if 'galaxy' in f:
+            f.remove('galaxy')
+        if num('gal_partner_snr') >= max(R['gal_partner'], R['gal_rel'] * num('snr')):
+            f.append('galaxy')
+    if 'known' not in f and num('d_known3') <= R['known_half']:   # nur die v3-Ergänzung der Liste (NIST)
+        f.append('known3')
+    if bool(narrow_v3(w, num('dchi2_width'), num('snr'), R)):
+        f.append('narrow')
+    if num('pair_snr') >= R['pair_snr_min']:
+        f.append('pair')
+    if num('meteor_ng') >= R['meteor_min_groups']:
+        f.append('meteor')
+    lt = num('lam_topo')
+    if _near_any(lt, R.get('airglow_topo', []), R['topo_tol']):
+        f.append('airglow')
+    if _near_any(lt, R.get('lamp_topo', []), R['topo_tol']):
+        f.append('lamp')
+    return f
+
+
+def d_known3(lam_rest, R):
+    lines = np.concatenate([STELLAR, np.asarray(R.get('known_add', []), float)])
+    return float(np.min(np.abs(lines - lam_rest))) if lam_rest == lam_rest else np.nan
+
+
+def multi_line_annotate(dets, R):
+    """v3: Merkmale aus mehreren Detektionen derselben Faser (Schlüssel tile/petal/fiber).
+    pair_snr, pair_name, pair_dv: stärkste Partnerdetektion (S/N >= pair_partner_snr, ohne Maske, nicht an einer
+      bekannten Sternlinie, > 3 px entfernt), die mit der Detektion ein Galaxien-Linienpaar gleicher Rotverschiebung
+      bildet (|Δv| <= pair_dv km/s, z >= pair_zmin). 0 = kein Partner.
+    meteor_ng: Zahl verschiedener Meteor-Liniengruppen (topozentrisch, ±meteor_tol Å), die unter den Detektionen der
+      Faser (S/N >= meteor_snr, ohne Maske) vorkommen; die eigene Detektion zählt mit.
+    Partner einer Injektion sind die echten Detektionen derselben Faser (die Injektion ändert nur ihre Stelle);
+    Himmelsfasern prüfen nur gegen Himmelsfaser-Detektionen."""
+    pairs = [(GAL[a], GAL[b]) for a, b in R['pair_list']]
+    names = [f'{a}-{b}' for a, b in R['pair_list']]
+    dv_max, zmin = float(R['pair_dv']), float(R.get('pair_zmin', 0.003))
+    psnr, kh = float(R['pair_partner_snr']), float(R['known_half'])
+    mgroups = [(g, np.asarray(v, float)) for g, v in R['meteor_groups'].items()]
+    mtol, msnr = float(R['meteor_tol']), float(R.get('meteor_snr', 5.0))
+    by = {}
+    for d in dets:
+        by.setdefault((d['tile'], d['petal'], d['fiber']), []).append(d)
+
+    def fnum(x, dflt=np.nan):
+        try:
+            v = float(x)
+            return v if v == v else dflt
+        except (TypeError, ValueError):
+            return dflt
+    for grp in by.values():
+        real = [g for g in grp if g['kind'] == 'real']
+        sky = [g for g in grp if g['kind'] == 'sky']
+        for d in grp:
+            pool = sky if d['kind'] == 'sky' else real
+            pj = int(d['pix'])
+            others = [p for p in pool if p is not d and abs(int(p['pix']) - pj) > 3]
+            part = [p for p in others if fnum(p['snr'], 0) >= psnr and fnum(p.get('nmask2', 0), 0) == 0
+                    and not (fnum(p.get('d_known3', p.get('d_known')), 99.0) <= kh)]
+            lam = fnum(d['lam_obs'])
+            best = (0.0, '', np.nan)
+            for (l1, l2), nm in zip(pairs, names):
+                for la, lb, tag in ((l1, l2, nm), (l2, l1, nm)):
+                    z = lam / la - 1
+                    if z < zmin:
+                        continue
+                    for p in part:
+                        zp = fnum(p['lam_obs']) / lb - 1
+                        dv = C_KMS * (zp - z) / (1 + z)
+                        if abs(dv) <= dv_max and fnum(p['snr'], 0) > best[0]:
+                            best = (fnum(p['snr'], 0), tag, dv)
+            d['pair_snr'], d['pair_name'], d['pair_dv'] = round(best[0], 3), best[1], best[2]
+            hit = set()
+            for q in [d] + [p for p in others if fnum(p['snr'], 0) >= msnr and fnum(p.get('nmask2', 0), 0) == 0]:
+                lt = fnum(q.get('lam_topo'))
+                if lt != lt:
+                    continue
+                for g, lines in mgroups:
+                    if np.min(np.abs(lines - lt)) <= mtol:
+                        hit.add(g)
+            d['meteor_ng'] = len(hit)
+    return dets
 
 # ---------------------------------------------------------------- Pass 3: Extraktions-chi2 der Einzelbelichtungen
 def exposure_nights():
@@ -1142,7 +1304,8 @@ def _p1_one(task):
         return path, dict(tile=ti['tile'], petal=p, status='cached', n_star=-1, error='')
     try:
         P = load_petal(ti, p, args.get('rows', 'all'), tuple(args.get('exclude_morph', ())))
-        D = reduce_petal(P, ti, split_of(ti['tile'], float(args.get('tune_frac', 0.3))))
+        pil = set(int(x) for x in args.get('pilot_tiles', []))   # v3: Pilot-Kacheln markieren (split = 'pilot')
+        D = reduce_petal(P, ti, 'pilot' if ti['tile'] in pil else split_of(ti['tile'], float(args.get('tune_frac', 0.3))))
         tmp = path[:-4] + '.tmp.npz'
         np.savez(tmp, **D)
         os.replace(tmp, path)
@@ -1248,6 +1411,117 @@ def _write(path, cols, rows):
                         for k, v in r.items()})
 
 
+V3_DET_EXTRA = ['d_known3', 'pair_snr', 'pair_name', 'pair_dv', 'meteor_ng', 'chi_thr3']
+COMPACT_COLS = ['kind', 'tile', 'petal', 'fiber', 'pix', 'snr', 'width_ratio', 'dchi2_width', 'gal_partner_snr',
+                'gal_npartner', 'chi_nexp', 'chi_rel_max', 'chi_fmask', 'vetoes']
+# lam_obs = lam_obs_of(pix); split = split_of(tile) bzw. 'pilot'. Mit diesen Spalten sind v1/v2 und alle
+# nachträglich prüfbaren v3-Vetos (Schmalheit, Breite, Residuums-Partner, CHI2PIX, Belichtungsmaske) neu auswertbar.
+
+
+def _run_v3_tail(args, R, dets, injs, specs, skys, errors, pstat, out, sfx, n_all, tiles, n_det_raw, threads,
+                 t0, t1, t2, t3, cache):
+    """v3: Verwerfen vor dem Schreiben NUR an billigen, unstrittigen Vetos (R['write_cheap'], Standard snr, mask,
+    known mit der v1-Liste). Alle übrigen Vetos stehen in der Spalte 'vetoes'; eine echte/Himmelsfaser-Zeile wird
+    geschrieben, wenn ihr Vetosatz leer oder ⊆ R['post_checkable'] ist. Pass 3 (CHI2PIX) für alle geschriebenen
+    Zeilen ab chi_tmin (Zeilen mit nicht-leerem Vetosatz erst ab chi_post_tmin). Zeilen mit eindeutigem
+    Einzelbelichtungs-Artefakt (chi_rel_max > chi_compact_factor × v3-Schwelle) werden in Kurzform nach
+    detcompact_<s>.csv geschrieben (alle Merkmale, die Schmalheit/Breite/CHI2PIX nachträglich prüfbar machen).
+    Injektionen: immer geschrieben, Vetos ebenfalls vermerkt (für die Effizienz-Auswertung)."""
+    pf = args.get('prefilter') or {}
+    tw = float(pf.get('t_write', R['T']))
+    cheap = set(R.get('write_cheap', ['snr', 'mask', 'known']))
+    post = set(R.get('post_checkable', ['narrow', 'width']))
+    for d in dets:
+        lr = d.get('lam_rest', np.nan)
+        d['d_known3'] = d_known3(float(lr), R) if lr is not None and lr == lr else np.nan
+    multi_line_annotate(dets, R)
+    keep = []
+    for d in dets:
+        v = stage_a_flags(d, R)
+        if d['kind'] != 'inj' and float(d['snr']) < tw and 'snr' not in v:
+            v.append('snr')
+        d['vetoes'] = ','.join(v)
+        if d['kind'] == 'inj':
+            keep.append(d); continue
+        if set(v) & cheap:
+            continue
+        if set(v) <= post:
+            keep.append(d)
+    dets = keep
+    n_chi_files = 0
+    if args.get('chi2pix', False):
+        kinds = ('real', 'sky') if args.get('chi_sky', True) else ('real',)
+        tpost = float(args.get('chi_post_tmin', args.get('chi_tmin', 5.0)))
+        sel = [d for d in dets if d['kind'] in kinds and (d['vetoes'] == '' or float(d['snr']) >= tpost)]
+        n_chi_files = chi2pix_pass(sel, exposure_nights(), threads=threads, tmin=float(args.get('chi_tmin', 5.0)),
+                                   log_args=args, kinds=kinds)
+        _log(args, f'pass3 fertig: {n_chi_files} frame-Dateien, {time.time() - t3:.0f} s')
+        for d in dets:
+            if d['kind'] == 'inj' or 'chi_rel_max' not in d:
+                continue
+            v = [x for x in d['vetoes'].split(',') if x]
+            thr = float(chi_threshold_v3(float(d['snr']), R))
+            d['chi_thr3'] = round(thr, 3)
+            if d['chi_rel_max'] > thr:
+                v.append('chi2pix')
+            if R.get('expmask') and d.get('chi_fmask', 0) > 0:
+                v.append('expmask')
+            d['vetoes'] = ','.join(v)
+    fac = float(R.get('chi_compact_factor', 0))
+    full, compact = [], []
+    for d in dets:
+        if fac > 0 and d['kind'] != 'inj' and 'chi_thr3' in d and d['chi_rel_max'] > fac * d['chi_thr3']:
+            compact.append(d)
+        else:
+            full.append(d)
+    t4 = time.time()
+    _write(os.path.join(out, f'detections_{sfx}.csv'), DET_COLS + V3_DET_EXTRA, full)
+    _write(os.path.join(out, f'detcompact_{sfx}.csv'), COMPACT_COLS, compact)
+    _write(os.path.join(out, f'injections_{sfx}.csv'), INJ_COLS + ['w_scale', 'line_noise'], injs)
+    _write(os.path.join(out, f'skyfibers_{sfx}.csv'), SKY_COLS, skys)
+    _write(os.path.join(out, f'petals_{sfx}.csv'), ['tile', 'petal', 'status', 'n_star', 'error'], pstat)
+    _write_spectra(args, out, sfx, specs, full)
+    if not args.get('cache') and not args.get('keep_cache'):
+        shutil.rmtree(cache, ignore_errors=True)
+    n_fail = sum(1 for s in pstat if s['status'] == 'fail')
+    vc = {}
+    for d in full + compact:
+        if d['kind'] == 'real':
+            k = d['vetoes'] or '(leer)'
+            vc[k] = vc.get(k, 0) + 1
+    return dict(job='desi_laser', rules_version=3, n_tiles_all=n_all, n_tiles=len(tiles), n_petals=len(pstat),
+                n_fail=n_fail, n_star_spec=sum(1 for r in specs if r.get('status') == 'ok'), n_sky=len(skys),
+                n_det_real=n_det_raw, n_det_written=sum(1 for d in full if d['kind'] == 'real'),
+                n_det_compact=sum(1 for d in compact if d['kind'] == 'real'),
+                n_sky_written=sum(1 for d in full + compact if d['kind'] == 'sky'),
+                n_real_clean=sum(1 for d in full if d['kind'] == 'real' and d['vetoes'] == ''),
+                n_inj=len(injs), n_lib=int(len(_LIB.TID)), t_pass1=round(t1 - t0, 1), t_lib=round(t2 - t1, 1),
+                t_pass2=round(t3 - t2, 1), t_pass3=round(t4 - t3, 1), n_chi_files=n_chi_files,
+                veto_sets_top=dict(sorted(vc.items(), key=lambda x: -x[1])[:12]),
+                errors=errors[:5] + [s['error'] for s in pstat if s['error']][:5])
+
+
+def _write_spectra(args, out, sfx, specs, dets):
+    if args.get('table', 'full') == 'full':
+        _write(os.path.join(out, f'spectra_{sfx}.csv'), SPEC_COLS, specs)
+        return
+    agg = {}
+    for r in specs:
+        if r.get('status') != 'ok':
+            continue
+        k = (r['split'], int(np.clip(np.floor(2 * np.log10(max(r['snr_r'], 0.1))), -2, 8)),
+             int(np.clip(np.floor(r['gmag']) if np.isfinite(r['gmag']) else 99, 0, 99)))
+        a = agg.setdefault(k, [0, 0, []])
+        a[0] += 1; a[1] += r['n_det']; a[2].append(r['ewerr_med_r'])
+    rows = [dict(split=k[0], snr_bin=k[1], gbin=k[2], n_spec=v[0], n_det=v[1],
+                 ewerr_r_med=float(np.nanmedian(v[2]))) for k, v in agg.items()]
+    _write(os.path.join(out, f'spectragg_{sfx}.csv'), ['split', 'snr_bin', 'gbin', 'n_spec', 'n_det', 'ewerr_r_med'],
+           rows)
+    tid = set((d['tile'], d['petal'], d['fiber']) for d in dets if d['kind'] == 'real')
+    _write(os.path.join(out, f'spectra_{sfx}.csv'), SPEC_COLS + ['morph'],
+           [r for r in specs if (r['tile'], r['petal'], r['fiber']) in tid])
+
+
 def run(args, shard, nshards, out):
     global _LIB, _ARGS, _SKY
     t0 = time.time()
@@ -1291,6 +1565,10 @@ def run(args, shard, nshards, out):
     t3 = time.time()
     sfx = f'{shard:04d}'
     n_det_raw = sum(1 for d in dets if d['kind'] == 'real')
+    R = args.get('rules')
+    if R and int(R.get('version', 1)) >= 3:
+        return _run_v3_tail(args, R, dets, injs, specs, skys, errors, pstat, out, sfx, n_all, tiles,
+                            n_det_raw, threads, t0, t1, t2, t3, cache)
     pf = args.get('prefilter')
     if pf:  # Volllauf: nur Zeilen schreiben, die die harten, billigen Vetos überleben (Größe von ts-results)
         tw, kh = float(pf.get('t_write', 5.5)), float(pf.get('known_half', 4.0))

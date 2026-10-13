@@ -35,6 +35,20 @@ commit. The job file `jobs/current.json` in this commit embeds the full rules.
 | `30f7c6d9c14d91499924ce32a464b8e2e034f131f9d9daf51e6892e0a8ba78a8` | `rules_v2.json` | v2 = v1 + point-source cut + single-exposure mask veto (fixed 2026-10-13T01:44 UTC, before wave 1) |
 | `392bc0c51de81943fb0e3a47862b6345655d279fd923960d68f0b9e819190013` | `ts-compute/jobs/current.json` | Wave-1 job configuration with embedded rules |
 
+**Rules v3 (2026-10-13, after two independent reviews of the pilot).** Review found that the v1/v2 narrowness
+veto rejects bright real unresolved lines (60–99 % at S/N ≳ 50) and that the job discarded vetoed rows before
+writing them. v3 recalibrates the shape vetoes on real unresolved lines (sky lines in frame files of two tuning
+tiles), adds partner-line, meteor, airglow, lamp and extended stellar-line vetoes, and writes every row that fails
+only checkable vetoes, so the rules can be re-applied after the run. Wave A (main/bright) starts with this commit;
+no wave-1 or wave-A result has been looked at. The final rule freeze follows an adversarial review and precedes
+any look at results; any change from the file below will be listed with its reason.
+
+| SHA-256 | File | Content |
+|---|---|---|
+| `ad7e27a96dceb1de2812f305f4932a360ea742cdb504518522d5197e3de8f151` | `rules_v3.json` | Rules v3 as launched (candidate for final freeze) |
+| `99d960dec984a4ed837a6deff6d014248f010dc8e70cf958d66cce2ee55fa593` | `ts-compute/tsjobs/desi_laser.py` | Job code (v3 logic active only for `rules.version >= 3`; v2 output bit-identical) |
+| `275898c5b4cde88fc82b242b213fce66eaf195b63ffeca45cf1b3d601e83d63a` | `ts-compute/jobs/current.json` | Wave-A job configuration (main/bright, 50 shards, rules v3 embedded) |
+
 Survivors of the search are candidates for further vetting, not detections.
 
 ## L1 — Earth-shadow test of POSS-I transients (within-plate, preregistered)
