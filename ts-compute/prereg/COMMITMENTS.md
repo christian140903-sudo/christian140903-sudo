@@ -20,3 +20,19 @@ Blind test: Gaia DR4 (archive opens 2026-12-02). Predictions resolve 2026-12-31.
 A candidate on this list is a star whose brightness changed more than the
 measurement model expects. It is not a claim of anything artificial; natural
 explanations are open until tested.
+
+## W1 — laser-line search in DESI DR1 stellar spectra
+
+Rules were tuned only on 30 tuning tiles; the pilot gate was measured blind on
+60 test tiles (false-alarm rate 40 / 72,574 = 5.5e-4 per spectrum, gate 1e-3).
+Rule version v2 below adds two vetoes found after the gate measurement; its
+first blind test is wave 1 (all DESI DR1 main/bright stars), started with this
+commit. The job file `jobs/current.json` in this commit embeds the full rules.
+
+| SHA-256 | File | Content |
+|---|---|---|
+| `fdcb015efc4fb2b5c6b44d8f8182cecc3d87ec0e82de30e3815200eb090b38e8` | `rules_frozen_v1.json` | Rules frozen 2026-10-13 00:22:40 UTC before the test tiles were evaluated |
+| `30f7c6d9c14d91499924ce32a464b8e2e034f131f9d9daf51e6892e0a8ba78a8` | `rules_v2.json` | v2 = v1 + point-source cut + single-exposure mask veto (fixed 2026-10-13T01:44 UTC, before wave 1) |
+| `392bc0c51de81943fb0e3a47862b6345655d279fd923960d68f0b9e819190013` | `ts-compute/jobs/current.json` | Wave-1 job configuration with embedded rules |
+
+Survivors of the search are candidates for further vetting, not detections.

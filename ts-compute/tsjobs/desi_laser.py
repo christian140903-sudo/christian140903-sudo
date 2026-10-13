@@ -364,7 +364,7 @@ def petal_index(url):
     return idx
 
 
-def load_petal(ti, petal, rows_mode='all'):
+def load_petal(ti, petal, rows_mode='all', exclude_morph=()):
     tile, night = ti['tile'], ti['night']
     d = f'{BASE}/tiles/cumulative/{tile}/{night}'
     url = f'{d}/coadd-{petal}-{tile}-thru{night}.fits'
@@ -383,6 +383,10 @@ def load_petal(ti, petal, rows_mode='all'):
     objtype = np.char.strip(np.asarray(fm['OBJTYPE']).astype(str))
     fstat = np.asarray(fm['COADD_FIBERSTATUS'])
     is_star = (spectype == 'STAR') & (objtype == 'TGT') & (fstat == 0)
+    if exclude_morph and 'MORPHTYPE' in fm.columns.names:
+        # v2 (Pilot-Befund): ausgedehnte Legacy-Surveys-Quellen (SER/REX/EXP/DEV/DUP) sind keine Sterne im Sinn der Suche
+        morph = np.char.strip(np.asarray(fm['MORPHTYPE']).astype(str))
+        is_star &= ~np.isin(morph, list(exclude_morph))
     is_sky = (objtype == 'SKY') & (fstat == 0)
     if rows_mode == 'all':
         rows = np.arange(n)
@@ -458,6 +462,7 @@ def reduce_petal(P, ti, split):
         flux_r=g('FLUX_R'), fiberflux_r=g('FIBERFLUX_R'), fibertotflux_r=g('FIBERTOTFLUX_R'),
         numexp=g('COADD_NUMEXP'), exptime=g('COADD_EXPTIME'), mws=g('MWS_TARGET', 0), ebv=g('EBV'),
         pmra=g('PMRA'), pmdec=g('PMDEC'), ref_cat=np.char.strip(g('REF_CAT', '').astype(str)),
+        morph=np.char.strip(g('MORPHTYPE', '').astype(str)),
         ref_id=g('REF_ID', -1),
     )
     expids = ';'.join(str(int(e)) for e in np.unique(P['ef']['EXPID'])) if len(P['ef']) else ''
@@ -1136,7 +1141,7 @@ def _p1_one(task):
     if os.path.exists(path):
         return path, dict(tile=ti['tile'], petal=p, status='cached', n_star=-1, error='')
     try:
-        P = load_petal(ti, p, args.get('rows', 'all'))
+        P = load_petal(ti, p, args.get('rows', 'all'), tuple(args.get('exclude_morph', ())))
         D = reduce_petal(P, ti, split_of(ti['tile'], float(args.get('tune_frac', 0.3))))
         tmp = path[:-4] + '.tmp.npz'
         np.savez(tmp, **D)
@@ -1310,6 +1315,17 @@ def run(args, shard, nshards, out):
         n_chi_files = chi2pix_pass(dets, exposure_nights(), threads=threads, tmin=float(args.get('chi_tmin', 5.0)),
                                    log_args=args, kinds=kinds)
         _log(args, f'pass3 fertig: {n_chi_files} frame-Dateien, {time.time() - t3:.0f} s')
+        if R:  # eingefrorene CHI2PIX-Schwelle und (v2) Einzelbelichtungs-Maske als Vermerk, Zeilen bleiben erhalten
+            for d in dets:
+                if d['kind'] == 'inj' or 'chi_rel_max' not in d:
+                    continue
+                v = [x for x in d.get('vetoes', '').split(',') if x]
+                thr = R['chi_max'] * max(1.0, (float(d['snr']) / 20.0) ** 2)
+                if d['chi_rel_max'] > thr:
+                    v.append('chi2pix')
+                if R.get('expmask') and d.get('chi_fmask', 0) > 0:
+                    v.append('expmask')
+                d['vetoes'] = ','.join(v)
     t4 = time.time()
     _write(os.path.join(out, f'detections_{sfx}.csv'), DET_COLS, dets)
     _write(os.path.join(out, f'injections_{sfx}.csv'), INJ_COLS, injs)
