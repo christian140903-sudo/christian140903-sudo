@@ -14,6 +14,11 @@ FIBERMAP, EXP_FIBERMAP, FLUX/IVAR/MASK (b, r, z) und wenige RESOLUTION-Zeilen. A
 Was die Schicht darunter im Fehlerfall selbst tut: requests wiederholt nicht von selbst -> eigene Retries
 (3x, Backoff); der DESI-Server liefert bei falschem Range HTTP 416 -> Petal wird als Fehler gezählt, Lauf
 läuft weiter (fail-closed: fehlende Petals erscheinen in meta.n_fail, nie als 0 Detektionen).
+multiprocessing.Pool wartet unbegrenzt auf die Aufgabe eines gestorbenen oder verklemmten Workers, und der
+requests-Timeout begrenzt nur einzelne Socket-Operationen -> Wächter (_pool_run/_thread_run): kommt pool_timeout_s
+lang KEIN Ergebnis, werden die Worker-Stapel nach stderr geschrieben, der Pool beendet und die offenen Aufgaben
+fail-closed verbucht (Pass 1/2: Petal 'fail'/'pool_timeout'; Pass 3: Kandidat ungeprüft, chi_err 'timeout';
+Bibliothek: Shard-Abbruch nach Diagnose abort_<s>.json). Fortschritt + Lebenszeichen auf stdout (UTC).
 
 Ausgaben (CSV je Shard; Rohliste, kein Befund):
   detections_<s>.csv  alle Detektionen (kind = real | inj | sky) mit Merkmalen
@@ -25,7 +30,8 @@ Ausgaben (CSV je Shard; Rohliste, kein Befund):
 args: survey ('main'), program ('bright' oder Liste), tiles (Liste TILEID, optional), max_tiles, seed,
       t_pre (5.0), k_nn (25), m_pre (60), lib_snr (15), lib_max (30000), inj_frac (1.0),
       rows ('all'|'select'), cache (Pfad, optional, Pass-1-Cache), workers (4), threads (8),
-      table ('full'|'agg'), tune_frac (0.3)
+      table ('full'|'agg'), tune_frac (0.3), pool_timeout_s (900: Sekunden ohne jedes neue Ergebnis eines Pools/
+      Pass 3), heartbeat_s (300), _test_hang (nur Test, siehe _maybe_hang)
 v3 (nur wirksam mit rules.version >= 3, sonst bitgleich wie v1/v2): Schreibfilter nur snr/mask/known, übrige Vetos
       als Spalte 'vetoes', Zeile geschrieben wenn Vetosatz ⊆ rules.post_checkable; Mehrlinien-Merkmale (Partner gleicher
       Rotverschiebung, Meteorgruppen), feste topozentrische Listen, Schmalheit über w_eff, CHI2PIX-Schwelle je S/N-Bin;
@@ -38,7 +44,6 @@ Injektion (optional, sonst unverändert U(2,16)): inj_snr_hi (z. B. 300) + inj_h
       Photonenrauschen in der IVAR, photonenbegrenzt durch den Objektfluss = pessimistisch für schwache Sterne).
 """
 import csv, hashlib, io, json, os, re, shutil, time, zlib
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import numpy as np
 import requests
@@ -1245,6 +1250,7 @@ def _chi2_file(task):
     """Ein frame-File (Kamera, Petal, Belichtung): CHI2PIX-Merkmale für alle Kandidaten darin."""
     import gzip
     night, expid, cam, petal, cands = task
+    _maybe_hang('pass3', f'{expid}/{cam}{petal}')
     url = f'{BASE}/exposures/{night}/{expid:08d}/frame-{cam.lower()}{petal}-{expid:08d}.fits.gz'
     try:
         h = fits.open(io.BytesIO(gzip.decompress(_get(url, timeout=600).content)), memmap=False)
@@ -1293,13 +1299,22 @@ def chi2pix_pass(dets, nights, threads=8, tmin=5.0, log_args=None, kinds=('real'
     Spalten: chi_rel_max, chi_rel_min, chi_nexp, chi_nhi (Belichtungen mit chi_rel > 3), chi_frac_fibers_min."""
     groups = chi_groups(dets, nights, tmin, kinds)
     tasks = [(n, e, c, p, cands) for (n, e, c, p), cands in groups.items()]
+    got = {}
+
+    def take(m, res):
+        got[m] = res
+        if log_args is not None and (len(got) - 1) % 50 == 0:
+            _log(log_args, f'pass3 {len(got)}/{len(tasks)}')
+    rest = _thread_run(_chi2_file, tasks, threads, log_args if log_args is not None else {}, 'pass3', take)
     per = {}
-    with ThreadPoolExecutor(threads) as pool:
-        for m, res in enumerate(pool.map(_chi2_file, tasks)):
-            for cid, e, v in res:
-                per.setdefault(cid, []).append(v)
-            if log_args is not None and m % 50 == 0:
-                _log(log_args, f'pass3 {m + 1}/{len(tasks)}')
+    for m in range(len(tasks)):                       # Eingabereihenfolge (wie zuvor pool.map)
+        for cid, e, v in got.get(m, ()):
+            per.setdefault(cid, []).append(v)
+    # Wächter (fail-closed, EINFRIEREN-V3 V-2): Kandidat mit mindestens einer offenen Belichtung gilt als ungeprüft
+    # (chi_nexp = 0, chi_err = 'timeout'); Teilergebnisse seiner übrigen Belichtungen werden verworfen
+    for m in rest:
+        for c in tasks[m][4]:
+            per[c[0]] = [dict(chi_err='timeout')]
     aggregate_chi(dets, per)
     return len(tasks)
 
@@ -1312,6 +1327,7 @@ def _load_petal(path):
 
 def _p1_one(task):
     ti, p, args, cache = task
+    _maybe_hang('pass1', f"{ti['tile']}/{p}")
     path = os.path.join(cache, f"p_{ti['tile']}_{p}.npz")
     if os.path.exists(path):
         return path, dict(tile=ti['tile'], petal=p, status='cached', n_star=-1, error='')
@@ -1328,28 +1344,31 @@ def _p1_one(task):
 
 
 def pass1(tiles, args, cache, nproc):
-    """Laden + Reduzieren in Prozessen (Download und CPU überlappen; GIL umgangen)."""
-    import multiprocessing as mp
+    """Laden + Reduzieren in Prozessen (Download und CPU überlappen; GIL umgangen). Wächter: nach pool_timeout_s ohne
+    jedes Ergebnis werden die offenen Petals als 'fail' / 'pool_timeout' verbucht, der Lauf geht weiter."""
     tasks = [(ti, p, args, cache) for ti in tiles for p in range(10)]
     paths, stat = [], []
-    log = args.get('log')
-    with mp.get_context('fork').Pool(nproc) as pool:
-        for k, (path, st) in enumerate(pool.imap_unordered(_p1_one, tasks, chunksize=1)):
-            stat.append(st)
-            if path:
-                paths.append(path)
-            if log and st['status'] == 'fail':
-                with open(log, 'a') as f:
-                    f.write(f"{time.strftime('%H:%M:%S')} FAIL {st['tile']}/{st['petal']}: {st['error']}\n")
-            if log and (k % 20 == 0 or k == len(tasks) - 1):
-                with open(log, 'a') as f:
-                    f.write(f"{time.strftime('%H:%M:%S')} pass1 {k + 1}/{len(tasks)} "
-                            f"fail={sum(1 for x in stat if x['status'] == 'fail')}\n")
+
+    def take(_, r):
+        path, st = r
+        stat.append(st)
+        if path:
+            paths.append(path)
+        if st['status'] == 'fail':
+            _log(args, f"FAIL {st['tile']}/{st['petal']}: {st['error']}")
+        k = len(stat) - 1
+        if k % 20 == 0 or k == len(tasks) - 1:
+            _log(args, f"pass1 {k + 1}/{len(tasks)} fail={sum(1 for x in stat if x['status'] == 'fail')}")
+    with _fork_pool(nproc, args, 'pass1') as pool:
+        rest = _pool_run(pool, _p1_one, tasks, args, 'pass1', take)
+    for i in rest:
+        stat.append(dict(tile=tasks[i][0]['tile'], petal=tasks[i][1], status='fail', n_star=0, error='pool_timeout'))
     return sorted(paths), stat
 
 
 def _lib_one(task):
     path, lib_snr = task
+    _maybe_hang('lib', os.path.basename(path))
     D = _load_petal(path)
     FN, Z, TID, SN = [], [], [], []
     kp = D['kpos']
@@ -1369,13 +1388,19 @@ def _lib_one(task):
 
 
 def build_library(paths, args):
-    """Sterne hoher S/N (alle Kameras >= lib_snr, ZWARN = 0) des Shards; bei Überzahl zufällige Auswahl."""
-    import multiprocessing as mp
+    """Sterne hoher S/N (alle Kameras >= lib_snr, ZWARN = 0) des Shards; bei Überzahl zufällige Auswahl.
+    Wächter: fehlt nach pool_timeout_s ein Ergebnis, bricht der Shard ab (ohne vollständige Bibliothek keine Messung)."""
     lib_snr, lib_max = float(args.get('lib_snr', 15)), int(args.get('lib_max', 30000))
     FN, Z, TID, SN = [], [], [], []
-    with mp.get_context('fork').Pool(int(args.get('workers', 4))) as pool:
-        for f, z, t, sn in pool.imap(_lib_one, [(p, lib_snr) for p in paths], chunksize=4):
-            FN += f; Z += z; TID += t; SN += sn
+
+    def take(_, r):
+        f, z, t, sn = r
+        FN.extend(f); Z.extend(z); TID.extend(t); SN.extend(sn)
+    with _fork_pool(int(args.get('workers', 4)), args, 'lib') as pool:
+        rest = _pool_run(pool, _lib_one, [(p, lib_snr) for p in paths], args, 'lib', take, ordered=True, chunksize=4)
+    if rest:
+        raise RuntimeError(f'Bibliothek: {len(rest)} von {len(paths)} Petals ohne Ergebnis nach pool_timeout_s '
+                           '(pool_timeout) -> ohne vollständige Bibliothek keine Messung, Shard abgebrochen')
     FN, Z, TID = np.array(FN), np.array(Z), np.array(TID)
     if len(FN) > lib_max:
         keep = np.random.default_rng(1).choice(len(FN), lib_max, replace=False)
@@ -1392,6 +1417,7 @@ def _work(task):
     """Ein Petal; Ergebnis sofort als Checkpoint (pickle) neben den Cache, Neustart überspringt Fertiges."""
     import pickle
     path, seed = task
+    _maybe_hang('pass2', os.path.basename(path))
     part = path[:-4] + '.part.pkl'
     if os.path.exists(part):
         try:
@@ -1409,10 +1435,256 @@ def _work(task):
         return None, f'{os.path.basename(path)}: {traceback.format_exc()[-400:]}'
 
 
+# ---------------------------------------------------------------- Wächter: Pools/Threads mit Zeitgrenze, Lebenszeichen
+POOL_TIMEOUT_S = 900.0   # Sekunden ohne JEDES neue Ergebnis; normale Aufgaben brauchen Sekunden (WATCHDOG-JOB.md)
+HEARTBEAT_S = 300.0      # Lebenszeichen im Hauptprozess, solange ein Pool / Pass 3 läuft
+_HANG = ()               # nur Test (args['_test_hang']), siehe _maybe_hang
+_TIMEOUTS = {}           # Pass -> Zahl der wegen Zeitüberschreitung fail-closed verbuchten Aufgaben
+_FH = False              # faulthandler auf SIGUSR1 registriert (Worker erben das per fork)
+
+
+class _NoResult(Exception):
+    """Wächter-intern: in der Abfragefrist kam kein Ergebnis (eigene Klasse, damit ein TimeoutError aus der Aufgabe
+    selbst nicht als Wächter-Signal gilt)."""
+
+
+def _stamp():
+    return time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+
+
 def _log(args, msg):
+    """Protokollzeile mit UTC-Zeitstempel: immer auf stdout (sofort geflusht -> Actions-Log), zusätzlich in
+    args['log'], falls gesetzt."""
+    line = f'{_stamp()} {msg}'
+    print(line, flush=True)
     if args.get('log'):
         with open(args['log'], 'a') as f:
-            f.write(f"{time.strftime('%H:%M:%S')} {msg}\n")
+            f.write(line + '\n')
+
+
+def _thread_info():
+    """Threads des Hauptprozesses (vor einem fork): Python-Threads und Betriebssystem-Threads (inkl. BLAS-Pool)."""
+    import threading
+    try:
+        n_os = len(os.listdir('/proc/self/task'))
+    except OSError:
+        n_os = -1
+    return f'threads python={threading.active_count()} os={n_os}'
+
+
+def _mem_avail_mb():
+    try:
+        with open('/proc/meminfo') as f:
+            for ln in f:
+                if ln.startswith('MemAvailable:'):
+                    return int(ln.split()[1]) // 1024
+    except (OSError, ValueError, IndexError):
+        pass
+    return -1
+
+
+def _maybe_hang(stage, key):
+    """Nur Test: args['_test_hang'] = ['pass1:<tile>/<petal>', 'lib:p_<tile>_<petal>.npz', 'pass2:p_<tile>_<petal>.npz',
+    'pass3:<expid>/<cam><petal>', ...]; Zusatz ':kill' beendet den Worker-Prozess hart (SIGKILL; nur pass1/lib/pass2)."""
+    for h in _HANG:
+        q = str(h).split(':')
+        if q[0] == stage and len(q) > 1 and q[1] == key:
+            if len(q) > 2 and q[2] == 'kill':
+                os.kill(os.getpid(), 9)
+            time.sleep(10 ** 6)
+
+
+def _chunk(job):
+    k0, fn, part = job
+    return k0, [fn(t) for t in part]
+
+
+def _fork_pool(n, args, label):
+    import multiprocessing as mp
+    _log(args, f'{label}: fork-Pool mit {n} Workern ({_thread_info()})')
+    return mp.get_context('fork').Pool(n)
+
+
+def _pool_pids(pool):
+    try:
+        return sorted(p.pid for p in pool._pool)
+    except Exception:
+        return []
+
+
+def _watch(nxt, n, args, label, on_result, state, unit=1):
+    """Wächter-Schleife: nxt(t) liefert das nächste (i, Ergebnis) oder wirft _NoResult nach t s. Kommt
+    pool_timeout_s lang kein Ergebnis, endet die Schleife; Rückgabe = Indizes der offenen Aufgaben (leer = fertig).
+    Alle heartbeat_s ein Lebenszeichen (fertige Aufgaben, Zeit seit dem letzten Ergebnis, state(), freier Speicher)."""
+    T = float(args.get('pool_timeout_s', POOL_TIMEOUT_S))
+    beat = float(args.get('heartbeat_s', HEARTBEAT_S))
+    done = set()
+    t_last = t_beat = time.time()
+    while len(done) < n:
+        try:
+            i, r = nxt(max(0.5, min(30.0, T, beat)))
+        except _NoResult:
+            if time.time() - t_last >= T:
+                rest = sorted(set(range(n)) - done)
+                what = 'Aufgaben' if unit == 1 else f'Bündel (je bis {unit} Aufgaben)'
+                _log(args, f'{label}: WAECHTER {T:.0f} s ohne Ergebnis -> {len(rest)} offene {what} fail-closed '
+                           f'({len(done)}/{n} fertig; {state()})')
+                # GitHub-Annotation: Teil-Shard wird in der Laufübersicht sichtbar, obwohl der Job grün endet
+                print(f'::warning title=Waechter {label}::{len(rest)} offene {what} nach {T:.0f} s fail-closed '
+                      f'verbucht ({len(done)}/{n} fertig)', flush=True)
+                return rest
+        except StopIteration:
+            break
+        else:
+            done.add(i)
+            t_last = time.time()
+            on_result(i, r)
+        now = time.time()
+        if now - t_beat >= beat:
+            _log(args, f'{label}: Lebenszeichen {len(done)}/{n} fertig, letztes Ergebnis vor {now - t_last:.0f} s, '
+                       f'{state()}, MemAvailable={_mem_avail_mb()} MB')
+            t_beat = now
+    return []
+
+
+def _pool_stop(pool, args, label):
+    """Worker-Stapel nach stderr (SIGUSR1 -> faulthandler), dann pool.terminate() mit Zeitgrenze: terminate() kann
+    selbst hängen, wenn ein gestorbener Worker eine Queue-Sperre hielt -> Worker per SIGKILL, Pool aufgeben."""
+    import signal, threading
+    pids = _pool_pids(pool)
+    if _FH:
+        for pid in pids:   # nacheinander, damit sich die Stapel der Worker im Log nicht mischen
+            try:
+                os.kill(pid, signal.SIGUSR1)
+            except OSError:
+                pass
+            time.sleep(1)
+        time.sleep(1)
+    th = threading.Thread(target=pool.terminate, daemon=True)
+    th.start()
+    th.join(60)
+    if th.is_alive():
+        for pid in _pool_pids(pool):
+            try:
+                os.kill(pid, signal.SIGKILL)
+            except OSError:
+                pass
+        _log(args, f'{label}: terminate() hängt nach 60 s -> Worker {pids} per SIGKILL beendet, Pool aufgegeben')
+
+
+def _pool_run(pool, fn, tasks, args, label, on_result, ordered=False, chunksize=1):
+    """fn auf tasks im Prozess-Pool, Ergebnisse an on_result(i, Ergebnis) (ordered: Eingabereihenfolge wie imap,
+    sonst Fertigstellungsreihenfolge wie imap_unordered). Rückgabe: Indizes der wegen Zeitüberschreitung offenen
+    Aufgaben; dann ist der Pool bereits beendet. Ausnahmen aus fn laufen wie bisher zum Aufrufer durch."""
+    import multiprocessing as mp
+    # Bündel selbst bilden (wie Pool._get_tasks: aufeinanderfolgende Stücke der Länge chunksize, in Reihenfolge):
+    # imap(..., chunksize > 1) liefert einen Generator ohne next(timeout)
+    c = max(1, int(chunksize))
+    jobs = [(k, fn, tasks[k:k + c]) for k in range(0, len(tasks), c)]
+    it = (pool.imap if ordered else pool.imap_unordered)(_chunk, jobs)
+
+    def nxt(t):
+        try:
+            k0, res = it.next(timeout=t)
+        except mp.TimeoutError:
+            raise _NoResult from None
+        return k0 // c, (k0, res)
+
+    def take(_, r):
+        k0, res = r
+        for q, x in enumerate(res):
+            on_result(k0 + q, x)
+    pids0 = _pool_pids(pool)
+
+    def state():
+        p = _pool_pids(pool)
+        return f'Worker {p}' + (f' (beim Start {pids0}: Worker ersetzt, also gestorben)' if p != pids0 else '')
+    rest = _watch(nxt, len(jobs), args, label, take, state, unit=c)
+    if rest:
+        _pool_stop(pool, args, label)
+    rest = [i for j in rest for i in range(j * c, min((j + 1) * c, len(tasks)))]
+    if rest:
+        _TIMEOUTS[label] = _TIMEOUTS.get(label, 0) + len(rest)
+    return rest
+
+
+def _thread_run(fn, tasks, nthreads, args, label, on_result):
+    """Wie _pool_run für Threads (Pass 3), Ergebnisse in Fertigstellungsreihenfolge. Daemon-Threads: ein hängender
+    Download hält weder den Lauf noch das Prozessende auf (ThreadPoolExecutor-Threads würden beim Beenden des
+    Interpreters abgewartet). Ausnahmen aus fn laufen wie zuvor bei pool.map zum Aufrufer durch."""
+    import queue, threading
+    todo, res_q, stop = queue.SimpleQueue(), queue.SimpleQueue(), threading.Event()
+    for i in range(len(tasks)):
+        todo.put(i)
+
+    def worker():
+        while not stop.is_set():
+            try:
+                i = todo.get_nowait()
+            except queue.Empty:
+                return
+            try:
+                res_q.put((i, True, fn(tasks[i])))
+            except BaseException as exc:
+                res_q.put((i, False, exc))
+    ths = [threading.Thread(target=worker, daemon=True) for _ in range(max(1, int(nthreads)))]
+    for th in ths:
+        th.start()
+
+    def nxt(t):
+        try:
+            i, ok, r = res_q.get(timeout=t)
+        except queue.Empty:
+            raise _NoResult from None
+        if not ok:
+            stop.set()
+            raise r
+        return i, r
+    try:
+        rest = _watch(nxt, len(tasks), args, label, on_result,
+                      lambda: f'Threads aktiv {sum(th.is_alive() for th in ths)}/{len(ths)}')
+    finally:
+        stop.set()
+    if rest:
+        _TIMEOUTS[label] = _TIMEOUTS.get(label, 0) + len(rest)
+    return rest
+
+
+def _mark_fail(pstat, paths, error):
+    """Petals (Pfade p_<tile>_<petal>.npz) in der Petal-Statistik auf 'fail' setzen (fail-closed: die Auswertung zählt
+    nur 'ok'-Petals im Nenner)."""
+    keys = set()
+    for p in paths:
+        _, t, q = os.path.basename(p)[:-4].split('_')
+        keys.add((int(t), int(q)))
+    for s in pstat:
+        if (int(s['tile']), int(s['petal'])) in keys:
+            s['status'], s['error'] = 'fail', error
+
+
+def _with_timeouts(stats):
+    if _TIMEOUTS:
+        stats['pool_timeouts'] = dict(_TIMEOUTS)
+    return stats
+
+
+def _abort(args, out, shard, tiles, pstat, exc):
+    """Shard-Abbruch vor der Messung (Bibliothek/Himmelsmodell): bisherige Diagnose sichern, bevor die Ausnahme
+    weiterläuft. Absichtlich KEIN petals_<s>.csv: die Auswertung zählt 'ok'-Petals als Nenner, ohne Detektionen
+    wäre das fail-open."""
+    st = {}
+    for s in pstat:
+        st[s['status']] = st.get(s['status'], 0) + 1
+    diag = dict(job='desi_laser', aborted=repr(exc)[:400], shard=shard, utc=_stamp(), n_tiles=len(tiles),
+                n_petals=len(pstat), petal_status=st, pool_timeouts=dict(_TIMEOUTS),
+                petals_fail=[f"{s['tile']}/{s['petal']}: {s['error']}" for s in pstat if s['status'] == 'fail'][:50])
+    _log(args, 'ABBRUCH ' + json.dumps(diag, default=str))
+    print(f"::error title=Shard {shard} abgebrochen::{diag['aborted'][:300]}", flush=True)
+    try:
+        with open(os.path.join(out, f'abort_{shard:04d}.json'), 'w') as f:
+            json.dump(diag, f, indent=1, default=str)
+    except OSError:
+        pass
 
 
 def _write(path, cols, rows):
@@ -1536,7 +1808,16 @@ def _write_spectra(args, out, sfx, specs, dets):
 
 
 def run(args, shard, nshards, out):
-    global _LIB, _ARGS, _SKY
+    global _LIB, _ARGS, _SKY, _HANG, _FH
+    import faulthandler, signal
+    try:   # Diagnose: Segfault/Abbruch (auch in Workern, per fork geerbt) und Stapel auf SIGUSR1 nach stderr
+        faulthandler.enable()
+        faulthandler.register(signal.SIGUSR1, all_threads=True)
+        _FH = True
+    except (AttributeError, ValueError, RuntimeError, OSError):
+        _FH = False
+    _HANG = tuple(args.get('_test_hang') or ())
+    _TIMEOUTS.clear()
     t0 = time.time()
     threads, workers = int(args.get('threads', 8)), int(args.get('workers', 4))
     tiles = tile_list(args)
@@ -1545,11 +1826,17 @@ def run(args, shard, nshards, out):
     import tempfile
     cache = args.get('cache') or os.path.join(tempfile.gettempdir(), f'w1cache_{shard:04d}')
     os.makedirs(cache, exist_ok=True)
+    _log(args, f'Shard {shard}/{nshards}: {len(tiles)} Kacheln, workers={workers}, threads={threads}, '
+               f"pool_timeout_s={float(args.get('pool_timeout_s', POOL_TIMEOUT_S)):.0f}, {_thread_info()}")
     paths, pstat = pass1(tiles, args, cache, threads)
     _log(args, f'pass1 fertig: {len(paths)} Petals, {time.time() - t0:.0f} s')
     t1 = time.time()
-    _SKY = sky_template(cache)
-    _LIB = build_library(paths, args)
+    try:
+        _SKY = sky_template(cache)
+        _LIB = build_library(paths, args)
+    except Exception as exc:   # ohne Himmelsmodell/Bibliothek keine Messung: erst Diagnose, dann Abbruch
+        _abort(args, out, shard, tiles, pstat, exc)
+        raise
     _ARGS = args
     t2 = time.time()
     _log(args, f'Bibliothek: {len(_LIB.TID)} Sterne, {t2 - t1:.0f} s')
@@ -1558,30 +1845,39 @@ def run(args, shard, nshards, out):
     tf = float(args.get('tune_frac', 0.3))
     paths_o = sorted(paths, key=lambda p: (split_of(int(os.path.basename(p).split('_')[1]), tf) != 'tune', p))
     tasks = [(p, int(hashlib.sha256(os.path.basename(p).encode()).hexdigest()[:8], 16)) for p in paths_o]
+
+    def take(path, r):
+        res, err = r
+        if err:   # Petal ohne Pass-2-Ergebnis zählt fail-closed nicht als 'ok' (Nenner der Auswertung)
+            errors.append(err)
+            _mark_fail(pstat, [path], 'pass2: ' + err.replace('\n', ' | ')[:190])
+            return
+        d, i, s, k = res
+        dets.extend(d); injs.extend(i); specs.extend(s); skys.extend(k)
     if workers > 1:
-        import multiprocessing as mp
-        with mp.get_context('fork').Pool(workers) as pool:
-            for k, (res, err) in enumerate(pool.imap_unordered(_work, tasks, chunksize=1)):
-                if k % 20 == 0:
-                    _log(args, f'pass2 {k + 1}/{len(tasks)} dets={len(dets)} injs={len(injs)}')
-                if err:
-                    errors.append(err); continue
-                d, i, s, k = res
-                dets += d; injs += i; specs += s; skys += k
+        n_got = [0]
+
+        def take2(j, r):
+            if n_got[0] % 20 == 0:
+                _log(args, f'pass2 {n_got[0] + 1}/{len(tasks)} dets={len(dets)} injs={len(injs)}')
+            n_got[0] += 1
+            take(tasks[j][0], r)
+        with _fork_pool(workers, args, 'pass2') as pool:
+            rest = _pool_run(pool, _work, tasks, args, 'pass2', take2)
+        _mark_fail(pstat, [tasks[j][0] for j in rest], 'pool_timeout')
     else:
+        rest = []
         for tk in tasks:
-            res, err = _work(tk)
-            if err:
-                errors.append(err); continue
-            d, i, s, k = res
-            dets += d; injs += i; specs += s; skys += k
+            take(tk[0], _work(tk))
     t3 = time.time()
+    _log(args, f'pass2 fertig: {len(tasks) - len(rest)}/{len(tasks)} Petals (pool_timeout {len(rest)}, '
+               f'Fehler {len(errors)}), {t3 - t2:.0f} s')
     sfx = f'{shard:04d}'
     n_det_raw = sum(1 for d in dets if d['kind'] == 'real')
     R = args.get('rules')
     if R and int(R.get('version', 1)) >= 3:
-        return _run_v3_tail(args, R, dets, injs, specs, skys, errors, pstat, out, sfx, n_all, tiles,
-                            n_det_raw, threads, t0, t1, t2, t3, cache)
+        return _with_timeouts(_run_v3_tail(args, R, dets, injs, specs, skys, errors, pstat, out, sfx, n_all, tiles,
+                                           n_det_raw, threads, t0, t1, t2, t3, cache))
     pf = args.get('prefilter')
     if pf:  # Volllauf: nur Zeilen schreiben, die die harten, billigen Vetos überleben (Größe von ts-results)
         tw, kh = float(pf.get('t_write', 5.5)), float(pf.get('known_half', 4.0))
@@ -1644,8 +1940,10 @@ def run(args, shard, nshards, out):
     if not args.get('cache') and not args.get('keep_cache'):
         shutil.rmtree(cache, ignore_errors=True)
     n_fail = sum(1 for s in pstat if s['status'] == 'fail')
-    return dict(job='desi_laser', n_tiles_all=n_all, n_tiles=len(tiles), n_petals=len(pstat), n_fail=n_fail,
-                n_star_spec=sum(1 for r in specs if r.get('status') == 'ok'), n_sky=len(skys),
-                n_det_real=n_det_raw, n_det_written=sum(1 for d in dets if d['kind'] == 'real'), n_inj=len(injs),
-                n_lib=int(len(_LIB.TID)), t_pass1=round(t1 - t0, 1), t_lib=round(t2 - t1, 1),
-                t_pass2=round(t3 - t2, 1), t_pass3=round(t4 - t3, 1), n_chi_files=n_chi_files, errors=errors[:5] + [s['error'] for s in pstat if s['error']][:5])
+    return _with_timeouts(dict(
+        job='desi_laser', n_tiles_all=n_all, n_tiles=len(tiles), n_petals=len(pstat), n_fail=n_fail,
+        n_star_spec=sum(1 for r in specs if r.get('status') == 'ok'), n_sky=len(skys),
+        n_det_real=n_det_raw, n_det_written=sum(1 for d in dets if d['kind'] == 'real'), n_inj=len(injs),
+        n_lib=int(len(_LIB.TID)), t_pass1=round(t1 - t0, 1), t_lib=round(t2 - t1, 1),
+        t_pass2=round(t3 - t2, 1), t_pass3=round(t4 - t3, 1), n_chi_files=n_chi_files,
+        errors=errors[:5] + [s['error'] for s in pstat if s['error']][:5]))

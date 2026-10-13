@@ -25,13 +25,23 @@ jobs:
           import json
           c = json.load(open('ts-compute/jobs/current.json'))
           n = int(c['nshards'])
-          print('shards=' + json.dumps(list(range(n))))
+          # optional only_shards: nur diese Shard-Nummern rechnen (Nachlauf); nshards bleibt die Gesamtzahl,
+          # damit die Aufteilung tiles[shard::nshards] identisch bleibt. Ungueltige Angaben -> Abbruch (fail-closed).
+          only = c.get('only_shards')
+          if only is None:
+              shards = list(range(n))
+          else:
+              shards = sorted(set(int(s) for s in only))
+              if not shards or any(s < 0 or s >= n for s in shards):
+                  raise SystemExit(f'only_shards ungueltig: {only} (nshards={n})')
+          print('shards=' + json.dumps(shards))
           print('nshards=' + str(n))
           PY
   work:
     needs: plan
     runs-on: ubuntu-latest
-    timeout-minutes: 340
+    # Shards brauchen normal 15-80 min; ein Hänger soll einen Platz nicht 5,7 h blockieren (Wächter im Job: pool_timeout_s)
+    timeout-minutes: 120
     strategy:
       fail-fast: false
       max-parallel: 8
@@ -48,6 +58,9 @@ jobs:
       - name: run shard
         working-directory: ts-compute
         run: python -m tsjobs.run --config jobs/current.json --shard ${{ matrix.shard }} --nshards ${{ needs.plan.outputs.nshards }} --out ../out
+      - name: kernel log (OOM/segfault diagnosis)
+        if: always()
+        run: sudo dmesg -T 2>/dev/null | grep -iE 'out of memory|oom-kill|killed process|segfault' | tail -n 20 || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
