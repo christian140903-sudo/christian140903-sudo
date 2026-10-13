@@ -129,3 +129,11 @@ re-examined before wave B.
 | `860271cf1992c309bc474aaf1a3dcd85b158533484e49c28380ff41039c7ce7f` | `ts-compute/tsjobs/nachlauf.py` | Rerun list and one-source-per-shard merge |
 | `9a44a0ba23735a30ecadf65ff1f75c85d9738135bfea98c6c2cf76d3aa324059` | `ts-compute/tsjobs/run.py` | Dispatcher (partial shard ends with exit code 3) |
 | `522a7e6e7c1d091a7b2ff1e946d766d26d3b99515651cec70777dbf6b4216c35` | `.github/workflows/ts-compute.yml` | Workflow (job limit 120 min, `only_shards`) |
+
+**Rerun of wave A started (after run 6 was cancelled at about 11:31 UTC).** The rerun list was produced mechanically by
+`nachlauf.py liste` from job status/times and execution metadata only: shards 4, 5, 15, 19, 21, 29, 32, 37, 38, 40, 43,
+44, 45, 46, 47, 48, 49 (17 of 50; reasons J1/J2; none of the 33 successful shards triggered M1–M3).
+
+| SHA-256 | File | Content |
+|---|---|---|
+| `336bf4873be3136f0ab10dda90b26d675278eb58302ce81168bb7ea40533331a` | `ts-compute/jobs/current.json` | Rerun job (run-6 job + `only_shards`), rules v3 embedded |
