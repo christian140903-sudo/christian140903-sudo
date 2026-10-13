@@ -92,7 +92,7 @@ S.headers['User-Agent'] = 'ts-compute-w1/1.0 (open research; range reads)'
 def _get(url, rng=None, timeout=180):
     h = {'Range': rng} if rng else {}
     err = None
-    for a in range(4):
+    for a in range(TRIES):
         try:
             r = S.get(url, headers=h, timeout=timeout)
             if r.status_code in (200, 206):
@@ -102,8 +102,21 @@ def _get(url, rng=None, timeout=180):
                 break
         except Exception as exc:  # Netzfehler: erneut versuchen
             err = repr(exc)
-        time.sleep(2 * (a + 1))
+        time.sleep(min(60, 3 * 2 ** a))   # Server entlasten: wachsende Pausen (bis 60 s)
     raise IOError(f'{url}: {err}')
+
+
+TRIES = 8
+META = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'meta')
+
+
+def _meta_text(name):
+    """Kleine DESI-Metadaten (tiles-/exposures-iron.csv) aus ts-compute/meta/, sonst vom Server."""
+    p = os.path.join(META, name)
+    if os.path.exists(p):
+        with open(p, encoding='utf-8') as f:
+            return f.read()
+    return _get(BASE + '/' + name).text
 
 
 def get_range(url, a, b):
@@ -321,7 +334,7 @@ def keys_resample(F, pos):
 
 # ---------------------------------------------------------------- Pass 1: Laden + Reduzieren
 def tile_list(args):
-    t = np.genfromtxt(io.StringIO(_get(BASE + '/tiles-iron.csv').text), delimiter=',', names=True,
+    t = np.genfromtxt(io.StringIO(_meta_text('tiles-iron.csv')), delimiter=',', names=True,
                       dtype=None, encoding='utf-8')
     progs = args.get('program', 'bright')
     progs = [progs] if isinstance(progs, str) else list(progs)
@@ -1202,7 +1215,7 @@ def multi_line_annotate(dets, R):
 # ---------------------------------------------------------------- Pass 3: Extraktions-chi2 der Einzelbelichtungen
 def exposure_nights():
     """EXPID -> NIGHT aus der öffentlichen Belichtungstabelle."""
-    t = np.genfromtxt(io.StringIO(_get(BASE + '/exposures-iron.csv').text), delimiter=',', names=True,
+    t = np.genfromtxt(io.StringIO(_meta_text('exposures-iron.csv')), delimiter=',', names=True,
                       usecols=(0, 1, 2), dtype=None, encoding='utf-8')
     return {int(e): int(n) for n, e in zip(t['NIGHT'], t['EXPID'])}
 

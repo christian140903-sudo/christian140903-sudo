@@ -77,3 +77,17 @@ and of 28 input files; the unblinding script refuses to run if any differs.
 Declared in advance: the only claim this test can refute with probability ≥ 0.5
 if there is no effect is the 20,000–25,000 km shell claim; no claim can be
 supported with probability ≥ 0.5.
+
+**Restart of wave A (2026-10-13, after 03:40 UTC).** In run 4, data.desi.lbl.gov stopped accepting connections from
+some runners between about 02:55 and 03:23 UTC (connect timeouts; shards 3 and 27 lost, shard 48 hung). To reduce
+load on the DESI server, wave A was cancelled two minutes after it started and restarted with at most 8 parallel
+shards (was 20) and 4 download threads per shard (was 6); the two small metadata tables are now read from the
+repository, and failed requests are retried up to 8 times with growing pauses. The rules and the analysis code are
+unchanged; no result of run 4 beyond its false-alarm count and of run 5 (no output) was used.
+
+| SHA-256 | File | Content |
+|---|---|---|
+| `8493efd54ebabd9a309e0b52dbd97f84163adf86d6f26be2c4afef7eae0139a4` | `ts-compute/tsjobs/desi_laser.py` | Job code: metadata from `ts-compute/meta/`, retry with backoff (no rule change) |
+| `7a9d9250c616bd8adf0cae4c3e8579ad78f1a4a804b9a5df026084dbdbd82a7e` | `ts-compute/jobs/current.json` | Wave-A restart configuration (rules v3 embedded, threads 4) |
+| `2039434085b74c26126a01899766a7bc93a739d9e59a4f081645b8337c85a61c` | `ts-compute/meta/tiles-iron.csv` | DESI DR1 tile table (public, copied 2026-10-13 03:40 UTC) |
+| `f49d3438f0c44f4f176d8adc35bb566aa45e4615c1410001e2c78cd98ca5e2ab` | `ts-compute/meta/exposures-iron.csv` | DESI DR1 exposure table (public, copied 2026-10-13 03:40 UTC) |

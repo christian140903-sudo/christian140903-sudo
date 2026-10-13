@@ -1,7 +1,7 @@
 {
  "job": "desi_laser",
  "nshards": 50,
- "note": "W1-Volllauf v3, Welle A: DESI DR1 main/bright (DESI DR1 iron), Regeln v3 (rules_v3.json SHA-256 ad7e27a9..., REGELN-V3.md). Verworfen vor dem Schreiben nur snr/mask/known; uebrige Vetos in Spalte vetoes, nachtraeglich pruefbar. Pilot-Kacheln split=pilot (blinde FAR nur split=test). threads 6 statt 8 (Last auf data.desi.lbl.gov); backup+dark als Welle B danach. Ergebnis = Kandidatenliste fuer Stufe B, kein Befund. Endgueltiges Einfrieren der Regeln nach Gegencheck, vor jedem Blick auf Ergebnisse.",
+ "note": "W1-Volllauf v3, Welle A: DESI DR1 main/bright (DESI DR1 iron), Regeln v3 (rules_v3.json SHA-256 ad7e27a9..., REGELN-V3.md). Verworfen vor dem Schreiben nur snr/mask/known; uebrige Vetos in Spalte vetoes, nachtraeglich pruefbar. Pilot-Kacheln split=pilot (blinde FAR nur split=test). threads 4, max-parallel 8 (Neustart nach Verbindungs-Timeouts des DESI-Servers in Lauf 4/5; Metadaten aus ts-compute/meta); backup+dark als Welle B danach. Ergebnis = Kandidatenliste fuer Stufe B, kein Befund. Endgueltiges Einfrieren der Regeln nach Gegencheck, vor jedem Blick auf Ergebnisse.",
  "args": {
   "survey": "main",
   "program": [
@@ -11,7 +11,7 @@
   "lib_snr": 15,
   "lib_max": 30000,
   "workers": 4,
-  "threads": 6,
+  "threads": 4,
   "inj_frac": 0.02,
   "t_pre": 5.0,
   "tune_frac": 0.0,
