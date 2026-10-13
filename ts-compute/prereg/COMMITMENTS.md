@@ -93,3 +93,13 @@ unchanged; no result of run 4 beyond its false-alarm count and of run 5 (no outp
 | `7a9d9250c616bd8adf0cae4c3e8579ad78f1a4a804b9a5df026084dbdbd82a7e` | `ts-compute/jobs/current.json` | Wave-A restart configuration (rules v3 embedded, threads 4) |
 | `2039434085b74c26126a01899766a7bc93a739d9e59a4f081645b8337c85a61c` | `ts-compute/meta/tiles-iron.csv` | DESI DR1 tile table (public, copied 2026-10-13 03:40 UTC) |
 | `f49d3438f0c44f4f176d8adc35bb566aa45e4615c1410001e2c78cd98ca5e2ab` | `ts-compute/meta/exposures-iron.csv` | DESI DR1 exposure table (public, copied 2026-10-13 03:40 UTC) |
+
+**Stage-B tool frozen (2026-10-13, before any wave-A result was looked at).** Follow-up classification of survivors
+(partner lines incl. the [O II] doublet, morphology, neighbouring fibres for bright lines, sky model of the own
+exposure). Measured on injections: a real unresolved laser line is wrongly called natural in 0.8 % of cases
+(95 %: 0.3–1.8 %); many natural cases stay "open", and "open" does not mean artificial.
+
+| SHA-256 | File | Content |
+|---|---|---|
+| `88fb37e78233da7b778a2a8372fd609682de4e141ee5840c8864ca02c59ba1da` | `stage_b_v3.py` | Stage-B tool |
+| `d10e69762387a5bcae4f0b56ce933b561600be0d14a26c3e849582a19a43b652` | `EINFRIEREN-V3.md` (with addendum 1) | Freeze record incl. stage B |
