@@ -22,4 +22,8 @@ for name, paths in groups.items():
             w.writerows(rows[1:])
 metas = [json.load(open(p)) for p in sorted(glob.glob(os.path.join(src, 'shard-*', 'meta_*.json')))]
 json.dump(metas, open(os.path.join(dest, 'shards_meta.json'), 'w'), indent=1)
+# Diagnose abgebrochener Shards (desi_laser abort_<s>.json) sonst nur 7 Tage im Artefakt; Datei nur, wenn vorhanden
+aborts = [json.load(open(p)) for p in sorted(glob.glob(os.path.join(src, 'shard-*', 'abort_*.json')))]
+if aborts:
+    json.dump(aborts, open(os.path.join(dest, 'shards_abort.json'), 'w'), indent=1)
 print(f'merged {sum(len(v) for v in groups.values())} csv files into {len(groups)}, {len(metas)} shard metas')

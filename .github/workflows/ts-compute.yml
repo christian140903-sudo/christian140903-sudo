@@ -31,8 +31,11 @@ jobs:
           if only is None:
               shards = list(range(n))
           else:
-              shards = sorted(set(int(s) for s in only))
-              if not shards or any(s < 0 or s >= n for s in shards):
+              # nur eine nicht-leere Liste echter Ganzzahlen ("45" -> [4, 5], true -> 1, 4.9 -> 4 still waere falsch)
+              if not isinstance(only, list) or not only or any(type(s) is not int for s in only):
+                  raise SystemExit(f'only_shards ungueltig: {only!r} (Liste ganzer Zahlen erwartet)')
+              shards = sorted(set(only))
+              if any(s < 0 or s >= n for s in shards):
                   raise SystemExit(f'only_shards ungueltig: {only} (nshards={n})')
           print('shards=' + json.dumps(shards))
           print('nshards=' + str(n))
@@ -40,7 +43,8 @@ jobs:
   work:
     needs: plan
     runs-on: ubuntu-latest
-    # Shards brauchen normal 15-80 min; ein Hänger soll einen Platz nicht 5,7 h blockieren (Wächter im Job: pool_timeout_s)
+    # Shards brauchen normal 15-37 min (Lauf 4/6); ein Hänger soll einen Platz nicht 5,7 h blockieren (Wächter im Job:
+    # pool_timeout_s, Gesamtfrist shard_deadline_s = 100 min; Teil-Shard endet rot mit Ausgaben, Exit 3)
     timeout-minutes: 120
     strategy:
       fail-fast: false
@@ -57,6 +61,8 @@ jobs:
       - run: pip install -r ts-compute/requirements.txt
       - name: run shard
         working-directory: ts-compute
+        # Schritt-Frist unter dem Job-Limit: kernel log + upload bekommen sicher ihr Fenster (Gesamtfrist im Job: 100 min)
+        timeout-minutes: 110
         run: python -m tsjobs.run --config jobs/current.json --shard ${{ matrix.shard }} --nshards ${{ needs.plan.outputs.nshards }} --out ../out
       - name: kernel log (OOM/segfault diagnosis)
         if: always()

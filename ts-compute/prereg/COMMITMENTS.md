@@ -103,3 +103,29 @@ exposure). Measured on injections: a real unresolved laser line is wrongly calle
 |---|---|---|
 | `88fb37e78233da7b778a2a8372fd609682de4e141ee5840c8864ca02c59ba1da` | `stage_b_v3.py` | Stage-B tool |
 | `d10e69762387a5bcae4f0b56ce933b561600be0d14a26c3e849582a19a43b652` | `EINFRIEREN-V3.md` (with addendum 1) | Freeze record incl. stage B |
+
+**Watchdog job code and rerun rule for wave A (fixed before run 6 has ended and before any run-6 result was looked
+at).** Several run-6 shards (code `8493efd5…`) hung until the 340-min job limit. The job code below adds a watchdog:
+if a process pool or the download threads deliver no result for a fixed time (900 s; 1800 s for the two download
+passes), the running tasks are booked as failed (fail-closed: failed petals leave the denominator, candidates
+without the single-exposure check count as unchecked), tasks never started are resumed once, and after 100 minutes a
+shard starts no further work and writes its outputs. A petal whose measurement raises an exception is now booked as
+failed instead of ok. Rules, vetoes and thresholds are unchanged; for runs without errors the outputs are identical
+to `8493efd5…` (tested on three pilot tiles).
+
+Rerun rule, applied mechanically after run 6 has ended by `ts-compute/tsjobs/nachlauf.py` (reads only job status and
+times and execution metadata, never detections): a run-6 shard is rerun exactly once with the code below if
+(J1) its job did not end in success, (J2) its job ran longer than 120 min, (M1) its metadata are missing, (M2) its
+metadata report watchdog timeouts or the shard deadline, or (M3) its error list contains at least one exception of
+the measurement pass. Ordinary download failures of single petals do not trigger a rerun. A rerun shard replaces the
+run-6 shard completely, whatever it contains, and is never mixed petal by petal; there is no second rerun. Timeouts
+in a rerun shard stay fail-closed, and the number of candidates left unchecked by timeouts is reported together with
+the false-alarm rate. Checkpoint: if shard 29 or 32 ends successfully after more than 120 min, the 120-min limit is
+re-examined before wave B.
+
+| SHA-256 | File | Content |
+|---|---|---|
+| `a15f2fc2455bac6fc36daaef9e8b46eba9b92da28c7a1b8ba863249a6761ae9f` | `ts-compute/tsjobs/desi_laser.py` | Job code with watchdog (rules unchanged) |
+| `860271cf1992c309bc474aaf1a3dcd85b158533484e49c28380ff41039c7ce7f` | `ts-compute/tsjobs/nachlauf.py` | Rerun list and one-source-per-shard merge |
+| `9a44a0ba23735a30ecadf65ff1f75c85d9738135bfea98c6c2cf76d3aa324059` | `ts-compute/tsjobs/run.py` | Dispatcher (partial shard ends with exit code 3) |
+| `522a7e6e7c1d091a7b2ff1e946d766d26d3b99515651cec70777dbf6b4216c35` | `.github/workflows/ts-compute.yml` | Workflow (job limit 120 min, `only_shards`) |

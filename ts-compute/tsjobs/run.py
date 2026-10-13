@@ -1,5 +1,5 @@
 """Dispatcher: python -m tsjobs.run --config jobs/current.json --shard i --nshards n --out DIR"""
-import argparse, importlib, json, os, platform, time
+import argparse, importlib, json, os, platform, sys, time
 
 
 def main():
@@ -19,6 +19,13 @@ def main():
     with open(os.path.join(a.out, f'meta_{a.shard:04d}.json'), 'w') as f:
         json.dump(stats, f, indent=1)
     print(json.dumps(stats))
+    # Teil-Shard (Wächter/Gesamtfrist, desi_laser): Ausgaben sind geschrieben, aber unvollständig -> Job rot, damit
+    # die Nachlauf-Liste (alle work-Jobs != success) ihn mechanisch erfasst; Upload und gather laufen mit always()
+    part = {k: stats[k] for k in ('pool_timeouts', 'shard_deadline') if stats.get(k)}
+    if part:
+        print(f"::error title=Teil-Shard {a.shard}::Ausgaben geschrieben, aber unvollstaendig: {json.dumps(part)}",
+              flush=True)
+        sys.exit(3)
 
 
 if __name__ == '__main__':

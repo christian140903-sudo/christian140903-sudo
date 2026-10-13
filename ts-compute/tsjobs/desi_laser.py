@@ -11,14 +11,19 @@ FIBERMAP, EXP_FIBERMAP, FLUX/IVAR/MASK (b, r, z) und wenige RESOLUTION-Zeilen. A
           Detektionen >= t_pre mit Merkmalen; Injektion unaufgelöster Linien durch dieselbe Kette;
           Himmelsfasern durch denselben Detektor (Null ohne Stern); Faser-übergreifende Zählung.
 
-Was die Schicht darunter im Fehlerfall selbst tut: requests wiederholt nicht von selbst -> eigene Retries
-(3x, Backoff); der DESI-Server liefert bei falschem Range HTTP 416 -> Petal wird als Fehler gezählt, Lauf
-läuft weiter (fail-closed: fehlende Petals erscheinen in meta.n_fail, nie als 0 Detektionen).
-multiprocessing.Pool wartet unbegrenzt auf die Aufgabe eines gestorbenen oder verklemmten Workers, und der
-requests-Timeout begrenzt nur einzelne Socket-Operationen -> Wächter (_pool_run/_thread_run): kommt pool_timeout_s
-lang KEIN Ergebnis, werden die Worker-Stapel nach stderr geschrieben, der Pool beendet und die offenen Aufgaben
-fail-closed verbucht (Pass 1/2: Petal 'fail'/'pool_timeout'; Pass 3: Kandidat ungeprüft, chi_err 'timeout';
-Bibliothek: Shard-Abbruch nach Diagnose abort_<s>.json). Fortschritt + Lebenszeichen auf stdout (UTC).
+Was die Schicht darunter im Fehlerfall selbst tut: requests wiederholt nicht von selbst -> eigene Retries in
+_get (TRIES = 8, Pausen 3..60 s = 273 s): bis ≈ 28,5 min je Request bei timeout 180 (Pass 1), ≈ 85 min bei
+timeout 600 (Pass 3), also LÄNGER als pool_timeout_s; der DESI-Server liefert bei falschem Range HTTP 416 -> Petal
+wird als Fehler gezählt, Lauf läuft weiter (fail-closed: fehlende Petals erscheinen in meta.n_fail, nie als 0
+Detektionen). multiprocessing.Pool wartet unbegrenzt auf die Aufgabe eines gestorbenen oder verklemmten Workers,
+und der requests-Timeout begrenzt nur einzelne Socket-Operationen -> Wächter (_pool_run/_thread_run): kommt
+pool_timeout_s lang KEIN Ergebnis, werden die Worker-Stapel nach stderr geschrieben und der Pool beendet. Die
+LAUFENDEN Aufgaben (Startmarke) werden fail-closed verbucht (Pass 1/2: Petal 'fail'/'pool_timeout'; Pass 3:
+Kandidat ungeprüft, chi_err 'timeout'; Bibliothek: Shard-Abbruch nach Diagnose abort_<s>.json); nie gestartete
+Aufgaben laufen in Pass 1/2/3 genau einmal in einem frischen Pool weiter, eine zweite Auslösung verbucht den Rest
+fail-closed. Gesamtfrist je Shard (shard_deadline_s): danach startet nichts mehr, Offenes wird fail-closed
+verbucht und die Ausgaben werden geschrieben (statt im Job-Limit ohne Ausgabe zu enden). Fortschritt +
+Lebenszeichen auf stdout (UTC).
 
 Ausgaben (CSV je Shard; Rohliste, kein Befund):
   detections_<s>.csv  alle Detektionen (kind = real | inj | sky) mit Merkmalen
@@ -30,8 +35,10 @@ Ausgaben (CSV je Shard; Rohliste, kein Befund):
 args: survey ('main'), program ('bright' oder Liste), tiles (Liste TILEID, optional), max_tiles, seed,
       t_pre (5.0), k_nn (25), m_pre (60), lib_snr (15), lib_max (30000), inj_frac (1.0),
       rows ('all'|'select'), cache (Pfad, optional, Pass-1-Cache), workers (4), threads (8),
-      table ('full'|'agg'), tune_frac (0.3), pool_timeout_s (900: Sekunden ohne jedes neue Ergebnis eines Pools/
-      Pass 3), heartbeat_s (300), _test_hang (nur Test, siehe _maybe_hang)
+      table ('full'|'agg'), tune_frac (0.3), pool_timeout_s (Sekunden ohne jedes neue Ergebnis eines Pools/Pass 3;
+      ohne Angabe: Pass 1 und 3 1800, Bibliothek und Pass 2 900; gesetzt: gilt für alle Pässe; je Pass
+      überschreibbar mit pool_timeout_s_pass1/_lib/_pass2/_pass3), shard_deadline_s (6000:
+      Gesamtfrist ab Shard-Start, <= 0 = aus), heartbeat_s (300), _test_hang (nur Test, siehe _maybe_hang)
 v3 (nur wirksam mit rules.version >= 3, sonst bitgleich wie v1/v2): Schreibfilter nur snr/mask/known, übrige Vetos
       als Spalte 'vetoes', Zeile geschrieben wenn Vetosatz ⊆ rules.post_checkable; Mehrlinien-Merkmale (Partner gleicher
       Rotverschiebung, Meteorgruppen), feste topozentrische Listen, Schmalheit über w_eff, CHI2PIX-Schwelle je S/N-Bin;
@@ -1315,6 +1322,9 @@ def chi2pix_pass(dets, nights, threads=8, tmin=5.0, log_args=None, kinds=('real'
     for m in rest:
         for c in tasks[m][4]:
             per[c[0]] = [dict(chi_err='timeout')]
+    if rest:   # meta: so viele Kandidaten sind dadurch ungeprüft (n_real_clean zählt sie als „clean“, siehe Bericht)
+        n_to = len({c[0] for m in rest for c in tasks[m][4]})
+        _EXTRA['chi_timeout_cands'] = _EXTRA.get('chi_timeout_cands', 0) + n_to
     aggregate_chi(dets, per)
     return len(tasks)
 
@@ -1345,7 +1355,8 @@ def _p1_one(task):
 
 def pass1(tiles, args, cache, nproc):
     """Laden + Reduzieren in Prozessen (Download und CPU überlappen; GIL umgangen). Wächter: nach pool_timeout_s ohne
-    jedes Ergebnis werden die offenen Petals als 'fail' / 'pool_timeout' verbucht, der Lauf geht weiter."""
+    jedes Ergebnis werden die laufenden Petals als 'fail' / 'pool_timeout' verbucht, nie gestartete einmal in einem
+    frischen Pool fortgesetzt (zweite Auslösung: Rest 'fail'); der Lauf geht weiter."""
     tasks = [(ti, p, args, cache) for ti in tiles for p in range(10)]
     paths, stat = [], []
 
@@ -1359,8 +1370,7 @@ def pass1(tiles, args, cache, nproc):
         k = len(stat) - 1
         if k % 20 == 0 or k == len(tasks) - 1:
             _log(args, f"pass1 {k + 1}/{len(tasks)} fail={sum(1 for x in stat if x['status'] == 'fail')}")
-    with _fork_pool(nproc, args, 'pass1') as pool:
-        rest = _pool_run(pool, _p1_one, tasks, args, 'pass1', take)
+    rest = _pool_run(nproc, _p1_one, tasks, args, 'pass1', take, resume=True)
     for i in rest:
         stat.append(dict(tile=tasks[i][0]['tile'], petal=tasks[i][1], status='fail', n_star=0, error='pool_timeout'))
     return sorted(paths), stat
@@ -1396,8 +1406,9 @@ def build_library(paths, args):
     def take(_, r):
         f, z, t, sn = r
         FN.extend(f); Z.extend(z); TID.extend(t); SN.extend(sn)
-    with _fork_pool(int(args.get('workers', 4)), args, 'lib') as pool:
-        rest = _pool_run(pool, _lib_one, [(p, lib_snr) for p in paths], args, 'lib', take, ordered=True, chunksize=4)
+    # ohne Fortsetzung: jedes fehlende Bündel bricht den Shard ohnehin ab; geordnet (wie imap) wegen lib_max-Auswahl
+    rest = _pool_run(int(args.get('workers', 4)), _lib_one, [(p, lib_snr) for p in paths], args, 'lib', take,
+                     ordered=True, chunksize=4)
     if rest:
         raise RuntimeError(f'Bibliothek: {len(rest)} von {len(paths)} Petals ohne Ergebnis nach pool_timeout_s '
                            '(pool_timeout) -> ohne vollständige Bibliothek keine Messung, Shard abgebrochen')
@@ -1437,9 +1448,17 @@ def _work(task):
 
 # ---------------------------------------------------------------- Wächter: Pools/Threads mit Zeitgrenze, Lebenszeichen
 POOL_TIMEOUT_S = 900.0   # Sekunden ohne JEDES neue Ergebnis; normale Aufgaben brauchen Sekunden (WATCHDOG-JOB.md)
+# Netz-Pässe länger als eine volle _get-Leiter bei Verbindungs-Timeouts (≈ 28,5 min): ein Ausfall bis ≈ 60 min
+# kostet so nur die laufenden Aufgaben (Fortsetzung); begrenzt durch die Gesamtfrist (WATCHDOG-JOB.md, Nacharbeit)
+POOL_TIMEOUT_PASS_S = {'pass1': 1800.0, 'pass3': 1800.0}
 HEARTBEAT_S = 300.0      # Lebenszeichen im Hauptprozess, solange ein Pool / Pass 3 läuft
+SHARD_DEADLINE_S = 6000.0  # Gesamtfrist ab Shard-Start (100 min < Schritt-Limit 110 < Job-Limit 120 min)
 _HANG = ()               # nur Test (args['_test_hang']), siehe _maybe_hang
 _TIMEOUTS = {}           # Pass -> Zahl der wegen Zeitüberschreitung fail-closed verbuchten Aufgaben
+_RESUMED = {}            # Pass -> Zahl der nach einer Auslösung in frischem Pool fortgesetzten Aufgaben
+_EXTRA = {}              # weitere meta-Felder nur im Fehlerfall (shard_deadline, chi_timeout_cands)
+_DEADLINE = None         # absolute Zeit der Gesamtfrist (time.time()), None = keine
+_STARTED = None          # Startmarken (geteilter Speicher, per fork vererbt), Index = erste Aufgabe des Bündels
 _FH = False              # faulthandler auf SIGUSR1 registriert (Worker erben das per fork)
 
 
@@ -1496,7 +1515,24 @@ def _maybe_hang(stage, key):
 
 def _chunk(job):
     k0, fn, part = job
+    m = _STARTED
+    if m is not None:   # Startmarke (Worker): dieses Bündel läuft -> bei Auslösung fail-closed, nicht fortsetzen
+        m[k0] = 1
     return k0, [fn(t) for t in part]
+
+
+def _timeout(args, label):
+    """Wächterfrist eines Passes: args pool_timeout_s_<label>, sonst args pool_timeout_s (alle Pässe), sonst
+    POOL_TIMEOUT_PASS_S[label] (Netz-Pässe 1800 s), sonst POOL_TIMEOUT_S (900 s)."""
+    if f'pool_timeout_s_{label}' in args:
+        return float(args[f'pool_timeout_s_{label}'])
+    if 'pool_timeout_s' in args:
+        return float(args['pool_timeout_s'])
+    return float(POOL_TIMEOUT_PASS_S.get(label, POOL_TIMEOUT_S))
+
+
+def _deadline_left():
+    return float('inf') if _DEADLINE is None else _DEADLINE - time.time()
 
 
 def _fork_pool(n, args, label):
@@ -1512,39 +1548,45 @@ def _pool_pids(pool):
         return []
 
 
-def _watch(nxt, n, args, label, on_result, state, unit=1):
-    """Wächter-Schleife: nxt(t) liefert das nächste (i, Ergebnis) oder wirft _NoResult nach t s. Kommt
-    pool_timeout_s lang kein Ergebnis, endet die Schleife; Rückgabe = Indizes der offenen Aufgaben (leer = fertig).
+def _watch(nxt, keys, args, label, on_result, state, unit=1):
+    """Wächter-Schleife über die Aufgaben-Indizes keys: nxt(t) liefert das nächste (i, Ergebnis) oder wirft _NoResult
+    nach t s. Endet, wenn alle Ergebnisse da sind, wenn _timeout(args, label) s lang kein Ergebnis kam ('frist') oder
+    wenn die Gesamtfrist des Shards erreicht ist ('gesamtfrist'). Rückgabe (offene Indizes, Grund); ([], '') = fertig.
     Alle heartbeat_s ein Lebenszeichen (fertige Aufgaben, Zeit seit dem letzten Ergebnis, state(), freier Speicher)."""
-    T = float(args.get('pool_timeout_s', POOL_TIMEOUT_S))
+    T = _timeout(args, label)
     beat = float(args.get('heartbeat_s', HEARTBEAT_S))
-    done = set()
+    keys = list(keys)
+    n, done = len(keys), set()
     t_last = t_beat = time.time()
     while len(done) < n:
-        try:
-            i, r = nxt(max(0.5, min(30.0, T, beat)))
-        except _NoResult:
-            if time.time() - t_last >= T:
-                rest = sorted(set(range(n)) - done)
-                what = 'Aufgaben' if unit == 1 else f'Bündel (je bis {unit} Aufgaben)'
-                _log(args, f'{label}: WAECHTER {T:.0f} s ohne Ergebnis -> {len(rest)} offene {what} fail-closed '
-                           f'({len(done)}/{n} fertig; {state()})')
-                # GitHub-Annotation: Teil-Shard wird in der Laufübersicht sichtbar, obwohl der Job grün endet
-                print(f'::warning title=Waechter {label}::{len(rest)} offene {what} nach {T:.0f} s fail-closed '
-                      f'verbucht ({len(done)}/{n} fertig)', flush=True)
-                return rest
-        except StopIteration:
-            break
-        else:
-            done.add(i)
-            t_last = time.time()
-            on_result(i, r)
+        left = _deadline_left()
+        why = 'gesamtfrist' if left <= 0 else ''
+        if not why:
+            try:
+                i, r = nxt(max(0.5, min(30.0, T, beat, left)))
+            except _NoResult:
+                if time.time() - t_last >= T:
+                    why = 'frist'
+            except StopIteration:   # legitim nie (die Schleife endet vorher): eine Aufgabe warf StopIteration
+                raise RuntimeError(f'{label}: Ergebnisstrom vorzeitig beendet ({len(done)}/{n}); eine Aufgabe warf '
+                                   'StopIteration (nicht still kürzen)') from None
+            else:
+                done.add(i)
+                t_last = time.time()
+                on_result(i, r)
+        if why:
+            rest = sorted(set(keys) - done)
+            what = 'Aufgaben' if unit == 1 else f'Bündel (je bis {unit} Aufgaben)'
+            _log(args, f'{label}: WAECHTER ' + (f'{T:.0f} s ohne Ergebnis' if why == 'frist' else
+                                                'Gesamtfrist des Shards erreicht') +
+                 f' ({len(done)}/{n} fertig, {len(rest)} offene {what}; {state()})')
+            return rest, why
         now = time.time()
         if now - t_beat >= beat:
             _log(args, f'{label}: Lebenszeichen {len(done)}/{n} fertig, letztes Ergebnis vor {now - t_last:.0f} s, '
                        f'{state()}, MemAvailable={_mem_avail_mb()} MB')
             t_beat = now
-    return []
+    return [], ''
 
 
 def _pool_stop(pool, args, label):
@@ -1572,81 +1614,157 @@ def _pool_stop(pool, args, label):
         _log(args, f'{label}: terminate() hängt nach 60 s -> Worker {pids} per SIGKILL beendet, Pool aufgegeben')
 
 
-def _pool_run(pool, fn, tasks, args, label, on_result, ordered=False, chunksize=1):
-    """fn auf tasks im Prozess-Pool, Ergebnisse an on_result(i, Ergebnis) (ordered: Eingabereihenfolge wie imap,
-    sonst Fertigstellungsreihenfolge wie imap_unordered). Rückgabe: Indizes der wegen Zeitüberschreitung offenen
-    Aufgaben; dann ist der Pool bereits beendet. Ausnahmen aus fn laufen wie bisher zum Aufrufer durch."""
+def _settle(args, label, open_, why, started, resume, rnd, lost, unit):
+    """Nach einer Auslösung: laufende (gestartete) offene Einheiten -> lost (fail-closed); nie gestartete werden bei
+    resume genau einmal fortgesetzt (nur nach 'frist' in Runde 1), sonst ebenfalls lost. Rückgabe: fortzusetzende."""
+    if why == 'gesamtfrist':
+        _EXTRA.setdefault('shard_deadline', label)
+    running = [j for j in open_ if started(j)]
+    never = [j for j in open_ if not started(j)]
+    lost.extend(running)
+    what = 'Aufgaben' if unit == 1 else 'Bündel'
+    if never and resume and rnd == 1 and why == 'frist':
+        _log(args, f'{label}: {len(running)} laufende {what} fail-closed, {len(never)} nie gestartete {what} werden '
+                   'einmal in frischem Pool fortgesetzt')
+        return never
+    lost.extend(never)
+    _log(args, f'{label}: {len(running)} laufende + {len(never)} nie gestartete {what} fail-closed'
+               + (' (zweite Auslösung)' if rnd > 1 else '') + (' (Gesamtfrist)' if why == 'gesamtfrist' else ''))
+    return []
+
+
+def _report_lost(args, label, n_lost, n_resumed, n_total):
+    if n_resumed:
+        _RESUMED[label] = _RESUMED.get(label, 0) + n_resumed
+    if n_lost:
+        _TIMEOUTS[label] = _TIMEOUTS.get(label, 0) + n_lost
+        # GitHub-Annotation: Teil-Shard wird in der Laufübersicht sichtbar (run.py beendet den Job dann mit Exit 3)
+        print(f'::warning title=Waechter {label}::{n_lost} von {n_total} Aufgaben fail-closed verbucht'
+              f' (fortgesetzt: {n_resumed})', flush=True)
+
+
+def _pool_run(nproc, fn, tasks, args, label, on_result, ordered=False, chunksize=1, resume=False):
+    """fn auf tasks in einem fork-Pool mit nproc Workern, Ergebnisse an on_result(i, Ergebnis) (ordered:
+    Eingabereihenfolge wie imap, sonst Fertigstellungsreihenfolge wie imap_unordered). Wächter (_watch): nach einer
+    Auslösung Worker-Stapel + Pool beenden; laufende Aufgaben (Startmarke) sind verloren, nie gestartete laufen mit
+    resume genau einmal in einem frischen Pool weiter. Nach der Gesamtfrist startet kein Pool mehr. Rückgabe: Indizes
+    der fail-closed verbuchten Aufgaben. Ausnahmen aus fn laufen wie bisher zum Aufrufer durch."""
     import multiprocessing as mp
+    global _STARTED
+    ctx = mp.get_context('fork')
     # Bündel selbst bilden (wie Pool._get_tasks: aufeinanderfolgende Stücke der Länge chunksize, in Reihenfolge):
     # imap(..., chunksize > 1) liefert einen Generator ohne next(timeout)
     c = max(1, int(chunksize))
     jobs = [(k, fn, tasks[k:k + c]) for k in range(0, len(tasks), c)]
-    it = (pool.imap if ordered else pool.imap_unordered)(_chunk, jobs)
-
-    def nxt(t):
+    todo, lost, n_resumed = list(range(len(jobs))), [], 0
+    for rnd in (1, 2):
+        if not todo:
+            break
+        if _deadline_left() <= 0:   # nichts mehr starten: Ausgaben sollen vor dem Job-Limit geschrieben werden
+            _EXTRA.setdefault('shard_deadline', label)
+            _log(args, f'{label}: Gesamtfrist des Shards erreicht -> {len(todo)} Bündel ohne Start fail-closed')
+            lost.extend(todo)
+            break
+        marks = ctx.RawArray('b', max(1, len(tasks)))
+        _STARTED = marks
         try:
-            k0, res = it.next(timeout=t)
-        except mp.TimeoutError:
-            raise _NoResult from None
-        return k0 // c, (k0, res)
+            with _fork_pool(nproc, args, label if rnd == 1 else f'{label} (Fortsetzung)') as pool:
+                it = (pool.imap if ordered else pool.imap_unordered)(_chunk, [jobs[j] for j in todo])
 
-    def take(_, r):
-        k0, res = r
-        for q, x in enumerate(res):
-            on_result(k0 + q, x)
-    pids0 = _pool_pids(pool)
+                def nxt(t):
+                    try:
+                        k0, res = it.next(timeout=t)
+                    except mp.TimeoutError:
+                        raise _NoResult from None
+                    return k0 // c, (k0, res)
 
-    def state():
-        p = _pool_pids(pool)
-        return f'Worker {p}' + (f' (beim Start {pids0}: Worker ersetzt, also gestorben)' if p != pids0 else '')
-    rest = _watch(nxt, len(jobs), args, label, take, state, unit=c)
-    if rest:
-        _pool_stop(pool, args, label)
-    rest = [i for j in rest for i in range(j * c, min((j + 1) * c, len(tasks)))]
-    if rest:
-        _TIMEOUTS[label] = _TIMEOUTS.get(label, 0) + len(rest)
+                def take(_, r):
+                    k0, res = r
+                    for q, x in enumerate(res):
+                        on_result(k0 + q, x)
+                pids0 = _pool_pids(pool)
+
+                def state():
+                    p = _pool_pids(pool)
+                    return f'Worker {p}' + (f' (beim Start {pids0}: Worker ersetzt, also gestorben)' if p != pids0
+                                            else '')
+                open_, why = _watch(nxt, todo, args, label, take, state, unit=c)
+                if open_:
+                    _pool_stop(pool, args, label)
+        finally:
+            _STARTED = None
+        if not open_:
+            break
+        todo = _settle(args, label, open_, why, lambda j: marks[jobs[j][0]] != 0, resume, rnd, lost, c)
+        n_resumed += sum(len(jobs[j][2]) for j in todo)
+    rest = sorted(i for j in lost for i in range(jobs[j][0], jobs[j][0] + len(jobs[j][2])))
+    _report_lost(args, label, len(rest), n_resumed, len(tasks))
     return rest
 
 
-def _thread_run(fn, tasks, nthreads, args, label, on_result):
+def _thread_worker(fn, tasks, todo, res_q, stop, started):
+    import queue
+    while not stop.is_set():
+        try:
+            i = todo.get_nowait()
+        except queue.Empty:
+            return
+        started.add(i)
+        try:
+            res_q.put((i, True, fn(tasks[i])))
+        except BaseException as exc:
+            res_q.put((i, False, exc))
+
+
+def _thread_run(fn, tasks, nthreads, args, label, on_result, resume=True):
     """Wie _pool_run für Threads (Pass 3), Ergebnisse in Fertigstellungsreihenfolge. Daemon-Threads: ein hängender
     Download hält weder den Lauf noch das Prozessende auf (ThreadPoolExecutor-Threads würden beim Beenden des
-    Interpreters abgewartet). Ausnahmen aus fn laufen wie zuvor bei pool.map zum Aufrufer durch."""
-    import queue, threading
-    todo, res_q, stop = queue.SimpleQueue(), queue.SimpleQueue(), threading.Event()
-    for i in range(len(tasks)):
-        todo.put(i)
+    Interpreters abgewartet). Bei Auslösung: Stapel aller Threads nach stderr; laufende Aufgaben verloren, nie
+    gestartete einmal mit frischen Threads fortgesetzt. Ausnahmen aus fn laufen wie zuvor bei pool.map zum Aufrufer
+    durch."""
+    import queue, sys, threading
+    todo_i, lost, n_resumed = list(range(len(tasks))), [], 0
+    for rnd in (1, 2):
+        if not todo_i:
+            break
+        if _deadline_left() <= 0:
+            _EXTRA.setdefault('shard_deadline', label)
+            _log(args, f'{label}: Gesamtfrist des Shards erreicht -> {len(todo_i)} Aufgaben ohne Start fail-closed')
+            lost.extend(todo_i)
+            break
+        todo, res_q, stop, started = queue.SimpleQueue(), queue.SimpleQueue(), threading.Event(), set()
+        for i in todo_i:
+            todo.put(i)
+        ths = [threading.Thread(target=_thread_worker, args=(fn, tasks, todo, res_q, stop, started), daemon=True)
+               for _ in range(max(1, int(nthreads)))]
+        for th in ths:
+            th.start()
 
-    def worker():
-        while not stop.is_set():
+        def nxt(t, res_q=res_q, stop=stop):
             try:
-                i = todo.get_nowait()
+                i, ok, r = res_q.get(timeout=t)
             except queue.Empty:
-                return
-            try:
-                res_q.put((i, True, fn(tasks[i])))
-            except BaseException as exc:
-                res_q.put((i, False, exc))
-    ths = [threading.Thread(target=worker, daemon=True) for _ in range(max(1, int(nthreads)))]
-    for th in ths:
-        th.start()
-
-    def nxt(t):
+                raise _NoResult from None
+            if not ok:
+                stop.set()
+                raise r
+            return i, r
         try:
-            i, ok, r = res_q.get(timeout=t)
-        except queue.Empty:
-            raise _NoResult from None
-        if not ok:
+            open_, why = _watch(nxt, todo_i, args, label, on_result,
+                                lambda ths=ths: f'Threads aktiv {sum(th.is_alive() for th in ths)}/{len(ths)}')
+        finally:
             stop.set()
-            raise r
-        return i, r
-    try:
-        rest = _watch(nxt, len(tasks), args, label, on_result,
-                      lambda: f'Threads aktiv {sum(th.is_alive() for th in ths)}/{len(ths)}')
-    finally:
-        stop.set()
-    if rest:
-        _TIMEOUTS[label] = _TIMEOUTS.get(label, 0) + len(rest)
+        if not open_:
+            break
+        try:   # Diagnose: wo stehen die Threads (Download/SSL -> Netz, acquire -> Sperre)
+            import faulthandler
+            faulthandler.dump_traceback(file=sys.stderr, all_threads=True)
+        except Exception:
+            pass
+        todo_i = _settle(args, label, open_, why, lambda i, s=started: i in s, resume, rnd, lost, 1)
+        n_resumed += len(todo_i)
+    rest = sorted(lost)
+    _report_lost(args, label, len(rest), n_resumed, len(tasks))
     return rest
 
 
@@ -1663,8 +1781,14 @@ def _mark_fail(pstat, paths, error):
 
 
 def _with_timeouts(stats):
+    """meta-Felder nur im Fehlerfall (fehlerfreier Lauf: meta bitgleich): pool_timeouts (Pass -> fail-closed
+    verbuchte Aufgaben), pool_resumed (Pass -> fortgesetzte Aufgaben), shard_deadline (Pass, in dem die Gesamtfrist
+    griff), chi_timeout_cands (Kandidaten ohne CHI2PIX wegen Pass-3-Frist; n_real_clean zählt sie als „clean“)."""
     if _TIMEOUTS:
         stats['pool_timeouts'] = dict(_TIMEOUTS)
+    if _RESUMED:
+        stats['pool_resumed'] = dict(_RESUMED)
+    stats.update(_EXTRA)
     return stats
 
 
@@ -1676,7 +1800,8 @@ def _abort(args, out, shard, tiles, pstat, exc):
     for s in pstat:
         st[s['status']] = st.get(s['status'], 0) + 1
     diag = dict(job='desi_laser', aborted=repr(exc)[:400], shard=shard, utc=_stamp(), n_tiles=len(tiles),
-                n_petals=len(pstat), petal_status=st, pool_timeouts=dict(_TIMEOUTS),
+                n_petals=len(pstat), petal_status=st, pool_timeouts=dict(_TIMEOUTS), pool_resumed=dict(_RESUMED),
+                **_EXTRA,
                 petals_fail=[f"{s['tile']}/{s['petal']}: {s['error']}" for s in pstat if s['status'] == 'fail'][:50])
     _log(args, 'ABBRUCH ' + json.dumps(diag, default=str))
     print(f"::error title=Shard {shard} abgebrochen::{diag['aborted'][:300]}", flush=True)
@@ -1808,7 +1933,7 @@ def _write_spectra(args, out, sfx, specs, dets):
 
 
 def run(args, shard, nshards, out):
-    global _LIB, _ARGS, _SKY, _HANG, _FH
+    global _LIB, _ARGS, _SKY, _HANG, _FH, _DEADLINE
     import faulthandler, signal
     try:   # Diagnose: Segfault/Abbruch (auch in Workern, per fork geerbt) und Stapel auf SIGUSR1 nach stderr
         faulthandler.enable()
@@ -1818,7 +1943,11 @@ def run(args, shard, nshards, out):
         _FH = False
     _HANG = tuple(args.get('_test_hang') or ())
     _TIMEOUTS.clear()
+    _RESUMED.clear()
+    _EXTRA.clear()
     t0 = time.time()
+    dl_s = float(args.get('shard_deadline_s', SHARD_DEADLINE_S))
+    _DEADLINE = t0 + dl_s if dl_s > 0 else None
     threads, workers = int(args.get('threads', 8)), int(args.get('workers', 4))
     tiles = tile_list(args)
     n_all = len(tiles)
@@ -1826,8 +1955,9 @@ def run(args, shard, nshards, out):
     import tempfile
     cache = args.get('cache') or os.path.join(tempfile.gettempdir(), f'w1cache_{shard:04d}')
     os.makedirs(cache, exist_ok=True)
+    fr = '/'.join(f'{_timeout(args, x):.0f}' for x in ('pass1', 'lib', 'pass2', 'pass3'))
     _log(args, f'Shard {shard}/{nshards}: {len(tiles)} Kacheln, workers={workers}, threads={threads}, '
-               f"pool_timeout_s={float(args.get('pool_timeout_s', POOL_TIMEOUT_S)):.0f}, {_thread_info()}")
+               f'Fristen pass1/lib/pass2/pass3={fr} s, shard_deadline_s={dl_s:.0f}, {_thread_info()}')
     paths, pstat = pass1(tiles, args, cache, threads)
     _log(args, f'pass1 fertig: {len(paths)} Petals, {time.time() - t0:.0f} s')
     t1 = time.time()
@@ -1862,8 +1992,7 @@ def run(args, shard, nshards, out):
                 _log(args, f'pass2 {n_got[0] + 1}/{len(tasks)} dets={len(dets)} injs={len(injs)}')
             n_got[0] += 1
             take(tasks[j][0], r)
-        with _fork_pool(workers, args, 'pass2') as pool:
-            rest = _pool_run(pool, _work, tasks, args, 'pass2', take2)
+        rest = _pool_run(workers, _work, tasks, args, 'pass2', take2, resume=True)
         _mark_fail(pstat, [tasks[j][0] for j in rest], 'pool_timeout')
     else:
         rest = []
