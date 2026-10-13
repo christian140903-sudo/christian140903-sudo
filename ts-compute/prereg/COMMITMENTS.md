@@ -36,3 +36,18 @@ commit. The job file `jobs/current.json` in this commit embeds the full rules.
 | `392bc0c51de81943fb0e3a47862b6345655d279fd923960d68f0b9e819190013` | `ts-compute/jobs/current.json` | Wave-1 job configuration with embedded rules |
 
 Survivors of the search are candidates for further vetting, not detections.
+
+## L1 — Earth-shadow test of POSS-I transients (within-plate, preregistered)
+
+Frozen preregistration (v1.0, 2026-10-13T01:49:05Z), committed before any
+transient count on a plate with Earth shadow was computed. The file includes
+the SHA-256 of the analysis code (`978dd630fd67ba8f70773bd531dff931dfbc1b0e0d4ea800f8b86da672c8c40f`)
+and of 28 input files; the unblinding script refuses to run if any differs.
+
+| SHA-256 | File | Content |
+|---|---|---|
+| `206390d0ee4b53a3e3fc72bce67bee3d3acab67a636971a703381c4a8c60405a` | `analysis/L1-poss-shadow/PRAEREG.md` | Frozen preregistration v1.0 (private repo commit e2501bf) |
+
+Declared in advance: the only claim this test can refute with probability ≥ 0.5
+if there is no effect is the 20,000–25,000 km shell claim; no claim can be
+supported with probability ≥ 0.5.
