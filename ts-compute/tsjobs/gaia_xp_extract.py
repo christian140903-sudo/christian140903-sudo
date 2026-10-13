@@ -163,6 +163,9 @@ def run(args, shard, nshards, out):
     keys = sorted(per)
     if args.get('only_file'):
         keys = [k for k in keys if k.endswith(args['only_file'])]
+    if args.get('only_files'):  # Nachlauf: nur diese Dateinamen (z. B. abgebrochene Downloads)
+        wanted = set(args['only_files'])
+        keys = [k for k in keys if k.rsplit('/', 1)[-1] in wanted]
     keys = keys[shard::nshards]
     if args.get('max_files'):
         keys = keys[:int(args['max_files'])]
@@ -170,7 +173,8 @@ def run(args, shard, nshards, out):
     header_all, rows_all, found, errors = None, [], {}, []
     nbytes = n_early = n_fail = n_unsorted = 0
     with ThreadPoolExecutor(threads) as pool:
-        futs = {pool.submit(stream_filter, k, per[k], early_stop): k for k in keys}
+        tries = int(args.get('tries', 4))
+        futs = {pool.submit(stream_filter, k, per[k], early_stop, tries): k for k in keys}
         for fut in as_completed(futs):
             k = futs[fut]
             try:

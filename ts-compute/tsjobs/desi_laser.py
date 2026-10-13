@@ -1040,6 +1040,27 @@ def exposure_nights():
     return {int(e): int(n) for n, e in zip(t['NIGHT'], t['EXPID'])}
 
 
+def chi_features(chi, wl, fib, msk, cands):
+    """CHI2PIX-Merkmale je Kandidat (cid, fiber, lam) aus einer Einzelbelichtung (chi, msk: (nfib, npix))."""
+    out = []
+    pos = {int(f): k for k, f in enumerate(fib)}
+    for cid, fiber, lam in cands:
+        if int(fiber) not in pos:
+            out.append((cid, dict(chi_err='fiber'))); continue
+        r = pos[int(fiber)]
+        jj = int(np.argmin(np.abs(wl - lam)))
+        c = chi[r].astype(float)
+        loc = np.r_[c[max(0, jj - 30):max(0, jj - 4)], c[jj + 5:jj + 31]]
+        loc = loc[loc > 0]
+        cm = float(np.max(c[max(0, jj - 2):jj + 3]))
+        cl = float(np.median(loc)) if loc.size > 5 else np.nan
+        allc = chi[:, max(0, jj - 2):jj + 3].astype(float).max(1)
+        out.append((cid, dict(chi_max=cm, chi_loc=cl, chi_rel=cm / max(cl, 0.05) if np.isfinite(cl) else np.nan,
+                              chi_frac_fibers=float((allc >= cm).mean()),
+                              fmask=int((msk[r, max(0, jj - 2):jj + 3] != 0).sum()))))
+    return out
+
+
 def _chi2_file(task):
     """Ein frame-File (Kamera, Petal, Belichtung): CHI2PIX-Merkmale für alle Kandidaten darin."""
     import gzip
@@ -1053,49 +1074,10 @@ def _chi2_file(task):
         msk = h['MASK'].data
     except Exception as exc:
         return [(c[0], expid, dict(chi_err=repr(exc)[:80])) for c in cands]
-    out = []
-    pos = {int(f): k for k, f in enumerate(fib)}
-    for cid, fiber, lam in cands:
-        if int(fiber) not in pos:
-            out.append((cid, expid, dict(chi_err='fiber'))); continue
-        r = pos[int(fiber)]
-        jj = int(np.argmin(np.abs(wl - lam)))
-        c = chi[r]
-        loc = np.r_[c[max(0, jj - 30):max(0, jj - 4)], c[jj + 5:jj + 31]]
-        loc = loc[loc > 0]
-        cm = float(np.max(c[max(0, jj - 2):jj + 3]))
-        cl = float(np.median(loc)) if loc.size > 5 else np.nan
-        # Rang des Kandidaten unter allen Fasern derselben Spalte (Instrumentenmerkmal?)
-        allc = chi[:, max(0, jj - 2):jj + 3].max(1)
-        out.append((cid, expid, dict(chi_max=cm, chi_loc=cl, chi_rel=cm / max(cl, 0.05) if np.isfinite(cl) else np.nan,
-                                     chi_frac_fibers=float((allc >= cm).mean()),
-                                     fmask=int((msk[r, max(0, jj - 2):jj + 3] != 0).sum()))))
-    return out
+    return [(cid, expid, v) for cid, v in chi_features(chi, wl, fib, msk, cands)]
 
 
-def chi2pix_pass(dets, nights, threads=8, tmin=5.0, log_args=None):
-    """Ergänzt Detektionen (kind real/sky, S/N >= tmin, ohne Maske) um CHI2PIX aus allen Einzelbelichtungen.
-    Spalten: chi_rel_max, chi_rel_min, chi_nexp, chi_nhi (Belichtungen mit chi_rel > 3), chi_frac_fibers_min."""
-    groups = {}
-    for k, d in enumerate(dets):
-        d['cid'] = k
-        if d['kind'] not in ('real', 'sky') or d['snr'] < tmin or d.get('nmask2', 0) > 0:
-            continue
-        for e in str(d.get('expids', '')).split(';'):
-            if not e:
-                continue
-            e = int(e)
-            if e not in nights:
-                continue
-            groups.setdefault((nights[e], e, d['cam'], int(d['petal'])), []).append((k, int(d['fiber']), float(d['lam_obs'])))
-    tasks = [(n, e, c, p, cands) for (n, e, c, p), cands in groups.items()]
-    per = {}
-    with ThreadPoolExecutor(threads) as pool:
-        for m, res in enumerate(pool.map(_chi2_file, tasks)):
-            for cid, e, v in res:
-                per.setdefault(cid, []).append(v)
-            if log_args is not None and m % 50 == 0:
-                _log(log_args, f'pass3 {m + 1}/{len(tasks)}')
+def aggregate_chi(dets, per):
     for cid, vals in per.items():
         good = [v for v in vals if 'chi_rel' in v and np.isfinite(v['chi_rel'])]
         d = dets[cid]
@@ -1108,6 +1090,37 @@ def chi2pix_pass(dets, nights, threads=8, tmin=5.0, log_args=None):
             d['chi_fmask'] = int(max(v['fmask'] for v in good))
         else:
             d['chi_err'] = ';'.join(v.get('chi_err', '') for v in vals)[:80]
+
+
+def chi_groups(dets, nights, tmin):
+    groups = {}
+    for k, d in enumerate(dets):
+        d['cid'] = k
+        if d['kind'] not in ('real', 'sky') or d['snr'] < tmin or d.get('nmask2', 0) > 0:
+            continue
+        for e in str(d.get('expids', '')).split(';'):
+            if not e:
+                continue
+            e = int(e)
+            if e not in nights:
+                continue
+            groups.setdefault((nights[e], e, d['cam'], int(d['petal'])), []).append((k, int(d['fiber']), float(d['lam_obs'])))
+    return groups
+
+
+def chi2pix_pass(dets, nights, threads=8, tmin=5.0, log_args=None):
+    """Ergänzt Detektionen (kind real/sky, S/N >= tmin, ohne Maske) um CHI2PIX aus allen Einzelbelichtungen.
+    Spalten: chi_rel_max, chi_rel_min, chi_nexp, chi_nhi (Belichtungen mit chi_rel > 3), chi_frac_fibers_min."""
+    groups = chi_groups(dets, nights, tmin)
+    tasks = [(n, e, c, p, cands) for (n, e, c, p), cands in groups.items()]
+    per = {}
+    with ThreadPoolExecutor(threads) as pool:
+        for m, res in enumerate(pool.map(_chi2_file, tasks)):
+            for cid, e, v in res:
+                per.setdefault(cid, []).append(v)
+            if log_args is not None and m % 50 == 0:
+                _log(log_args, f'pass3 {m + 1}/{len(tasks)}')
+    aggregate_chi(dets, per)
     return len(tasks)
 
 
@@ -1195,10 +1208,21 @@ _SKY = None
 
 
 def _work(task):
+    """Ein Petal; Ergebnis sofort als Checkpoint (pickle) neben den Cache, Neustart überspringt Fertiges."""
+    import pickle
     path, seed = task
+    part = path[:-4] + '.part.pkl'
+    if os.path.exists(part):
+        try:
+            return pickle.load(open(part, 'rb')), None
+        except Exception:
+            pass
     try:
         D = _load_petal(path)
-        return process_petal(D, _LIB, _ARGS, _SKY, seed), None
+        res = process_petal(D, _LIB, _ARGS, _SKY, seed)
+        pickle.dump(res, open(part + '.tmp', 'wb'))
+        os.replace(part + '.tmp', part)
+        return res, None
     except Exception as exc:
         import traceback
         return None, f'{os.path.basename(path)}: {traceback.format_exc()[-400:]}'
@@ -1238,7 +1262,10 @@ def run(args, shard, nshards, out):
     t2 = time.time()
     _log(args, f'Bibliothek: {len(_LIB.TID)} Sterne, {t2 - t1:.0f} s')
     dets, injs, specs, skys, errors = [], [], [], [], []
-    tasks = [(p, int(hashlib.sha256(p.encode()).hexdigest()[:8], 16)) for p in paths]
+    # Tuning-Petals zuerst (Regeln können eingefroren werden, während Test-Petals rechnen)
+    tf = float(args.get('tune_frac', 0.3))
+    paths_o = sorted(paths, key=lambda p: (split_of(int(os.path.basename(p).split('_')[1]), tf) != 'tune', p))
+    tasks = [(p, int(hashlib.sha256(os.path.basename(p).encode()).hexdigest()[:8], 16)) for p in paths_o]
     if workers > 1:
         import multiprocessing as mp
         with mp.get_context('fork').Pool(workers) as pool:
