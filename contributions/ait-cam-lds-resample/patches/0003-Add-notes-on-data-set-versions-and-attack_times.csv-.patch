@@ -1,0 +1,36 @@
+From 5319ccf2480ab64e662effdf4a198ab1774021ed Mon Sep 17 00:00:00 2001
+From: Christian Bucher
+ <259439381+christian140903-sudo@users.noreply.github.com>
+Date: Tue, 20 Oct 2026 14:31:02 +0000
+Subject: [PATCH 3/3] Add notes on data set versions and attack_times.csv to
+ README
+
+---
+ README.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/README.md b/README.md
+index ba7c603..7cc4da8 100644
+--- a/README.md
++++ b/README.md
+@@ -40,6 +40,8 @@ To create LLM prompts based on the log data in the `manifestations_filtered/step
+ python3 create_llm_prompt.py --samples 5 --seed 42
+ ```
+ 
++Note that `llm_queries.json` was created from version 1 of the data set ([record 18390561](https://zenodo.org/records/18390561), as downloaded above). The latest version 2 ([record 18861762](https://zenodo.org/records/18861762)) additionally contains audit events of `runc init` in the Docker `audit.log` files of steps 3, 6, 8, 10, and 13 of Scenario 7, which results in different prompts. Moreover, `Path.rglob` does not return the log files in a fixed order, so the prompts may also differ across file systems and Python versions; the provided file can be reproduced with Python 3.12 when the files are read in the order in which they are stored in the zip archive.
++
+ The generated prompts contain a general task description as well as the lines to be classified. An example could look like this:
+ 
+ ```
+@@ -155,6 +157,8 @@ Note that filtering is based on the normal behavior activities observed in all o
+ python3 extract_attack_logs.py
+ ```
+ 
++Besides the manifestations, the script creates the files `labels.json` and `attack_times.csv` provided in this repository. `attack_times.csv` lists the start and end times (Unix timestamps) of the attack steps together with their techniques and tactics. Note that in rows with more than one technique (203 of the 904 rows), the `tactics` column concatenates the tactics of the individual techniques without separator, e.g., `reconnaissancereconnaissance` for the techniques `T1590.002_T1591`, while tactics of the same technique are separated by `_`. The tactics of each technique are available in the `metadata` field of the corresponding entry in `labels.json` (key `<scenario>-<event_id>`). The `technique_names` column is not filled (`NA`).
++
+ # Citation
+ 
+ If you use data or scripts from this repository, please cite the following publication:
+-- 
+2.43.0
+
