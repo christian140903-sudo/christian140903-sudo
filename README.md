@@ -1,174 +1,101 @@
 <h1 align="center">Christian Bucher</h1>
 
-<p align="center"><strong>I build the trust layer around AI agents.</strong></p>
+<p align="center"><strong>I direct AI coding agents to ship tested software — and I measure whether what I build actually works.</strong></p>
 
-<p align="center">
-  Memory with provenance · independent outcome checks · executable claims · behavior compatibility
-</p>
+<p align="center">Claude Code · MCP · evals · data audits · Vienna</p>
 
-<p align="center">
-  <a href="https://nextool.app">NexTool</a> ·
-  <a href="https://nextool.app/docs/">Product docs</a> ·
-  <a href="https://www.npmjs.com/~mr_bucher003">npm</a> ·
-  <a href="mailto:hello@nextool.app">Contact</a>
-</p>
+<p align="center"><a href="https://www.npmjs.com/~mr_bucher003">npm</a></p>
 
 ---
 
-## One stack. Six narrow jobs.
+## How I work with coding agents
 
-Most agent systems make it easy to call a tool. My open-source work focuses on
-the harder questions that come next: Why did the agent decide this? Did the
-outside world actually change? Is the public claim supported? Did an upgrade
-silently alter behavior? Did a critical rule remain true?
+Most of the code in my repositories was written by AI coding agents — mainly
+Claude Code — under my direction. My part: I write the specification, set the
+constraints (project instructions, hooks, permissions), decide what gets
+tested, review the result and reject what does not hold. Release decisions and
+every claim on this page are mine.
 
-| Failure to prevent | Project | Public evidence |
+Before a number or a plan is accepted, a separate review round with adversarial
+instructions tries to break it; that is how the withdrawn result under
+*Measurement* was caught. I have not yet run this setup inside an engineering
+team — that is the job I am looking for.
+
+## Contributions to research code and data
+
+Made the same way (coding agents under my direction); each entry links to the
+public result.
+
+- **[CAM-LDS analysis scripts](https://github.com/ait-aecid/attack-manifestations-interpretation/commits/main?author=christian140903-sudo)**
+  (AIT Austrian Institute of Technology, Oct 2026): three commits, accepted
+  into `main` — a prompt script that samples the log lines again in every
+  repetition, as Sect. 5.1.2 of the CAM-LDS paper describes; a script that
+  reproduces the numbers in the repository README's clarification of the
+  paper's stability results (identical prompts in 89 of 198 attack steps); and
+  README notes on data set versions and `attack_times.csv`.
+- **[PAIEC 2026](https://github.com/christian140903-sudo/christian140903-sudo/tree/claude/technosignatures-archive-analysis-nxoino/paiec-2026)**
+  (NeurIPS 2026 competition, Stanford AIMS, Oct 2026): competition entry with
+  report and code — a text-free predictor of whether an AI system answers a
+  benchmark item correctly, with a confirmatory re-run on fresh seeds under
+  rules frozen before the runs. It includes an audit of the training data
+  release: the public baseline loader saw only 60 of 156 graded benchmarks,
+  because the Hugging Face Hub file listing returns the first 100,000 of
+  385,266 files. I reported this to the organisers and prepared evidence packs
+  and patches at their request; the public part (lists and three proposed
+  patches) is in `audit/`.
+
+## Evidence
+
+Every test count comes with the command that reproduces it:
+
+```bash
+git clone https://github.com/christian140903-sudo/<repo> && cd <repo>
+npm ci && npm test
+```
+
+| Failure it catches | Project | Tests (Node 22, fresh clone) |
 |---|---|---|
-| Lost context and provenance | **[Soul MCP](https://github.com/christian140903-sudo/soul-mcp)** | npm · 23 MCP tools · 373 tests |
-| Tool success without real outcome | **[Postcondition](https://github.com/christian140903-sudo/postcondition-mcp)** | npm · MCP + SDK + CLI · 53 tests |
-| Unsupported README or release claims | **[Proofspec](https://github.com/christian140903-sudo/proofspec)** | source release · five reports · 70 tests |
-| Silent behavior drift after an upgrade | **[Behaviorlock](https://github.com/christian140903-sudo/behaviorlock)** | source release · nine matchers · 73 tests |
-| Critical runtime conditions going unproved | **[Agent Invariants](https://github.com/christian140903-sudo/agent-invariants)** | source release · fail-closed policies · 36 tests |
-| Opaque, disposable cognitive state | **[ANIMA Kernel](https://github.com/christian140903-sudo/anima)** | source release · zero runtime dependencies · 446 tests |
+| Agent memory that loses its history or keeps injected instructions as if they were facts | **[soul-mcp](https://github.com/christian140903-sudo/soul-mcp)** — memory server for MCP clients; quarantines injected instructions, records provenance; [on npm](https://www.npmjs.com/package/soul-mcp) | 374 passing (last verified 2026-10-08) |
+| An agent reports `success: true`, but nothing changed | **[postcondition-mcp](https://github.com/christian140903-sudo/postcondition-mcp)** — checks whether the world changed, not whether the agent said so; [on npm](https://www.npmjs.com/package/postcondition-mcp) | 55 passing (last verified 2026-10-09) |
+| A skill or agent behaves differently after a model update and nobody notices | **[behaviorlock](https://github.com/christian140903-sudo/behaviorlock)** — drift gate that compares recorded runs against contracts, without an LLM judge | 73 passing (last verified 2026-10-08) |
+| A rule that must hold during an agent run is broken silently | **[agent-invariants](https://github.com/christian140903-sudo/agent-invariants)** — fail-closed checks for conditions that must stay true | 36 passing (last verified 2026-10-08) |
 
-```text
-intent
-  ↓
-Soul ── remembers decisions, provenance, corrections, and outcomes
-  ↓
-Agent Invariants ── checks what must remain true during execution
-  ↓
-Postcondition ── observes whether the intended world state exists
-  ↓
-Proofspec ── binds public claims to narrow evidence contracts
+Referenced by [MediaPlural/agent-proven](https://github.com/MediaPlural/agent-proven)
+(its `agent-regression` skill points to behaviorlock) — a pointer in another
+project's documentation, not a usage report.
 
-Behaviorlock ── compares observable behavior before and after upgrades
-```
+Status, plainly: built since February 2026, next to a full-time job outside IT.
+soul-mcp is on npm (current release 4.0.2); postcondition-mcp, behaviorlock and
+agent-invariants are small v0.1 releases from July 2026. No external users are
+documented for any of them yet.
+Passing tests establish only what they cover.
 
-Soul is the long-running flagship (on npm since February 2026, seven releases).
-Postcondition, Proofspec, Behaviorlock and Agent Invariants are young v0.1
-releases from July 2026: small, tested, and early.
+## Measurement
 
-These projects can work together, but none pretends to be the whole agent
-stack. Each has a narrow promise, tests for that promise, a security or evidence
-boundary, and an honest `unknown` state where the software cannot prove enough.
+- **Two flaws found in my own evaluation harness (Aug 2026):** a grader bug,
+  which was fixable, and unequal format instructions between the two arms,
+  which were not. I withdrew the registered result the same day, before it
+  left the project, and discarded the experiment. One registered number I
+  still cannot reproduce exactly from the stored answers. Raw data not yet
+  published.
+- **A null result from my own evidence inventory (Aug 2026):** plain runtime
+  attachment without skills gave no quality gain on 20 tasks at 2.7× the cost
+  (one model, descriptive); the skill effect is unmeasured. Raw artefacts not
+  yet published.
 
-## Start with the failure you need to prevent
+## Corrections
 
-### Soul MCP — continuity with provenance
+Earlier experiments (Feb–Sep 2026) are archived; details on request.
 
-[![npm](https://img.shields.io/npm/v/soul-mcp?style=flat-square&label=npm&color=5de4a8)](https://www.npmjs.com/package/soul-mcp)
-[![downloads](https://img.shields.io/npm/dw/soul-mcp?style=flat-square&label=weekly%20downloads&color=54d8ff)](https://www.npmjs.com/package/soul-mcp)
-[![CI](https://img.shields.io/github/actions/workflow/status/christian140903-sudo/soul-mcp/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/christian140903-sudo/soul-mcp/actions)
-[![license](https://img.shields.io/github/license/christian140903-sudo/soul-mcp?style=flat-square)](https://github.com/christian140903-sudo/soul-mcp/blob/main/LICENSE)
+## About
 
-Local-first agent memory with durable runs, receipts, episodes, conflicts,
-calibration, deliberation, and a governed skill registry.
+Self-taught, based in Vienna. I work full-time outside IT, in sales and
+advisory work, and before that in dispatching — explaining technical things to
+non-experts is my day job. I started building with Claude Code in February
+2026.
 
-```bash
-claude mcp add soul -- npx -y soul-mcp
-```
+## Contact
 
-**[Product guide](https://nextool.app/soul/)** ·
-**[Source](https://github.com/christian140903-sudo/soul-mcp)** ·
-**[npm](https://www.npmjs.com/package/soul-mcp)**
-
-### Postcondition — outcome verification after tools return
-
-[![npm](https://img.shields.io/npm/v/postcondition-mcp?style=flat-square&label=npm&color=5de4a8)](https://www.npmjs.com/package/postcondition-mcp)
-[![downloads](https://img.shields.io/npm/dw/postcondition-mcp?style=flat-square&label=weekly%20downloads&color=54d8ff)](https://www.npmjs.com/package/postcondition-mcp)
-[![CI](https://img.shields.io/github/actions/workflow/status/christian140903-sudo/postcondition-mcp/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/christian140903-sudo/postcondition-mcp/actions)
-[![license](https://img.shields.io/github/license/christian140903-sudo/postcondition-mcp?style=flat-square)](https://github.com/christian140903-sudo/postcondition-mcp/blob/main/LICENSE)
-
-Declare an intended result, observe constrained file, HTTP, Git, npm, or manual
-evidence, and retain an honestly classified receipt instead of trusting
-`success: true`.
-
-```bash
-npx -y postcondition-mcp serve
-```
-
-**[Product guide](https://nextool.app/postcondition/)** ·
-**[Source](https://github.com/christian140903-sudo/postcondition-mcp)** ·
-**[npm](https://www.npmjs.com/package/postcondition-mcp)**
-
-### Proofspec — executable public claims
-
-[![release](https://img.shields.io/github/v/release/christian140903-sudo/proofspec?style=flat-square&color=54d8ff)](https://github.com/christian140903-sudo/proofspec/releases/tag/v0.1.0)
-[![CI](https://img.shields.io/github/actions/workflow/status/christian140903-sudo/proofspec/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/christian140903-sudo/proofspec/actions)
-[![license](https://img.shields.io/github/license/christian140903-sudo/proofspec?style=flat-square)](https://github.com/christian140903-sudo/proofspec/blob/main/LICENSE)
-
-Turn README, product, benchmark, and release claims into versioned evidence
-contracts with dependencies, policies, receipts, CI gates, and JSON, Markdown,
-HTML, SARIF, and JUnit reports.
-
-**[Product guide](https://nextool.app/proofspec/)** ·
-**[Source](https://github.com/christian140903-sudo/proofspec)** ·
-**[v0.1.0 release](https://github.com/christian140903-sudo/proofspec/releases/tag/v0.1.0)**
-
-### Behaviorlock — observable compatibility across agent upgrades
-
-[![release](https://img.shields.io/github/v/release/christian140903-sudo/behaviorlock?style=flat-square&color=54d8ff)](https://github.com/christian140903-sudo/behaviorlock/releases/tag/v0.1.0)
-[![CI](https://img.shields.io/github/actions/workflow/status/christian140903-sudo/behaviorlock/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/christian140903-sudo/behaviorlock/actions)
-[![license](https://img.shields.io/github/license/christian140903-sudo/behaviorlock?style=flat-square)](https://github.com/christian140903-sudo/behaviorlock/blob/main/LICENSE)
-
-Compare portable before-and-after traces with deterministic contracts for tool
-sequences, permissions, output structure, outcomes, ranks, sets, and bounded
-metrics — without provider calls or an LLM judge.
-
-**[Product guide](https://nextool.app/behaviorlock/)** ·
-**[Source](https://github.com/christian140903-sudo/behaviorlock)** ·
-**[v0.1.0 release](https://github.com/christian140903-sudo/behaviorlock/releases/tag/v0.1.0)**
-
-## Public proof, not audience theater
-
-I do not use fake adoption numbers or turn test counts into a claim of product
-quality. These are narrow, inspectable facts about the current public surfaces:
-
-| Surface | Current public fact |
-|---|---|
-| Soul MCP | 373 automated tests; CI on Node 20, 22, and 24 |
-| Postcondition | 53 automated tests; clean-install and MCP handshake checks |
-| Proofspec | 70 automated tests; 98.05% line coverage; five report formats |
-| Behaviorlock | 73 automated tests; 99.06% line coverage; nine deterministic matchers |
-| Agent Invariants | 36 automated tests; source release and CI |
-| ANIMA Kernel | 446 automated tests; zero runtime dependencies |
-| [NexTool](https://nextool.app) | 269 browser-tool pages; 131 technical guides; static site audit in CI |
-
-Passing tests establish only what they cover. Hash chains are not signatures.
-Portable traces are not provenance attestations. A green compatibility gate
-covers only declared scenarios. Those boundaries live beside the product claims,
-not in fine print after them.
-
-## The larger system
-
-I also run **Miguel**, a private personal AI operating layer that connects
-memory, voice, multiple model providers, tools, and long-running local services.
-It is the laboratory from which reusable mechanisms are extracted — not a
-50,000-line personal monolith I intend to dump online. Private conversations,
-identity state, credentials, machine paths, and raw session history stay private.
-
-The public products are rebuilt as small, documented, testable systems with
-portable schemas and explicit security boundaries.
-
-## About me
-
-I am a self-taught developer in Vienna. I have a full-time job and build these
-projects in the evenings and on weekends, without funding so far. In earlier
-jobs I dispatched a fleet of 50+ vehicles; I bring the same habit to software:
-deliver what was promised and say plainly what is not done yet. No degree yet;
-I plan to start university (business informatics) in autumn 2027.
-
-## How I build
-
-I use capable models as research, coding, review, and testing collaborators. I
-choose the architecture, resolve conflicts, validate results, manage releases,
-and remain responsible for every public claim.
-
-My default loop is:
-
-```text
-define the failure → design the evidence → build → falsify → ship → observe
-```
-
-<p align="center"><strong>Inspect the source. Run the tests. Judge the boundary.</strong></p>
+If a number on this page does not reproduce, please open an issue in that
+repository — for the contributions to research code and data, in this profile
+repository.
