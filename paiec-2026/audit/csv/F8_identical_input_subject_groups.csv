@@ -1,0 +1,120 @@
+group,benchmark,subject_id,display_name,shared_competition_subject_fields_concatenated
+1,ceval,baa6556dde2b5fd8,Yi-34B-200k,OpenCompassn_shots=5;selection=minimum_perplexity;source_study=arXiv:2310.17589v3
+1,ceval,8c3b5004da8eaa54,baichuan2-7b-base-hf,OpenCompassn_shots=5;selection=minimum_perplexity;source_study=arXiv:2310.17589v3
+1,ceval,c2246efe9d7a9340,llama_13b,OpenCompassn_shots=5;selection=minimum_perplexity;source_study=arXiv:2310.17589v3
+1,ceval,9bfa47a170d243ae,llama_2_13b,OpenCompassn_shots=5;selection=minimum_perplexity;source_study=arXiv:2310.17589v3
+1,ceval,d6caaa4c05471b56,llama_2_70b,OpenCompassn_shots=5;selection=minimum_perplexity;source_study=arXiv:2310.17589v3
+1,ceval,95c185b0c8b68978,llama_2_7b,OpenCompassn_shots=5;selection=minimum_perplexity;source_study=arXiv:2310.17589v3
+1,ceval,fdef7d2dfe85968e,llama_7b,OpenCompassn_shots=5;selection=minimum_perplexity;source_study=arXiv:2310.17589v3
+1,ceval,14cbbbcb15947d45,mistral-7b-instruct-v0.1-hf,OpenCompassn_shots=5;selection=minimum_perplexity;source_study=arXiv:2310.17589v3
+1,ceval,7a2988fc6d1debc9,mistral-7b-v0.1-hf,OpenCompassn_shots=5;selection=minimum_perplexity;source_study=arXiv:2310.17589v3
+1,ceval,a8d5e69f45335290,yi-6b-hf,OpenCompassn_shots=5;selection=minimum_perplexity;source_study=arXiv:2310.17589v3
+2,chipbench,3803d12c5781cf02,AutoDMP,ChiPBench OpenROAD evaluation flowreported_settings=Only%20generated%20macro%20positions%20retained%20for%20the%20placement%20comparison.;source_component=macro_placement;study=NeurIPS 2025 final paper
+2,chipbench,aa5ea408e1a8b9f2,DREAMPlace,ChiPBench OpenROAD evaluation flowreported_settings=Only%20generated%20macro%20positions%20retained%20for%20the%20placement%20comparison.;source_component=macro_placement;study=NeurIPS 2025 final paper
+3,chipbench,726d7202881fb39c,Yosys,ChiPBench OpenROAD evaluation flowsource_component=logic_synthesis;study=NeurIPS 2025 final paper
+3,chipbench,0714a1a25282ee5c,Synopsys-DC,ChiPBench OpenROAD evaluation flowsource_component=logic_synthesis;study=NeurIPS 2025 final paper
+4,chipbench,ceba255a459eb5a2,Hier-RTLMP,ChiPBench OpenROAD evaluation flowsource_component=macro_placement;study=NeurIPS 2025 final paper
+4,chipbench,ef9f5191cf5208c3,SA,ChiPBench OpenROAD evaluation flowsource_component=macro_placement;study=NeurIPS 2025 final paper
+4,chipbench,024793668b54d147,WireMask-EA,ChiPBench OpenROAD evaluation flowsource_component=macro_placement;study=NeurIPS 2025 final paper
+4,chipbench,c086ae7a0e8843be,Synopsys commercial placer,ChiPBench OpenROAD evaluation flowsource_component=macro_placement;study=NeurIPS 2025 final paper
+5,csedb,b3dd3ec27be10e0e,CSEDB / MedGPT (MG-0623),"CSEDBhistorical_request_settings=not_recorded;prompt_configuration=original reported configuration, historical payload not recorded"
+5,csedb,a257bb47bfb1f77f,CSEDB / DeepSeek-R1-0528,"CSEDBhistorical_request_settings=not_recorded;prompt_configuration=original reported configuration, historical payload not recorded"
+5,csedb,048d3f6a72fd63d8,CSEDB / o3 (20250416),"CSEDBhistorical_request_settings=not_recorded;prompt_configuration=original reported configuration, historical payload not recorded"
+5,csedb,cc46d8b08a0234c3,CSEDB / Gemini-2.5-Pro (20250506),"CSEDBhistorical_request_settings=not_recorded;prompt_configuration=original reported configuration, historical payload not recorded"
+5,csedb,676f8d493d17b194,CSEDB / Qwen3-235B-A22B,"CSEDBhistorical_request_settings=not_recorded;prompt_configuration=original reported configuration, historical payload not recorded"
+5,csedb,3f9da4a33ecb82b9,CSEDB / Claude-3.7-Sonnet (20250219),"CSEDBhistorical_request_settings=not_recorded;prompt_configuration=original reported configuration, historical payload not recorded"
+6,devbench,e4d111f614aa087f,blip,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,fe7104b4169290eb,bridgetower,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,bde398412777354a,clip_base,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,00be1d21bbd36413,clip_large,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,32d81571a902e232,cogvlm,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,9773e3bd4e4cfccc,cvcl,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,97e59605b5e6ba28,flava,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,a3a0e2fcf410ee00,kosmos,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,9a2adb1275c15894,llava,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,0ef8ee5db79d712a,logit_cogvlm,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,5063e03b0ad39c89,logit_kosmos,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,073ce95349bc9b93,logit_llava,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,4dfff40dedc0e028,logit_moondream,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,001af92f24d355ec,logit_tinyllava,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,5a77a9c2ff09310e,moondream2,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,ac62655520046e10,openclip_random,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,30608901348d097e,siglip,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,5d01a89cb8a7d316,tinyllava,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+6,devbench,a74048e476ee192a,vilt,DevBenchconfiguration_scope=Released array filename identifies the model and scoring variant. Exact historical weight and execution revisions are not asserted.
+7,dpai,3e224d4d36f5fa9f,Opus 4.7 max ultrathink,claude-codecli_version=2.1.118 (Claude Code);configuration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+7,dpai,e21bfba8c48172dd,Sonnet 4.6 max ultrathink,claude-codecli_version=2.1.118 (Claude Code);configuration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+8,dpai,aad6e6b24450bfe8,Opus 1M max ultrathink,claude-codecli_version=2.1.119 (Claude Code);configuration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+8,dpai,456593cc7b24de19,Sonnet 4.6 max ultrathink,claude-codecli_version=2.1.119 (Claude Code);configuration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+8,dpai,dcf4fb1df728dff8,Opus 4.6 max ultrathink,claude-codecli_version=2.1.119 (Claude Code);configuration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+9,dpai,0b01186393ce473d,Opus 4.7 max ultrathink,claude-codeconfiguration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+9,dpai,a75f16eb600a4fe2,Opus 1M max ultrathink,claude-codeconfiguration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+9,dpai,297e367c1fc713b2,Sonnet 4.6 max ultrathink,claude-codeconfiguration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+9,dpai,888ec4fd3109935a,Opus 4.6 max ultrathink,claude-codeconfiguration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+10,dpai,e850c73386b7e425,GPT-5.4 xhigh,juniecli_version=Junie version: build 1512.1 nightly;configuration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+10,dpai,576c2463ee3ad1b6,Claude Opus 4.6 max,juniecli_version=Junie version: build 1512.1 nightly;configuration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+10,dpai,d78bb216833a3379,Claude Sonnet 4.6 max,juniecli_version=Junie version: build 1512.1 nightly;configuration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+10,dpai,c681ea6e2cb6f9fd,GPT-5.3-codex xhigh,juniecli_version=Junie version: build 1512.1 nightly;configuration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+10,dpai,fa94d0f51f6189b5,Grok 4.1 Fast Reasoning,juniecli_version=Junie version: build 1512.1 nightly;configuration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+11,dpai,ea6c3e6b142ba8e4,Claude Opus 4.6 max,junieconfiguration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+11,dpai,5aa198da68498477,GPT-5.3-codex xhigh,junieconfiguration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+11,dpai,bff51bb3e2b555dd,GPT-5.4 xhigh,junieconfiguration_scope=Configured model label and per-attempt CLI identity. Omitted versions remain unknown. The source filename supplies an omitted CLI name.
+12,edumath,7217dd84fd8b66ba,edumath_12b,EDUMATHconfiguration_scope=Published generator label. Per-row historical weight revisions and generation settings are not provided.
+12,edumath,ecbd8b3a7fd77137,gemma3_27b,EDUMATHconfiguration_scope=Published generator label. Per-row historical weight revisions and generation settings are not provided.
+12,edumath,fc087c4566554476,gemma3_12b_sft,EDUMATHconfiguration_scope=Published generator label. Per-row historical weight revisions and generation settings are not provided.
+12,edumath,30209faf318ac4c7,gemma3_12b,EDUMATHconfiguration_scope=Published generator label. Per-row historical weight revisions and generation settings are not provided.
+12,edumath,515ffa40d0f3369c,gemma3_12b_kto,EDUMATHconfiguration_scope=Published generator label. Per-row historical weight revisions and generation settings are not provided.
+12,edumath,cabd2b39d26aefcb,edumath_30b,EDUMATHconfiguration_scope=Published generator label. Per-row historical weight revisions and generation settings are not provided.
+12,edumath,9d184cf6093ed7ce,qwen3_235b,EDUMATHconfiguration_scope=Published generator label. Per-row historical weight revisions and generation settings are not provided.
+12,edumath,9707673b7d1add6c,qwen3_30b,EDUMATHconfiguration_scope=Published generator label. Per-row historical weight revisions and generation settings are not provided.
+12,edumath,d7c3b6ff813dd63d,gpt41,EDUMATHconfiguration_scope=Published generator label. Per-row historical weight revisions and generation settings are not provided.
+12,edumath,701546e4b6c05316,gpt45,EDUMATHconfiguration_scope=Published generator label. Per-row historical weight revisions and generation settings are not provided.
+13,elicitation_game,c813c92115a8e00a,gemma-2-9b-it (circuit-broken),configuration_scope=Result artifact and published experiment labels only. Historical weights and exact invocations are not established.;organism=circuit-broken;technique=anti_refusal
+13,elicitation_game,b1461b892259cc2d,Mistral-7B-v0.1 (circuit-broken),configuration_scope=Result artifact and published experiment labels only. Historical weights and exact invocations are not established.;organism=circuit-broken;technique=anti_refusal
+13,elicitation_game,2e5777c5a76def2a,Mistral-7B-Instruct-v0.2 (circuit-broken),configuration_scope=Result artifact and published experiment labels only. Historical weights and exact invocations are not established.;organism=circuit-broken;technique=anti_refusal
+14,elicitation_game,df4d9e9a24466429,gemma-2-9b-it (circuit-broken),configuration_scope=Result artifact and published experiment labels only. Historical weights and exact invocations are not established.;organism=circuit-broken;technique=prefilling
+14,elicitation_game,82af30289cbe3b92,Mistral-7B-Instruct-v0.2 (circuit-broken),configuration_scope=Result artifact and published experiment labels only. Historical weights and exact invocations are not established.;organism=circuit-broken;technique=prefilling
+14,elicitation_game,3d2e98a837a3f891,Mistral-7B-v0.1 (circuit-broken),configuration_scope=Result artifact and published experiment labels only. Historical weights and exact invocations are not established.;organism=circuit-broken;technique=prefilling
+15,elicitation_game,bc83e691d8f74255,gemma-2-9b-it (pw-locked),configuration_scope=Result artifact and published experiment labels only. Historical weights and exact invocations are not established.;organism=pw-locked;technique=anti_refusal
+15,elicitation_game,d6aea2ed06f9c3ff,Mistral-7B-Instruct-v0.2 (pw-locked),configuration_scope=Result artifact and published experiment labels only. Historical weights and exact invocations are not established.;organism=pw-locked;technique=anti_refusal
+16,elicitation_game,490bfd097f37a229,gemma-2-9b-it (pw-locked),configuration_scope=Result artifact and published experiment labels only. Historical weights and exact invocations are not established.;organism=pw-locked;technique=prefilling
+16,elicitation_game,ce7e3b183680f7af,Mistral-7B-Instruct-v0.2 (pw-locked),configuration_scope=Result artifact and published experiment labels only. Historical weights and exact invocations are not established.;organism=pw-locked;technique=prefilling
+16,elicitation_game,914bd1e170e240a2,Mistral-7B-v0.1 (pw-locked),configuration_scope=Result artifact and published experiment labels only. Historical weights and exact invocations are not established.;organism=pw-locked;technique=prefilling
+17,emoji_attack,2fc453f831fd4995,chatglm3,EasyJailbreakconfiguration_scope=Released target label only. Exact checkpoint version and request settings are not recorded.
+17,emoji_attack,8bd30f7d63bdbdf1,gpt4,EasyJailbreakconfiguration_scope=Released target label only. Exact checkpoint version and request settings are not recorded.
+17,emoji_attack,447f29061cfa63b2,internlm7b,EasyJailbreakconfiguration_scope=Released target label only. Exact checkpoint version and request settings are not recorded.
+17,emoji_attack,071d0116191408c9,llama213b,EasyJailbreakconfiguration_scope=Released target label only. Exact checkpoint version and request settings are not recorded.
+17,emoji_attack,bcf78bb40c338638,llama27b,EasyJailbreakconfiguration_scope=Released target label only. Exact checkpoint version and request settings are not recorded.
+17,emoji_attack,95084bcc49069650,mistral7b,EasyJailbreakconfiguration_scope=Released target label only. Exact checkpoint version and request settings are not recorded.
+17,emoji_attack,cb88179f017e0d4a,qwen7b,EasyJailbreakconfiguration_scope=Released target label only. Exact checkpoint version and request settings are not recorded.
+17,emoji_attack,7957425a939e9764,vicuna13b,EasyJailbreakconfiguration_scope=Released target label only. Exact checkpoint version and request settings are not recorded.
+17,emoji_attack,3207bdb48766a3b0,vicuna7b,EasyJailbreakconfiguration_scope=Released target label only. Exact checkpoint version and request settings are not recorded.
+18,fgbench,8e7e1281fc4674ff,o3-mini-2025-01-31,FGBenchanswer_parser=standard
+18,fgbench,a5ac7f281eff0c38,AI4Chem/ChemLLM-7B-Chat,FGBenchanswer_parser=standard
+19,intercode,0cbdd4ad85cc9d0e,chat-bison-001,InterCode released evaluationenvironment=ic_bash;max_turns=10;strategy=try_again
+19,intercode,18168edc6232ef7e,gpt-3.5,InterCode released evaluationenvironment=ic_bash;max_turns=10;strategy=try_again
+19,intercode,747d00dd3a065c08,text-bison-001,InterCode released evaluationenvironment=ic_bash;max_turns=10;strategy=try_again
+19,intercode,db8d4c0f2b70aa91,vicuna,InterCode released evaluationenvironment=ic_bash;max_turns=10;strategy=try_again
+20,intercode,5be12a0c8db08cb7,chat-bison-001,InterCode released evaluationenvironment=ic_sql;max_turns=10;strategy=try_again
+20,intercode,3d695da73743cf24,gpt-3.5,InterCode released evaluationenvironment=ic_sql;max_turns=10;strategy=try_again
+20,intercode,5759557ab21d7976,text-bison-001,InterCode released evaluationenvironment=ic_sql;max_turns=10;strategy=try_again
+20,intercode,ec9fb35f3f5117c1,vicuna,InterCode released evaluationenvironment=ic_sql;max_turns=10;strategy=try_again
+21,qatch,bba27d39ad7c1d02,TAPAS-wtq,QATCH original released evaluationprediction_task=question-answering
+21,qatch,ad874764f497e289,TAPEX-wtq,QATCH original released evaluationprediction_task=question-answering
+22,qatch,f8d7cc35158ab9c4,RESDSQL,QATCH original released evaluationprediction_task=semantic-parsing
+22,qatch,ed97d42175fce027,RESDSQL-large,QATCH original released evaluationprediction_task=semantic-parsing
+23,theagentcompany,c4a020a8648e1d3a,llama-3.1-405b,OpenHands-0.14.2
+23,theagentcompany,0f25efa97f034d90,amazon-nova-pro-v1:0,OpenHands-0.14.2
+23,theagentcompany,420a1fbf94392f8b,qwen2-72b,OpenHands-0.14.2
+24,theagentcompany,7178e12c112a3bc8,claude-3-7-sonnet + deepseek-v3,OpenHands-0.28.1
+24,theagentcompany,7484b34d5d2726af,claude-3-7-sonnet + gpt-4o,OpenHands-0.28.1
+25,vl_rewardbench,e6e06c84d061cdb4,Qwen/Qwen2-VL-2B-Instruct,
+25,vl_rewardbench,e52eb0e7b91d8053,Qwen/Qwen2-VL-7B-Instruct,
+25,vl_rewardbench,32dd6c35dd5a2f50,allenai/Molmo-72B-0924,
+25,vl_rewardbench,442d22e4612a89f7,allenai/Molmo-7B-D-0924,
+25,vl_rewardbench,0b313b6523573702,llava-1.6-ov-7b-hf,
+25,vl_rewardbench,a8f13670b2fb5796,meta/Llama-3.2-90B-Vision-Instruct,
+25,vl_rewardbench,f680954e372a2435,meta-llama/Llama-3.2-11B-Vision-Instruct,
+25,vl_rewardbench,b73d0e94b9e519b4,mistralai/Pixtral-12B-2409,
+25,vl_rewardbench,1865558b9909512c,nvidia/NVLM-D-72B,
+25,vl_rewardbench,5f13f06ca2f7cc32,qwen-vl-max-0809,

@@ -1,0 +1,6 @@
+Pre-registration v2 (frozen file, never changed afterwards; later additions only as PRAEREGISTRIERUNG-v2-AMENDMENT-<n>.md with their own hash)
+frozen_utc: 2026-10-20T20:26:04Z (local record of the author's working directory; Git itself does not prove this time)
+sha256: e5fd821fdf6e2db3be86e1e341b02bc4199d4721790dd3ae8f027b60e9521ab7
+bytes: 24338
+check: sha256sum -c <(echo "e5fd821fdf6e2db3be86e1e341b02bc4199d4721790dd3ae8f027b60e9521ab7  PRAEREGISTRIERUNG-v2.md")   (run inside prereg/)
+note: paths inside the file refer to the author's working tree (modell-v2/... = ./ in this repository; modell-v2/kern = modell/); the file is the frozen original, byte for byte

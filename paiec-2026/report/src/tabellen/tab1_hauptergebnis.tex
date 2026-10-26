@@ -1,0 +1,26 @@
+% erzeugt von tabellen_v2.py aus JSON/CSV — nicht von Hand aendern
+\begin{table}[t]
+\centering\footnotesize
+\caption{\raggedright Main result per regime. Columns 2--7: \textbf{discovery} (Design A, seeds 0--2, 10 benchmark folds, 2,142 test pairs, 142 benchmarks;
+paired differences $\pm$ cluster-robust SE over benchmarks; letters = verdict by the rule of Section 5: b better, w worse, e equivalent, g grey zone).
+Last two columns: \textbf{confirmatory} runs (seeds 200--202, fold seed 200; H1 of Table~\ref{tab:hyp}), Design A (benchmark-cold, all
+regimes) and Design B (benchmark- and subject-cold, S1 and S3). ``ours'' = the submitted predictor; discovery numbers were computed along the v1
+path, which differs from the submitted v2.0-core only in the Platt stages 3 and 7 (Appendix~\ref{app:prereg}). Sources: \texttt{modell/ergebnisse/cv\_A\_p2\_S1-S2-S3-S30-kompakt10/auswertung.json},
+\texttt{liga/ergebnisse/liga\_vergleich.json} (ALC columns), \texttt{konfirmation/hypothesen\_tafel.json}.}
+\label{tab:main}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrrrrrrrr@{}}
+\toprule
+ & \multicolumn{4}{c}{Brier ALC (lower is better)} & \multicolumn{2}{c}{ours $-$ baseline (discovery)} & \multicolumn{2}{c}{ours $-$ BB (confirmatory)} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+regime & EM & BB & pair model & ours & vs BB & vs EM & Design A & Design B \\
+\midrule
+S1 (1 subject/benchmark) & 0.2479 & 0.2131 & 0.2129 & 0.2129 & $-0.0003 \pm 0.0004$ g & $-0.0351 \pm 0.0024$ & $-0.0004 \pm 0.0004$ g & $-0.0004 \pm 0.0004$ g \\
+S2 & 0.2475 & 0.2133 & 0.2106 & 0.2103 & $-0.0030 \pm 0.0006$ b & $-0.0372 \pm 0.0021$ & $-0.0031 \pm 0.0006$ b & --- \\
+S3 & 0.2475 & 0.2134 & 0.2091 & 0.2087 & $-0.0047 \pm 0.0007$ b & $-0.0388 \pm 0.0020$ & $-0.0049 \pm 0.0007$ b & $-0.0049 \pm 0.0007$ b \\
+S30 (limit) & 0.2470 & 0.2135 & 0.2042 & 0.2005 & $-0.0130 \pm 0.0013$ b & $-0.0465 \pm 0.0021$ & $-0.0132 \pm 0.0012$ b & --- \\
+compact10 (hypothetical) & 0.2504 & 0.2158 & 0.2083 & 0.1968 & $-0.0190 \pm 0.0014$ b & $-0.0536 \pm 0.0028$ & --- & --- \\
+\bottomrule
+\end{tabular}}
+\end{table}

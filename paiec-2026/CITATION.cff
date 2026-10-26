@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "PAIEC 2026: hierarchical logistic pair-level predictor, predictability analysis and data-quality audit"
+type: software
+authors:
+  - family-names: Bucher
+    given-names: Christian
+version: v2.0.1-paiec
+license: MIT
+repository-code: "https://github.com/christian140903-sudo/christian140903-sudo/tree/claude/technosignatures-archive-analysis-nxoino/paiec-2026"

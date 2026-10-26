@@ -1,0 +1,145 @@
+{
+ "neu": "$PAIEC_WORK/modell/cv_V2K2",
+ "alt": "$PAIEC_WORK/modell/cv_REG2",
+ "zeit_utc": "2026-10-21T06:35:48Z",
+ "falten": {
+  "0": {
+   "zeilen": 144102,
+   "max_dq": 0.008449733104784363,
+   "max_dbrier": 0.005632979340101374,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": null,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "1": {
+   "zeilen": 136710,
+   "max_dq": 0.010860734272417794,
+   "max_dbrier": 0.00913054496663357,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": null,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "2": {
+   "zeilen": 73710,
+   "max_dq": 0.013138193459044545,
+   "max_dbrier": 0.00852870215844237,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": null,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "3": {
+   "zeilen": 110754,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": null,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "4": {
+   "zeilen": 112224,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": null,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "5": {
+   "zeilen": 100002,
+   "max_dq": 0.020130054627027105,
+   "max_dbrier": 0.018506203203526195,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": null,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "6": {
+   "zeilen": 122220,
+   "max_dq": 0.010665872090632245,
+   "max_dbrier": 0.010808092605816055,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": null,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "7": {
+   "zeilen": 106596,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": null,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "8": {
+   "zeilen": 180306,
+   "max_dq": 0.024618839489490785,
+   "max_dbrier": 0.026371098578753305,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": null,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "9": {
+   "zeilen": 127512,
+   "max_dq": 0.013800655549804697,
+   "max_dbrier": 0.01210014110561114,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": null,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  }
+ },
+ "urteil": "bitgleich au\u00dfer erlaubten Pr\u00e4diktoren",
+ "je_praediktor": {
+  "beta_binomial": {
+   "zeilen": 173448,
+   "max_dq": 0.0,
+   "n_ungleich_q": 0
+  },
+  "empirischer_mittelwert": {
+   "zeilen": 173448,
+   "max_dq": 0.0,
+   "n_ungleich_q": 0
+  },
+  "hier_item": {
+   "zeilen": 173448,
+   "max_dq": 0.024618839489490785,
+   "n_ungleich_q": 24504
+  },
+  "hier_item_t05": {
+   "zeilen": 173448,
+   "max_dq": 0.024618839489490785,
+   "n_ungleich_q": 24504
+  },
+  "hier_item_t2": {
+   "zeilen": 173448,
+   "max_dq": 0.024618839489490785,
+   "n_ungleich_q": 24504
+  },
+  "hier_kal": {
+   "zeilen": 173448,
+   "max_dq": 0.024618839489490785,
+   "n_ungleich_q": 24504
+  },
+  "konstant_0.5": {
+   "zeilen": 173448,
+   "max_dq": 0.0,
+   "n_ungleich_q": 0
+  }
+ },
+ "zeilen_gesamt": 1214136,
+ "max_dq": 0.024618839489490785,
+ "max_dbrier": 0.026371098578753305,
+ "rc": 0,
+ "erlaubt": [
+  "hier_item",
+  "hier_item_t05",
+  "hier_item_t2",
+  "hier_kal"
+ ]
+}

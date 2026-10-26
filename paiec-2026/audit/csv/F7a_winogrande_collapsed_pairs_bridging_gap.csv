@@ -1,0 +1,173 @@
+variant,translation,source_index_a,source_index_b,items_in_group,item_ids_a,item_ids_b,reference_a,reference_b,shared_content_hash,english_originals_differ,english_pair_is_winogrande_twin,gold_equals_english_gold
+af,Human - Upwork.com,1347,1348,4,12fef892c0f0010e;b3f42266f0da187c,43f7ce5d55ee5b64;f6e846fee388335e,1,2,f2ee2db613bd3194,True,True,True
+af,Human - Upwork.com,1553,1554,4,1071f7264a9e185b;34e082b04616fb94,00fe47747861be66;5c59277b50a79243,1,2,fd9a507647ca7b37,True,True,True
+af,Human - Upwork.com,1726,1727,4,bf60b183bde88731;f3bfb1a47f87c6b5,2847d510870c7d06;c2f95d7c8d7a92b4,1,2,bdf82c6c34f54774,True,True,True
+bt-af,Google Translate,1347,1348,2,7eadc9c914cac3b7,ce62d5694c3cc094,1,2,df7ce346cb7f5ee3,True,True,True
+bt-af,Google Translate,1553,1554,2,25121d047d95bd84,34167b211c37014a,1,2,4bf07ea97b37f5aa,True,True,True
+bt-af,Google Translate,1648,1649,2,ea8ba23b8be519c1,afb36e0a8afecae4,1,2,6fb6ce9dbe008ec3,True,True,True
+bt-af,Google Translate,1726,1727,2,75b2a04ba7797bac,ad25568dd0c20556,1,2,98c1f17583e78e63,True,True,True
+bt-bm,Google Translate,611,612,2,a20e48a9cb297ad6,7b146706b7d79ca8,1,2,ad0afb42f7e52925,True,True,True
+bt-ig,Google Translate,611,612,2,6d8a4b6de2756fae,02873ad37e4cac7b,1,2,dde407b5e6024648,True,True,True
+bt-ig,Google Translate,681,682,2,882c4d4f235c7453,5bb5a559f07b65c6,1,2,412fd64831531f18,True,True,True
+bt-ig,Google Translate,740,741,2,2246a2df909657a0,c3e0ffaf92304c90,1,2,9485b10120b1ad8e,True,True,True
+bt-ig,Google Translate,877,878,2,232218ed86e676c4,46492296c6ce2064,1,2,e8e8de2e19fb4a45,True,True,True
+bt-ig,Google Translate,1375,1376,2,6aba0a21f28558b4,ce50070b627b1050,1,2,8f9a7d4bfbc4c2e7,True,True,True
+bt-ig,Google Translate,1648,1649,2,1b46c97256cf12e7,ac092df9bc3f4c6a,1,2,04aa4812185eb6dc,True,True,True
+bt-ig,Google Translate,1688,1689,2,bcfe464c36624ebb,2df3ce3902857833,1,2,d97c023233460599,True,True,True
+bt-nso,Google Translate,1375,1376,2,0e00796b5178980e,9212896afe5814c7,1,2,c93df6341e4e667d,True,True,True
+bt-sn,Google Translate,27,28,2,2cc9f2c528c35faa,354df662a0dc0760,1,2,ee1b339d7fcaa3c2,True,True,True
+bt-sn,Google Translate,144,145,2,948d85e4d4bbcf65,83ffba72e88414fc,1,2,ad706fadaf4d198b,True,True,True
+bt-sn,Google Translate,230,231,2,946f0733e22e9606,0d1fd3508cbd7b2c,1,2,0d79494f81432232,True,True,True
+bt-sn,Google Translate,468,469,2,3554c06fcd427c44,ecd8ef5a431cffb6,1,2,493062938b5c32ef,True,True,True
+bt-sn,Google Translate,501,502,2,4055840904eed526,b27304377a6bcdab,1,2,7cb8577151b0d3cf,True,True,True
+bt-sn,Google Translate,540,541,2,77cb7f3d6c70e5d6,fc6d299f14b6e265,1,2,540070ff6c880d1d,True,True,True
+bt-sn,Google Translate,597,598,2,8092890461ab464c,219ccd009d6d3038,1,2,3c4d006d2055e93b,True,True,True
+bt-sn,Google Translate,877,878,2,3bc8e1e5104dcb97,8420570cf88febdb,1,2,4083e86fff93cd64,True,True,True
+bt-sn,Google Translate,900,901,2,ff790e0c7c4e7b0a,379bc48b805d7ce2,1,2,2397c3f9c774b45f,True,True,True
+bt-sn,Google Translate,909,910,2,bdc006af3d98c11e,b7d26c7fdeb6db2b,1,2,961f5e6f06b1e533,True,True,True
+bt-sn,Google Translate,963,964,2,c1c3c36863ec969b,1deee0ff77fd854f,1,2,3cf15403ca84df6a,True,True,True
+bt-sn,Google Translate,966,967,2,14c197565b6cc429,9fac08284b7c9c6e,1,2,82d9284c94a7c7e1,True,True,True
+bt-sn,Google Translate,983,984,2,f9578a45ef400176,b2e1918db7264276,1,2,716a9f8b67057e1f,True,True,True
+bt-sn,Google Translate,1010,1011,2,dca072a7a70f040f,c8b81c09e472436e,1,2,29e983d97b6f9f01,True,True,True
+bt-sn,Google Translate,1254,1255,2,38c998b69cdfd3c0,14f37617189f3fca,1,2,e8cfdff3399115b3,True,True,True
+bt-sn,Google Translate,1272,1273,2,ff4419de4a34f26a,86e766fad6c65cec,1,2,1f8264ced5dd0650,True,True,True
+bt-sn,Google Translate,1644,1645,2,0c49d7297f25c21c,802ab213cdd40b06,1,2,cd71c72565ae68cb,True,True,True
+bt-st,Google Translate,31,32,2,5682a7c86bfc9e0f,2322ca1ac9a233b4,1,2,e9efadf8666ac70d,True,True,True
+bt-st,Google Translate,155,156,2,3a8fb9152a47b592,e4149dfc013d07ff,1,2,84eae9931ac63200,True,True,True
+bt-st,Google Translate,194,195,2,c850164716b57d81,65cab8751b2cf7b5,1,2,b3695dce8a058690,True,True,True
+bt-st,Google Translate,269,270,2,0fb76830c6e6848c,4b167975e90914ef,1,2,e95f255891b82f32,True,True,True
+bt-st,Google Translate,516,517,2,ff3a4619ad8a8b3a,69fd8fdd2448664f,1,2,ccc11bd086271fa6,True,True,True
+bt-st,Google Translate,1303,1304,2,656a3ab9a53685b2,bca476a09060cab5,1,2,8ea04be6023046b6,True,True,True
+bt-st,Google Translate,1375,1376,2,a2ed82e24da26432,09ecf82677231099,1,2,eb74964eb470c63f,True,True,True
+bt-st,Google Translate,1469,1470,2,0b99f723d4bca718,3f9fed78e1ac05c6,1,2,fa59a4b58ef9595e,True,True,True
+bt-st,Google Translate,1570,1571,2,707a5319417538a8,0d37a9213fc2f337,1,2,e99a01cb9e54ebf9,True,True,True
+bt-st,Google Translate,1589,1590,2,ca1970b9e978afd5,8d0fcb6b868ea1e9,1,2,87e8302a4ceb3f6c,True,True,True
+bt-st,Google Translate,1638,1639,2,0da77865f7a1bbad,ac2ab6333a12aead,1,2,0d864f032ada244e,True,True,True
+bt-st,Google Translate,1744,1745,2,eacb38695d86d419,68a7ba87367a639c,1,2,527716b50309cd87,True,True,True
+bt-tn,gpt-4o-2024-05-13,14,15,2,b5746fd50c63b02a,c37a5faa96bb4614,1,2,13a52bffbbc6cf42,True,True,True
+bt-tn,gpt-4o-2024-05-13,153,154,2,d7c9a03a467c19ad,8d61659ac8fdfcf3,1,2,945b1040b07d9b20,True,True,True
+bt-tn,gpt-4o-2024-05-13,297,298,2,e4f01e97b45d9c73,c8e6f43c1bb9f218,1,2,f4fc8a8622b97acf,True,True,True
+bt-tn,gpt-4o-2024-05-13,516,517,2,23028a92873c2cda,22b8f04c54b38cac,1,2,d4fe333280c7350d,True,True,True
+bt-tn,gpt-4o-2024-05-13,809,810,2,f1d6ca4bb4fc9149,5df1bbdacaea7e36,1,2,913b84deb7248d1c,True,True,True
+bt-tn,gpt-4o-2024-05-13,850,851,2,c16ffded1d8b54c7,1ec581c04cc6c22e,1,2,af2d2120ca9a4296,True,True,True
+bt-tn,gpt-4o-2024-05-13,1164,1165,2,ced57d66b4733b4a,a47f403e28d92423,1,2,8ef119af6f114e4a,True,True,True
+bt-tn,gpt-4o-2024-05-13,1375,1376,2,bb712b0bf3b6bc16,8454a2ca163057b2,1,2,6d23a37857cc3b58,True,True,True
+bt-tn,gpt-4o-2024-05-13,1638,1639,2,4fc7b6d37e5089a6,ff641c82da9a6645,1,2,72824b5758cf03a3,True,True,True
+bt-tn,gpt-4o-2024-05-13,1695,1696,2,42d82f2f43bdcd8b,fa1e5c0a48f42e1e,1,2,e98ed472ddc0d675,True,True,True
+bt-tn,gpt-4o-2024-05-13,1740,1741,2,c26618735295e118,226667d7fd68a7de,1,2,554950b4c3d2680a,True,True,True
+bt-ts,Google Translate,14,15,2,cf68e3efff2c478e,99411057e666fe50,1,2,db24c1e925ceadc9,True,True,True
+bt-ts,Google Translate,347,348,2,9d76893f8382b82f,48ec187d1e465262,1,2,39bc3ce6972160da,True,True,True
+bt-ts,Google Translate,468,469,2,e696840fdb04d74a,3ab56ec354155fa7,1,2,8688c6e4dfb75960,True,True,True
+bt-ts,Google Translate,688,689,2,dc94aefd0ada8e87,e6168362a805156f,1,2,1924ada236d57611,True,True,True
+bt-ts,Google Translate,957,958,2,76235bb361a82660,cfa8a76b10612262,1,2,9161dfd44696008c,True,True,True
+bt-ts,Google Translate,1097,1098,2,54b9b7b7cb46eac8,e853537ce6c1a72b,1,2,7ab735109c159cf7,True,True,True
+bt-ts,Google Translate,1536,1537,2,4414bb77e71c89ab,f66e7a7c3d9ca564,1,2,37ca933832ff9c51,True,True,True
+bt-xh,Google Translate,255,256,2,69c6306d0437eba3,cd3535c041ef6652,1,2,6c1e66b2a58812e2,True,True,True
+bt-xh,Google Translate,301,302,2,4ce1c9b11d74fccd,3002d5e3b48f315e,1,2,5ae4c11ea4f54a33,True,True,True
+bt-xh,Google Translate,850,851,2,82932dfcf75f1113,73aba2874ae8f647,1,2,08368c4a839f2e28,True,True,True
+bt-xh,Google Translate,1114,1115,2,dbecae4e3655328a,760c5138396e26bf,1,2,3c87aac4ac8bcc70,True,True,True
+bt-xh,Google Translate,1254,1255,2,12ed1db2184cfbbb,5484dbb8176a97f7,1,2,19ac503195156f0f,True,True,True
+bt-xh,Google Translate,1375,1376,2,054c1b26a943d2ac,4784dad6e8da825e,1,2,c1682d3a61e30c16,True,True,True
+bt-xh,Google Translate,1695,1696,2,c26c3f87f3325bac,2e2c283a23b1c8ce,1,2,e03e72850a814352,True,True,True
+bt-zu,Google Translate,57,58,2,eccb6f322aa218c2,744886052e49592b,1,2,17ece8b2115349c7,True,True,True
+bt-zu,Google Translate,297,298,2,8c319f3315380009,eea65ab48f22d532,1,2,58cf1f31a94dcafd,True,True,True
+bt-zu,Google Translate,316,317,2,f971da45cfe26d9f,c00dade033e069eb,1,2,38929af868c5f2a8,True,True,True
+bt-zu,Google Translate,354,355,2,b50d559f31fb1e8d,db3bd3916a99d7e5,1,2,6cda9812e88ba68c,True,True,True
+bt-zu,Google Translate,516,517,2,97cce2925fdd01a6,e4b37c5a8f184a64,1,2,a00eff160116a6de,True,True,True
+bt-zu,Google Translate,529,530,2,247822250ec88454,b3aed5a7ee1dad0c,1,2,be705cb364670b59,True,True,True
+bt-zu,Google Translate,538,539,2,4e509da15182ebc3,84664db41b83a4a2,1,2,51c1d3421ecc7264,True,True,True
+bt-zu,Google Translate,549,550,2,ca055d119ead2b71,c2573524b4fc7ab6,1,2,9692160a681dbf22,True,True,True
+bt-zu,Google Translate,645,646,2,6c053dd7556048c5,d450463a6875ec6e,1,2,8551c905a1b9f911,True,True,True
+bt-zu,Google Translate,681,682,2,090dc4e2ff7bfd0d,35fb8c646d12b8f3,1,2,03d74945ab594e43,True,True,True
+bt-zu,Google Translate,1063,1064,2,cf7fd4b0a90556eb,8fe2136b943617bf,1,2,1b4c75943ed41326,True,True,True
+bt-zu,Google Translate,1077,1078,2,cea7bdd7ab8ceec4,08ad059ecfdf7c9b,1,2,f8f85e14734d05d8,True,True,True
+bt-zu,Google Translate,1224,1225,2,d07991d1b1e1563e,13d6ae92d6f20b5a,1,2,06f2374e8d530f0e,True,True,True
+bt-zu,Google Translate,1237,1238,2,4a2c1bb17018a0c9,b08065fbf542f61e,1,2,c6a809f5b4d303f6,True,True,True
+bt-zu,Google Translate,1263,1264,2,9ef3bfb052f567a8,c9e3a3dfd2230bb1,1,2,a4356cc38dd568b6,True,True,True
+bt-zu,Google Translate,1469,1470,2,fa5fd866b996d4af,d79a3de3d4102fc1,1,2,9c82899063c96c7d,True,True,True
+bt-zu,Google Translate,1507,1508,2,921a1b5077e4d499,2dff91223b368b1f,1,2,d054a033bb97da39,True,True,True
+bt-zu,Google Translate,1570,1571,2,9205e431df6a1359,7a2d80f5581cb6d1,1,2,c36ba0c5deba6644,True,True,True
+bt-zu,Google Translate,1580,1581,2,d6f2d16fb81704a7,510b4d941dac4769,1,2,e16fdd79f90afe2f,True,True,True
+gt-af,Google Translate,523,524,2,cc46d8fc69508434,dbe29b18fea88cfe,1,2,5e4ef764581a7ef1,True,True,True
+gt-bm,Google Translate,285,286,2,76f7498d0262ed55,7c2f8bd9cf306245,1,2,a7bd0cdaf848442a,True,True,True
+gt-bm,Google Translate,660,661,2,99e6396fc2d20efb,318c6a731100e65d,1,2,ee7f8eaf19d1d05a,True,True,True
+gt-bm,Google Translate,662,663,2,77528c238ab1ab6e,a86187f9a8de75e0,1,2,40d9f097d97493ca,True,True,True
+gt-bm,Google Translate,847,848,2,c351187856ae9fb5,0ea89635e5565664,1,2,9c661cb520cac5e1,True,True,True
+gt-bm,Google Translate,877,878,2,6aee49d17a12ab04,765eb39179f7bbe1,1,2,c2c2e2d773141feb,True,True,True
+gt-bm,Google Translate,1648,1649,2,068b1f8c77d98bc8,fbed9a3adab6dfd5,1,2,aba210ba0428acc9,True,True,True
+gt-ig,Google Translate,297,298,2,5b947abd7326f28e,852b56036c1ba75c,1,2,073e50d7be6f603a,True,True,True
+gt-ig,Google Translate,422,423,2,9bf5c545db107ffd,44e8c10b9ba6de8b,1,2,930eb079cc9542d8,True,True,True
+gt-ig,Google Translate,681,682,2,a1f71a6c1e088e69,784e05fbd2fc11ae,1,2,236286659bcfaa32,True,True,True
+gt-ig,Google Translate,1029,1030,2,3c42108935b078f4,b4715c3cfc6bae22,1,2,5f229cdc8dbf0ee1,True,True,True
+gt-ig,Google Translate,1648,1649,2,8e6789737decdd5c,9acffedf45dae664,1,2,18a93056eca1d5e4,True,True,True
+gt-nso,Google Translate,930,931,2,4d49af87b9ab3839,1b8e37b1f0d65e50,1,2,9dcc454ea3b59e2f,True,True,True
+gt-nso,Google Translate,1638,1639,2,bf5a5e601cd4c500,6841d8da644a6c9b,1,2,7018105136f9a529,True,True,True
+gt-sn,Google Translate,144,145,2,71ee49928fd10f65,5c91880de25262d2,1,2,30bfe4d55cebb343,True,True,True
+gt-sn,Google Translate,396,397,2,0b3091d1560a36fd,3ec7f2d0ba27543e,1,2,48e545db3a017584,True,True,True
+gt-sn,Google Translate,1469,1470,2,1b992a0d949d2768,c1d2f42b0cda5f34,1,2,f0f3ff5814edd2a8,True,True,True
+gt-st,Google Translate,516,517,2,cfc4291401c912fa,5949377f4491813c,1,2,f97137f3ca8bc588,True,True,True
+gt-ts,Google Translate,14,15,2,9b20579fc3e5e9b5,f9e9c328138271dc,1,2,2a52f0ebbde54c97,True,True,True
+gt-ts,Google Translate,306,307,2,cfb1c1ee16a49a99,5df2e06b8ab997f6,1,2,d3731b0dd062877a,True,True,True
+gt-ts,Google Translate,975,976,2,e725cc27baf94b37,a8d4449609475bff,1,2,4310e12d81af9860,True,True,True
+gt-ts,Google Translate,1695,1696,2,365b2c8baf25994a,fb4eae8b8ca680fa,1,2,eb4e752c3c8f299b,True,True,True
+gt-xh,Google Translate,662,663,2,d2f70884865d0855,e6415496b9ce8da5,1,2,efc1aa3e39e38aaf,True,True,True
+gt-xh,Google Translate,1695,1696,2,c40745575cf03366,c0d237bd52285554,1,2,59ad75d927788061,True,True,True
+ig,Human - Upwork.com,611,612,4,0bcd97506b7d1735;3ed1e9313bcb8677,620ad3c0e205ac7b;e18976e324e457b1,1,2,0e2371556d835e2f,True,True,True
+ig,Human - Upwork.com,681,682,4,7c20966408736df0;9e81afeea7aedc03,0429756895d0ecfa;9ba99108b208d4e2,1,2,0b557b4052694f03,True,True,True
+ig,Human - Upwork.com,740,741,4,52e1627ce6ea0536;cea98e506228d77a,6caae38825db60e8;ed3d12679a0d9178,1,2,f17aa5175f778d3b,True,True,True
+ig,Human - Upwork.com,1375,1376,4,2de360270d5418b7;a93230fb04a7920e,4b2473cfcd7027fe;fa212794ea53f93a,1,2,3a7a3d2fd1c299c9,True,True,True
+ig,Human - Upwork.com,1648,1649,4,279f3ef25bfad7f4;67be971918e9db40,356595bf0e4f9ce1;523133ce65cbedc5,1,2,8369ecc813806191,True,True,True
+ig,Human - Upwork.com,1688,1689,4,baaf839adca5f98c;f5ee937dec2e5c52,d35332b36e752f5a;f79aa4ec91e53553,1,2,30da11ed1b5bff57,True,True,True
+sn,Human - Upwork.com,144,145,4,3a079ae59a89c2a9;e3e1717441bf6e2c,32ba26b32a6210dc;56609a6939e49eac,1,2,d19d9d7d73ebc5d3,True,True,True
+sn,Human - Upwork.com,230,231,4,3d16c7f20f7f2a60;ec94906c87d7244b,2bba7e6fd41d3489;f751416b6db85ade,1,2,7a62e73ec5eb2055,True,True,True
+sn,Human - Upwork.com,468,469,4,45e8a85dfdbf8411;7668cd03077fbe86,c0e20e18c01f61d6;ee2bb1f03fbc8de7,1,2,fbce57934b3720c1,True,True,True
+sn,Human - Upwork.com,501,502,4,917d27c0805c581a;beb12b393c451463,b96a3c3fb17e40bf;f4f5bd924d811e68,1,2,7007e91c5722045b,True,True,True
+sn,Human - Upwork.com,540,541,4,77e7ac1b70ac0773;8e497af6e89424cf,799dea5ff623f492;d610f08d06d0ef7c,1,2,f7b94826d48b9048,True,True,True
+sn,Human - Upwork.com,597,598,4,aa84337f0893b069;fbda9022e3b7f63d,2d187e4ce519802c;cf26655c1eaeb126,1,2,0f2c312b179ca13a,True,True,True
+sn,Human - Upwork.com,877,878,4,053769a29f653348;67df88273650188b,4107e2979345417a;a8e422a4e06fc61c,1,2,0cc13e4dfef5feac,True,True,True
+sn,Human - Upwork.com,900,901,4,b6b9b69f7f51edc9;bba4b35cbc794436,47d89829dd192dc2;dba57cd3daea7005,1,2,130688d82d63e982,True,True,True
+sn,Human - Upwork.com,909,910,4,6a166f54a2968a43;f272f6f5759719c0,1bc66bc8abc36a44;bef89830e344667c,1,2,b387e3c4d2faea61,True,True,True
+sn,Human - Upwork.com,963,964,4,df260c48ba8e48f7;f4ebdbaf90a1574c,1f33e03bf3ca7e39;d277ee2c3e8ca782,1,2,f2d9fb1935d919e3,True,True,True
+sn,Human - Upwork.com,966,967,4,3e6d58c8e0141cc3;f0d8aa96e01dbe98,07f16d60f5b0b200;0f07a34f57e3883b,1,2,de1372467f8f2cc7,True,True,True
+sn,Human - Upwork.com,1010,1011,4,7bebaf45371cd821;fe40cb952ec124f9,02010dcd2379f93d;54aaaef29deb4033,1,2,4f3472a296e8bf2e,True,True,True
+sn,Human - Upwork.com,1254,1255,4,7288ac583eeab248;7fa08e7b19410f9d,70d33f785d5ce397;f101dbed57da0152,1,2,789a9ac92b815f35,True,True,True
+sn,Human - Upwork.com,1272,1273,4,3f89a8a99747bf0b;56a9607ba20f9ef5,7e7b84ca5b0d9f8a;c574d5e208236ba5,1,2,c5c4cf8b02a2a62c,True,True,True
+sn,Human - Upwork.com,1644,1645,4,0cb1886fc5588c7b;32c855283fc787e1,3c27960e4c1d0014;74a88fa3d88dc2e9,1,2,68abb17870373427,True,True,True
+st,Human - Upwork.com,194,195,4,899001628a2c53d2;cb29c3539c8d21ec,28bb8fe2ba4c679e;9f99dcf8a5cf08cb,1,2,ddaa397c15a90b5c,True,True,True
+st,Human - Upwork.com,516,517,4,2bdc7b5ade81bdec;eba5e3442a88d213,2edc9f823fa392b5;77bbdd02bd65b7f8,1,2,fa9ef4fefca370ae,True,True,True
+st,Human - Upwork.com,1303,1304,4,023343b4bb7d01a5;7ff8f9f4c26fe3dd,0b673dbac05495cb;4c2280d754aaebfe,1,2,131993ecea8f495d,True,True,True
+st,Human - Upwork.com,1469,1470,4,c858b30cd4af3be2;f9cebb08054047f3,98bf9819bfb877a2;a6ba96fc7df9b6e9,1,2,12f3cc4de69d9395,True,True,True
+st,Human - Upwork.com,1589,1590,4,b554a2b251e327ec;cf14f4ffc149f275,49987437a704be21;c700a92aa8f9016b,1,2,b074b2d0ad4ea762,True,True,True
+st,Human - Upwork.com,1744,1745,4,5721babddb392a59;f22dfe680bf3136e,da5c91d89b79223f;fd43153dccc9a341,1,2,ad2d4032a2df04b7,True,True,True
+tn,Human - Upwork.com,14,15,4,715175cb5253597e;e1f55ac463e84e87,e7e9e9bca660822b;f3b9475abe5f93b4,1,2,c747954195bc17b1,True,True,True
+tn,Human - Upwork.com,297,298,4,2233a0a6e9708ad8;7c057e7d12133822,5519da43dd9ce2e4;ef79c17a25361a0b,1,2,9c7ff20c4bedfd9b,True,True,True
+tn,Human - Upwork.com,516,517,4,1700126a326e1f23;30988f6ad2b8ebae,08977f6af73c60f9;c5e1ef5a919a9719,1,2,639d5debc62e3a6f,True,True,True
+tn,Human - Upwork.com,1638,1639,4,163806af4ec5660a;e9453c499e0cf56a,234536dc0601af6e;318d71c50e0d86f4,1,2,34dab21302958b24,True,True,True
+ts,Human - Upwork.com,14,15,4,549325d807449f12;7fa535dc224c585a,4921eaac45e11507;63ae05a566860e99,1,2,831490aac21e2116,True,True,True
+ts,Human - Upwork.com,347,348,4,60b52094aeffbe79;91eede444703cf56,9de0ce11228b2a4d;f5a2e5799de8fb85,1,2,0b1181c82106a716,True,True,True
+ts,Human - Upwork.com,468,469,4,683736ec7d9f11a1;ca883676cfda40f7,da5f2e37da174402;f67a8a92b94de31d,1,2,c6c34554457df9ec,True,True,True
+ts,Human - Upwork.com,688,689,4,174470824ea7ecbb;ece5c68f0e73f3df,1140b91bf5adacea;43093ad78ff1e4dd,1,2,9f7bd7697ef625dc,True,True,True
+ts,Human - Upwork.com,957,958,4,965704bc4bf9665b;c313a1f7401c98ac,b3aa8a443fc99c78;e009cbe24b27077b,1,2,b6c2afb38dd60cc2,True,True,True
+xh,Human - Upwork.com,255,256,4,12f59bedcc1cf01b;20ec59e28083850b,958261e6697d340a;cfbd0caf95ab3329,1,2,b98a6c179ee1732e,True,True,True
+xh,Human - Upwork.com,301,302,4,31dd9af038698643;b25595a445539fe6,dd040b329bdcba9a;fae29624a3f1edc5,1,2,3ac18d3d273faca4,True,True,True
+xh,Human - Upwork.com,850,851,4,c47502f7f7e9f202;ca012efeb56fde28,1c221178a02d73d7;5d90c1e94909a282,1,2,0c2be2fe077363d8,True,True,True
+xh,Human - Upwork.com,1254,1255,4,53edb6e5289f1319;9ce2ec47df274923,88e647491cc7ee70;a601dfa566c6ab43,1,2,35faf878a15cc256,True,True,True
+xh,Human - Upwork.com,1375,1376,4,90b03a50579e9da1;9b0e89f8881f4084,b9baea94945a8c3d;d7800f7926217d74,1,2,d89b5883ff2c3a77,True,True,True
+xh,Human - Upwork.com,1695,1696,4,b2575ed86b9d8f25;b67b98b6c89077c9,4d98926fe41791f5;7ca431641d2a2443,1,2,48164a67029d3cc8,True,True,True
+zu,Human - Upwork.com,57,58,4,d2062fc6b57dcccc;da70978b4f1c00e3,503634749b4624b1;bb9d50a52756e261,1,2,78df45cc5eacfcd1,True,True,True
+zu,Human - Upwork.com,297,298,4,142ede211e0fa87b;fe906db1d0d62ef9,ac9e7326c8973fd8;c2504da1b696ceb0,1,2,4bac028d571036f7,True,True,True
+zu,Human - Upwork.com,354,355,4,ba0d62426beb2bf6;c34c8c7b2422b1a8,2039c437d55371fa;445b212ac4ce43bd,1,2,ed9f409c342f702e,True,True,True
+zu,Human - Upwork.com,516,517,4,9725bba017894e18;f32684122a9607e2,e15383a7cc0548b0;e3af1929f7ea97ba,1,2,2f440337d589ce5e,True,True,True
+zu,Human - Upwork.com,538,539,4,03f988a2c74afa5d;452f51f84df984d7,0a131d4d3b2e6e77;c4bfcf259993ad98,1,2,9ab07771fbb38bb8,True,True,True
+zu,Human - Upwork.com,549,550,4,13b54e8db0dd97ef;9ff9cf2715658af6,5b88076de63fea78;df6e2249cc4d4f60,1,2,6293a7cbc1a75a17,True,True,True
+zu,Human - Upwork.com,645,646,4,09f353e57271cc06;f21813e7dafe5607,78e429b2c8a40f3e;f9a66dfe159b63b8,1,2,055087250cd3276c,True,True,True
+zu,Human - Upwork.com,681,682,4,b79794d1e18f3c35;eb0cb0f7f09bdec9,1c96403863c852e6;679254d8ded73b1e,1,2,8f6bb175f01f6f82,True,True,True
+zu,Human - Upwork.com,1063,1064,4,1d142f054f2759d6;55a821b05fee8553,18b0e91ad44873e2;67316bef1e21449c,1,2,0ee773d170746d43,True,True,True
+zu,Human - Upwork.com,1077,1078,4,75ee99674153e34a;990d1bbee075fe06,44d9bd4d21d9ecc5;6d44b889a31c8855,1,2,7987f86525f8840a,True,True,True
+zu,Human - Upwork.com,1224,1225,4,4b05114500193c6b;7ec010fea0eba4d0,328c42001d2a5389;799294f33fba7006,1,2,b8868c102a9cb202,True,True,True
+zu,Human - Upwork.com,1237,1238,4,1f7323a5540f67e1;d55639ef6a1b358f,69cc26cb3c1f295b;9a20d9b23fbcf642,1,2,89daff4202a2bae3,True,True,True
+zu,Human - Upwork.com,1263,1264,4,4f9c0f57fa4f5983;5b5304baaa9c5681,4b8e7092f325e06f;59d260d05d03a753,1,2,c739f149c26a817c,True,True,True
+zu,Human - Upwork.com,1469,1470,4,211315dabbb3101b;8e5d068965e4bd42,04f32fb8e80ca2db;51d367c0134252dc,1,2,338f6c2adf0d6d50,True,True,True
+zu,Human - Upwork.com,1507,1508,4,cb57925f23d35fc2;d0756829db395bb7,96e9a044b699868d;a3fbb1ecb39cd388,1,2,6b9eacd7d93f26cf,True,True,True
+zu,Human - Upwork.com,1570,1571,4,55bb3be06fbc39b2;f444bd8964c06008,68e501a8217fc846;f6363fc06594a108,1,2,675191e487347c5d,True,True,True
+zu,Human - Upwork.com,1580,1581,4,764e05aa41fd210f;b80f4944c55bb0c3,612980ebd1eb1d64;b3d47058c3862d47,1,2,0df136cd4f440ba7,True,True,True

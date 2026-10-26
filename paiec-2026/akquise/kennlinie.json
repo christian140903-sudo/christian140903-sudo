@@ -1,0 +1,223 @@
+{
+ "lauf": "pilot",
+ "zeit_utc": "2026-10-20T21:06:06Z",
+ "falten": 1,
+ "konfig": {
+  "name": "pilot",
+  "falten": 10,
+  "nur": "0",
+  "saaten": [
+   0,
+   1,
+   2
+  ],
+  "regime": [
+   "S3",
+   "kompakt10"
+  ],
+  "ordnung": "rr",
+  "split": "paar",
+  "politik": "zufall,abdeckung",
+  "praediktor": "hier_item",
+  "prozesse": 1,
+  "ordnungen": [
+   "rr"
+  ],
+  "splits": [
+   "paar"
+  ],
+  "politiken": [
+   "zufall",
+   "abdeckung"
+  ],
+  "praediktoren": [
+   "hier_item"
+  ],
+  "aus": "$PAIEC_WORK/akquise/pilot"
+ },
+ "tabelle": {
+  "S3|rr|paar|hier_item": {
+   "zufall": {
+    "alc_paare": 0.2071,
+    "n_paare": 260,
+    "n_benchmarks": 15,
+    "n_saaten": 3
+   },
+   "abdeckung": {
+    "alc_paare": 0.20713,
+    "n_paare": 260,
+    "n_benchmarks": 15,
+    "n_saaten": 3
+   }
+  },
+  "kompakt10|rr|paar|hier_item": {
+   "zufall": {
+    "alc_paare": 0.19387,
+    "n_paare": 115,
+    "n_benchmarks": 5,
+    "n_saaten": 3
+   },
+   "abdeckung": {
+    "alc_paare": 0.19208,
+    "n_paare": 115,
+    "n_benchmarks": 5,
+    "n_saaten": 3
+   }
+  }
+ },
+ "vergleiche_vs_zufall": [
+  {
+   "n_paare": 260,
+   "n_cluster": 15,
+   "mittel": 2.57e-05,
+   "se": 0.0001178,
+   "z": 0.2185427,
+   "ki95": [
+    -0.00020517775322127042,
+    0.0002566749713987199
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "kein Unterschied belegt",
+   "S": "S3",
+   "ordnung": "rr",
+   "split": "paar",
+   "praediktor": "hier_item",
+   "politik": "abdeckung",
+   "referenz": "zufall",
+   "alc_politik": 0.2071301,
+   "alc_zufall": 0.2071044,
+   "n_identisch": 73
+  },
+  {
+   "n_paare": 115,
+   "n_cluster": 5,
+   "mittel": -0.001783,
+   "se": 0.0006302,
+   "z": -2.829205,
+   "ki95": [
+    -0.0030181511673239665,
+    -0.0005477719470512305
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "S": "kompakt10",
+   "ordnung": "rr",
+   "split": "paar",
+   "praediktor": "hier_item",
+   "politik": "abdeckung",
+   "referenz": "zufall",
+   "alc_politik": 0.1920821,
+   "alc_zufall": 0.1938651,
+   "n_identisch": 0
+  }
+ ],
+ "abdeckung_bewertungsitems": {
+  "S3|rr|paar": {
+   "abdeckung": {
+    "B0": 0.0,
+    "B1": 0.629,
+    "B3": 1.842,
+    "B7": 4.297,
+    "B15": 9.305,
+    "B31": 19.547
+   },
+   "zufall": {
+    "B0": 0.0,
+    "B1": 0.629,
+    "B3": 1.827,
+    "B7": 4.226,
+    "B15": 9.065,
+    "B31": 18.782
+   }
+  },
+  "kompakt10|rr|paar": {
+   "abdeckung": {
+    "B0": 0.0,
+    "B1": 4.251,
+    "B3": 12.884,
+    "B7": 29.904,
+    "B15": 44.521,
+    "B31": 48.579
+   },
+   "zufall": {
+    "B0": 0.0,
+    "B1": 4.145,
+    "B3": 11.309,
+    "B7": 22.595,
+    "B15": 36.614,
+    "B31": 46.926
+   }
+  }
+ },
+ "zaehler": {
+  "S3|rr|paar|abdeckung": {
+   "kandidaten": 135454,
+   "kaeufe": 24180,
+   "abweichungen": 1142,
+   "fallbacks": 0,
+   "laeufe": 276
+  },
+  "S3|rr|paar|zufall": {
+   "kandidaten": 135251,
+   "kaeufe": 24180,
+   "abweichungen": 0,
+   "fallbacks": 0,
+   "laeufe": 276
+  },
+  "kompakt10|rr|paar|abdeckung": {
+   "kandidaten": 15455,
+   "kaeufe": 9641,
+   "abweichungen": 3203,
+   "fallbacks": 0,
+   "laeufe": 35
+  },
+  "kompakt10|rr|paar|zufall": {
+   "kandidaten": 15275,
+   "kaeufe": 9641,
+   "abweichungen": 0,
+   "fallbacks": 0,
+   "laeufe": 35
+  }
+ },
+ "kennlinie": {
+  "regel_vorab": "MDE (2 SE, projiziert auf C_voll) kompakt10 > 0,0025 -> 5 Saaten (0-4), sonst 3 (0-2); D-akquise §6.2",
+  "mde_kompakt10": 0.0003369,
+  "saaten_volllauf": 3,
+  "zeilen": [
+   {
+    "S": "S3",
+    "ordnung": "rr",
+    "split": "paar",
+    "praediktor": "hier_item",
+    "politik": "abdeckung",
+    "n_paare": 260,
+    "n_cluster": 15,
+    "mittel": 2.57e-05,
+    "se": 0.0001178,
+    "C_voll": 142,
+    "se_voll_projiziert": 3.83e-05,
+    "mde_2se_voll": 7.66e-05
+   },
+   {
+    "S": "kompakt10",
+    "ordnung": "rr",
+    "split": "paar",
+    "praediktor": "hier_item",
+    "politik": "abdeckung",
+    "n_paare": 115,
+    "n_cluster": 5,
+    "mittel": -0.001783,
+    "se": 0.0006302,
+    "C_voll": 70,
+    "se_voll_projiziert": 0.0001684,
+    "mde_2se_voll": 0.0003369
+   }
+  ],
+  "p_fehlentscheidung_bei_nulleffekt": 0.02275013194817922,
+  "betriebskennlinie": "P(Mittel + 2 SE < 0 | mu = 0) = 1 - Phi(2) = 2,3 %; Grauzone 4 SE"
+ }
+}

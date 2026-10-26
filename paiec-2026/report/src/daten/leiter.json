@@ -1,0 +1,280 @@
+{
+ "leiter_B0": [
+  {
+   "Stufe": "L0 konstant 0,5",
+   "Brier_B0": 0.25,
+   "(q-R)^2": 0.066721,
+   "Aufloesung_R2": -0.000123,
+   "bekannt (q-R)^2": 0.06685,
+   "unbekannt (q-R)^2": 0.06657
+  },
+  {
+   "Stufe": "L1 v1 hier_item B0",
+   "Brier_B0": 0.248495,
+   "(q-R)^2": 0.065216,
+   "Aufloesung_R2": 0.022438,
+   "bekannt (q-R)^2": 0.064564,
+   "unbekannt (q-R)^2": 0.065977
+  },
+  {
+   "Stufe": "L2 Orakel Benchmark-Lage (LOO-Mittel der anderen Paare)",
+   "Brier_B0": 0.206705,
+   "(q-R)^2": 0.023426,
+   "Aufloesung_R2": 0.648858,
+   "bekannt (q-R)^2": 0.021721,
+   "unbekannt (q-R)^2": 0.025417
+  },
+  {
+   "Stufe": "L3a F\u00e4higkeit, ehrlich (Falten-\u03b8, Name) + \u03bc_c",
+   "Brier_B0": 0.257702,
+   "(q-R)^2": 0.074423,
+   "Aufloesung_R2": -0.11558,
+   "bekannt (q-R)^2": 0.071312,
+   "unbekannt (q-R)^2": 0.078057
+  },
+  {
+   "Stufe": "L3b F\u00e4higkeit in-sample (\u03b8 aus allen Bm, Namen in \u22652 Bm) + \u03bc_c",
+   "Brier_B0": 0.255804,
+   "(q-R)^2": 0.072525,
+   "Aufloesung_R2": -0.087126,
+   "bekannt (q-R)^2": 0.067789,
+   "unbekannt (q-R)^2": 0.078057
+  },
+  {
+   "Stufe": "L4 Orakel Lage+Steigung (c_b, a_b in-sample) + ehrliches \u03b8",
+   "Brier_B0": 0.211559,
+   "(q-R)^2": 0.028279,
+   "Aufloesung_R2": 0.576101,
+   "bekannt (q-R)^2": 0.026112,
+   "unbekannt (q-R)^2": 0.030811
+  },
+  {
+   "Stufe": "L5 Orakel Lage+Steigung + in-sample \u03b8 (Namen \u22652 Bm)",
+   "Brier_B0": 0.204429,
+   "(q-R)^2": 0.02115,
+   "Aufloesung_R2": 0.682967,
+   "bekannt (q-R)^2": 0.012879,
+   "unbekannt (q-R)^2": 0.030811
+  },
+  {
+   "Stufe": "L6 ALS voll in-sample (auch Einzel-Einheiten; enth\u00e4lt geschrumpftes Paarresiduum)",
+   "Brier_B0": 0.188473,
+   "(q-R)^2": 0.005194,
+   "Aufloesung_R2": 0.92215,
+   "bekannt (q-R)^2": 0.009319,
+   "unbekannt (q-R)^2": 0.000376
+  },
+  {
+   "Stufe": "L7 Orakel Paarrate R",
+   "Brier_B0": 0.183279,
+   "(q-R)^2": 0.0,
+   "Aufloesung_R2": 1.0,
+   "bekannt (q-R)^2": NaN,
+   "unbekannt (q-R)^2": NaN
+  },
+  {
+   "Stufe": "L8 Orakel Rate + LOO-Item-Schwierigkeit (Slope 1, mittelwert-angepasst)",
+   "Brier_B0": 0.123291,
+   "(q-R)^2": NaN,
+   "Aufloesung_R2": NaN,
+   "bekannt (q-R)^2": NaN,
+   "unbekannt (q-R)^2": NaN
+  },
+  {
+   "Stufe": "L9 Orakel Item-Wahrscheinlichkeit k/n (nur Wiederholungsrauschen)",
+   "Brier_B0": 0.006515,
+   "(q-R)^2": NaN,
+   "Aufloesung_R2": NaN,
+   "bekannt (q-R)^2": NaN,
+   "unbekannt (q-R)^2": NaN
+  }
+ ],
+ "anteil_paare_name_leer": 0.4612511671335201,
+ "anteil_paare_name_multi": 0.48366013071895425,
+ "varianz_logit": {
+  "var_l_gesamt": 3.6171888949686335,
+  "var_c_b (zwischen Benchmarks, paargewichtet)": 1.6269891751517669,
+  "var_a_theta (Namen in >=2 Bm, innerhalb Bm)": 0.8022469374532541,
+  "var_residuum_gesamt (inkl. Einzel-Einheiten als Residuum)": 0.7390812138777036,
+  "sigma_e2_ALS": 0.15188055743552029,
+  "mittel_messvarianz_vl": 0.1039256363430443,
+  "hyp_state_alle": {
+   "mu_c": 0.315132119560688,
+   "lam": 0.3989132817129243,
+   "tau_c2": 1.3681984453467362,
+   "tau_l2": 0.16354567640543496,
+   "tau_v2": 0.3181397088010255,
+   "kappa": 3.216683698764024,
+   "s2_unk": 0.7895016581343653,
+   "tau_i2": null
+  },
+  "var_c_b_benchmarkbalanciert": 2.5402808752759913,
+  "mittel_var_l_innerhalb_benchmark": 0.9623724696159695,
+  "R2_faehigkeit_innerhalb_benchmark_median(Namen>=2Bm, Bm mit >2 solchen Paaren)": 0.4015142399472069,
+  "R2_faehigkeit_innerhalb_benchmark_mittel": 0.15455255822008232,
+  "n_benchmarks_R2": 80
+ },
+ "varianz_brier": {
+  "Var(y) gesamt = ybar(1-ybar)": 0.198765050878561,
+  "ybar": 0.2736486158172674,
+  "zwischen Benchmarks Var(R_b)": 0.046256168411355485,
+  "zwischen Paaren innerhalb Benchmark E(R_sb-R_b)^2": 0.0205335242376695,
+  "innerhalb Paar E R(1-R)": 0.18320043870896904,
+  "  davon durch LOO-Item-Schwierigkeit erkl\u00e4rt E Var_i(p_i)": 0.05513568844195932,
+  "  davon Rest (Brier Orakel Rate + LOO-Schwierigkeit)": 0.12318136858652312,
+  "  davon Wiederholungsrauschen (Brier bei Orakel k/n)": 0.006489267732033978,
+  "anteil_bewertungsitems_mit_LOO_info": 0.9280915987311491,
+  "paare_mit_LOO_info_>0.9": 0.9033613445378151
+ },
+ "orakel_schwierigkeit_budget": {
+  "0": {
+   "v1_hier_kal_paarkonstant": 0.24849484424315874,
+   "v1 + LOO-Schwierigkeit": 0.20025453832460757,
+   "Orakel Rate": 0.18327932700683194,
+   "Orakel Rate + LOO-Schwierigkeit": 0.12329093588941278
+  },
+  "1": {
+   "v1_hier_kal_paarkonstant": 0.2245057205502708,
+   "v1 + LOO-Schwierigkeit": 0.1738315776587194,
+   "Orakel Rate": 0.18327932700683194,
+   "Orakel Rate + LOO-Schwierigkeit": 0.12329093588941278
+  },
+  "3": {
+   "v1_hier_kal_paarkonstant": 0.20934945731390506,
+   "v1 + LOO-Schwierigkeit": 0.1561893269210311,
+   "Orakel Rate": 0.18327932700683194,
+   "Orakel Rate + LOO-Schwierigkeit": 0.12329093588941278
+  },
+  "7": {
+   "v1_hier_kal_paarkonstant": 0.19940397635978327,
+   "v1 + LOO-Schwierigkeit": 0.14427692267585132,
+   "Orakel Rate": 0.18327932700683194,
+   "Orakel Rate + LOO-Schwierigkeit": 0.12329093588941278
+  },
+  "15": {
+   "v1_hier_kal_paarkonstant": 0.19338381513607886,
+   "v1 + LOO-Schwierigkeit": 0.13670999317667556,
+   "Orakel Rate": 0.18327932700683194,
+   "Orakel Rate + LOO-Schwierigkeit": 0.12329093588941278
+  },
+  "31": {
+   "v1_hier_kal_paarkonstant": 0.1893939157583992,
+   "v1 + LOO-Schwierigkeit": 0.1314521089832501,
+   "Orakel Rate": 0.18327932700683194,
+   "Orakel Rate + LOO-Schwierigkeit": 0.12329093588941278
+  }
+ },
+ "orakel_schwierigkeit_alc": {
+  "v1_hier_kal_paarkonstant": 0.20911746987216343,
+  "v1 + LOO-Schwierigkeit": 0.15537222881724128,
+  "Orakel Rate": 0.18327932700683194,
+  "Orakel Rate + LOO-Schwierigkeit": 0.12329093588941278
+ },
+ "orakel_schwierigkeit_alc_nur_LOO>0.9": {
+  "n_paare": 1934,
+  "v1": 0.2102617438842045,
+  "v1+LOO": 0.15172638733540444,
+  "orakel_rate": 0.18479976175887988,
+  "orakel_rate+LOO": 0.11959619353192735
+ },
+ "orakel_schwierigkeit_je_subjektzahl": {
+  "1": {
+   "n": 39.0,
+   "floor": 0.1873344173071022,
+   "orakel_loo": 0.18733441730710224,
+   "trial": 0.003669065288951504,
+   "loo_anteil": 0.0,
+   "alc_v1": 0.21858739765490837,
+   "alc_v1_loo": 0.21858739765490837
+  },
+  "2": {
+   "n": 36.0,
+   "floor": 0.18444355540239726,
+   "orakel_loo": 0.15687274581991414,
+   "trial": 0.02298106263836943,
+   "loo_anteil": 0.6666438756978346,
+   "alc_v1": 0.20855714002483836,
+   "alc_v1_loo": 0.18248202045218923
+  },
+  "3-4": {
+   "n": 111.0,
+   "floor": 0.15973512015931512,
+   "orakel_loo": 0.11661117433995476,
+   "trial": 0.011228948802140787,
+   "loo_anteil": 0.8046022849207272,
+   "alc_v1": 0.18998841229953792,
+   "alc_v1_loo": 0.14902218284439148
+  },
+  "5-9": {
+   "n": 420.0,
+   "floor": 0.2016360709581635,
+   "orakel_loo": 0.1472910009290336,
+   "trial": 0.004965782341325309,
+   "loo_anteil": 0.8756278739942245,
+   "alc_v1": 0.2244751719858421,
+   "alc_v1_loo": 0.17371824205331693
+  },
+  "10-29": {
+   "n": 2187.0,
+   "floor": 0.17287180990030687,
+   "orakel_loo": 0.11644115591319222,
+   "trial": 0.004930217483984764,
+   "loo_anteil": 0.9403094601257428,
+   "alc_v1": 0.20040995030365444,
+   "alc_v1_loo": 0.14982111445341226
+  },
+  ">=30": {
+   "n": 3633.0,
+   "floor": 0.18808658097560008,
+   "orakel_loo": 0.12382362350035565,
+   "trial": 0.007372351393072701,
+   "loo_anteil": 0.9434300884218315,
+   "alc_v1": 0.2130721300676278,
+   "alc_v1_loo": 0.15583974122406793
+  }
+ },
+ "akquise_budget": {
+  "0": {
+   "zufall ohne d (nur Rate)": 0.25369254798151825,
+   "zufall mit Orakel-d": 0.19893604841504084,
+   "adaptiv mit Orakel-d": 0.19893604841504084
+  },
+  "1": {
+   "zufall ohne d (nur Rate)": 0.23206848237812333,
+   "zufall mit Orakel-d": 0.1785027043881107,
+   "adaptiv mit Orakel-d": 0.17637162348964358
+  },
+  "3": {
+   "zufall ohne d (nur Rate)": 0.2129096839350327,
+   "zufall mit Orakel-d": 0.158758919895778,
+   "adaptiv mit Orakel-d": 0.15441849682963676
+  },
+  "7": {
+   "zufall ohne d (nur Rate)": 0.19995748379937373,
+   "zufall mit Orakel-d": 0.1434753956620445,
+   "adaptiv mit Orakel-d": 0.14073893383379513
+  },
+  "15": {
+   "zufall ohne d (nur Rate)": 0.1935858851841044,
+   "zufall mit Orakel-d": 0.13449908770911662,
+   "adaptiv mit Orakel-d": 0.1329443839110189
+  },
+  "31": {
+   "zufall ohne d (nur Rate)": 0.19060259873532204,
+   "zufall mit Orakel-d": 0.12948664943222227,
+   "adaptiv mit Orakel-d": 0.12917668472816432
+  }
+ },
+ "akquise_alc": {
+  "zufall ohne d (nur Rate)": 0.21213382173101086,
+  "zufall mit Orakel-d": 0.15588949131573626,
+  "adaptiv mit Orakel-d": 0.1537059609271394
+ },
+ "akquise_budget_aequivalenz_logB": {
+  "1": 1.13,
+  "3": 3.82,
+  "7": 8.83,
+  "15": 18.79,
+  "31": "> 31"
+ }
+}

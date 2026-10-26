@@ -1,0 +1,27 @@
+% erzeugt von tabellen_v2.py aus JSON/CSV — nicht von Hand aendern
+\begin{table}[t]
+\centering\scriptsize
+\caption{\raggedright Hypothesis table as it fell (pre-registration \texttt{prereg/PRAEREGISTRIERUNG-v2.md}, sha256 e5fd821f\ldots, frozen 2026-10-20 20:26:04Z,
+before the confirmatory runs). Discovery = seeds 0--2 (Design A); confirmatory = seeds 200--202, fold seed 200, Design A unless marked B.
+Summary of verdicts: 9 passed, 1 failed. Verdicts are produced by code,
+self-attested, no second judge; ``ours'' = the submitted predictor (confirmatory runs: nested Platt-stage choice per fold, Appendix~\ref{app:prereg}).
+$^{*}$rule met, stated expectation of $\le 3\,\%$ missed at B31. Source: \texttt{konfirmation/hypothesen\_tafel.json}.}
+\label{tab:hyp}
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{4.3cm}>{\raggedright\arraybackslash}p{1.2cm}@{}}
+\toprule
+id, estimand & rule & discovery value & confirmatory value & verdict \\
+\midrule
+\textbf{H1} ALC(ours) $-$ ALC(BB), S1/S2/S3 & S2, S3 better; S1 equivalent or grey zone with power & S1 $-$0.0003 $\pm$ 0.0004 (grey zone), S2 $-$0.0030 $\pm$ 0.0006 (better), S3 $-$0.0047 $\pm$ 0.0007 (better), S30 $-$0.0130 $\pm$ 0.0013 & A: S1 $-0.0004 \pm 0.0004$ grey; S2 $-0.0031 \pm 0.0006$ better; S3 $-0.0049 \pm 0.0007$ better (S30 $-0.0132 \pm 0.0012$); B: S1 $-0.0004 \pm 0.0004$ grey; S3 $-0.0049 \pm 0.0007$ better & passed \\
+\textbf{H2a} relative error of the exact three-term formula vs the BB curve, $B = 1$--$31$, S1, Designs A and B & all five budgets within $\pm 10\,\%$ in both designs (expectation $\le 3\,\%$) & Design A S1 exact: $-$0.1 / +0.1 / +0.8 / +0.4 / +0.3 \%; Design B not compared & A: ${+1.6} / {+2.0} / {+2.5} / {-2.4} / {-4.2}\,\%$, max 4.2\,\% (within 10\,\%: yes; within 3\,\%: no); B: ${+1.6} / {+1.9} / {+2.4} / {-2.4} / {-4.2}\,\%$, max 4.2\,\% (within 10\,\%: yes; within 3\,\%: no) & passed$^{*}$ \\
+\textbf{H2b} (i) pooling steps S1$\to$S30 at B1, B3; (ii) fixed-$\kappa$ formula vs pooled model at S3/B1, S30/B1 & (i) 6/6 steps better; (ii) S3/B1 in [+10, +30]\,\%, S30/B1 in [+50, +110]\,\% & (i) 6/6 steps better (B1 0.0488$\to$ 0.0272, B3 0.0327$\to$ 0.0192 from S1 to S30); (ii) S3/B1 +17.6 \%, S30/B1 +78.4 \% & (i) 6/6 steps better; (ii) S3/B1 $+21.4\,\%$, S30/B1 $+87.7\,\%$ & passed \\
+\textbf{H2c} $\bar\kappa$ (BB prior strength per fold) vs $U/V_0$ (S1, B0) & $|\bar\kappa - U/V_0| \le 2\,\mathrm{SE}_{\mathrm{boot}}$ & $\bar\kappa_{\mathrm{ML}} = 2.731$, $U/V_0 = 2.722$, difference $+0.009$, SE$_{\mathrm{boot}}$ 0.309 & $\bar\kappa$ 2.735, $U/V_0$ 2.725, difference +0.010, SE$_{\mathrm{boot}}$ 0.309 ($\bar\kappa$ fitted by moments, as in discovery; Appendix B, deviation 3) & passed \\
+\textbf{H3} share of our excess at B0--B3 (cluster bootstrap) & lower 95\,\% bound $> 0.70$ in S1, S2, S3 & S1 0.772 [0.753, 0.788], S2 0.781 [0.761, 0.799], S3 0.785 [0.765, 0.805]; S30 0.892 [0.841, 0.959] & S1 0.767 [0.748, 0.785]; S2 0.778 [0.759, 0.795]; S3 0.783 [0.764, 0.801]; S30 0.894 (reported) & passed \\
+\textbf{H4} ALC(ours) $-$ ALC(ours without subject identity), uncalibrated & equivalent ($|d| + 2\,$SE $< 0.001$) in S1, S2, S3 & S1 $-$0.00048 $\pm$ 0.00035, S2 $-$0.00050 $\pm$ 0.00031, S3 $-$0.00051 $\pm$ 0.00028 — all grey zone & S1 $-0.0005 \pm 0.0003$ grey; S2 $-0.0006 \pm 0.0003$ better; S3 $-0.0007 \pm 0.0003$ better (none equivalent) & \textbf{FAILED} \\
+\textbf{H5} mixing / stacking ours with BB; NPEB vs BB & all nine equivalent, none better & nine comparisons, all equivalent, none better ($|d| \le 0.00030$) & 9 of 9 equivalent, 0 better; $|d| \le 0.00012$, SE $\le 0.00023$ (largest: (b) stacking S2/S3 $+0.00012$; nine values in \texttt{hypothesen\_tafel.json}) & passed \\
+\textbf{H6} LOBO-$R^2$ of benchmark metadata on $R_b$ and logit $R_b$ (ridge) & LOBO-$R^2 \le 0.05$ for both targets & feature set A: LOBO-$R^2$ $-$0.024 ($R_b$), $-$0.025 (logit) & LOBO-$R^2$ $-0.048$ ($R_b$), $-0.056$ (logit); feature set B & passed \\
+\textbf{H7} L10 repeat-noise floor: median over benchmarks with $\ge 100$ repeated cells & median $\ge 0.02$; two computation paths within 1\,\% & median 0.0488 (IQR 0.011--0.088), 62 benchmarks, one computation path & median 0.0488, IQR 0.011--0.088, 62 benchmarks; second path median 0.0488 & passed \\
+\textbf{H8} item-stage gain at B31 vs number of evaluation items with foreign labels & (i) S3 slope $<0$, $R^2 \ge 0.8$; (ii) S30 saturation & (i) S3 slope $-$0.00009/item, $R^2$ 0.995; (ii) S30: 21--50 $-$0.0157, 51--100 $-$0.0125, $>$100 $-$0.0138 (saturation) & (i) S3 WLS slope $-0.00009$/item, $R^2$ 0.98; pair slope $-0.00008$ [$-0.00011$, $-0.00005$]; (ii) S30: 21--50 $-0.0171$, 51--100 $-0.0123$, $>$100 $-0.0140$ (saturation) & passed \\
+\bottomrule
+\end{tabular}
+\end{table}

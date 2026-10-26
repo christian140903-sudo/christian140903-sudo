@@ -1,0 +1,15 @@
+| Kriterium | Stand | Beleg |
+|---|---|---|
+| K1 Prereg-Hash + Reihenfolge | ERFÜLLT | sha256 e5fd821fdf6e… == e5fd821fdf6e…; Hash eingefroren 20:26:04Z < erster P4-Heartbeat 2026-10-20T20:56:55Z |
+| K2 cv_K_A fertig=10 | ERFÜLLT | {"falten": 10, "fertig": 10, "saaten": "200,201,202", "falten_saat": 200, "phase": 1, "design": "A", "zeit_utc": "2026-10-20T21:28:08Z"} |
+| K2 cv_K_A2v fertig=10 | ERFÜLLT | {"falten": 10, "fertig": 10, "saaten": "200,201,202", "falten_saat": 200, "phase": 2, "design": "A", "platt_stufen": "", "zeit_utc": "2026-10-21T07:07:45Z", "log_zeilen_platt_stufen": 10} |
+| K2 cv_K_B fertig=10 | ERFÜLLT | {"falten": 10, "fertig": 10, "saaten": "200,201,202", "falten_saat": 200, "phase": 1, "design": "B", "platt_stufen": "", "zeit_utc": "2026-10-20T21:55:03Z"} |
+| K2 cv_K_B2v fertig=10 | ERFÜLLT | {"falten": 10, "fertig": 10, "saaten": "200,201,202", "falten_saat": 200, "phase": 2, "design": "B", "platt_stufen": "", "zeit_utc": "2026-10-21T06:59:18Z", "log_zeilen_platt_stufen": 10} |
+| K3 frische Faltenzuteilung | ERFÜLLT | 128/142 Benchmarks in anderer Falte als cv_A |
+| K4 Tafel vollständig (10 H, Regel/Wert/Urteil/Quelle) | ERFÜLLT | ids=['H1', 'H2a', 'H2b', 'H2c', 'H3', 'H4', 'H5', 'H6', 'H7', 'H8'] |
+| K5 keine not_evaluated | ERFÜLLT | not_evaluated: keine; Urteile: {"H1": "passed", "H2a": "passed", "H2b": "passed", "H2c": "passed", "H3": "passed", "H4": "failed", "H5": "passed", "H6": "passed", "H7": "passed", "H8": "passed"} |
+| K6 ZAHLEN-QUELLEN-v2 P4-Abschnitt | ERFÜLLT | 42 P4-Zeilen |
+| K7 auswertung_K.json mit Kehrseite + 4 Primärläufe | ERFÜLLT | ok |
+| K8 Fehlerfall fail-closed ausgelöst | ERFÜLLT | 10/10 not_evaluated bei leerem Ergebnisordner |
+
+GESAMT: alle erfüllt (rc 0)

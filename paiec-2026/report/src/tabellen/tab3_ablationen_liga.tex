@@ -1,0 +1,27 @@
+% erzeugt von tabellen_v2.py aus JSON/CSV — nicht von Hand aendern
+\begin{table}[t]
+\centering\scriptsize
+\caption{\raggedright Method league, all 10/10 folds, discovery seeds, test pairs capped at 30 per benchmark, hyperparameters chosen on the training benchmarks of each fold
+(inner 75/25 split). ALC at one (S1) and three (S3) subjects per benchmark; $\Delta$ = paired difference method $-$ ours (negative = method better; ``ours'' along the
+v1 path, Appendix~\ref{app:prereg}) $\pm$ cluster-robust SE; letter = verdict by the pre-stated rule (b better, w worse, e equivalent, g grey zone; Section 5).
+The ablations are in Table~\ref{tab:ablations} (Appendix~\ref{app:tables}). Sources: \texttt{liga/ergebnisse/liga\_vergleich.json} (ALC, full values rounded once), \texttt{liga/ergebnisse/rangfolge.csv} (mean rank), \texttt{liga/ergebnisse/vergleich\_gepaart.csv} ($\Delta$).}
+\label{tab:abl}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.5cm}lllll@{}}
+\toprule
+method & ALC S1 & ALC S3 & mean rank & $\Delta$ vs ours, S1 & $\Delta$ vs ours, S3 \\
+\midrule
+ours (v1 path) & 0.2129 & 0.2087 & 1.0 & reference & reference \\
+IRT 2PL & 0.2131 & 0.2094 & 3.2 & $+0.0003 \pm 0.0004$ g & $+0.0007 \pm 0.0003$ w \\
+ours without item stage & 0.2129 & 0.2091 & 4.0 & $0.00000 \pm 0.00000$ e & $+0.00045 \pm 0.00008$ w \\
+stacking (2PL, MF, kNN, BB) & 0.2134 & 0.2094 & 4.4 & $+0.0006 \pm 0.0007$ g & $+0.0007 \pm 0.0005$ g \\
+matrix factorisation (rank 1--8) & 0.2138 & 0.2095 & 4.8 & $+0.0009 \pm 0.0006$ g & $+0.0009 \pm 0.0005$ g \\
+IRT 1PL (Rasch) & 0.2132 & 0.2102 & 4.8 & $+0.0004 \pm 0.0004$ g & $+0.0015 \pm 0.0004$ w \\
+kNN over subjects & 0.2135 & 0.2106 & 7.2 & $+0.0006 \pm 0.0005$ g & $+0.0020 \pm 0.0004$ w \\
+gradient boosting (20 features) & 0.2154 & 0.2113 & 7.6 & $+0.0025 \pm 0.0008$ w & $+0.0027 \pm 0.0005$ w \\
+beta-binomial & 0.2131 & 0.2134 & 7.8 & $+0.0003 \pm 0.0004$ g & $+0.0047 \pm 0.0007$ w \\
+empirical mean & 0.2479 & 0.2475 & 10.2 & $+0.0351 \pm 0.0024$ w & $+0.0388 \pm 0.0020$ w \\
+constant 0.5 & 0.2500 & 0.2500 & 10.8 & $+0.0371 \pm 0.0042$ w & $+0.0413 \pm 0.0047$ w \\
+\bottomrule
+\end{tabular}
+\end{table}

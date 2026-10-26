@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+work/
+.env
+*.log
+STATUS.md
+PUSH-ANLEITUNG.md
+!report/src/daten/formel_check.log

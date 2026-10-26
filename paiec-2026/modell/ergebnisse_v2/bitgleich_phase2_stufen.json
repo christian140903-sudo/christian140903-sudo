@@ -1,0 +1,187 @@
+{
+ "zeit_utc": "2026-10-21T06:39:35Z",
+ "regel": "hier_*: Abweichung nur in Stufen s mit (s in verschachtelt) != (s in v1 {0,1,3,7}); Baselines max|dq|=0",
+ "falten": {
+  "0": {
+   "zeilen": 144102,
+   "max_dq_je_stufe_hier": {
+    "0": 0.0,
+    "1": 0.0,
+    "3": 0.0,
+    "7": 0.0,
+    "15": 0.008449733104784363,
+    "31": 0.0
+   },
+   "abweichende_stufen": [
+    15
+   ],
+   "erlaubte_stufen": [
+    15
+   ],
+   "max_dq_baselines": 0.0,
+   "ok": true
+  },
+  "1": {
+   "zeilen": 136710,
+   "max_dq_je_stufe_hier": {
+    "0": 0.0,
+    "1": 0.0,
+    "3": 0.0,
+    "7": 0.010860734272417794,
+    "15": 0.0,
+    "31": 0.0
+   },
+   "abweichende_stufen": [
+    7
+   ],
+   "erlaubte_stufen": [
+    7
+   ],
+   "max_dq_baselines": 0.0,
+   "ok": true
+  },
+  "2": {
+   "zeilen": 73710,
+   "max_dq_je_stufe_hier": {
+    "0": 0.0,
+    "1": 0.0,
+    "3": 0.0,
+    "7": 0.013138193459044545,
+    "15": 0.0,
+    "31": 0.0
+   },
+   "abweichende_stufen": [
+    7
+   ],
+   "erlaubte_stufen": [
+    7
+   ],
+   "max_dq_baselines": 0.0,
+   "ok": true
+  },
+  "3": {
+   "zeilen": 110754,
+   "max_dq_je_stufe_hier": {
+    "0": 0.0,
+    "1": 0.0,
+    "3": 0.0,
+    "7": 0.0,
+    "15": 0.0,
+    "31": 0.0
+   },
+   "abweichende_stufen": [],
+   "erlaubte_stufen": [],
+   "max_dq_baselines": 0.0,
+   "ok": true
+  },
+  "4": {
+   "zeilen": 112224,
+   "max_dq_je_stufe_hier": {
+    "0": 0.0,
+    "1": 0.0,
+    "3": 0.0,
+    "7": 0.0,
+    "15": 0.0,
+    "31": 0.0
+   },
+   "abweichende_stufen": [],
+   "erlaubte_stufen": [],
+   "max_dq_baselines": 0.0,
+   "ok": true
+  },
+  "5": {
+   "zeilen": 100002,
+   "max_dq_je_stufe_hier": {
+    "0": 0.0,
+    "1": 0.0,
+    "3": 0.020130054627027105,
+    "7": 0.0,
+    "15": 0.0,
+    "31": 0.0
+   },
+   "abweichende_stufen": [
+    3
+   ],
+   "erlaubte_stufen": [
+    3
+   ],
+   "max_dq_baselines": 0.0,
+   "ok": true
+  },
+  "6": {
+   "zeilen": 122220,
+   "max_dq_je_stufe_hier": {
+    "0": 0.0,
+    "1": 0.0,
+    "3": 0.0,
+    "7": 0.0,
+    "15": 0.010665872090632245,
+    "31": 0.0047725185739795895
+   },
+   "abweichende_stufen": [
+    15,
+    31
+   ],
+   "erlaubte_stufen": [
+    15,
+    31
+   ],
+   "max_dq_baselines": 0.0,
+   "ok": true
+  },
+  "7": {
+   "zeilen": 106596,
+   "max_dq_je_stufe_hier": {
+    "0": 0.0,
+    "1": 0.0,
+    "3": 0.0,
+    "7": 0.0,
+    "15": 0.0,
+    "31": 0.0
+   },
+   "abweichende_stufen": [],
+   "erlaubte_stufen": [],
+   "max_dq_baselines": 0.0,
+   "ok": true
+  },
+  "8": {
+   "zeilen": 180306,
+   "max_dq_je_stufe_hier": {
+    "0": 0.0,
+    "1": 0.0,
+    "3": 0.024618839489490785,
+    "7": 0.0,
+    "15": 0.0,
+    "31": 0.0
+   },
+   "abweichende_stufen": [
+    3
+   ],
+   "erlaubte_stufen": [
+    3
+   ],
+   "max_dq_baselines": 0.0,
+   "ok": true
+  },
+  "9": {
+   "zeilen": 127512,
+   "max_dq_je_stufe_hier": {
+    "0": 0.0,
+    "1": 0.0,
+    "3": 0.0,
+    "7": 0.013800655549804697,
+    "15": 0.0,
+    "31": 0.0
+   },
+   "abweichende_stufen": [
+    7
+   ],
+   "erlaubte_stufen": [
+    7
+   ],
+   "max_dq_baselines": 0.0,
+   "ok": true
+  }
+ },
+ "rc": 0
+}

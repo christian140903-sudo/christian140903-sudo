@@ -1,0 +1,80 @@
+--- a/tools/prepare_data.py
++++ b/tools/prepare_data.py
+@@ -32,6 +32,7 @@
+ import numpy as np
+ import pandas as pd
+ from huggingface_hub import HfApi, hf_hub_download
++from huggingface_hub.hf_api import RepoFolder
+ 
+ # Canonical repository behind the competition site's public-training link.
+ PUBLIC_DATA_REPO = "aims-foundations/measurement-db"
+@@ -73,7 +74,30 @@
+     api = HfApi()
+     data_info = api.repo_info(PUBLIC_DATA_REPO, repo_type="dataset", revision="main")
+     data_revision = data_info.sha
+-    files = {entry.rfilename for entry in data_info.siblings}
++    # repo_info().siblings is capped at 100,000 entries; this repository has 385,266 files
++    # (revision 54074453), so the list ends inside helm_afr/raw/. List the top-level
++    # benchmark folders instead and ask for the formatted tables explicitly.
++    top = [
++        e.path
++        for e in api.list_repo_tree(
++            PUBLIC_DATA_REPO, repo_type="dataset", revision=data_revision
++        )
++        if isinstance(e, RepoFolder)
++    ]
++    wanted = [
++        f"{d}/formatted_tables/{t}.parquet"
++        for d in top
++        for t in ("benchmarks", "subjects", "items", "responses", "traces")
++    ]
++    files = set()
++    for i in range(0, len(wanted), 500):  # paths-info rejects >= 1000 paths (HTTP 413)
++        files |= {
++            p.path
++            for p in api.get_paths_info(
++                PUBLIC_DATA_REPO, wanted[i : i + 500],
++                repo_type="dataset", revision=data_revision,
++            )
++        }
+     embedding_info = None
+     if not args.no_embeddings:
+         embedding_info = api.repo_info(
+@@ -82,18 +106,20 @@
+     data_out = os.path.join(out, "data")
+     os.makedirs(data_out, exist_ok=True)
+     dirs = sorted(
+-        {f.rsplit("/", 1)[0] for f in files if f.endswith("/benchmarks.parquet")}
++        {f.split("/", 1)[0] for f in files if f.endswith("/formatted_tables/benchmarks.parquet")}
+     )
+     print(f"  {len(dirs)} benchmark dirs")
+ 
+     # Competition-eligible tables have binary, item-level responses.
+     def _elig(d):
+         benchmark = pd.read_parquet(
+-            _fetch(f"{d}/benchmarks.parquet", data_revision)
++            _fetch(f"{d}/formatted_tables/benchmarks.parquet", data_revision)
+         ).iloc[0]
+         return d, bool(
+             benchmark["response_type"] == "binary"
+             and benchmark["granularity"] == "item"
++            # Dataset card: "Filter catalog records to release == public".
++            and benchmark["release"] == "public"
+         )
+ 
+     eligible = []
+@@ -113,11 +139,9 @@
+         os.makedirs(os.path.join(data_out, d), exist_ok=True)
+         got = []
+         for t in _TABLES:
+-            source_name = f"{d}/{t}.parquet"
+-            # The current release uses both spellings. Keep one local schema
+-            # so the retrieval code can always load response.parquet.
+-            if t == "response" and source_name not in files:
+-                source_name = f"{d}/responses.parquet"
++            # Tables live in <benchmark>/formatted_tables/ and the response table is
++            # named responses.parquet in all 281 folders; keep the local name response.parquet.
++            source_name = f"{d}/formatted_tables/{'responses' if t == 'response' else t}.parquet"
+             if source_name not in files:
+                 continue
+             src = _fetch(source_name, data_revision)

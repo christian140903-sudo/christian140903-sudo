@@ -1,0 +1,68 @@
+{
+ "urteil": "ok",
+ "dateien": [
+  "model.py",
+  "README.md"
+ ],
+ "statische_befunde": [],
+ "fremde_module": [],
+ "smoke": 0.5329024208635789,
+ "robust_alle_ok": true,
+ "max_abweichung_zu_projektcode": 0.0,
+ "max_abweichung_reihenfolge": 0.0,
+ "max_abweichung_zu_exaktpfad": 0.0,
+ "groesster_lauf_labels": 2108,
+ "voll_bis": 1024,
+ "n_vergleiche": 296,
+ "laufzeit_kriterium_ok": true,
+ "haertung_ok": true,
+ "zaehler_nach_normalbetrieb": {
+  "aufrufe": 1819,
+  "hier": 1819,
+  "beta_binomial": 0,
+  "konstant": 0
+ },
+ "labelformen_bitgleich": true,
+ "none_uebersprungen": true,
+ "kaputter_eintrag": {
+  "p": 0.5712468400869196,
+  "ok_float": true,
+  "bb_fallbacks_plus": 1,
+  "konstant_plus": 0
+ },
+ "hochrechnung_150000_aufrufe_100000_labels_kopie_s": 56.95454992746818,
+ "laufzeit": {
+  "0": {
+   "median_ms": 0.0035684997783391736,
+   "p99_ms": 0.014974000805523247,
+   "erster_aufruf_ms": 0.010009000106947497
+  },
+  "93": {
+   "median_ms": 0.023245500415214337,
+   "p99_ms": 0.05012300061935093,
+   "erster_aufruf_ms": 0.5425740000646329
+  },
+  "93_frische_kopie_je_aufruf": {
+   "median_ms": 0.19470949973765528,
+   "p99_ms": 0.24970699996629264
+  },
+  "930": {
+   "median_ms": 0.16707399936422007,
+   "p99_ms": 0.2521780006645713,
+   "erster_aufruf_ms": 3.7831280005775625
+  },
+  "930_frische_kopie_je_aufruf": {
+   "median_ms": 1.8063325005641673,
+   "p99_ms": 2.5645519999670796
+  },
+  "100000": {
+   "median_ms": 0.11088350129284663,
+   "p99_ms": 0.19513899860612582,
+   "erster_aufruf_ms": 272.1586949992343
+  },
+  "100000_frische_kopie_je_aufruf": {
+   "median_ms": 0.3796969995164545,
+   "p99_ms": 0.4604129990184447
+  }
+ }
+}

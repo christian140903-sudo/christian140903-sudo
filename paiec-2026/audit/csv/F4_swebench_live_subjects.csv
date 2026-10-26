@@ -1,0 +1,66 @@
+subject_id,display_name,category,rows,graded_1,graded_0,null,graded_rate_in_db,report_resolved,report_total,publisher_resolved_rate,db_ones_equal_report_resolved,db_rows_equal_applied_or_located_or_resolved
+ee56e009fe31e281,Agentless + Claude 3.7 Sonnet|2025-05-01,website report subject: only resolved list graded,204,34,0,170,1.0,34.0,300.0,0.1133,True,True
+5f5417830c444709,Agentless + DeepSeek V3|2025-05-01,website report subject: only resolved list graded,250,40,0,210,1.0,40.0,300.0,0.1333,True,True
+23752e51b4b61969,Agentless + GPT 4.1|2025-05-01,website report subject: only resolved list graded,253,36,0,217,1.0,36.0,300.0,0.12,True,True
+8386f47c5cc8bb5a,Agentless + GPT 4o|2025-05-01,website report subject: only resolved list graded,275,35,0,240,1.0,35.0,300.0,0.1167,True,True
+2fe8afc19e175bb3,OpenHands + Claude 3.7 Sonnet|2025-05-01,website report subject: only resolved list graded,1133,254,0,879,1.0,254.0,1319.0,0.1926,True,True
+1e8f82b23da0c222,OpenHands + DeepSeek V3|2025-05-01,website report subject: only resolved list graded,243,39,0,204,1.0,39.0,300.0,0.13,True,True
+8643bacfa28355b8,OpenHands + GPT 4.1|2025-05-01,website report subject: only resolved list graded,178,34,0,144,1.0,34.0,300.0,0.1133,True,True
+45497c2a98ca32b3,OpenHands + GPT 4o|2025-05-01,website report subject: only resolved list graded,216,21,0,195,1.0,21.0,300.0,0.07,True,True
+57acc0a416b9e4d6,SWE-agent + Claude-4.5-Sonnet|2025-12-01,website report subject: only resolved list graded,108,108,0,0,1.0,108.0,300.0,0.36,True,True
+86df9770f1505a2a,SWE-agent + DeepSeek V3|2025-05-01,website report subject: only resolved list graded,276,46,0,230,1.0,46.0,300.0,0.1533,True,True
+d629a837b737876f,SWE-agent + GPT 4o|2025-05-01,website report subject: only resolved list graded,1173,120,0,1053,1.0,120.0,1319.0,0.091,True,True
+5cca2ccc647ba4ad,SWE-agent + GPT5-Thinking (Medium)|2025-11-01,website report subject: only resolved list graded,292,73,0,219,1.0,73.0,300.0,0.2433,True,True
+babff7a54c4ed9c0,lite/20250725-openhands-Qwen3-Coder-480B-A35B,other,300,74,217,9,0.2543,,,,,
+8c2b36f983e9089f,lite/20251221-MITIBM-agent-seedoss36b,other,291,60,211,20,0.2214,,,,,
+244a850909a57822,lite/Slai-Agent/gpt-5.5-xhigh,submitter-declared success-only package,36,36,0,0,1.0,,,,,
+14046a2ea7469c81,lite/agav/gpt-5.5,other,300,186,85,29,0.6863,,,,,
+018d487ca5087ed7,lite/aiwork-code/20260909-opus-4-8-xhigh,other,300,102,190,8,0.3493,,,,,
+26560e3513054bc5,lite/ami-agent/20260623-v0.7.0-claude-opus-4-6,other,300,189,110,1,0.6321,,,,,
+f1d10d25cc3e89db,lite/sapient-slingshot-agent/v2.6.0/20260629-claude-4.5,other,293,36,254,3,0.1241,,,,,
+6f2211ca683ea958,lite/sapient-slingshot-agent/v3.1.0/20260817-opus-4-6,other,299,75,190,34,0.283,,,,,
+a1a5568032e287f1,lite/sapient-slingshot-agent/v3.3.0/20260831-gpt-5.6-sol,other,300,134,164,2,0.4497,,,,,
+eb14b99842f3be87,lite/sweagent/20250501-sweagent-claude37,folder subject merged with website list (successes added without failures),1222,226,201,795,0.5293,,,,,
+8e84ee38ae0a4030,lite/sweagent/20250501-sweagent-gpt41,folder subject merged with website list (successes added without failures),1262,245,236,781,0.5094,,,,,
+14be3a4ba7c30f46,multilang/all_languages/claudecode/claude-4-5-sonnet,other,193,59,100,34,0.3711,,,,,
+10f6f01b4220107f,multilang/all_languages/claudecode/deepseek-v3.1-terminus,other,188,37,94,57,0.2824,,,,,
+44bb5e08d3723802,multilang/all_languages/claudecode/deepseek-v4-pro,other,240,67,118,55,0.3622,,,,,
+35da13109030fcbf,multilang/all_languages/claudecode/gpt-5-2-medium,other,180,53,106,21,0.3333,,,,,
+f80a4f9c6cc13cbd,multilang/all_languages/claudecode/gpt-5.5-medium,other,240,90,135,15,0.4,,,,,
+fd7fe7b3a6ff9e7b,multilang/all_languages/openhands/deepseek-v4-pro,other,240,76,156,8,0.3276,,,,,
+f1a7834c9309d048,multilang/all_languages/openhands/gpt-5.5-medium,other,240,95,140,5,0.4043,,,,,
+fd29cfc3833392e1,multilang/all_languages/sweagent/claude-4-5-sonnet,other,165,49,54,62,0.4757,,,,,
+409745bf035b0b13,multilang/all_languages/sweagent/deepseek-v3.1-terminus,other,160,40,114,6,0.2597,,,,,
+b8f649d5b2ba2d8e,multilang/all_languages/sweagent/deepseek-v4-pro,other,238,97,137,4,0.4145,,,,,
+b0b5030c7b15efde,multilang/all_languages/sweagent/gemini-3-flash,other,165,47,106,12,0.3072,,,,,
+c632a15d8f832c3d,multilang/all_languages/sweagent/gpt-5.2-medium,other,165,45,116,4,0.2795,,,,,
+bc7780bb7757b0db,multilang/all_languages/sweagent/gpt-5.5-medium,other,230,105,120,5,0.4667,,,,,
+1f8e95b24d1ac60d,multilang/cs/20260223-brokk-gpt52-flash3,other,20,9,6,5,0.6,,,,,
+2d47847b650febc6,multilang/cs/20260225-brokk-sonnet45-flash3,other,20,9,7,4,0.5625,,,,,
+f1e141f9926ff3a9,multilang/go/ami-agent/20260716-v0.7.0-claude-opus-4-6,other,138,103,35,0,0.7464,,,,,
+77319889a5452715,multilang/go/ami-agent/20260723-v0.7.0-claude-sonnet-4-6,other,138,99,39,0,0.7174,,,,,
+1aa61dd630f77d47,multilang/go/ami-agent/20260729-v0.7.0-claude-haiku-4-5,other,138,90,48,0,0.6522,,,,,
+cc8363fc85432b88,multilang/go/ami-agent/20260729-v0.7.0-gemini-3.1-pro-preview,other,138,72,58,8,0.5538,,,,,
+4294361c2b6c6770,multilang/go/ami-agent/20260729-v0.7.0-gemini-3.6-flash,other,138,78,52,8,0.6,,,,,
+7835a85e5f36c438,multilang/java/ami-agent/20260817-v0.7.2-claude-opus-4-6,other,109,73,36,0,0.6697,,,,,
+8d0931fd4dd1c970,multilang/java/brokk-agent/20260218-brokk-gpt52-flash3,other,60,25,33,2,0.431,,,,,
+5f37f37f513ec375,multilang/java/brokk-agent/20260218-brokk-sonnet4.5-flash3,other,60,23,34,3,0.4035,,,,,
+cfb43c2c98a35765,multilang/java/slingshot-agent/20260707-sapient-slingshot-gpt-5.5,other,109,40,69,0,0.367,,,,,
+7d6a95ef606e3ff7,multilang/java/slingshot-agent/20260812-sapient-slingshot-gpt-5.5,other,109,45,64,0,0.4128,,,,,
+6a8e535a5a5ca4e8,multilang/java/slingshot-agent/20260901-sapient-slingshot-gpt-5.6-sol,other,160,84,76,0,0.525,,,,,
+9a0a0173bb671990,multilang/js_ts/ami-agent/20260710-v0.7.0-claude-opus-4-6/js,other,93,60,33,0,0.6452,,,,,
+37fb604e63be1dfa,multilang/js_ts/ami-agent/20260710-v0.7.0-claude-opus-4-6/ts,other,111,62,49,0,0.5586,,,,,
+598d9754385c2e2a,multilang/js_ts/slingshot-agent/20260623-slingshot-claude4.5/js,other,93,23,62,8,0.2706,,,,,
+8a45b19481037e87,multilang/js_ts/slingshot-agent/20260623-slingshot-claude4.5/ts,other,107,28,77,2,0.2667,,,,,
+9b7ff92f0c4b985e,multilang/js_ts/slingshot-agent/20260629-sapient-slingshot-gpt-5.5/js,other,93,31,58,4,0.3483,,,,,
+f1fa04e42d3f8d83,multilang/js_ts/slingshot-agent/20260629-sapient-slingshot-gpt-5.5/ts,other,111,46,64,1,0.4182,,,,,
+c2746836ed2dbd87,multilang/js_ts/slingshot-agent/20260730-sapient-slingshot-gpt-5.5/js,other,93,46,44,3,0.5111,,,,,
+5df2978fddf41307,multilang/js_ts/slingshot-agent/20260730-sapient-slingshot-gpt-5.5/ts,other,111,52,59,0,0.4685,,,,,
+313381293de282ba,multilang/rust/ami-agent/20260625-v0.7.0-claude-opus-4-6,other,94,46,48,0,0.4894,,,,,
+c2e3bcc1fb835d92,windows/Slai-Agent/gpt-5.5-xhigh,submitter-declared success-only package,8,8,0,0,1.0,,,,,
+79835553866a22c2,windows/win-agent/claude-sonnet-4-5,other,38,0,0,38,,,,,,
+d572b313d75a3537,windows/win-agent/deepseek-v3.1-terminus,other,35,0,0,35,,,,,,
+c4dc25b788bb6675,windows/win-agent/deepseek-v4-pro,other,34,7,9,18,0.4375,,,,,
+07d3f02c0656c183,windows/win-agent/gemini-3-flash,other,38,0,0,38,,,,,,
+e9eb92a14ac6036c,windows/win-agent/gpt-5.2-medium,other,35,0,0,35,,,,,,
+998a551a47525dc3,windows/win-agent/gpt-5.5-medium,other,34,9,11,14,0.45,,,,,

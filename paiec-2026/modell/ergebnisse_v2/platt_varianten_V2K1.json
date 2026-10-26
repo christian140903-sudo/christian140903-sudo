@@ -1,0 +1,227 @@
+{
+ "ordner": "$PAIEC_WORK/modell/cv_V2K1",
+ "zeit_utc": "2026-10-20T20:21:35Z",
+ "regime": {
+  "S1": {
+   "alc_paare": {
+    "ohne_platt": 0.213726,
+    "paket_v2core_{0,1}": 0.212938,
+    "v1_{0,1,3,7}": 0.21286,
+    "verschachtelt_je_falte": 0.212934
+   },
+   "vergleiche": {
+    "paket_v2core_{0,1} - v1": {
+     "n_paare": 2142,
+     "n_cluster": 142,
+     "mittel": 7.77e-05,
+     "se": 0.0001007,
+     "z": 0.7712947,
+     "ki95": [
+      -0.00011975649259501821,
+      0.00027516516551018787
+     ],
+     "schwelle": "mittel + 2.0*SE < 0",
+     "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+     "grauzone_breite_in_se": 4.0,
+     "urteil": "kein Unterschied belegt"
+    },
+    "verschachtelt_je_falte - v1": {
+     "n_paare": 2142,
+     "n_cluster": 142,
+     "mittel": 7.35e-05,
+     "se": 4.35e-05,
+     "z": 1.6896562,
+     "ki95": [
+      -1.1757331104755107e-05,
+      0.0001587246452965412
+     ],
+     "schwelle": "mittel + 2.0*SE < 0",
+     "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+     "grauzone_breite_in_se": 4.0,
+     "urteil": "kein Unterschied belegt"
+    },
+    "ohne_platt - v1": {
+     "n_paare": 2142,
+     "n_cluster": 142,
+     "mittel": 0.000866,
+     "se": 0.0006252,
+     "z": 1.3852445,
+     "ki95": [
+      -0.00035933193001592024,
+      0.0020914163664859913
+     ],
+     "schwelle": "mittel + 2.0*SE < 0",
+     "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+     "grauzone_breite_in_se": 4.0,
+     "urteil": "kein Unterschied belegt"
+    }
+   }
+  },
+  "S2": {
+   "alc_paare": {
+    "ohne_platt": 0.211272,
+    "paket_v2core_{0,1}": 0.210594,
+    "v1_{0,1,3,7}": 0.210563,
+    "verschachtelt_je_falte": 0.210618
+   },
+   "vergleiche": {
+    "paket_v2core_{0,1} - v1": {
+     "n_paare": 2142,
+     "n_cluster": 142,
+     "mittel": 3.09e-05,
+     "se": 7.95e-05,
+     "z": 0.3890171,
+     "ki95": [
+      -0.0001248254932010242,
+      0.000186645713693328
+     ],
+     "schwelle": "mittel + 2.0*SE < 0",
+     "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+     "grauzone_breite_in_se": 4.0,
+     "urteil": "kein Unterschied belegt"
+    },
+    "verschachtelt_je_falte - v1": {
+     "n_paare": 2142,
+     "n_cluster": 142,
+     "mittel": 5.48e-05,
+     "se": 3.39e-05,
+     "z": 1.6164633,
+     "ki95": [
+      -1.1645896820375952e-05,
+      0.00012124215051691106
+     ],
+     "schwelle": "mittel + 2.0*SE < 0",
+     "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+     "grauzone_breite_in_se": 4.0,
+     "urteil": "kein Unterschied belegt"
+    },
+    "ohne_platt - v1": {
+     "n_paare": 2142,
+     "n_cluster": 142,
+     "mittel": 0.0007095,
+     "se": 0.0005735,
+     "z": 1.2371786,
+     "ki95": [
+      -0.00041452983836554535,
+      0.0018335454188668325
+     ],
+     "schwelle": "mittel + 2.0*SE < 0",
+     "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+     "grauzone_breite_in_se": 4.0,
+     "urteil": "kein Unterschied belegt"
+    }
+   }
+  },
+  "S3": {
+   "alc_paare": {
+    "ohne_platt": 0.209731,
+    "paket_v2core_{0,1}": 0.209125,
+    "v1_{0,1,3,7}": 0.209117,
+    "verschachtelt_je_falte": 0.209163
+   },
+   "vergleiche": {
+    "paket_v2core_{0,1} - v1": {
+     "n_paare": 2142,
+     "n_cluster": 142,
+     "mittel": 7.6e-06,
+     "se": 6.78e-05,
+     "z": 0.1128125,
+     "ki95": [
+      -0.0001251751387672783,
+      0.0001404646743564003
+     ],
+     "schwelle": "mittel + 2.0*SE < 0",
+     "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+     "grauzone_breite_in_se": 4.0,
+     "urteil": "kein Unterschied belegt"
+    },
+    "verschachtelt_je_falte - v1": {
+     "n_paare": 2142,
+     "n_cluster": 142,
+     "mittel": 4.58e-05,
+     "se": 2.78e-05,
+     "z": 1.6480129,
+     "ki95": [
+      -8.664214373455474e-06,
+      0.00010019836809586677
+     ],
+     "schwelle": "mittel + 2.0*SE < 0",
+     "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+     "grauzone_breite_in_se": 4.0,
+     "urteil": "kein Unterschied belegt"
+    },
+    "ohne_platt - v1": {
+     "n_paare": 2142,
+     "n_cluster": 142,
+     "mittel": 0.0006136,
+     "se": 0.0005399,
+     "z": 1.1364284,
+     "ki95": [
+      -0.000444661602111027,
+      0.001671819082355875
+     ],
+     "schwelle": "mittel + 2.0*SE < 0",
+     "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+     "grauzone_breite_in_se": 4.0,
+     "urteil": "kein Unterschied belegt"
+    }
+   }
+  },
+  "S30": {
+   "alc_paare": {
+    "ohne_platt": 0.20445,
+    "paket_v2core_{0,1}": 0.20412,
+    "v1_{0,1,3,7}": 0.204176,
+    "verschachtelt_je_falte": 0.204195
+   },
+   "vergleiche": {
+    "paket_v2core_{0,1} - v1": {
+     "n_paare": 2142,
+     "n_cluster": 142,
+     "mittel": -5.62e-05,
+     "se": 3.27e-05,
+     "z": -1.7197221,
+     "ki95": [
+      -0.0001202539093994452,
+      7.852321696275655e-06
+     ],
+     "schwelle": "mittel + 2.0*SE < 0",
+     "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+     "grauzone_breite_in_se": 4.0,
+     "urteil": "kein Unterschied belegt"
+    },
+    "verschachtelt_je_falte - v1": {
+     "n_paare": 2142,
+     "n_cluster": 142,
+     "mittel": 1.9e-05,
+     "se": 1.21e-05,
+     "z": 1.5674642,
+     "ki95": [
+      -4.757518127023032e-06,
+      4.275272028675044e-05
+     ],
+     "schwelle": "mittel + 2.0*SE < 0",
+     "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+     "grauzone_breite_in_se": 4.0,
+     "urteil": "kein Unterschied belegt"
+    },
+    "ohne_platt - v1": {
+     "n_paare": 2142,
+     "n_cluster": 142,
+     "mittel": 0.0002741,
+     "se": 0.0003925,
+     "z": 0.698351,
+     "ki95": [
+      -0.0004952004498267656,
+      0.001043409525252747
+     ],
+     "schwelle": "mittel + 2.0*SE < 0",
+     "p_fehlentscheidung_bei_nulleffekt": 0.0227501,
+     "grauzone_breite_in_se": 4.0,
+     "urteil": "kein Unterschied belegt"
+    }
+   }
+  }
+ },
+ "kehrseite": "Differenzen in der Gr\u00f6\u00dfenordnung 1e-5 liegen unter jeder Entscheidungsschwelle (Regel Mittel + 2 SE); die Stufenwahl ist eine Verfahrensfrage (verschachtelt vs. gepoolt), kein Score-Hebel."
+}

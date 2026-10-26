@@ -1,0 +1,27 @@
+% erzeugt von tabellen_v2.py aus JSON/CSV — nicht von Hand aendern
+\begin{table}[H]
+\centering\scriptsize
+\caption{\raggedright Ablations, discovery (Design A, seeds 0--2): paired ALC difference $\pm$ cluster-robust SE; letter = verdict by the pre-stated rule
+(b better, w worse, e equivalent, g grey zone; Section 5). The confirmatory H4 row (seeds 200--202) failed the equivalence hypothesis.
+Rows with a difference or SE below 0.00005 are given to five decimals. Sources: \texttt{modell/ergebnisse/cv\_A\_S1-S2-S3-S30/auswertung.json} (v1 stage set: Platt calibration, subject identity, benchmark slope),
+\texttt{modell/ergebnisse/cv\_A\_p2\_S1-S2-S3-S30-kompakt10/auswertung.json} (item stage and item temperature),
+\texttt{konfirmation/hypothesen\_tafel.json} (H4).}
+\label{tab:ablations}
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.7cm}llll@{}}
+\toprule
+component (paired difference) & S1 & S2 & S3 & S30 \\
+\midrule
+item stage (ours $-$ pair model) & $0.00000 \pm 0.00000$ e & $-0.00022 \pm 0.00004$ b & $-0.00045 \pm 0.00008$ b & $-0.00366 \pm 0.00061$ b \\
+Platt calibration per budget, v1 stage set (calibrated $-$ raw) & $-0.0009 \pm 0.0006$ g & $-0.0007 \pm 0.0006$ g & $-0.0006 \pm 0.0005$ g & $-0.0003 \pm 0.0004$ g \\
+subject identity (raw $-$ without subject) & $-0.0005 \pm 0.0004$ g & $-0.0005 \pm 0.0003$ g & $-0.0005 \pm 0.0003$ g & $-0.0005 \pm 0.0003$ g \\
+subject identity, calibrated (cal.\ $-$ cal.\ without subject) & $-0.0014 \pm 0.0007$ g & $-0.0012 \pm 0.0007$ g & $-0.0011 \pm 0.0006$ g & $-0.0008 \pm 0.0005$ g \\
+benchmark slope $a_b$ (raw $-$ without slope) & --- & --- & $-0.00003 \pm 0.00003$ e & --- \\
+item temperature 1 vs 0.5 (ours $-$ t0.5) & $0.00000 \pm 0.00000$ e & $-0.00005 \pm 0.00001$ b & $-0.00009 \pm 0.00002$ b & $-0.00064 \pm 0.00012$ b \\
+item temperature 1 vs 2 (ours $-$ t2) & $0.00000 \pm 0.00000$ e & $+0.00002 \pm 0.00001$ w & $+0.00004 \pm 0.00002$ w & $+0.00025 \pm 0.00008$ w \\
+subject identity, \textbf{confirmatory} Design A (H4, seeds 200--202) & $-0.0005 \pm 0.0003$ g & $-0.0006 \pm 0.0003$ b & $-0.0007 \pm 0.0003$ b & --- \\
+stratum stage (item-metadata strata) & \multicolumn{4}{l}{not evaluated: pilot on one fold only, full run aborted; not part of the submission} \\
+text-based item prior & \multicolumn{4}{l}{not evaluated: prepared, no measurement; not part of the submission} \\
+\bottomrule
+\end{tabular}
+\end{table}

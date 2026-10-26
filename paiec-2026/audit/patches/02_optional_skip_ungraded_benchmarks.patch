@@ -1,0 +1,11 @@
+--- a/tools/prepare_data.py
++++ b/tools/prepare_data.py
+@@ -120,6 +120,8 @@
+             and benchmark["granularity"] == "item"
+             # Dataset card: "Filter catalog records to release == public".
+             and benchmark["release"] == "public"
++            # Optional rule change: skip benchmarks without any grade (coverage 0).
++            and (benchmark["coverage"] or 0) > 0
+         )
+ 
+     eligible = []

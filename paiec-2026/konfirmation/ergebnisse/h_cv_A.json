@@ -1,0 +1,431 @@
+{
+ "zeit_utc": "2026-10-21T08:49:23Z",
+ "design": "A",
+ "p1": "cv_K_A",
+ "p2": "cv_K_A2v",
+ "H1": {
+  "S1": {
+   "d": -0.000421,
+   "se": 0.000383,
+   "ci95": [
+    -0.001172,
+    0.00033
+   ],
+   "better": false,
+   "worse": false,
+   "equivalent": false,
+   "marge": 0.001,
+   "verdict": "grey_zone",
+   "power_aequivalenz_bei_null": 0.458778,
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "benchmark_balanciert": {
+    "d": 0.000282,
+    "se": 0.000428
+   },
+   "gegen_empirischer_mittelwert": {
+    "d": -0.034747,
+    "se": 0.002423,
+    "ci95": [
+     -0.039496,
+     -0.029998
+    ],
+    "better": true,
+    "worse": false,
+    "equivalent": false,
+    "marge": 0.001,
+    "verdict": "better"
+   }
+  },
+  "S2": {
+   "d": -0.003133,
+   "se": 0.000553,
+   "ci95": [
+    -0.004217,
+    -0.002049
+   ],
+   "better": true,
+   "worse": false,
+   "equivalent": false,
+   "marge": 0.001,
+   "verdict": "better",
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "benchmark_balanciert": {
+    "d": -0.00224,
+    "se": 0.000548
+   },
+   "gegen_empirischer_mittelwert": {
+    "d": -0.037066,
+    "se": 0.002157,
+    "ci95": [
+     -0.041294,
+     -0.032838
+    ],
+    "better": true,
+    "worse": false,
+    "equivalent": false,
+    "marge": 0.001,
+    "verdict": "better"
+   }
+  },
+  "S3": {
+   "d": -0.004936,
+   "se": 0.000668,
+   "ci95": [
+    -0.006245,
+    -0.003627
+   ],
+   "better": true,
+   "worse": false,
+   "equivalent": false,
+   "marge": 0.001,
+   "verdict": "better",
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "benchmark_balanciert": {
+    "d": -0.004059,
+    "se": 0.000628
+   },
+   "gegen_empirischer_mittelwert": {
+    "d": -0.038675,
+    "se": 0.002033,
+    "ci95": [
+     -0.04266,
+     -0.03469
+    ],
+    "better": true,
+    "worse": false,
+    "equivalent": false,
+    "marge": 0.001,
+    "verdict": "better"
+   }
+  },
+  "S30": {
+   "d": -0.013208,
+   "se": 0.001231,
+   "ci95": [
+    -0.015621,
+    -0.010795
+   ],
+   "better": true,
+   "worse": false,
+   "equivalent": false,
+   "marge": 0.001,
+   "verdict": "better",
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "benchmark_balanciert": {
+    "d": -0.010146,
+    "se": 0.001048
+   },
+   "gegen_empirischer_mittelwert": {
+    "d": -0.04635,
+    "se": 0.002152,
+    "ci95": [
+     -0.050568,
+     -0.042132
+    ],
+    "better": true,
+    "worse": false,
+    "equivalent": false,
+    "marge": 0.001,
+    "verdict": "better"
+   }
+  }
+ },
+ "H3": {
+  "S1": {
+   "anteil": 0.767475,
+   "se_boot": 0.009454,
+   "ci95_boot": [
+    0.748344,
+    0.784702
+   ],
+   "n_benchmarks": 142,
+   "n_zeilen": 6426,
+   "ueberschuss_je_budget": {
+    "0": 0.064892,
+    "1": 0.047689,
+    "3": 0.031796,
+    "7": 0.019173,
+    "15": 0.011494,
+    "31": 0.006492
+   },
+   "regel": "untere KI-Grenze > 0.70 (S1, S2, S3)",
+   "verdict": "passed"
+  },
+  "S2": {
+   "anteil": 0.777778,
+   "se_boot": 0.009393,
+   "ci95_boot": [
+    0.758903,
+    0.795479
+   ],
+   "n_benchmarks": 142,
+   "n_zeilen": 6426,
+   "ueberschuss_je_budget": {
+    "0": 0.064892,
+    "1": 0.043323,
+    "3": 0.027697,
+    "7": 0.016649,
+    "15": 0.010148,
+    "31": 0.005528
+   },
+   "regel": "untere KI-Grenze > 0.70 (S1, S2, S3)",
+   "verdict": "passed"
+  },
+  "S3": {
+   "anteil": 0.783006,
+   "se_boot": 0.009634,
+   "ci95_boot": [
+    0.763824,
+    0.80093
+   ],
+   "n_benchmarks": 142,
+   "n_zeilen": 6426,
+   "ueberschuss_je_budget": {
+    "0": 0.064892,
+    "1": 0.039735,
+    "3": 0.025367,
+    "7": 0.015417,
+    "15": 0.009325,
+    "31": 0.004583
+   },
+   "regel": "untere KI-Grenze > 0.70 (S1, S2, S3)",
+   "verdict": "passed"
+  },
+  "S30": {
+   "anteil": 0.893657,
+   "se_boot": 0.03078,
+   "ci95_boot": [
+    0.840795,
+    0.964144
+   ],
+   "n_benchmarks": 142,
+   "n_zeilen": 6426,
+   "ueberschuss_je_budget": {
+    "0": 0.064892,
+    "1": 0.025228,
+    "3": 0.016803,
+    "7": 0.009581,
+    "15": 0.002308,
+    "31": -0.006054
+   },
+   "regel": "untere KI-Grenze > 0.70 (S1, S2, S3)",
+   "verdict": "reported"
+  },
+  "gesamt": "passed"
+ },
+ "H4": {
+  "S1": {
+   "d": -0.000545,
+   "se": 0.000338,
+   "ci95": [
+    -0.001207,
+    0.000117
+   ],
+   "better": false,
+   "worse": false,
+   "equivalent": false,
+   "marge": 0.001,
+   "verdict": "grey_zone",
+   "power_aequivalenz_bei_null": 0.66223,
+   "n_paare": 2142,
+   "n_cluster": 142
+  },
+  "S2": {
+   "d": -0.000598,
+   "se": 0.000287,
+   "ci95": [
+    -0.001161,
+    -3.5e-05
+   ],
+   "better": true,
+   "worse": false,
+   "equivalent": false,
+   "marge": 0.001,
+   "verdict": "better",
+   "n_paare": 2142,
+   "n_cluster": 142
+  },
+  "S3": {
+   "d": -0.000677,
+   "se": 0.000256,
+   "ci95": [
+    -0.001179,
+    -0.000175
+   ],
+   "better": true,
+   "worse": false,
+   "equivalent": false,
+   "marge": 0.001,
+   "verdict": "better",
+   "n_paare": 2142,
+   "n_cluster": 142
+  }
+ },
+ "H8": {
+  "S3": {
+   "klassen": {
+    "0": {
+     "n": 1558,
+     "itemgewinn_mittel": -0.0,
+     "items_mittel": 0.0
+    },
+    "1-2": {
+     "n": 82,
+     "itemgewinn_mittel": -0.000229,
+     "items_mittel": 1.426829
+    },
+    "3-5": {
+     "n": 108,
+     "itemgewinn_mittel": -0.00152,
+     "items_mittel": 4.074074
+    },
+    "6-10": {
+     "n": 197,
+     "itemgewinn_mittel": -0.000863,
+     "items_mittel": 8.15736
+    },
+    "11-20": {
+     "n": 964,
+     "itemgewinn_mittel": -0.001493,
+     "items_mittel": 15.570539
+    },
+    "21-50": {
+     "n": 3517,
+     "itemgewinn_mittel": -0.002655,
+     "items_mittel": 29.634632
+    }
+   },
+   "wls_steigung_je_item": -8.7e-05,
+   "r2_klassenmittel_gewichtet": 0.982495,
+   "r2_klassenmittel_ungewichtet": 0.806613,
+   "paar_steigung_je_item": -7.8e-05,
+   "paar_steigung_se_boot": 1.3e-05,
+   "paar_steigung_ci95_boot": [
+    -0.000106,
+    -5.4e-05
+   ],
+   "n_zeilen": 6426,
+   "n_benchmarks": 142,
+   "regel": "(i) Steigung < 0, 95%-KI ohne 0, R² Klassenmittel >= 0.8",
+   "verdict": "passed"
+  },
+  "S30": {
+   "klassen": {
+    "0": {
+     "n": 415,
+     "itemgewinn_mittel": 0.0,
+     "items_mittel": 0.0
+    },
+    "1-2": {
+     "n": 56,
+     "itemgewinn_mittel": -0.000698,
+     "items_mittel": 1.375
+    },
+    "3-5": {
+     "n": 39,
+     "itemgewinn_mittel": -0.000773,
+     "items_mittel": 4.128205
+    },
+    "6-10": {
+     "n": 95,
+     "itemgewinn_mittel": -0.001286,
+     "items_mittel": 7.863158
+    },
+    "11-20": {
+     "n": 232,
+     "itemgewinn_mittel": -0.001939,
+     "items_mittel": 15.267241
+    },
+    "21-50": {
+     "n": 672,
+     "itemgewinn_mittel": -0.017071,
+     "items_mittel": 37.171131
+    },
+    "51-100": {
+     "n": 1222,
+     "itemgewinn_mittel": -0.012314,
+     "items_mittel": 71.493453
+    },
+    ">100": {
+     "n": 3695,
+     "itemgewinn_mittel": -0.013993,
+     "items_mittel": 225.930447
+    }
+   },
+   "wls_steigung_je_item": -2.8e-05,
+   "r2_klassenmittel_gewichtet": 0.302162,
+   "r2_klassenmittel_ungewichtet": 0.436743,
+   "paar_steigung_je_item": -4e-06,
+   "paar_steigung_se_boot": 1.3e-05,
+   "paar_steigung_ci95_boot": [
+    -3.1e-05,
+    1.8e-05
+   ],
+   "n_zeilen": 6426,
+   "n_benchmarks": 142,
+   "regel": "(ii) Sättigung: Mittel 51-100 und >100 nicht negativer als 1.3 × Mittel 21-50",
+   "schwelle_1_3x_21_50": -0.022193,
+   "verdict": "passed"
+  },
+  "kompakt10": {
+   "klassen": {
+    "11-20": {
+     "n": 68,
+     "itemgewinn_mittel": -0.006484,
+     "items_mittel": 16.176471
+    },
+    "21-50": {
+     "n": 3098,
+     "itemgewinn_mittel": -0.037598,
+     "items_mittel": 46.244674
+    }
+   },
+   "wls_steigung_je_item": -0.001035,
+   "r2_klassenmittel_gewichtet": 1.0,
+   "r2_klassenmittel_ungewichtet": 1.0,
+   "paar_steigung_je_item": -0.0009,
+   "paar_steigung_se_boot": 0.000181,
+   "paar_steigung_ci95_boot": [
+    -0.001241,
+    -0.00052
+   ],
+   "n_zeilen": 3166,
+   "n_benchmarks": 83,
+   "verdict": "reported"
+  },
+  "gesamt": "passed"
+ },
+ "saaten_p2": [
+  200,
+  201,
+  202
+ ],
+ "status_p2": {
+  "falten": 10,
+  "fertig": 10,
+  "saaten": "200,201,202",
+  "falten_saat": 200,
+  "phase": 2,
+  "design": "A",
+  "platt_stufen": "",
+  "zeit_utc": "2026-10-21T07:07:45Z"
+ },
+ "saaten_p1": [
+  200,
+  201,
+  202
+ ],
+ "status_p1": {
+  "falten": 10,
+  "fertig": 10,
+  "saaten": "200,201,202",
+  "falten_saat": 200,
+  "phase": 1,
+  "design": "A",
+  "zeit_utc": "2026-10-20T21:28:08Z"
+ }
+}

@@ -1,0 +1,12 @@
+2026-10-20T14:50:46Z Start Phase 1 Design B, Falten 10, Saaten 0,1,2, S 1,3,30, von 
+2026-10-20T14:51:55Z Falte 2: 14 Benchmarks, 131 Paare, 49518 Sätze, 52 s
+2026-10-20T14:51:58Z Falte 1: 15 Benchmarks, 241 Paare, 91098 Sätze, 55 s
+2026-10-20T14:52:00Z Falte 0: 15 Benchmarks, 260 Paare, 98280 Sätze, 58 s
+2026-10-20T14:52:02Z Falte 3: 14 Benchmarks, 194 Paare, 73332 Sätze, 60 s
+2026-10-20T14:52:48Z Falte 5: 14 Benchmarks, 185 Paare, 69930 Sätze, 50 s
+2026-10-20T14:52:49Z Falte 4: 14 Benchmarks, 200 Paare, 75600 Sätze, 54 s
+2026-10-20T14:52:49Z Falte 7: 14 Benchmarks, 188 Paare, 71064 Sätze, 47 s
+2026-10-20T14:52:51Z Falte 6: 14 Benchmarks, 200 Paare, 75600 Sätze, 51 s
+2026-10-20T14:53:36Z Falte 9: 14 Benchmarks, 222 Paare, 83916 Sätze, 47 s
+2026-10-20T14:53:36Z Falte 8: 14 Benchmarks, 321 Paare, 121338 Sätze, 48 s
+2026-10-20T14:53:36Z Ende: 10/10 Falten vorhanden

@@ -1,0 +1,142 @@
+{
+ "zeit_utc": "2026-10-21T08:50:28Z",
+ "design": "B",
+ "p1": "cv_K_B",
+ "p2": "cv_K_B2",
+ "H1": {
+  "S1": {
+   "d": -0.000455,
+   "se": 0.000383,
+   "ci95": [
+    -0.001206,
+    0.000296
+   ],
+   "better": false,
+   "worse": false,
+   "equivalent": false,
+   "marge": 0.001,
+   "verdict": "grey_zone",
+   "power_aequivalenz_bei_null": 0.458778,
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "benchmark_balanciert": {
+    "d": 0.000157,
+    "se": 0.000442
+   },
+   "gegen_empirischer_mittelwert": {
+    "d": -0.034759,
+    "se": 0.002394,
+    "ci95": [
+     -0.039451,
+     -0.030067
+    ],
+    "better": true,
+    "worse": false,
+    "equivalent": false,
+    "marge": 0.001,
+    "verdict": "better"
+   }
+  },
+  "S3": {
+   "d": -0.004876,
+   "se": 0.000668,
+   "ci95": [
+    -0.006185,
+    -0.003567
+   ],
+   "better": true,
+   "worse": false,
+   "equivalent": false,
+   "marge": 0.001,
+   "verdict": "better",
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "benchmark_balanciert": {
+    "d": -0.00407,
+    "se": 0.000643
+   },
+   "gegen_empirischer_mittelwert": {
+    "d": -0.038591,
+    "se": 0.00202,
+    "ci95": [
+     -0.04255,
+     -0.034632
+    ],
+    "better": true,
+    "worse": false,
+    "equivalent": false,
+    "marge": 0.001,
+    "verdict": "better"
+   }
+  }
+ },
+ "H3": {
+  "gesamt": "not_applicable"
+ },
+ "H4": {
+  "S1": {
+   "d": -0.000644,
+   "se": 0.000356,
+   "ci95": [
+    -0.001342,
+    5.4e-05
+   ],
+   "better": false,
+   "worse": false,
+   "equivalent": false,
+   "marge": 0.001,
+   "verdict": "grey_zone",
+   "power_aequivalenz_bei_null": 0.581478,
+   "n_paare": 2142,
+   "n_cluster": 142
+  },
+  "S3": {
+   "d": -0.000682,
+   "se": 0.000277,
+   "ci95": [
+    -0.001225,
+    -0.000139
+   ],
+   "better": true,
+   "worse": false,
+   "equivalent": false,
+   "marge": 0.001,
+   "verdict": "better",
+   "n_paare": 2142,
+   "n_cluster": 142
+  }
+ },
+ "H8": {
+  "gesamt": "not_applicable"
+ },
+ "saaten_p2": [
+  200,
+  201,
+  202
+ ],
+ "status_p2": {
+  "falten": 10,
+  "fertig": 10,
+  "saaten": "200,201,202",
+  "falten_saat": 200,
+  "phase": 2,
+  "design": "B",
+  "platt_stufen": "",
+  "zeit_utc": "2026-10-20T22:17:04Z"
+ },
+ "saaten_p1": [
+  200,
+  201,
+  202
+ ],
+ "status_p1": {
+  "falten": 10,
+  "fertig": 10,
+  "saaten": "200,201,202",
+  "falten_saat": 200,
+  "phase": 1,
+  "design": "B",
+  "platt_stufen": "",
+  "zeit_utc": "2026-10-20T21:55:03Z"
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "model_dir": "./dist",
+ "python": "3.13.16",
+ "aufrufe_je_groesse": 20,
+ "zeit_utc": "2026-10-20T20:21:43Z",
+ "messungen": {
+  "100000": {
+   "prozess_gesamt_s": {
+    "median": 0.7276564299995698,
+    "min": 0.648079603000042,
+    "max": 1.0079458219997832
+   },
+   "import_s": {
+    "median": 0.006380062499829364,
+    "min": 0.005203714999879594,
+    "max": 0.012041988999953901
+   },
+   "labels_laden_s": {
+    "median": 0.3120959325001422,
+    "min": 0.2714030619999903,
+    "max": 0.47946645399952104
+   },
+   "erster_predict_s": {
+    "median": 0.2719720539998889,
+    "min": 0.2190269469992927,
+    "max": 0.3737823989995377
+   },
+   "zweiter_predict_s": {
+    "median": 0.00043045899974458735,
+    "min": 0.00033746899953257525,
+    "max": 0.0007746589999442222
+   },
+   "n_labels": 100000,
+   "modell_ohne_labelladen_median_s": 0.27835211649971825,
+   "kriterium_erster_predict_median_lt_max_s": true
+  },
+  "300000": {
+   "prozess_gesamt_s": {
+    "median": 2.8503943139999137,
+    "min": 2.4632543080006144,
+    "max": 3.47358047599937
+   },
+   "import_s": {
+    "median": 0.005752488999860361,
+    "min": 0.00528792400018574,
+    "max": 0.012198184999760997
+   },
+   "labels_laden_s": {
+    "median": 1.135718693999479,
+    "min": 0.905255286999818,
+    "max": 1.3391485780002768
+   },
+   "erster_predict_s": {
+    "median": 1.2254880324999249,
+    "min": 1.0720221209994634,
+    "max": 1.4705550279995805
+   },
+   "zweiter_predict_s": {
+    "median": 0.0004459430001588771,
+    "min": 0.0003544390001479769,
+    "max": 0.004554314000415616
+   },
+   "n_labels": 300000,
+   "modell_ohne_labelladen_median_s": 1.2312405214997852,
+   "kriterium_erster_predict_median_lt_max_s": true
+  }
+ },
+ "urteil": "ok",
+ "max_s": 5.0,
+ "lesart": "Schlechtester Fall, falls die Plattform je predict-Aufruf einen neuen Prozess startet: Kosten je Aufruf = Python-Start + Import (Zustand parsen) + Gruppierung von |labeled| (O(n)). Bei 150 000 Aufrufen je Checkpoint w\u00e4re das nicht einzuhalten \u2014 trifft aber jede Einreichung gleich (auch die Veranstalter-Baseline z\u00e4hlt labeled je Aufruf). Innerhalb eines Prozesses gilt der O(64)-Pfad.",
+ "kehrseite": "Falsch, wenn die Plattform labeled je Aufruf anders \u00fcbergibt (Generator, anderes Objekt je Aufruf ohne Prozessneustart): dann gilt weder dieser Fall noch der O(64)-Schnellpfad, sondern der Stichprobenschl\u00fcssel je Aufruf (~0,2 ms) plus einmalige Gruppierung je Checkpoint."
+}

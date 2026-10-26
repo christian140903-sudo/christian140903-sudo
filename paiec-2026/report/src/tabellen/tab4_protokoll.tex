@@ -1,0 +1,31 @@
+% erzeugt von tabellen_v2.py aus JSON/CSV — nicht von Hand aendern
+\begin{table}[H]
+\centering\scriptsize
+\caption{\raggedright Protocol sensitivity: what moves the error besides the model. Discovery (Design A, seeds 0--2) unless stated; paired differences
+$\pm$ cluster-robust SE. Formula rows use the three-term learning curve with moments from the S1 test pairs ($U=0.1833$, $V_0=0.0673$,
+$\kappa=2.73$, $D=0.00138$, $F=0.00070$; nothing fitted). Sources: P2 = \texttt{modell/ergebnisse/cv\_A\_p2\_S1-S2-S3-S30-kompakt10/auswertung.json};
+league = \texttt{liga/ergebnisse/liga\_vergleich.json} (BB ALC, full value rounded once); D\_exakt = \texttt{daten/D\_exakt.json}; obs.\ = \texttt{daten/beobachtung\_discovery.json}; alc\_law = \texttt{theorie/alc\_law.py};
+loss = \texttt{daten/verlust.json}; P5 pilot = \texttt{daten/akquise\_pilot\_tabelle.json}; \texttt{daten/} = \texttt{report/src/daten/}.}
+\label{tab:protocol}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{4.1cm}>{\raggedright\arraybackslash}p{2.7cm}l@{}}
+\toprule
+protocol quantity & regime & effect (ALC unless stated) & reading & src \\
+\midrule
+subjects per benchmark & S1 & BB ALC 0.2131; v1 $-$ BB $-0.0003 \pm 0.0004$ & one subject: nothing to pool; v1 gains at B0--B1 only; BB unchanged & P2, league \\
+subjects per benchmark & S2 & BB ALC 0.2133; v1 $-$ BB $-0.0030 \pm 0.0006$ & pooling gain mainly at B1--B7; BB unchanged & P2, league \\
+subjects per benchmark & S3 & BB ALC 0.2134; v1 $-$ BB $-0.0047 \pm 0.0007$ & pooling gain mainly at B1--B7; BB unchanged & P2, league \\
+subjects per benchmark & S30 & BB ALC 0.2135; v1 $-$ BB $-0.0130 \pm 0.0013$ & pooling gain mainly at B1--B7; BB unchanged & P2, league \\
+item overlap (foreign labels on evaluation items) & S3 & item-stage gain $-0.0004 \pm 0.0001$ & grows with overlap; compact10 is hypothetical & P2 \\
+item overlap (foreign labels on evaluation items) & S30 & item-stage gain $-0.0037 \pm 0.0006$ & grows with overlap; compact10 is hypothetical & P2 \\
+item overlap (foreign labels on evaluation items) & compact10 & item-stage gain $-0.0115 \pm 0.0010$ & grows with overlap; compact10 is hypothetical & P2 \\
+50/50 item split (split term $D$) & all & $D = 0.00138$ (exact), 0.00072 (first approximation); ALC contribution of the split term 0.00078 & protocol quantity, not model error & D\_exakt, alc\_law \\
+items per pair $N$ (finite-population term $F$) & all & $F = 0.00070$; $N$ median 1000, min 80 & second order in $1/N$ & D\_exakt \\
+identity collision (surplus labels from indistinguishable subjects of other pairs) & S1 / S3 / S30 & formula error for BB at B31: $+0.3\,\%$ / $-5.9\,\%$ / $-8.3\,\%$ & clean only in S1; grows with S & obs., alc\_law \\
+subject known in training (name) vs unknown & S3, B0 / B3 & excess known 0.0652 / 0.0239; unknown 0.0652 / 0.0276 & B0 identical; B3 gap mostly benchmark composition & loss \\
+label acquisition policy (coverage vs random), pilot & S3 & $+0.00003 \pm 0.00012$ equivalent (260 pairs, 15 clusters) & pilot only (fold 0); full run not evaluated (aborted) & P5 pilot \\
+label acquisition policy (coverage vs random), pilot & compact10 & $-0.00178 \pm 0.00063$ better (115 pairs, 5 clusters) & pilot only (fold 0); full run not evaluated (aborted) & P5 pilot \\
+split per item instead of per pair & --- & not evaluated (scenario aborted with the acquisition full run) & --- & P5 pilot \\
+\bottomrule
+\end{tabular}
+\end{table}

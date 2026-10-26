@@ -1,0 +1,219 @@
+benchmark,subject_id,display_name,normalized_name,class,responses,setting_visible_in_some_competition_input_field,core_case_model_visible_setting_invisible
+researchcodebench,7d65eb53a8cc7d83,GROK_3_MINI_BETA_HIGH,xAI Grok 3 Mini,A explicit setting,212,False,True
+livebench,70f454dba609393b,LiveBench / o1-2024-12-17-high,,A explicit setting,318,True,False
+livebench,96801351729e5589,LiveBench / o3-mini-2025-01-31-high,,A explicit setting,318,True,False
+matharena_platform,65a2d34cb04a1d18,MathArena Platform / Claude-Fable-5.1 (high),,A explicit setting,170,True,False
+matharena_platform,3ca22860bcbba8fc,MathArena Platform / Claude-Opus-4.6 (High),,A explicit setting,828,True,False
+matharena_platform,d383e5eb98bc8f1f,MathArena Platform / Claude-Opus-4.7 (high),,A explicit setting,41,True,False
+matharena_platform,025d833f5df63398,MathArena Platform / GPT-5.2 (high),,A explicit setting,584,True,False
+researchcodebench,a710d3c9478ce52e,O1_HIGH,OpenAI o1,A explicit setting,212,False,True
+researchcodebench,aacefbdabb006bb4,O3_HIGH,OpenAI o3,A explicit setting,212,False,True
+researchcodebench,8d0f7b00fa1ee7d4,O3_MINI_HIGH,OpenAI o3-mini,A explicit setting,212,False,True
+researchcodebench,2a0f1dd372d29f18,OPENROUTER_O4_MINI_HIGH,OpenAI o4-mini,A explicit setting,212,False,True
+multi_swebench,370de70a197c04ad,OpenAI-o3-mini-high,OpenAI o3-mini,A explicit setting,1446,False,True
+multi_swebench,b6de0c0aab96e405,OpenAI-o3-mini-high,OpenAI o3-mini,A explicit setting,897,False,True
+multi_swebench,a1a3bd9bfb400f47,OpenAI-o3-mini-high,OpenAI o3-mini,A explicit setting,685,False,True
+multi_swebench,aac580c3888aae09,OpenAI-o3-mini-high,OpenAI o3-mini,A explicit setting,471,False,True
+multi_swebench,0f3db4570fff74a1,OpenAI-o3-mini-high,OpenAI o3-mini,A explicit setting,387,False,True
+multi_swebench,4195148f31e2ccbe,OpenAI-o3-mini-high,OpenAI o3-mini,A explicit setting,402,False,True
+livebench,1664ffc59e492fe5,LiveBench / o1-2024-12-17-low,,A explicit setting,318,True,False
+livebench,258ced126bd9ef6e,LiveBench / o3-mini-2025-01-31-low,,A explicit setting,318,True,False
+matharena_platform,6ccd3dd7aefbdbf7,MathArena Platform / GPT-5.2 (low),,A explicit setting,251,True,False
+matharena_platform,f9f1cf2ff627d16c,MathArena Platform / Gemini 3.1 Pro Preview (low),,A explicit setting,312,True,False
+matharena_platform,0961890dea4eaed0,"MathArena Platform / Gemini 3.8 Flash (low, Qwen Code)",,A explicit setting,1,True,False
+dpai,576c2463ee3ad1b6,Claude Opus 4.6 max,,A explicit setting,301,False,False
+dpai,ea6c3e6b142ba8e4,Claude Opus 4.6 max,,A explicit setting,5,False,False
+dpai,d78bb216833a3379,Claude Sonnet 4.6 max,,A explicit setting,306,False,False
+matharena_platform,619394921750a587,MathArena Platform / Claude-Fable-5 (max),,A explicit setting,46,True,False
+matharena_platform,89ef5e946f6a7abf,MathArena Platform / Claude-Fable-5 (max),,A explicit setting,728,True,False
+matharena_platform,fb1fe90f18ba9fd5,MathArena Platform / Claude-Fable-5.1 (max),,A explicit setting,506,True,False
+matharena_platform,96ea2a51d073e0ff,MathArena Platform / Claude-Opus-4.8 (max),,A explicit setting,46,True,False
+matharena_platform,76765cadf6d94a70,MathArena Platform / Claude-Opus-4.8 (max),,A explicit setting,1192,True,False
+matharena_platform,4c123d328c48ff8f,MathArena Platform / Claude-Opus-5 (max),,A explicit setting,46,True,False
+matharena_platform,95c8b1309807cbba,MathArena Platform / Claude-Opus-5 (max),,A explicit setting,252,True,False
+matharena_platform,10bcb426e804ccef,MathArena Platform / DeepSeek-v4-Flash (Max),,A explicit setting,1212,True,False
+matharena_platform,29bf6ecb2f4a716e,MathArena Platform / DeepSeek-v4-Pro (Max),,A explicit setting,756,True,False
+matharena_platform,52e88aba233bb6a5,MathArena Platform / GPT-5.6-Sol (max),,A explicit setting,258,True,False
+matharena_platform,15532b2ad2889a89,"MathArena Platform / GPT-5.6-Sol (max, via Codex)",,A explicit setting,60,True,False
+matharena_platform,38f7fdebc738cf4d,MathArena Platform / GPT-6 Astra (max),,A explicit setting,834,True,False
+dpai,aad6e6b24450bfe8,Opus 1M max ultrathink,,A explicit setting,296,False,False
+dpai,a75f16eb600a4fe2,Opus 1M max ultrathink,,A explicit setting,10,False,False
+dpai,dcf4fb1df728dff8,Opus 4.6 max ultrathink,,A explicit setting,301,False,False
+dpai,888ec4fd3109935a,Opus 4.6 max ultrathink,,A explicit setting,5,False,False
+dpai,3e224d4d36f5fa9f,Opus 4.7 max ultrathink,,A explicit setting,301,False,False
+dpai,0b01186393ce473d,Opus 4.7 max ultrathink,,A explicit setting,5,False,False
+dpai,e21bfba8c48172dd,Sonnet 4.6 max ultrathink,,A explicit setting,295,False,False
+dpai,297e367c1fc713b2,Sonnet 4.6 max ultrathink,,A explicit setting,9,False,False
+dpai,456593cc7b24de19,Sonnet 4.6 max ultrathink,,A explicit setting,2,False,False
+mmdocrag,f1c299f63abfe2a1,qvq-max-no-think,Alibaba QVQ-Max,A explicit setting,1999,True,False
+kmmlu,9280dd2d7908c18c,KMMLU / gpt-51-medium-2025-11-13-0shot,,A explicit setting,35030,True,False
+livebench,62fb9b846d915f26,LiveBench / o1-2024-12-17-medium,,A explicit setting,318,True,False
+livebench,a7be10128c405949,LiveBench / o3-mini-2025-01-31-medium,,A explicit setting,318,True,False
+matharena_platform,ba56f7625019bea2,MathArena Platform / Gemini 3.1 Pro Preview (medium),,A explicit setting,92,True,False
+algotune,806060f84158a9ea,gpt-5-pro (medium),OpenAI GPT-5 Pro,A explicit setting,154,True,False
+swebench_live,35da13109030fcbf,multilang/all_languages/claudecode/gpt-5-2-medium,,A explicit setting,180,True,False
+swebench_live,f80a4f9c6cc13cbd,multilang/all_languages/claudecode/gpt-5.5-medium,,A explicit setting,240,True,False
+swebench_live,f1a7834c9309d048,multilang/all_languages/openhands/gpt-5.5-medium,,A explicit setting,240,True,False
+swebench_live,c632a15d8f832c3d,multilang/all_languages/sweagent/gpt-5.2-medium,,A explicit setting,165,True,False
+swebench_live,bc7780bb7757b0db,multilang/all_languages/sweagent/gpt-5.5-medium,,A explicit setting,230,True,False
+swebench_live,e9eb92a14ac6036c,windows/win-agent/gpt-5.2-medium,,A explicit setting,35,True,False
+swebench_live,998a551a47525dc3,windows/win-agent/gpt-5.5-medium,,A explicit setting,34,True,False
+swebench_live,5cca2ccc647ba4ad,SWE-agent + GPT5-Thinking (Medium)|2025-11-01,,A explicit setting,292,True,False
+dpai,9c253df2e2968450,5.4 xHigh,,A explicit setting,305,False,False
+dpai,676fc5f9ba9f3b70,5.4 xHigh,,A explicit setting,1,False,False
+dpai,f1b5015799ae3c97,5.5 xHigh,,A explicit setting,306,False,False
+programbench,c97f2312c3a7b735,Claude Opus 4.8 (xhigh) / 20260717_mini-v2.4.5_opus-4.8-xhigh / 1c7dbabb53ca,,A explicit setting,200,True,False
+programbench,3439a3a37c153fea,Claude Opus 5 (xhigh) / 20260731_mini-v2.4.2_opus-5-xhigh / dc41b7688eef,,A explicit setting,198,True,False
+dpai,c681ea6e2cb6f9fd,GPT-5.3-codex xhigh,,A explicit setting,304,False,False
+dpai,5aa198da68498477,GPT-5.3-codex xhigh,,A explicit setting,2,False,False
+dpai,e850c73386b7e425,GPT-5.4 xhigh,,A explicit setting,305,False,False
+dpai,bff51bb3e2b555dd,GPT-5.4 xhigh,,A explicit setting,1,False,False
+matharena_platform,d7159741520015b8,MathArena Platform / Claude-Opus-4.7 (xhigh),,A explicit setting,732,True,False
+matharena_platform,fb0ea82d827189e4,MathArena Platform / GPT-5.2 (xhigh),,A explicit setting,124,True,False
+matharena_platform,7ea32e1248350597,MathArena Platform / GPT-5.4 (xhigh),,A explicit setting,703,True,False
+matharena_platform,c8be8f9965b3b4f4,MathArena Platform / GPT-5.4-Pro (xhigh),,A explicit setting,128,True,False
+matharena_platform,d0a7a0593c84fc8f,MathArena Platform / GPT-5.5 (xhigh),,A explicit setting,1515,True,False
+swebench_live,244a850909a57822,lite/Slai-Agent/gpt-5.5-xhigh,,A explicit setting,36,True,False
+swebench_live,018d487ca5087ed7,lite/aiwork-code/20260909-opus-4-8-xhigh,,A explicit setting,300,True,False
+swebench_live,c2e3bcc1fb835d92,windows/Slai-Agent/gpt-5.5-xhigh,,A explicit setting,8,True,False
+programbench,1c85eb1d6eac348f,Claude Opus 4.7 (xhigh reasoning) / 20260507_mini-v2.2.6_opus-4-7-xhigh / a765fc1d689e,,A explicit setting,199,True,False
+rakuda,7ba8c0b2e8a5e9b1,011-qwen3-8b-v2-sft-nothink,,A explicit setting,40,True,False
+tengu,dfa1b22776386cba,011-qwen3-8b-v2-sft-nothink,,A explicit setting,120,True,False
+rakuda,3b612af55a20c9d0,012-smoothieqwen3-8b-v2-sft-nothink,,A explicit setting,40,True,False
+tengu,162649dc744575bc,012-smoothieqwen3-8b-v2-sft-nothink,,A explicit setting,120,True,False
+rakuda,417a8a212d50cc04,013-qwen3-8b-v2-dpo-nothink,,A explicit setting,40,True,False
+tengu,60c31875846be509,013-qwen3-8b-v2-dpo-nothink,,A explicit setting,120,True,False
+rakuda,c06a2f58baea0c6b,014-smoothieqwen3-8b-v2-dpo-nothink,,A explicit setting,40,True,False
+tengu,943bdcd5091cd33b,014-smoothieqwen3-8b-v2-dpo-nothink,,A explicit setting,120,True,False
+rakuda,70a41154c43cc0fe,015-qwen3-8b-v2-dpo405b-nothink,,A explicit setting,40,True,False
+tengu,271310c83459eaee,015-qwen3-8b-v2-dpo405b-nothink,,A explicit setting,120,True,False
+rakuda,6ced134d07b64eb6,016-smoothieqwen3-8b-v2-dpo405b-nothink,,A explicit setting,40,True,False
+tengu,b4c9a90b0960b4d9,016-smoothieqwen3-8b-v2-dpo405b-nothink,,A explicit setting,120,True,False
+rakuda,6183412e428c6ea1,017-qwen3-8b-v2-dpo405b-clr-nothink,,A explicit setting,40,True,False
+tengu,0eab2106c2c95d46,017-qwen3-8b-v2-dpo405b-clr-nothink,,A explicit setting,120,True,False
+rakuda,0330f0516e7e9801,AXCXEPT__Qwen3-EZO-8B-beta-nothink,,A explicit setting,40,True,False
+tengu,031008cda9cff4da,AXCXEPT__Qwen3-EZO-8B-beta-nothink,,A explicit setting,120,True,False
+eduguardbench,510e1b32bd15a6b1,Qwen3-235B-A22B (non-reasoning),Alibaba Qwen3 235B A22B,A explicit setting,13568,True,False
+eduguardbench,d801a7a79f6ea293,Qwen3-32B (non-reasoning),Alibaba Qwen3 32B,A explicit setting,13533,True,False
+eduguardbench,331c160af44febcf,Qwen3-8B (non-reasoning),Alibaba Qwen3 8B,A explicit setting,13573,True,False
+rakuda,d14a22c8d7a665ad,Qwen__Qwen3-235B-A22B-nothink,,A explicit setting,40,True,False
+tengu,1f8c39884109158d,Qwen__Qwen3-235B-A22B-nothink,,A explicit setting,120,True,False
+rakuda,a0aee18adad216b8,Qwen__Qwen3-30B-A3B-nothink,,A explicit setting,40,True,False
+tengu,39b83011ef75b7d1,Qwen__Qwen3-30B-A3B-nothink,,A explicit setting,120,True,False
+rakuda,81012109eb1737ad,Qwen__Qwen3-8B-nothink,,A explicit setting,40,True,False
+tengu,dd277399d4d924a1,Qwen__Qwen3-8B-nothink,,A explicit setting,120,True,False
+rakuda,af12c83657d3689e,Qwen__Qwen3.6-27B-nothink,,A explicit setting,40,True,False
+tengu,329639352ff36ed5,Qwen__Qwen3.6-27B-nothink,,A explicit setting,115,True,False
+ikp,94252e00abb3c60f,gpt-5-nano-think,OpenAI GPT-5 nano,C open case,2800,False,True
+rakuda,52d7ec3304b7e1aa,microsoft__Phi-4-reasoning-nothink,,A explicit setting,40,True,False
+tengu,f9749f7678ee33cd,microsoft__Phi-4-reasoning-nothink,,A explicit setting,115,True,False
+rakuda,0dcc7fad8cb41537,nvidia__NVIDIA-Nemotron-3-Nano-30B-A3B-BF16-nothink,,A explicit setting,40,True,False
+tengu,82fb23f31766ab66,nvidia__NVIDIA-Nemotron-3-Nano-30B-A3B-BF16-nothink,,A explicit setting,115,True,False
+mmdocrag,d1ab289874373f7f,qwen3-14b-no-think,Alibaba Qwen3 14B,A explicit setting,3998,True,False
+mmdocrag,93aaa277c4b81776,qwen3-30b-a3b-no-think,Alibaba Qwen3 30B A3B,A explicit setting,3998,True,False
+mmdocrag,244b8cc284dd22aa,qwen3-4b-no-think,Alibaba Qwen3 4B,A explicit setting,3998,True,False
+mmdocrag,78c305a8596192ef,qwen3-8b-no-think,Alibaba Qwen3 8B,A explicit setting,3998,True,False
+matharena,b9d0ce1d510c35cd,Claude-3.7-Sonnet (Think),,A explicit setting,860,True,False
+matharena,68c86aed89037bce,Claude-Opus-4.0 (Think),,A explicit setting,360,True,False
+real_webagents,82b51084b7e8a3e9,Claude-Opus-4:Thinking,Anthropic Claude Opus 4,A explicit setting,112,False,True
+matharena,6778df072cd56c20,Claude-Sonnet-4.5 (Think),,A explicit setting,1596,True,False
+hle,67a156376eb5e897,DeepSeek-V3.2-Exp-Thinking,DeepSeek V3.2,B think suffix of hybrid model,110,True,False
+hle,d8e90e2a1b460b43,DeepSeek-V3.2-Thinking,DeepSeek V3.2,B think suffix of hybrid model,1261,True,False
+matharena,227332f90adb31b0,DeepSeek-v3.1 (Think),,B think suffix of hybrid model,924,True,False
+matharena,8e59102e29f0ba6b,DeepSeek-v3.2 (Think),DeepSeek V3.2,B think suffix of hybrid model,3403,True,False
+matharena,b7b7db43d8b46865,DeepSeek-v3.2-Exp (Think),,B think suffix of hybrid model,1044,True,False
+matharena,253569cd72b933a0,Gemini 2.5 Flash (Thinking),,B think suffix of hybrid model,732,True,False
+matharena,0fc7a14637cf4d1b,Grok 3 (Think),xAI Grok 3,B think suffix of hybrid model,168,True,False
+matharena,fe9d490a21932071,Grok 4 Fast (Reasoning) (Selfcheck Agent),,A explicit setting,1,True,False
+matharena,f16888e5901dfa31,Grok 4.1 Fast (Reasoning),xAI Grok 4.1 Fast,A explicit setting,4992,True,False
+dpai,fa94d0f51f6189b5,Grok 4.1 Fast Reasoning,,B think suffix of hybrid model,306,False,False
+kris_bench,98557c89ad066778,KRIS-Bench / bagel_thinking,,A explicit setting,8021,True,False
+matharena,64ef8c71d54e3a1b,Kimi K2.5 (Think),Moonshot Kimi K2.5,B think suffix of hybrid model,2600,True,False
+matharena,c745ad9e074218e1,Kimi K2.6 (Think),Moonshot Kimi K2.6,B think suffix of hybrid model,540,True,False
+livebench,7071a8ab4ba486f8,LiveBench / claude-3-7-sonnet-20250219-thinking-25k,,A explicit setting,318,True,False
+livebench,b826acf31d7232c1,LiveBench / claude-3-7-sonnet-20250219-thinking-64k,,A explicit setting,318,True,False
+matharena_platform,ea972671741ffeeb,MathArena Platform / DeepSeek-v3.2 (Think),,B think suffix of hybrid model,456,True,False
+matharena_platform,df1b7621fd85bc47,MathArena Platform / Grok 4.1 Fast (Reasoning),,A explicit setting,584,True,False
+matharena_platform,390cf72517cb2fab,MathArena Platform / Kimi K2.5 (Think),,B think suffix of hybrid model,444,True,False
+matharena_platform,a6ba1cbdff1a0194,MathArena Platform / Kimi K2.6 (Think),,B think suffix of hybrid model,554,True,False
+matharena_platform,dec1366e97d9bc58,MathArena Platform / Kimi K3 (Think),,B think suffix of hybrid model,727,True,False
+eduguardbench,6c146074a297e5ca,Qwen3-235B-A22B (reasoning),Alibaba Qwen3 235B A22B,A explicit setting,13520,True,False
+eduguardbench,1904ae23984bbfed,Qwen3-32B (reasoning),Alibaba Qwen3 32B,A explicit setting,13479,True,False
+eduguardbench,b047905a3d4b0297,Qwen3-8B (reasoning),Alibaba Qwen3 8B,A explicit setting,13597,True,False
+multimodal_stem_ai,95c65862ca1f572c,anthropic/claude-3.7-sonnet:thinking,Anthropic Claude 3.7 Sonnet,A explicit setting,255,False,True
+multimodal_stem_ai,17ba13555ab2ceb7,anthropic/claude-3.7-sonnet:thinking,Anthropic Claude 3.7 Sonnet,A explicit setting,255,False,True
+multimodal_stem_ai,6b1fba210b9c1b20,anthropic/claude-3.7-sonnet:thinking,Anthropic Claude 3.7 Sonnet,A explicit setting,255,False,True
+multimodal_stem_ai,8cff3b6ae1ad60e4,anthropic/claude-3.7-sonnet:thinking,Anthropic Claude 3.7 Sonnet,A explicit setting,255,False,True
+real_webagents,7fcaa05b8c908c9f,anthropic/claude-3.7-sonnet:thinking,Anthropic Claude 3.7 Sonnet,A explicit setting,413,False,True
+helm_anthropic_redteam,5de50f25966d2e97,anthropic/claude-opus-4-20250514-thinking-10k,Anthropic Claude Opus 4,A explicit setting,1000,True,False
+helm_bbq,1294e4a625a8276b,anthropic/claude-opus-4-20250514-thinking-10k,Anthropic Claude Opus 4,A explicit setting,1000,True,False
+helm_harmbench,5de50f25966d2e97,anthropic/claude-opus-4-20250514-thinking-10k,Anthropic Claude Opus 4,A explicit setting,400,True,False
+helm_simple_safety_tests,5de50f25966d2e97,anthropic/claude-opus-4-20250514-thinking-10k,Anthropic Claude Opus 4,A explicit setting,100,True,False
+helm_xstest,5de50f25966d2e97,anthropic/claude-opus-4-20250514-thinking-10k,Anthropic Claude Opus 4,A explicit setting,450,True,False
+helm_anthropic_redteam,e17841067c98cc70,anthropic/claude-sonnet-4-20250514-thinking-10k,Anthropic Claude Sonnet 4,A explicit setting,1000,True,False
+helm_bbq,a4c15452c9b8e5ac,anthropic/claude-sonnet-4-20250514-thinking-10k,Anthropic Claude Sonnet 4,A explicit setting,1000,True,False
+helm_harmbench,e17841067c98cc70,anthropic/claude-sonnet-4-20250514-thinking-10k,Anthropic Claude Sonnet 4,A explicit setting,400,True,False
+helm_simple_safety_tests,e17841067c98cc70,anthropic/claude-sonnet-4-20250514-thinking-10k,Anthropic Claude Sonnet 4,A explicit setting,100,True,False
+helm_xstest,e17841067c98cc70,anthropic/claude-sonnet-4-20250514-thinking-10k,Anthropic Claude Sonnet 4,A explicit setting,450,True,False
+ikp,7fcaa05b8c908c9f,claude-3.7-sonnet-think,Anthropic Claude 3.7 Sonnet,A explicit setting,2800,False,True
+ikp,7b05e5a12ede7785,claude-haiku-4.5-think,Anthropic Claude Haiku 4.5,A explicit setting,2800,False,True
+ikp,82b51084b7e8a3e9,claude-opus-4-think,Anthropic Claude Opus 4,A explicit setting,2800,False,True
+ikp,f1543a72a79b6da8,claude-opus-4.1-think,Anthropic Claude Opus 4.1,A explicit setting,2800,False,True
+ikp,8e0f3a785794b0f5,claude-opus-4.5-think,Anthropic Claude Opus 4.5,A explicit setting,2800,False,True
+ikp,5b753609f9c7ac4d,claude-opus-4.6-think,Anthropic Claude Opus 4.6,A explicit setting,2800,False,True
+ikp,62164bb2b6e485da,claude-opus-4.7-think,Anthropic Claude Opus 4.7,A explicit setting,2800,False,True
+ikp,ab1a57252740ac07,claude-sonnet-4-think,Anthropic Claude Sonnet 4,A explicit setting,2800,False,True
+ikp,fb756c177643c16c,claude-sonnet-4.5-think,Anthropic Claude Sonnet 4.5,A explicit setting,2800,False,True
+ikp,ab5afdb60900c228,claude-sonnet-4.6-think,Anthropic Claude Sonnet 4.6,A explicit setting,2800,False,True
+ikp,1a06f0f18530a417,deepseek-v3.2-think,DeepSeek V3.2,B think suffix of hybrid model,2800,False,True
+ikp,1c23e4759fa6fb67,deepseek-v4-flash-think,DeepSeek V4 Flash,B think suffix of hybrid model,2800,False,True
+ikp,ad5edb1d80577552,deepseek-v4-pro-think,DeepSeek V4 Pro,B think suffix of hybrid model,2641,False,True
+matharena,6d08bce10d9c41ed,gemini-2.5-flash (think),,B think suffix of hybrid model,120,True,False
+ikp,3fdfaafd297f00c8,gemini-2.5-flash-lite-think,Google Gemini 2.5 Flash-Lite,B think suffix of hybrid model,2800,False,True
+ikp,e4b4ec61717e2e26,gemini-2.5-flash-think,Google Gemini 2.5 Flash,B think suffix of hybrid model,2800,False,True
+ikp,f3c1964f1cdb72be,gemini-2.5-pro-think,Google Gemini 2.5 Pro,C open case,2800,False,True
+ikp,f2ec95cfcf28625b,gemini-3-flash-think,Google Gemini 3 Flash,B think suffix of hybrid model,2800,False,True
+ikp,5dbd9c12986f2026,glm-4.5-air-think,Zhipu GLM-4.5 Air,B think suffix of hybrid model,1400,False,True
+ikp,04a4a46dbc2662cf,glm-4.5-think,Zhipu GLM-4.5,B think suffix of hybrid model,1281,False,True
+ikp,6e9409ff6e4109a8,glm-4.6-think,Zhipu GLM-4.6,B think suffix of hybrid model,1400,False,True
+ikp,d2f2a9c90a7a4703,glm-4.7-flash-think,Zhipu GLM-4.7 Flash,B think suffix of hybrid model,1400,False,True
+ikp,b1ae9a319c5eb01f,glm-4.7-think,Zhipu GLM-4.7,B think suffix of hybrid model,1400,False,True
+ikp,7f7a5c772fd6315c,glm-5-think,Zhipu GLM-5,B think suffix of hybrid model,3509,False,True
+ikp,354ba7e51ecc4465,glm-5-turbo-think,Zhipu GLM-5 Turbo,B think suffix of hybrid model,1281,False,True
+ikp,6ed41082e7b1aab1,glm-5.1-think,Zhipu GLM-5.1,B think suffix of hybrid model,2455,False,True
+ikp,092a1a339e59aac2,gpt-5-mini-think,OpenAI GPT-5 mini,C open case,2800,False,True
+ikp,7dee9bfbe006fb22,gpt-5-think,OpenAI GPT-5,C open case,2800,False,True
+ikp,5d5aa7a62f496d1f,gpt-5.5-think,OpenAI GPT-5.5,C open case,2800,False,True
+arcagi,aae90118e8816bd2,grok-4-fast-reasoning,xAI Grok 4 Fast,B think suffix of hybrid model,127,True,False
+arcagi,4d3fa9ee4c1fcb69,grok-4-fast-reasoning,xAI Grok 4 Fast,B think suffix of hybrid model,393,True,False
+txbench_pp,247d31406289c0e7,grok-4.20-0309-reasoning,xAI Grok 4.20,B think suffix of hybrid model,36,True,False
+scbench_long,282e4a21127043fa,grok-4.20-beta-0309-reasoning,xAI Grok 4.20,B think suffix of hybrid model,12,True,False
+arcagi,328ef3e47c35385c,grok-4.20-beta-0309b-reasoning,xAI Grok 4.20,B think suffix of hybrid model,520,True,False
+ikp,d5cee7ea803d181f,grok-4.20-think,xAI Grok 4.20,B think suffix of hybrid model,2562,False,True
+ikp,131b230272590a40,hunyuan-a13b-think,Tencent Hunyuan A13B,B think suffix of hybrid model,2800,False,True
+ikp,c5569d60973e618f,kimi-k2.5-think,Moonshot Kimi K2.5,B think suffix of hybrid model,1400,False,True
+ikp,41eea517d156dac5,kimi-k2.6-think,Moonshot Kimi K2.6,B think suffix of hybrid model,1400,False,True
+ikp,0124d3848a9d6ca9,mimo-v2-flash-think,Xiaomi MiMo V2 Flash,C open case,2800,False,True
+ikp,1cf88efceaeb82d0,mimo-v2-pro-think,Xiaomi MiMo V2 Pro,C open case,2800,False,True
+ikp,965ef4eea33a4fdc,mimo-v2.5-pro-think,Xiaomi MiMo V2.5 Pro,C open case,2800,False,True
+ikp,d00148c514866cee,mimo-v2.5-think,Xiaomi MiMo V2.5,C open case,2800,False,True
+ikp,9d826fd5ba806b46,minimax-m2.7-think,MiniMax M2.7,C open case,1251,False,True
+ikp,c443d21fc2dbc98a,nemotron-super-49b-think,NVIDIA Nemotron Super 49B,B think suffix of hybrid model,1400,False,True
+ikp,2ec99af5c6359e30,qwen3-14b-think,Alibaba Qwen3 14B,B think suffix of hybrid model,1400,False,True
+ikp,2e663d8f22f5a8ea,qwen3-235b-a22b-think,Alibaba Qwen3 235B A22B,B think suffix of hybrid model,1281,False,True
+ikp,2a42cf4c586eab0c,qwen3-30b-a3b-think,Alibaba Qwen3 30B A3B,B think suffix of hybrid model,1400,False,True
+ikp,3b7ff8dae0a232cd,qwen3-32b-think,Alibaba Qwen3 32B,B think suffix of hybrid model,1400,False,True
+ikp,8ddb957632e6146b,qwen3-8b-think,Alibaba Qwen3 8B,B think suffix of hybrid model,1281,False,True
+ikp,278287398a2d6d74,qwen3.5-122b-a10b-think,Alibaba Qwen3.5 122B A10B,C open case,1281,False,True
+ikp,6449d2331d108fba,qwen3.5-27b-think,Alibaba Qwen3.5 27B,C open case,1281,False,True
+ikp,65779a4bf42c4537,qwen3.5-35b-a3b-think,Alibaba Qwen3.5 35B A3B,C open case,1281,False,True
+ikp,5381fa4f031233e7,qwen3.5-397b-a17b-think,Alibaba Qwen3.5 397B A17B,C open case,1281,False,True
+ikp,e6840cbc7493215b,qwen3.5-9b-think,Alibaba Qwen3.5 9B,C open case,1281,False,True
+ikp,fbb1b08604d0dcaa,qwen3.5-flash-think,Alibaba Qwen3.5 Flash,C open case,1281,False,True
+ikp,f34248cbbcc40cb6,qwen3.5-plus-think,Alibaba Qwen3.5 Plus,C open case,1281,False,True
+ikp,b6c170bf94c76235,qwen3.6-plus-think,Alibaba Qwen3.6 Plus,C open case,1281,False,True
+ikp,acd10f9465220842,seed-1.6-flash-think,ByteDance Seed 1.6 Flash,C open case,1281,False,True
+ikp,0b4efa58cabcd468,seed-1.6-think,ByteDance Seed 1.6,C open case,1281,False,True
+ikp,5533e3f4faabb07e,seed-2.0-lite-think,ByteDance Seed 2.0 Lite,C open case,1281,False,True
+ikp,320aa3171e7a03f1,seed-2.0-mini-think,ByteDance Seed 2.0 Mini,C open case,1281,False,True
+ikp,e449d4c934126e0b,step-3.5-flash-think,StepFun Step 3.5 Flash,C open case,1388,False,True

@@ -1,0 +1,11 @@
+rc_h_cv_A=0
+rc_h_cv_B=0
+rc_lernkurve_A=0
+rc_lernkurve_B=0
+rc_v0_eff_A=0
+rc_ensemble_A=0
+rc_tafel=0
+rc_s0137_h_cv_B=0
+rc_s0137_lernkurve_B=0
+rc_sens_h_cv_A=0
+rc_sens_h_cv_B=0

@@ -1,0 +1,1039 @@
+% refs.bib — erzeugt von bericht-v2/baue_refs.py aus v2-plan/BIBLIOGRAFIE.bib (+ 5 Zusatzeintraege); nicht von Hand aendern.
+% note -> annote (plainnat druckt annote nicht); Pruefweg und Datum je Schluessel in Anhang G des Berichts.
+
+@misc{polo2024tiny,
+  author = {Felipe {Maia Polo} and Lucas Weber and Leshem Choshen and Yuekai Sun and Gongjun Xu and Mikhail Yurochkin},
+  title = {{tinyBenchmarks}: Evaluating {LLMs} with fewer examples},
+  year = {2024},
+  eprint = {2402.14992},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {ICML (PMLR 235; proceedings.mlr.press/v235/maia-polo24a.html)},
+  url = {https://arxiv.org/abs/2402.14992},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2402.14992v2, eingereicht 2024-02-22). Nutzen: Belegt, dass IRT + Anker-Items 14K MMLU-Items auf 100 reduzieren; Referenz fuer Item-Stufe und Faehigkeit/Schwierigkeit-Zerlegung.}
+}
+
+@misc{kipnis2024metabench,
+  author = {Alex Kipnis and Konstantinos Voudouris and Luca M. Schulze Buschoff and Eric Schulz},
+  title = {metabench -- A Sparse Benchmark of Reasoning and Knowledge in Large Language Models},
+  year = {2025},
+  eprint = {2407.12844},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {ICLR (per arXiv comment)},
+  url = {https://arxiv.org/abs/2407.12844},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2407.12844v2, eingereicht 2024-07-04). Nutzen: n > 5000 LLMs, < 3 \% der Items rekonstruieren Scores mit 1,24 \% RMSE: Faehigkeit ist niedrigdimensional, Items redundant.}
+}
+
+@misc{vivek2023anchor,
+  author = {Rajan Vivek and Kawin Ethayarajh and Diyi Yang and Douwe Kiela},
+  title = {Anchor Points: Benchmarking Models with Much Fewer Examples},
+  year = {2024},
+  eprint = {2309.08638},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {EACL},
+  url = {https://doi.org/10.18653/v1/2024.eacl-long.95},
+  doi = {10.18653/v1/2024.eacl-long.95},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2309.08638v2, eingereicht 2023-09-14). Nutzen: Anker-Items (1-30) ranken Modelle besser als Zufall; Vorlaeufer der Item-Auswahl.}
+}
+
+@misc{perlitz2023efficient,
+  author = {Yotam Perlitz and Elron Bandel and Ariel Gera and Ofir Arviv and Liat Ein-Dor and Eyal Shnarch and Noam Slonim and Michal Shmueli-Scheuer and Leshem Choshen},
+  title = {Efficient Benchmarking of Language Models},
+  year = {2024},
+  eprint = {2308.11696},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {NAACL},
+  url = {https://doi.org/10.18653/v1/2024.naacl-long.139},
+  doi = {10.18653/v1/2024.naacl-long.139},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2308.11696v5, eingereicht 2023-08-22). Nutzen: DIoR-Zuverlaessigkeitsmass; Rechenersparnis x100 bei Rang-Erhalt -- Kontrast: Rang-Erhalt ist leichter als item-genaue Brier-Vorhersage.}
+}
+
+@misc{truong2025amortized,
+  author = {Sang Truong and Yuheng Tu and Percy Liang and Bo Li and Sanmi Koyejo},
+  title = {Reliable and Efficient Amortized Model-based Evaluation},
+  year = {2025},
+  eprint = {2503.13335},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {ICML (PMLR 267; proceedings.mlr.press/v267/truong25c.html)},
+  url = {https://arxiv.org/abs/2503.13335},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2503.13335v1, eingereicht 2025-03-17). Nutzen: Veranstalter-Linie: Rasch-Schwierigkeit aus Fragetext (Llama-3-8B-Embeddings), adaptive Testung spart bis 86 \% Fragen, 95 \% Reliabilitaet mit 31 Queries.}
+}
+
+@misc{hofmann2025fluid,
+  author = {Valentin Hofmann and David Heineman and Ian Magnusson and Kyle Lo and Jesse Dodge and Maarten Sap and Pang Wei Koh and Chun Wang and Hannaneh Hajishirzi and Noah A. Smith},
+  title = {Fluid Language Model Benchmarking},
+  year = {2025},
+  eprint = {2509.11106},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {COLM (per arXiv comment)},
+  url = {https://arxiv.org/abs/2509.11106},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2509.11106v1, eingereicht 2025-09-14). Nutzen: 2PL-IRT + Fisher-Information: bei 10 Items halbiert sich Rangfehler und Varianz gegenueber Zufall -- Gewinn adaptiver Auswahl ist bei kleinen Budgets groesst.}
+}
+
+@misc{zhang2025misses,
+  author = {Guanhua Zhang and Florian E. Dorner and Moritz Hardt},
+  title = {How Benchmark Prediction from Fewer Data Misses the Mark},
+  year = {2025},
+  eprint = {2506.07673},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  howpublished = {NeurIPS (neurips.cc/virtual/2025/poster/116085)},
+  url = {https://arxiv.org/abs/2506.07673},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2506.07673v2, eingereicht 2025-06-09). Nutzen: Negativbefund: Zufallsstichprobe + Regression schlaegt 11 Methoden, Extrapolation scheitert; AIPW-Debias als konsistenter Schaetzer -- Vorlage fuer unsere Item-Stufe.}
+}
+
+@misc{krumdick2026wild,
+  author = {Michael Krumdick and Adam Wiemerslage and Seth Ebner and Charles Lovering and Chris Tanner},
+  title = {{Cost-Efficient} Estimation of General Abilities Across Benchmarks},
+  year = {2026},
+  eprint = {2604.01418},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2604.01418},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2604.01418v2, eingereicht 2026-04-01). Nutzen: MIRT (K=3 + Generalfaktor) + V-optimale Auswahl: MAE < 7 \% auf 112 kalten Tasks nach 16 Items; ab N~64 ist Zufall gleich gut.}
+}
+
+@misc{chen2025compact,
+  author = {Jianhao Chen and Chenxu Wang and Gengrui Zhang and Peng Ye and Lei Bai and Wei Hu and Yuzhong Qu and Shuyue Hu},
+  title = {Learning Compact Representations of {LLM} Abilities via Item Response Theory},
+  year = {2025},
+  eprint = {2510.00844},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2510.00844},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2510.00844v1, eingereicht 2025-10-01). Nutzen: Gelernte MIRT-Repraesentationen fuer Routing/Benchmark-Vorhersage; aktueller Trend.}
+}
+
+@misc{zhou2025psnirt,
+  author = {Hongli Zhou and Hui Huang and Ziqing Zhao and Lvyuan Han and Huicheng Wang and Kehai Chen and Muyun Yang and Wei Bao and Jian Dong and Bing Xu and Conghui Zhu and Hailong Cao and Tiejun Zhao},
+  title = {Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory},
+  year = {2026},
+  eprint = {2505.15055},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {AAAI (per arXiv comment)},
+  url = {https://arxiv.org/abs/2505.15055},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2505.15055v3, eingereicht 2025-05-21). Nutzen: IRT als Benchmark-Diagnose (11 Benchmarks, 41 871 Items) -- Werkzeug fuer die Datenqualitaets-Saeule.}
+}
+
+@misc{pacchiardi2024hundred,
+  author = {Lorenzo Pacchiardi and Lucy G. Cheke and José Hernández-Orallo},
+  title = {100 instances is all you need: Predicting the success of a new {LLM} on unseen data by testing on a few instances},
+  year = {2024},
+  eprint = {2409.03563},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2409.03563},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2409.03563v1, eingereicht 2024-09-05). Nutzen: Generischer Assessor aus 100 Referenzinstanzen + Embeddings; OOD-Vorhersagbarkeit gering; Zufallsauswahl so gut wie fortgeschrittene Auswahl.}
+}
+
+@misc{ruan2024observational,
+  author = {Yangjun Ruan and Chris J. Maddison and Tatsunori Hashimoto},
+  title = {Observational Scaling Laws and the Predictability of Language Model Performance},
+  year = {2024},
+  eprint = {2405.10938},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  howpublished = {NeurIPS (per arXiv comment)},
+  url = {https://arxiv.org/abs/2405.10938},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2405.10938v3, eingereicht 2024-05-17). Nutzen: Leistung = Funktion eines niedrigdimensionalen Faehigkeitsraums aus ~100 Modellen; Stuetze fuer Subjektfaktor theta.}
+}
+
+@misc{zhang2024cpp,
+  author = {Qiyuan Zhang and Fuyuan Lyu and Xue Liu and Chen Ma},
+  title = {Collaborative Performance Prediction for Large Language Models},
+  year = {2024},
+  eprint = {2407.01300},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {EMNLP},
+  url = {https://doi.org/10.18653/v1/2024.emnlp-main.150},
+  doi = {10.18653/v1/2024.emnlp-main.150},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2407.01300v2, eingereicht 2024-07-01). Nutzen: Kollaboratives Filtern Modell x Task mit Designfaktoren -- naechster Verwandter des Paar-Modells; Kaltstart = Recommender-Problem.}
+}
+
+@misc{polo2024sloth,
+  author = {Felipe {Maia Polo} and Seamus Somerstep and Leshem Choshen and Yuekai Sun and Mikhail Yurochkin},
+  title = {Sloth: Scaling laws for {LLM} skills to predict multi-benchmark performance across families},
+  year = {2024},
+  eprint = {2412.06540},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2412.06540},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2412.06540v5, eingereicht 2024-12-09). Nutzen: Skalierungsgesetz ueber latente Skills, familienspezifische Effizienz, 12 Benchmarks; Korrelation zwischen Benchmarks als Prior-Quelle.}
+}
+
+@misc{ye2023predictable,
+  author = {Qinyuan Ye and Harvey Yiyun Fu and Xiang Ren and Robin Jia},
+  title = {How Predictable Are Large Language Model Capabilities? A Case Study on {BIG-bench}},
+  year = {2023},
+  eprint = {2305.14947},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {Findings of EMNLP (per arXiv comment)},
+  url = {https://arxiv.org/abs/2305.14947},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2305.14947v2, eingereicht 2023-05-24). Nutzen: MLP auf (Familie, Groesse, Task) erreicht R^2 > 95 \% -- mit Task-Identitaet; Kontrast zum kalten Benchmark.}
+}
+
+@misc{owen2024predictable,
+  author = {David Owen},
+  title = {How predictable is language model benchmark performance?},
+  year = {2024},
+  eprint = {2401.04757},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2401.04757},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2401.04757v1, eingereicht 2024-01-09). Nutzen: Aggregat 6 pp Fehler vs. Einzeltask 18 pp bei Compute-Extrapolation: Einzeltask-Vorhersage ist ~3x schwerer.}
+}
+
+@misc{snell2024emergence,
+  author = {Charlie Snell and Eric Wallace and Dan Klein and Sergey Levine},
+  title = {Predicting Emergent Capabilities by Finetuning},
+  year = {2024},
+  eprint = {2411.16035},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2411.16035},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2411.16035v1, eingereicht 2024-11-25). Nutzen: Emergenz per Feintuning bis 4x Compute vorhersagbar; Related Work zur Vorhersagbarkeit.}
+}
+
+@misc{zhou2025adele,
+  author = {Lexin Zhou and Lorenzo Pacchiardi and Fernando Martínez-Plumed and Katherine M. Collins and Yael Moros-Daval and Seraphina Zhang and Qinlin Zhao and Yitian Huang and Luning Sun and Jonathan E. Prunty and Zongqian Li and Pablo Sánchez-García and Kexin Jiang Chen and Pablo A. M. Casares and Jiyun Zu and John Burden and Behzad Mehrbakhsh and David Stillwell and Manuel Cebrian and Jindong Wang and Peter Henderson and Sherry Tongshuang Wu and Patrick C. Kyllonen and Lucy Cheke and Xing Xie and José Hernández-Orallo},
+  title = {General Scales Unlock {AI} Evaluation with Explanatory and Predictive Power},
+  year = {2025},
+  eprint = {2503.06378},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2503.06378},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2503.06378v2, eingereicht 2025-03-09). Nutzen: Instanz-Vorhersage ueber 18 Anforderungs-Rubriken: Benchmark-OOD AUROC 0,747 vs. Embeddings 0,480 -- rohe Embeddings versagen im kalten Benchmark.}
+}
+
+@misc{zhou2023predictableai,
+  author = {Lexin Zhou and Pablo A. Moreno-Casares and Fernando Martínez-Plumed and John Burden and Ryan Burnell and Lucy Cheke and Cèsar Ferri and Alexandru Marcoci and Behzad Mehrbakhsh and Yael Moros-Daval and Seán Ó hÉigeartaigh and Danaja Rutar and Wout Schellaert and Konstantinos Voudouris and José Hernández-Orallo},
+  title = {Predictable Artificial Intelligence},
+  year = {2023},
+  eprint = {2310.06167},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2310.06167},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2310.06167v3, eingereicht 2023-10-09). Nutzen: Programmatischer Rahmen 'Predictable AI'; Begriff Assessor.}
+}
+
+@misc{kossen2021activetesting,
+  author = {Jannik Kossen and Sebastian Farquhar and Yarin Gal and Tom Rainforth},
+  title = {Active Testing: Sample-Efficient Model Evaluation},
+  year = {2021},
+  eprint = {2103.05331},
+  archivePrefix = {arXiv},
+  primaryClass = {stat.ML},
+  howpublished = {ICML (per arXiv comment)},
+  url = {https://arxiv.org/abs/2103.05331},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2103.05331v2, eingereicht 2021-03-09). Nutzen: Aktive Auswahl von Testpunkten verzerrt Schaetzer; Bias-Entfernung bei Varianzreduktion -- Pflicht fuer nicht-uniforme Akquise.}
+}
+
+@misc{kossen2022ase,
+  author = {Jannik Kossen and Sebastian Farquhar and Yarin Gal and Tom Rainforth},
+  title = {Active Surrogate Estimators: An Active Learning Approach to {Label-Efficient} Model Evaluation},
+  year = {2022},
+  eprint = {2202.06881},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2202.06881},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2202.06881v2, eingereicht 2022-02-14). Nutzen: Surrogat-Schaetzer fuer label-effiziente Modellbewertung.}
+}
+
+@misc{northcutt2021pervasive,
+  author = {Curtis G. Northcutt and Anish Athalye and Jonas Mueller},
+  title = {Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks},
+  year = {2021},
+  eprint = {2103.14749},
+  archivePrefix = {arXiv},
+  primaryClass = {stat.ML},
+  howpublished = {NeurIPS Datasets and Benchmarks (per arXiv comment)},
+  url = {https://arxiv.org/abs/2103.14749},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2103.14749v4, eingereicht 2021-03-26). Nutzen: >= 3,3 \% Label-Fehler im Mittel ueber 10 Testsets, ImageNet-Val >= 6 \%; Fehler kippen Rankings.}
+}
+
+@misc{gema2024mmlu,
+  author = {Aryo Pradipta Gema and Joshua Ong Jun Leang and Giwon Hong and Alessio Devoto and Alberto Carlo Maria Mancino and Rohit Saxena and Xuanli He and Yu Zhao and Xiaotang Du and Mohammad Reza Ghasemi Madani and Claire Barale and Robert McHardy and Joshua Harris and Jean Kaddour and Emile van Krieken and Pasquale Minervini},
+  title = {Are We Done with {MMLU}?},
+  year = {2025},
+  eprint = {2406.04127},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {NAACL},
+  url = {https://doi.org/10.18653/v1/2025.naacl-long.262},
+  doi = {10.18653/v1/2025.naacl-long.262},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2406.04127v3, eingereicht 2024-06-06). Nutzen: 6,49 \% fehlerhafte MMLU-Fragen (Virology 57 \%); MMLU-Redux 5 700 Fragen -- Vorbild fuer Audit-Taxonomie.}
+}
+
+@misc{oren2023contamination,
+  author = {Yonatan Oren and Nicole Meister and Niladri Chatterji and Faisal Ladhak and Tatsunori B. Hashimoto},
+  title = {Proving Test Set Contamination in Black Box Language Models},
+  year = {2024},
+  eprint = {2310.17623},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {ICLR (per arXiv comment)},
+  url = {https://arxiv.org/abs/2310.17623},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2310.17623v2, eingereicht 2023-10-26). Nutzen: Statistischer Test auf Testset-Kontamination ueber Austauschbarkeit.}
+}
+
+@misc{miller2024errorbars,
+  author = {Evan Miller},
+  title = {Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations},
+  year = {2024},
+  eprint = {2411.00640},
+  archivePrefix = {arXiv},
+  primaryClass = {stat.AP},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2411.00640},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2411.00640v1, eingereicht 2024-11-01). Nutzen: Formeln fuer SE, gepaarte Modellvergleiche und Planung von Evals -- Stuetze fuer unsere KI/SE-Darstellung.}
+}
+
+@misc{vendrow2025platinum,
+  author = {Joshua Vendrow and Edward Vendrow and Sara Beery and Aleksander Madry},
+  title = {Do Large Language Model Benchmarks Test Reliability?},
+  year = {2025},
+  eprint = {2502.03461},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2502.03461},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2502.03461v1, eingereicht 2025-02-05). Nutzen: Platinum-Benchmarks: 15 Benchmarks von Label-Fehlern/Ambiguitaet bereinigt; Audit als Beitrag.}
+}
+
+@misc{perlitz2024benchbench,
+  author = {Yotam Perlitz and Ariel Gera and Ofir Arviv and Asaf Yehudai and Elron Bandel and Eyal Shnarch and Michal Shmueli-Scheuer and Leshem Choshen},
+  title = {Do These {LLM} Benchmarks Agree? Fixing Benchmark Evaluation with {BenchBench}},
+  year = {2024},
+  eprint = {2407.13696},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2407.13696},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2407.13696v2, eingereicht 2024-07-18). Nutzen: Benchmark-Agreement-Testing; Einordnung der Benchmark-Heterogenitaet.}
+}
+
+@misc{angelopoulos2023ppi,
+  author = {Anastasios N. Angelopoulos and Stephen Bates and Clara Fannjiang and Michael I. Jordan and Tijana Zrnic},
+  title = {{Prediction-Powered} Inference},
+  year = {2023},
+  eprint = {2301.09633},
+  archivePrefix = {arXiv},
+  primaryClass = {stat.ML},
+  howpublished = {Science 382(6671) (per arXiv comment)},
+  url = {https://arxiv.org/abs/2301.09633},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2301.09633v4, eingereicht 2023-01-23). Nutzen: Gueltige Inferenz aus wenigen Labels + ML-Vorhersagen; theoretischer Rahmen fuer Prior + Labels.}
+}
+
+@misc{guo2017calibration,
+  author = {Chuan Guo and Geoff Pleiss and Yu Sun and Kilian Q. Weinberger},
+  title = {On Calibration of Modern Neural Networks},
+  year = {2017},
+  eprint = {1706.04599},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  howpublished = {ICML (per arXiv comment)},
+  url = {https://arxiv.org/abs/1706.04599},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 1706.04599v2, eingereicht 2017-06-14). Nutzen: Temperatur-/Platt-Skalierung als datenarme Kalibrierung.}
+}
+
+@misc{rainforth2023boed,
+  author = {Tom Rainforth and Adam Foster and Desi R Ivanova and Freddie Bickford Smith},
+  title = {Modern Bayesian Experimental Design},
+  year = {2024},
+  eprint = {2302.14545},
+  archivePrefix = {arXiv},
+  primaryClass = {stat.ML},
+  howpublished = {Statistical Science 39(1) (per arXiv comment)},
+  url = {https://arxiv.org/abs/2302.14545},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2302.14545v2, eingereicht 2023-02-28). Nutzen: Moderne Bayes-Versuchsplanung (EIG); Sprache fuer labeling.py.}
+}
+
+@misc{viering2021curves,
+  author = {Tom Viering and Marco Loog},
+  title = {The Shape of Learning Curves: A Review},
+  year = {2022},
+  eprint = {2103.10948},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  howpublished = {IEEE TPAMI (per arXiv comment)},
+  url = {https://arxiv.org/abs/2103.10948},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2103.10948v2, eingereicht 2021-03-19). Nutzen: Formen von Lernkurven; Modellierung der Brier-Lernkurve je Paar.}
+}
+
+@misc{zhuang2023position,
+  author = {Yan Zhuang and Qi Liu and Zachary A. Pardos and Patrick C. Kyllonen and Jiyun Zu and Zhenya Huang and Shijin Wang and Enhong Chen},
+  title = {Position: {AI} Evaluation Should Learn from How We Test Humans},
+  year = {2023},
+  eprint = {2306.10512},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2306.10512},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2306.10512v4, eingereicht 2023-06-18). Nutzen: Adaptives Testen (CAT) fuer LLM-Evaluation als Position.}
+}
+
+@misc{biderman2024trenches,
+  author = {Stella Biderman and Hailey Schoelkopf and Lintang Sutawika and Leo Gao and Jonathan Tow and Baber Abbasi and Alham Fikri Aji and Pawan Sasanka Ammanamanchi and Sidney Black and Jordan Clive and Anthony DiPofi and Julen Etxaniz and Benjamin Fattori and Jessica Zosa Forde and Charles Foster and Jeffrey Hsu and Mimansa Jaiswal and Wilson Y. Lee and Haonan Li and Charles Lovering and Niklas Muennighoff and Ellie Pavlick and Jason Phang and Aviya Skowron and Samson Tan and Xiangru Tang and Kevin A. Wang and Genta Indra Winata and François Yvon and Andy Zou},
+  title = {Lessons from the Trenches on Reproducible Evaluation of Language Models},
+  year = {2024},
+  eprint = {2405.14782},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2405.14782},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2405.14782v3, eingereicht 2024-05-23). Nutzen: Reproduzierbarkeits-Fallen bei LLM-Evals; Begruendung fuer Harness-Felder im Subjekt.}
+}
+
+@misc{liang2022helm,
+  author = {Percy Liang and Rishi Bommasani and Tony Lee and Dimitris Tsipras and Dilara Soylu and Michihiro Yasunaga and Yian Zhang and Deepak Narayanan and Yuhuai Wu and Ananya Kumar and Benjamin Newman and Binhang Yuan and Bobby Yan and Ce Zhang and Christian Cosgrove and Christopher D. Manning and Christopher Ré and Diana Acosta-Navas and Drew A. Hudson and Eric Zelikman and Esin Durmus and Faisal Ladhak and Frieda Rong and Hongyu Ren and Huaxiu Yao and Jue Wang and Keshav Santhanam and Laurel Orr and Lucia Zheng and Mert Yuksekgonul and Mirac Suzgun and Nathan Kim and Neel Guha and Niladri Chatterji and Omar Khattab and Peter Henderson and Qian Huang and Ryan Chi and Sang Michael Xie and Shibani Santurkar and Surya Ganguli and Tatsunori Hashimoto and Thomas Icard and Tianyi Zhang and Vishrav Chaudhary and William Wang and Xuechen Li and Yifan Mai and Yuhui Zhang and Yuta Koreeda},
+  title = {Holistic Evaluation of Language Models},
+  year = {2023},
+  eprint = {2211.09110},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {arXiv preprint; TMLR (per arXiv comment)},
+  url = {https://arxiv.org/abs/2211.09110},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2211.09110v2, eingereicht 2022-11-16). Nutzen: HELM als Datenquelle vieler Benchmarks im Inventar.}
+}
+
+@misc{polo2024prompteval,
+  author = {Felipe {Maia Polo} and Ronald Xu and Lucas Weber and Mírian Silva and Onkar Bhardwaj and Leshem Choshen and Allysson Flavio Melo de Oliveira and Yuekai Sun and Mikhail Yurochkin},
+  title = {Efficient multi-prompt evaluation of {LLMs}},
+  year = {2024},
+  eprint = {2405.17202},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {NeurIPS (per arXiv comment)},
+  url = {https://arxiv.org/abs/2405.17202},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2405.17202v3, eingereicht 2024-05-27). Nutzen: IRT-basierte Schaetzung von Leistungsverteilungen ueber Prompts mit wenigen Evaluationen.}
+}
+
+@misc{madaan2024variance,
+  author = {Lovish Madaan and Aaditya K. Singh and Rylan Schaeffer and Andrew Poulton and Sanmi Koyejo and Pontus Stenetorp and Sharan Narang and Dieuwke Hupkes},
+  title = {Quantifying Variance in Evaluation Benchmarks},
+  year = {2024},
+  eprint = {2406.10229},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2406.10229},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2406.10229v1, eingereicht 2024-06-14). Nutzen: Varianzquellen in Benchmarks (Seeds, Prompts); Begruendung fuer Wiederholungen als Rauschen.}
+}
+
+@misc{reuel2024betterbench,
+  author = {Anka Reuel and Amelia Hardy and Chandler Smith and Max Lamparth and Malcolm Hardy and Mykel J. Kochenderfer},
+  title = {{BetterBench}: Assessing {AI} Benchmarks, Uncovering Issues, and Establishing Best Practices},
+  year = {2024},
+  eprint = {2411.12990},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  howpublished = {NeurIPS Datasets and Benchmarks (per arXiv comment)},
+  url = {https://arxiv.org/abs/2411.12990},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2411.12990v1, eingereicht 2024-11-20). Nutzen: Qualitaetskriterien fuer Benchmarks; Rahmen fuer Audit-Befunde.}
+}
+
+@misc{eriksson2025trust,
+  author = {Maria Eriksson and Erasmo Purificato and Arman Noroozian and Joao Vinagre and Guillaume Chaslot and Emilia Gomez and David Fernandez-Llorca},
+  title = {Can We Trust {AI} Benchmarks? An Interdisciplinary Review of Current Issues in {AI} Evaluation},
+  year = {2025},
+  eprint = {2502.06559},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2502.06559},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2502.06559v2, eingereicht 2025-02-10). Nutzen: Interdisziplinaere Kritik an Benchmarks; Kontext der Datenkuratierung.}
+}
+
+@misc{sainz2023trouble,
+  author = {Oscar Sainz and Jon Ander Campos and Iker García-Ferrero and Julen Etxaniz and Oier Lopez de Lacalle and Eneko Agirre},
+  title = {{NLP} Evaluation in trouble: On the Need to Measure {LLM} Data Contamination for each Benchmark},
+  year = {2023},
+  eprint = {2310.18018},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {Findings of EMNLP},
+  url = {https://doi.org/10.18653/v1/2023.findings-emnlp.722},
+  doi = {10.18653/v1/2023.findings-emnlp.722},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2310.18018v1, eingereicht 2023-10-27). Nutzen: Kontamination je Benchmark messen; Hypothese subjektabhaengiger Item-Schwierigkeit.}
+}
+
+@misc{deng2023contamination,
+  author = {Chunyuan Deng and Yilun Zhao and Xiangru Tang and Mark Gerstein and Arman Cohan},
+  title = {Investigating Data Contamination in Modern Benchmarks for Large Language Models},
+  year = {2024},
+  eprint = {2311.09783},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {NAACL},
+  url = {https://doi.org/10.18653/v1/2024.naacl-long.482},
+  doi = {10.18653/v1/2024.naacl-long.482},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2311.09783v2, eingereicht 2023-11-16). Nutzen: Kontaminationsnachweis in modernen Benchmarks.}
+}
+
+@misc{golchin2023timetravel,
+  author = {Shahriar Golchin and Mihai Surdeanu},
+  title = {Time Travel in {LLMs}: Tracing Data Contamination in Large Language Models},
+  year = {2024},
+  eprint = {2308.08493},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {ICLR (per arXiv comment)},
+  url = {https://arxiv.org/abs/2308.08493},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2308.08493v3, eingereicht 2023-08-16). Nutzen: Kontaminationsnachweis per Instanz-Vervollstaendigung.}
+}
+
+@misc{ji2020activebayesian,
+  author = {Disi Ji and Robert L. Logan and Padhraic Smyth and Mark Steyvers},
+  title = {Active Bayesian Assessment for {Black-Box} Classifiers},
+  year = {2021},
+  eprint = {2002.06532},
+  archivePrefix = {arXiv},
+  primaryClass = {stat.ML},
+  howpublished = {AAAI},
+  url = {https://doi.org/10.1609/aaai.v35i9.16968},
+  doi = {10.1609/aaai.v35i9.16968},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2002.06532v3, eingereicht 2020-02-16). Nutzen: Beta-Bernoulli-Posterior je Gruppe + Thompson Sampling: informative Priors + aktive Auswahl halbieren RMSE im Low-Data-Regime -- naechster Verwandter unseres Paar-Posteriors.}
+}
+
+@misc{dorner2024limits,
+  author = {Florian E. Dorner and Vivian Y. Nastl and Moritz Hardt},
+  title = {Limits to scalable evaluation at the frontier: {LLM} as Judge won't beat twice the data},
+  year = {2025},
+  eprint = {2410.13341},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  howpublished = {ICLR (per arXiv comment)},
+  url = {https://arxiv.org/abs/2410.13341},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2410.13341v4, eingereicht 2024-10-17). Nutzen: Grenzen skalierbarer Evaluation; Statistik bei wenigen Labels.}
+}
+
+@misc{ailem2024distributional,
+  author = {Melissa Ailem and Katerina Marazopoulou and Charlotte Siska and James Bono},
+  title = {Examining the robustness of {LLM} evaluation to the distributional assumptions of benchmarks},
+  year = {2024},
+  eprint = {2404.16966},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {ACL},
+  url = {https://doi.org/10.18653/v1/2024.acl-long.560},
+  doi = {10.18653/v1/2024.acl-long.560},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2404.16966v2, eingereicht 2024-04-25). Nutzen: Item-Korrelationen verletzen i.i.d.-Annahme -- Begruendung fuer Cluster-SE nach Benchmark.}
+}
+
+@misc{isik2024downstream,
+  author = {Berivan Isik and Natalia Ponomareva and Hussein Hazimeh and Dimitris Paparas and Sergei Vassilvitskii and Sanmi Koyejo},
+  title = {Scaling Laws for Downstream Task Performance of Large Language Models},
+  year = {2025},
+  eprint = {2402.04177},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {ICLR (per arXiv comment)},
+  url = {https://arxiv.org/abs/2402.04177},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2402.04177v3, eingereicht 2024-02-06). Nutzen: Skalierung von Downstream-Leistung; Randnotiz.}
+}
+
+@misc{schaeffer2023mirage,
+  author = {Rylan Schaeffer and Brando Miranda and Sanmi Koyejo},
+  title = {Are Emergent Abilities of Large Language Models a Mirage?},
+  year = {2023},
+  eprint = {2304.15004},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  howpublished = {NeurIPS (per arXiv comment)},
+  url = {https://arxiv.org/abs/2304.15004},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2304.15004v2, eingereicht 2023-04-28). Nutzen: Metrikwahl erzeugt Scheinspruenge; Argument fuer Wahrscheinlichkeitsmetriken.}
+}
+
+@misc{yao2025jeirt,
+  author = {Louie Hong Yao and Nicholas Jarvis and Tiffany Zhan and Saptarshi Ghosh and Linfeng Liu and Tianyu Jiang},
+  title = {{JE-IRT}: A Geometric Lens on {LLM} Abilities through Joint Embedding Item Response Theory},
+  year = {2025},
+  eprint = {2509.22888},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2509.22888},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2509.22888v2, eingereicht 2025-09-26). Nutzen: Joint-Embedding-IRT; weiterer MIRT-Trend.}
+}
+
+@misc{li2024activeacq,
+  author = {Yang Li and Jie Ma and Miguel Ballesteros and Yassine Benajiba and Graham Horwood},
+  title = {Active Evaluation Acquisition for Efficient {LLM} Benchmarking},
+  year = {2024},
+  eprint = {2410.05952},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2410.05952},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2410.05952v1, eingereicht 2024-10-08). Nutzen: Aktive Akquise von Evaluationsbeispielen mit Abhaengigkeitsmodell; Related Work zu labeling.py.}
+}
+
+@misc{zotos2024doubtful,
+  author = {Leonidas Zotos and Hedderik van Rijn and Malvina Nissim},
+  title = {Are You Doubtful? Oh, It Might Be Difficult Then! Exploring the Use of Model Uncertainty for Question Difficulty Estimation},
+  year = {2024},
+  eprint = {2412.11831},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2412.11831},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2412.11831v2, eingereicht 2024-12-16). Nutzen: Modell-Unsicherheit + Textmerkmale fuer Schwierigkeitsschaetzung (Bildung).}
+}
+
+@misc{kapoor2025difficulty,
+  author = {Radhika Kapoor and Sang T. Truong and Nick Haber and Maria Araceli Ruiz-Primo and Benjamin W. Domingue},
+  title = {Prediction of Item Difficulty for Reading Comprehension Items by Creation of Annotated Item Repository},
+  year = {2025},
+  eprint = {2502.20663},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {arXiv preprint},
+  url = {https://arxiv.org/abs/2502.20663},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2502.20663v2, eingereicht 2025-02-28). Nutzen: LLM-Embeddings verbessern Schwierigkeitsvorhersage nur marginal gegenueber linguistischen Merkmalen.}
+}
+
+@misc{rogoz2024unibuc,
+  author = {Ana-Cristina Rogoz and Radu Tudor Ionescu},
+  title = {{UnibucLLM}: Harnessing {LLMs} for Automated Prediction of Item Difficulty and Response Time for {Multiple-Choice} Questions},
+  year = {2024},
+  eprint = {2404.13343},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  howpublished = {arXiv preprint; BEA},
+  url = {https://arxiv.org/abs/2404.13343},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 2404.13343v1, eingereicht 2024-04-20). Nutzen: Schwierigkeitsvorhersage medizinischer Items mit LLM-Features; Schwierigkeit schwerer als Antwortzeit.}
+}
+
+@misc{gebru2018datasheets,
+  author = {Timnit Gebru and Jamie Morgenstern and Briana Vecchione and Jennifer Wortman Vaughan and Hanna Wallach and Hal Daumé and Kate Crawford},
+  title = {Datasheets for Datasets},
+  year = {2021},
+  eprint = {1803.09010},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.DB},
+  howpublished = {Communications of the ACM 64(12) (per arXiv comment)},
+  url = {https://arxiv.org/abs/1803.09010},
+  annote = {Geprueft 2026-10-20 ueber arXiv-API (Eintrag 1803.09010v8, eingereicht 2018-03-23). Nutzen: Datasheets als Form fuer Audit-Ergaenzungen je Benchmark.}
+}
+
+@article{burnell2023rethink,
+  author = {Ryan Burnell and Wout Schellaert and John Burden and Tomer D. Ullman and Fernando Martinez-Plumed and Joshua B. Tenenbaum and Danaja Rutar and Lucy G. Cheke and Jascha Sohl-Dickstein and Melanie Mitchell and Douwe Kiela and Murray Shanahan and Ellen M. Voorhees and Anthony G. Cohn and Joel Z. Leibo and Jose Hernandez-Orallo},
+  title = {Rethink reporting of evaluation results in {AI}},
+  year = {2023},
+  journal = {Science},
+  volume = {380},
+  number = {6641},
+  pages = {136--138},
+  doi = {10.1126/science.adf6369},
+  url = {https://doi.org/10.1126/science.adf6369},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Instanz-Ebene veroeffentlichen: Begruendung, warum Instanz-Datenbank + Audit ein Gemeinschaftsbeitrag ist.}
+}
+
+@article{gneiting2007proper,
+  author = {Tilmann Gneiting and Adrian E. Raftery},
+  title = {Strictly Proper Scoring Rules, Prediction, and Estimation},
+  year = {2007},
+  journal = {Journal of the American Statistical Association},
+  volume = {102},
+  number = {477},
+  pages = {359--378},
+  doi = {10.1198/016214506000001437},
+  url = {https://doi.org/10.1198/016214506000001437},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Streng propere Scoring-Regeln; Brier als Zielmetrik eingeordnet.}
+}
+
+@article{murphy1973partition,
+  author = {Allan H. Murphy},
+  title = {A New Vector Partition of the Probability Score},
+  year = {1973},
+  journal = {Journal of Applied Meteorology},
+  volume = {12},
+  number = {4},
+  pages = {595--600},
+  doi = {10.1175/1520-0450(1973)012<0595:ANVPOT>2.0.CO;2},
+  url = {https://doi.org/10.1175/1520-0450(1973)012<0595:ANVPOT>2.0.CO;2},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Zerlegung Brier = Unsicherheit - Aufloesung + Zuverlaessigkeit: Theorie unserer Vorhersagbarkeits-Zerlegung.}
+}
+
+@article{brier1950,
+  author = {Glenn W. Brier},
+  title = {Verification of forecasts expressed in terms of probability},
+  year = {1950},
+  journal = {Monthly Weather Review},
+  volume = {78},
+  number = {1},
+  pages = {1--3},
+  doi = {10.1175/1520-0493(1950)078<0001:VOFEIT>2.0.CO;2},
+  url = {https://doi.org/10.1175/1520-0493(1950)078<0001:VOFEIT>2.0.CO;2},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Ursprung des Brier-Scores.}
+}
+
+@article{efron1975stein,
+  author = {Bradley Efron and Carl Morris},
+  title = {Data Analysis Using {Stein's} Estimator and its Generalizations},
+  year = {1975},
+  journal = {Journal of the American Statistical Association},
+  volume = {70},
+  number = {350},
+  pages = {311--319},
+  doi = {10.1080/01621459.1975.10479864},
+  url = {https://doi.org/10.1080/01621459.1975.10479864},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Stein-Schrumpfung als Begruendung der Beta-Binomial-/Paar-Schrumpfung.}
+}
+
+@article{chaloner1995design,
+  author = {Kathryn Chaloner and Isabella Verdinelli},
+  title = {Bayesian Experimental Design: A Review},
+  year = {1995},
+  journal = {Statistical Science},
+  volume = {10},
+  number = {3},
+  pages = {273--304},
+  doi = {10.1214/ss/1177009939},
+  url = {https://doi.org/10.1214/ss/1177009939},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Bayes-Versuchsplanung: Kriterien fuer Item-Auswahl.}
+}
+
+@inproceedings{niculescu2005calibration,
+  author = {Alexandru Niculescu-Mizil and Rich Caruana},
+  title = {Predicting good probabilities with supervised learning},
+  year = {2005},
+  booktitle = {Proceedings of the 22nd international conference on Machine learning - ICML '05},
+  pages = {625--632},
+  doi = {10.1145/1102351.1102430},
+  url = {https://doi.org/10.1145/1102351.1102430},
+  annote = {Geprueft 2026-10-20 ueber Crossref (proceedings-article). Nutzen: Platt vs. isotonisch: Platt bei wenigen Daten vorzuziehen.}
+}
+
+@inproceedings{zadrozny2002calibration,
+  author = {Bianca Zadrozny and Charles Elkan},
+  title = {Transforming classifier scores into accurate multiclass probability estimates},
+  year = {2002},
+  booktitle = {Proceedings of the eighth ACM SIGKDD international conference on Knowledge discovery and data mining},
+  pages = {694--699},
+  doi = {10.1145/775047.775151},
+  url = {https://doi.org/10.1145/775047.775151},
+  annote = {Geprueft 2026-10-20 ueber Crossref (proceedings-article). Nutzen: Isotonische Kalibrierung als Alternative bei groesseren Budgets.}
+}
+
+@book{reckase2009mirt,
+  author = {M.D. Reckase},
+  title = {Multidimensional Item Response Theory},
+  year = {2009},
+  publisher = {Springer New York},
+  doi = {10.1007/978-0-387-89976-3},
+  url = {https://doi.org/10.1007/978-0-387-89976-3},
+  annote = {Geprueft 2026-10-20 ueber Crossref (book). Nutzen: Standardwerk MIRT.}
+}
+
+@article{northcutt2021confident,
+  author = {Curtis Northcutt and Lu Jiang and Isaac Chuang},
+  title = {Confident Learning: Estimating Uncertainty in Dataset Labels},
+  year = {2021},
+  journal = {Journal of Artificial Intelligence Research},
+  volume = {70},
+  pages = {1373--1411},
+  doi = {10.1613/jair.1.12125},
+  url = {https://doi.org/10.1613/jair.1.12125},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Confident Learning zur Label-Fehler-Erkennung; Methode fuer den Audit.}
+}
+
+@article{benedetto2023survey,
+  author = {Luca Benedetto and Paolo Cremonesi and Andrew Caines and Paula Buttery and Andrea Cappelli and Andrea Giussani and Roberto Turrin},
+  title = {A Survey on Recent Approaches to Question Difficulty Estimation from Text},
+  year = {2023},
+  journal = {ACM Computing Surveys},
+  volume = {55},
+  number = {9},
+  pages = {1--37},
+  doi = {10.1145/3556538},
+  url = {https://doi.org/10.1145/3556538},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Survey Schwierigkeitsschaetzung aus Text; Rahmen fuer Item-Text-Merkmale.}
+}
+
+@article{weiss1982cat,
+  author = {David J. Weiss},
+  title = {Improving Measurement Quality and Efficiency with Adaptive Testing},
+  year = {1982},
+  journal = {Applied Psychological Measurement},
+  volume = {6},
+  number = {4},
+  pages = {473--492},
+  doi = {10.1177/014662168200600408},
+  url = {https://doi.org/10.1177/014662168200600408},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Computerized Adaptive Testing, historischer Anker.}
+}
+
+@article{morris1983peb,
+  author = {Carl N. Morris},
+  title = {Parametric Empirical {Bayes} Inference: Theory and Applications},
+  year = {1983},
+  journal = {Journal of the American Statistical Association},
+  volume = {78},
+  number = {381},
+  pages = {47--55},
+  doi = {10.1080/01621459.1983.10477920},
+  url = {https://doi.org/10.1080/01621459.1983.10477920},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Parametrisches empirisches Bayes; Theorie der Hyperparameter-Schaetzung.}
+}
+
+@article{mackay1992evidence,
+  author = {David J. C. MacKay},
+  title = {The Evidence Framework Applied to Classification Networks},
+  year = {1992},
+  journal = {Neural Computation},
+  volume = {4},
+  number = {5},
+  pages = {720--736},
+  doi = {10.1162/neco.1992.4.5.720},
+  url = {https://doi.org/10.1162/neco.1992.4.5.720},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Probit-Naeherung der logistischen Vorhersage unter Gauss-Posterior (bereits im Entwurf).}
+}
+
+@article{cameron2015cluster,
+  author = {A. Colin Cameron and Douglas L. Miller},
+  title = {A Practitioner’s Guide to Cluster-Robust Inference},
+  year = {2015},
+  journal = {Journal of Human Resources},
+  volume = {50},
+  number = {2},
+  pages = {317--372},
+  doi = {10.3368/jhr.50.2.317},
+  url = {https://doi.org/10.3368/jhr.50.2.317},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Cluster-robuste Standardfehler (Cluster = Benchmark).}
+}
+
+@inproceedings{rodriguez2021leaderboards,
+  author = {Pedro Rodriguez and Joe Barrow and Alexander Miserlis Hoyle and John P. Lalor and Robin Jia and Jordan Boyd-Graber},
+  title = {Evaluation Examples are not Equally Informative: How should that change {NLP} Leaderboards?},
+  year = {2021},
+  booktitle = {Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)},
+  pages = {4486--4503},
+  doi = {10.18653/v1/2021.acl-long.346},
+  url = {https://doi.org/10.18653/v1/2021.acl-long.346},
+  annote = {Geprueft 2026-10-20 ueber Crossref (proceedings-article). Nutzen: Bayes-IRT-Leaderboard: Annotationsfehler und informative Items identifizieren -- Audit-Werkzeug mit unserer Item-Stufe.}
+}
+
+@inproceedings{lalor2016irt,
+  author = {John P. Lalor and Hao Wu and Hong Yu},
+  title = {Building an Evaluation Scale using Item Response Theory},
+  year = {2016},
+  booktitle = {Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing},
+  pages = {648--657},
+  doi = {10.18653/v1/D16-1062},
+  url = {https://doi.org/10.18653/v1/D16-1062},
+  annote = {Geprueft 2026-10-20 ueber Crossref (proceedings-article). Nutzen: IRT in NLP eingefuehrt.}
+}
+
+@inproceedings{lalor2019irt,
+  author = {John P. Lalor and Hao Wu and Hong Yu},
+  title = {Learning Latent Parameters without Human Response Patterns: Item Response Theory with Artificial Crowds},
+  year = {2019},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)},
+  pages = {4248--4258},
+  doi = {10.18653/v1/D19-1434},
+  url = {https://doi.org/10.18653/v1/D19-1434},
+  annote = {Geprueft 2026-10-20 ueber Crossref (proceedings-article). Nutzen: IRT-Parameter aus Modellantworten statt Menschen (artificial crowds).}
+}
+
+@book{fox2010bayesianirt,
+  author = {Jean-Paul Fox},
+  title = {Bayesian Item Response Modeling},
+  year = {2010},
+  publisher = {Springer New York},
+  doi = {10.1007/978-1-4419-0742-4},
+  url = {https://doi.org/10.1007/978-1-4419-0742-4},
+  annote = {Geprueft 2026-10-20 ueber Crossref (book). Nutzen: Hierarchische Bayes-IRT; Referenz fuer unser Laplace-Posterior-Modell.}
+}
+
+@book{efron2010largescale,
+  author = {Bradley Efron},
+  title = {{Large-Scale} Inference},
+  year = {2010},
+  publisher = {Cambridge University Press},
+  doi = {10.1017/CBO9780511761362},
+  url = {https://doi.org/10.1017/CBO9780511761362},
+  annote = {Geprueft 2026-10-20 ueber Crossref (monograph). Nutzen: Empirical Bayes im Grossen; Begruendung der Schrumpfung.}
+}
+
+@inproceedings{schein2002coldstart,
+  author = {Andrew I. Schein and Alexandrin Popescul and Lyle H. Ungar and David M. Pennock},
+  title = {Methods and metrics for cold-start recommendations},
+  year = {2002},
+  booktitle = {Proceedings of the 25th annual international ACM SIGIR conference on Research and development in information retrieval},
+  pages = {253--260},
+  doi = {10.1145/564376.564421},
+  url = {https://doi.org/10.1145/564376.564421},
+  annote = {Geprueft 2026-10-20 ueber Crossref (proceedings-article). Nutzen: Kaltstart in Empfehlungssystemen; Analogie fuer Benchmark-Kaltstart.}
+}
+
+@article{koren2009mf,
+  author = {Yehuda Koren and Robert Bell and Chris Volinsky},
+  title = {Matrix Factorization Techniques for Recommender Systems},
+  year = {2009},
+  journal = {Computer},
+  volume = {42},
+  number = {8},
+  pages = {30--37},
+  doi = {10.1109/MC.2009.263},
+  url = {https://doi.org/10.1109/MC.2009.263},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Matrixfaktorisierung; Analogie Subjekt x Benchmark.}
+}
+
+@book{lord1980irt,
+  author = {F. M. Lord},
+  title = {Applications of Item Response Theory to Practical Testing Problems},
+  year = {2012},
+  publisher = {Routledge},
+  doi = {10.4324/9780203056615},
+  url = {https://doi.org/10.4324/9780203056615},
+  annote = {Geprueft 2026-10-20 ueber Crossref (book). Nutzen: IRT-Grundlagenwerk (Routledge-Reprint des Buches von 1980).}
+}
+
+@inproceedings{byrd2022difficulty,
+  author = {Matthew Byrd and Shashank Srivastava},
+  title = {Predicting Difficulty and Discrimination of Natural Language Questions},
+  year = {2022},
+  booktitle = {Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)},
+  pages = {119--130},
+  doi = {10.18653/v1/2022.acl-short.15},
+  url = {https://doi.org/10.18653/v1/2022.acl-short.15},
+  annote = {Geprueft 2026-10-20 ueber Crossref (proceedings-article). Nutzen: Schwierigkeit/Diskrimination von NL-Fragen aus Text vorhersagen.}
+}
+
+@article{klie2023annotation,
+  author = {Jan-Christoph Klie and Bonnie Webber and Iryna Gurevych},
+  title = {Annotation Error Detection: Analyzing the Past and Present for a More Coherent Future},
+  year = {2023},
+  journal = {Computational Linguistics},
+  volume = {49},
+  number = {1},
+  pages = {157--198},
+  doi = {10.1162/coli_a_00464},
+  url = {https://doi.org/10.1162/coli_a_00464},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Survey Annotation Error Detection; Methodenrahmen fuer den Audit.}
+}
+
+@article{lin2007platt,
+  author = {Hsuan-Tien Lin and Chih-Jen Lin and Ruby C. Weng},
+  title = {A note on Platt’s probabilistic outputs for support vector machines},
+  year = {2007},
+  journal = {Machine Learning},
+  volume = {68},
+  number = {3},
+  pages = {267--276},
+  doi = {10.1007/s10994-007-5018-6},
+  url = {https://doi.org/10.1007/s10994-007-5018-6},
+  annote = {Geprueft 2026-10-20 ueber Crossref (journal-article). Nutzen: Numerisch stabiler Platt-Algorithmus (Pseudocode); zitiert Platt (2000).}
+}
+
+@inproceedings{guyon2011alc,
+  author = {Isabelle Guyon and Gavin C. Cawley and Gideon Dror and Vincent Lemaire},
+  title = {Results of the Active Learning Challenge},
+  booktitle = {JMLR Workshop and Conference Proceedings, Vol. 16 (Active Learning and Experimental Design)},
+  year = {2011},
+  pages = {19--45},
+  url = {https://proceedings.mlr.press/v16/guyon11a.html},
+  annote = {Geprueft 2026-10-20: Seite HTTP 200 und PDF gelesen (S. 4: ALC-Definition, globalscore = (ALC - Arand)/(Amax - Arand)). Nutzen: Herkunft der Area-under-the-Learning-Curve-Metrik, dort mit AUC statt Brier.}
+}
+
+@inproceedings{cawley2011baseline,
+  author = {Gavin C. Cawley},
+  title = {Baseline Methods for Active Learning},
+  booktitle = {JMLR Workshop and Conference Proceedings, Vol. 16 (Active Learning and Experimental Design)},
+  year = {2011},
+  url = {https://proceedings.mlr.press/v16/cawley11a.html},
+  annote = {Geprueft 2026-10-20: Seite HTTP 200, Titel bestaetigt. Nutzen: Zufallsauswahl als Baseline in Lernkurven-Wettbewerben.}
+}
+
+@inproceedings{sawade2010activerisk,
+  author = {Christoph Sawade and Niels Landwehr and Steffen Bickel and Tobias Scheffer},
+  title = {Active Risk Estimation},
+  booktitle = {Proceedings of the 27th International Conference on Machine Learning (ICML)},
+  year = {2010},
+  pages = {951--958},
+  url = {https://icml.cc/Conferences/2010/papers/285.pdf},
+  annote = {Geprueft 2026-10-20: PDF-URL HTTP 200; Autorenliste und Seiten aus mlanthology.org/icml/2010/sawade2010icml-active (HTTP 200). Nutzen: optimale Stichprobenverteilung zur Risiko-Schaetzung aus einem unlabeled Pool -- Theorie fuer labeling.py.}
+}
+
+@incollection{platt1999probabilistic,
+  author = {John C. Platt},
+  title = {Probabilistic Outputs for Support Vector Machines and Comparisons to Regularized Likelihood Methods},
+  booktitle = {Advances in Large-Margin Classifiers},
+  editor = {Alexander J. Smola and Peter L. Bartlett and Bernhard Sch{\"o}lkopf and Dale Schuurmans},
+  publisher = {The MIT Press},
+  year = {2000},
+  doi = {10.7551/mitpress/1113.001.0001},
+  url = {https://doi.org/10.7551/mitpress/1113.001.0001},
+  annote = {Geprueft 2026-10-20: Sammelband-DOI ueber Crossref (edited-book, MIT Press 2000); das Kapitel selbst hat keinen Crossref-Eintrag -- Existenz und Zitierweise 'Platt (2000)' zusaetzlich ueber Lin, Lin und Weng (2007, Machine Learning, DOI geprueft) belegt. Haeufig als Platt (1999) zitiert (Preprint-Jahr). Nutzen: Zwei-Parameter-Sigmoid-Kalibrierung (Platt scaling), im Modell je Budgetstufe verwendet.}
+}
+
+@article{rubin1976,
+  author = {Donald B. Rubin},
+  title = {Inference and missing data},
+  journal = {Biometrika},
+  volume = {63},
+  number = {3},
+  pages = {581--592},
+  year = {1976},
+  doi = {10.1093/biomet/63.3.581},
+  url = {https://doi.org/10.1093/biomet/63.3.581},
+  annote = {Checked 2026-10-21 via Crossref (api.crossref.org/works/10.1093/biomet/63.3.581: title, journal, volume 63(3), pages 581-592, year 1976 match). Use: ignorability of the label selection (Lemma 2, Appendix A.7).}
+}
+
+@article{wolpert1992,
+  author = {David H. Wolpert},
+  title = {Stacked generalization},
+  journal = {Neural Networks},
+  volume = {5},
+  number = {2},
+  pages = {241--259},
+  year = {1992},
+  doi = {10.1016/S0893-6080(05)80023-1},
+  url = {https://doi.org/10.1016/S0893-6080(05)80023-1},
+  annote = {Checked 2026-10-21 via Crossref (api.crossref.org/works/10.1016/S0893-6080(05)80023-1: title, journal, volume 5(2), pages 241-259, year 1992 match). Use: stacking in the method league and H5.}
+}
+
+@misc{paiec2026,
+  author = {{Stanford AIMS}},
+  title = {{NeurIPS} 2026 {Predictive AI Evaluation Competition} ({PAIEC}): Competition description and rules},
+  year = {2026},
+  howpublished = {Codabench competition page and starter kit},
+  url = {https://aims.stanford.edu/competition},
+  annote = {Page accessed 2026-10-20 (competition text, including the report format). Use: protocol, metric, rules.}
+}
+
+@misc{paiecbase2026,
+  author = {{Stanford AIMS}},
+  title = {paiec\_baseline: Starter kit and baselines for {PAIEC} 2026},
+  year = {2026},
+  howpublished = {GitHub repository aims-foundations/paiec\_baseline, commit cc88a959 (2026-10-15)},
+  url = {https://github.com/aims-foundations/paiec_baseline},
+  annote = {Repository accessed 2026-10-20, commit cc88a959c1e5e7462f31a9215baba066ce6d6e2b (read, not executed). Use: streaming\_ingestion.py (protocol replica), baselines Empirical Mean and BLE, tools/prepare\_data.py (audit finding 1).}
+}
+
+@misc{mdb2026,
+  author = {{Stanford AIMS}},
+  title = {{Measurement Data Bank} (aims-foundations/measurement-db)},
+  year = {2026},
+  howpublished = {Hugging Face dataset, revision 54074453 (2026-10-07); curation CC BY-SA 4.0, benchmarks under their upstream licences},
+  url = {https://huggingface.co/datasets/aims-foundations/measurement-db},
+  annote = {Dataset accessed 2026-10-20, revision 54074453da7b9911be0f48e4c560be547bc84d21 (formatted\_tables; GitHub measurement-db 652474f). Use: sole training source; subject of the data audit.}
+}

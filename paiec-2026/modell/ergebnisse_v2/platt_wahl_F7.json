@@ -1,0 +1,140 @@
+{
+ "urteil": "ok",
+ "gesamt_v1_regel": [
+  0,
+  1,
+  3,
+  7
+ ],
+ "paket_schnittregel": [
+  0,
+  1
+ ],
+ "mehrheit_je_stufe": [
+  0,
+  1,
+  3,
+  7
+ ],
+ "paket_gleich_v1": false,
+ "falten_mit_abweichung": 7,
+ "je_falte": [
+  {
+   "falte": 0,
+   "stufen": [
+    0,
+    1,
+    3,
+    7,
+    15
+   ],
+   "abweichung_zu_gesamt": [
+    15
+   ]
+  },
+  {
+   "falte": 1,
+   "stufen": [
+    0,
+    1,
+    3
+   ],
+   "abweichung_zu_gesamt": [
+    7
+   ]
+  },
+  {
+   "falte": 2,
+   "stufen": [
+    0,
+    1,
+    3
+   ],
+   "abweichung_zu_gesamt": [
+    7
+   ]
+  },
+  {
+   "falte": 3,
+   "stufen": [
+    0,
+    1,
+    3,
+    7
+   ],
+   "abweichung_zu_gesamt": []
+  },
+  {
+   "falte": 4,
+   "stufen": [
+    0,
+    1,
+    3,
+    7
+   ],
+   "abweichung_zu_gesamt": []
+  },
+  {
+   "falte": 5,
+   "stufen": [
+    0,
+    1,
+    7
+   ],
+   "abweichung_zu_gesamt": [
+    3
+   ]
+  },
+  {
+   "falte": 6,
+   "stufen": [
+    0,
+    1,
+    3,
+    7,
+    15,
+    31
+   ],
+   "abweichung_zu_gesamt": [
+    15,
+    31
+   ]
+  },
+  {
+   "falte": 7,
+   "stufen": [
+    0,
+    1,
+    3,
+    7
+   ],
+   "abweichung_zu_gesamt": []
+  },
+  {
+   "falte": 8,
+   "stufen": [
+    0,
+    1,
+    7
+   ],
+   "abweichung_zu_gesamt": [
+    3
+   ]
+  },
+  {
+   "falte": 9,
+   "stufen": [
+    0,
+    1,
+    3
+   ],
+   "abweichung_zu_gesamt": [
+    7
+   ]
+  }
+ ],
+ "state_platt_stufen": [
+  0,
+  1
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "zeit_utc": "2026-10-20T21:11:41Z",
+ "merkmalsmenge": "B (Prereg §4 H6)",
+ "n_benchmarks": 142,
+ "n_merkmale": 30,
+ "top20_schluessel": {
+  "input_scope": 33,
+  "category": 17,
+  "task": 13,
+  "lang": 11,
+  "dataset": 9,
+  "domain": 9,
+  "split": 9,
+  "difficulty": 5,
+  "reference_tags": 4,
+  "source_task_id": 4,
+  "dimension": 3,
+  "input_mode": 3,
+  "scenario": 3,
+  "source_file": 3,
+  "base_commit": 2,
+  "component": 2,
+  "context": 2,
+  "database_id": 2,
+  "prompt_origin": 2,
+  "repo": 2
+ },
+ "ergebnis": {
+  "R": {
+   "r2_lobo": -0.04774017938533448,
+   "var_y": 0.05062840009043966,
+   "mse_lobo": 0.05304540899274974,
+   "lambda_wahl_haeufigkeit": {
+    "3.0": 0,
+    "10.0": 0,
+    "30.0": 0,
+    "100.0": 0,
+    "300.0": 142
+   }
+  },
+  "logit_R": {
+   "r2_lobo": -0.056478810714261085,
+   "var_y": 1.4100816331870587,
+   "mse_lobo": 1.4897213668394866,
+   "lambda_wahl_haeufigkeit": {
+    "3.0": 0,
+    "10.0": 0,
+    "30.0": 0,
+    "100.0": 0,
+    "300.0": 142
+   }
+  }
+ },
+ "regel": "LOBO-R² <= 0.05 für R_b und logit(R_b)",
+ "verdict": "passed"
+}

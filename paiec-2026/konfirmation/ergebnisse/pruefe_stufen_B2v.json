@@ -1,0 +1,251 @@
+{
+ "design": "B",
+ "status": {
+  "falten": 10,
+  "fertig": 10,
+  "saaten": "200,201,202",
+  "falten_saat": 200,
+  "phase": 2,
+  "design": "B",
+  "platt_stufen": "",
+  "zeit_utc": "2026-10-21T06:59:18Z"
+ },
+ "stufen_log": {
+  "0": [
+   0,
+   1,
+   3
+  ],
+  "1": [
+   0,
+   1,
+   3
+  ],
+  "2": [
+   0,
+   1,
+   3
+  ],
+  "3": [
+   0,
+   1,
+   3,
+   7,
+   15
+  ],
+  "4": [
+   0,
+   1,
+   3,
+   7
+  ],
+  "5": [
+   0,
+   1,
+   3,
+   7
+  ],
+  "6": [
+   0,
+   1,
+   3,
+   7,
+   15
+  ],
+  "7": [
+   0,
+   1,
+   3,
+   7
+  ],
+  "8": [
+   0,
+   1,
+   3
+  ],
+  "9": [
+   0,
+   1,
+   3
+  ]
+ },
+ "stufen_soll": {
+  "0": [
+   0,
+   1,
+   3
+  ],
+  "1": [
+   0,
+   1,
+   3
+  ],
+  "2": [
+   0,
+   1,
+   3
+  ],
+  "3": [
+   0,
+   1,
+   3,
+   7,
+   15
+  ],
+  "4": [
+   0,
+   1,
+   3,
+   7
+  ],
+  "5": [
+   0,
+   1,
+   3,
+   7
+  ],
+  "6": [
+   0,
+   1,
+   3,
+   7,
+   15
+  ],
+  "7": [
+   0,
+   1,
+   3,
+   7
+  ],
+  "8": [
+   0,
+   1,
+   3
+  ],
+  "9": [
+   0,
+   1,
+   3
+  ]
+ },
+ "falten": {
+  "0": {
+   "stufen": [
+    0,
+    1,
+    3
+   ],
+   "max_dq_baselines": 0.0,
+   "max_dq_hier": 0.010119963491753758,
+   "erwartet_gleich_2p": false,
+   "passt": true
+  },
+  "1": {
+   "stufen": [
+    0,
+    1,
+    3
+   ],
+   "max_dq_baselines": 0.0,
+   "max_dq_hier": 0.011178244162912854,
+   "erwartet_gleich_2p": false,
+   "passt": true
+  },
+  "2": {
+   "stufen": [
+    0,
+    1,
+    3
+   ],
+   "max_dq_baselines": 0.0,
+   "max_dq_hier": 0.008261035502414193,
+   "erwartet_gleich_2p": false,
+   "passt": true
+  },
+  "3": {
+   "stufen": [
+    0,
+    1,
+    3,
+    7,
+    15
+   ],
+   "max_dq_baselines": 0.0,
+   "max_dq_hier": 0.006107939477361851,
+   "erwartet_gleich_2p": false,
+   "passt": true
+  },
+  "4": {
+   "stufen": [
+    0,
+    1,
+    3,
+    7
+   ],
+   "max_dq_baselines": 0.0,
+   "max_dq_hier": 0.0,
+   "erwartet_gleich_2p": true,
+   "passt": true
+  },
+  "5": {
+   "stufen": [
+    0,
+    1,
+    3,
+    7
+   ],
+   "max_dq_baselines": 0.0,
+   "max_dq_hier": 0.0,
+   "erwartet_gleich_2p": true,
+   "passt": true
+  },
+  "6": {
+   "stufen": [
+    0,
+    1,
+    3,
+    7,
+    15
+   ],
+   "max_dq_baselines": 0.0,
+   "max_dq_hier": 0.006198169840186729,
+   "erwartet_gleich_2p": false,
+   "passt": true
+  },
+  "7": {
+   "stufen": [
+    0,
+    1,
+    3,
+    7
+   ],
+   "max_dq_baselines": 0.0,
+   "max_dq_hier": 0.0,
+   "erwartet_gleich_2p": true,
+   "passt": true
+  },
+  "8": {
+   "stufen": [
+    0,
+    1,
+    3
+   ],
+   "max_dq_baselines": 0.0,
+   "max_dq_hier": 0.01040904087129857,
+   "erwartet_gleich_2p": false,
+   "passt": true
+  },
+  "9": {
+   "stufen": [
+    0,
+    1,
+    3
+   ],
+   "max_dq_baselines": 0.0,
+   "max_dq_hier": 0.009742385794089786,
+   "erwartet_gleich_2p": false,
+   "passt": true
+  }
+ },
+ "ok": true
+}

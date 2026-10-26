@@ -1,0 +1,12 @@
+2026-10-20T20:17:40Z Start Phase 2 Design A, Falten 10, Saaten 0,1,2, S 1,3,30, regime S1,S2,S3,S30,kompakt10, von cv_V2K1
+2026-10-20T20:19:26Z Falte 2: 14 Benchmarks, 131 Paare, 73710 Sätze, 93 s
+2026-10-20T20:22:30Z Falte 3: 14 Benchmarks, 194 Paare, 110754 Sätze, 184 s
+2026-10-20T20:22:45Z Falte 1: 15 Benchmarks, 241 Paare, 136710 Sätze, 292 s
+2026-10-20T20:23:26Z Falte 0: 15 Benchmarks, 260 Paare, 144102 Sätze, 332 s
+2026-10-20T20:24:59Z Falte 5: 14 Benchmarks, 185 Paare, 100002 Sätze, 134 s
+2026-10-20T20:26:20Z Falte 4: 14 Benchmarks, 200 Paare, 112224 Sätze, 229 s
+2026-10-20T20:27:57Z Falte 7: 14 Benchmarks, 188 Paare, 106596 Sätze, 177 s
+2026-10-20T20:28:06Z Falte 6: 14 Benchmarks, 200 Paare, 122220 Sätze, 281 s
+2026-10-20T20:30:51Z Falte 9: 14 Benchmarks, 222 Paare, 127512 Sätze, 175 s
+2026-10-20T20:31:00Z Falte 8: 14 Benchmarks, 321 Paare, 180306 Sätze, 280 s
+2026-10-20T20:31:00Z Ende: 10/10 Falten vorhanden

@@ -1,0 +1,45 @@
+{
+ "neu": "./dist",
+ "alt": "$PAIEC_WORK/paiec-v2kern/v1paket",
+ "zeit_utc": "2026-10-20T20:20:11Z",
+ "n_vergleiche": 2720,
+ "max_dp_gesamt": 0.02369822824120249,
+ "je_stufe": {
+  "0": {
+   "n": 272,
+   "max_dp": 0.0,
+   "n_ungleich": 0
+  },
+  "1": {
+   "n": 544,
+   "max_dp": 0.0,
+   "n_ungleich": 0
+  },
+  "3": {
+   "n": 544,
+   "max_dp": 0.02369822824120249,
+   "n_ungleich": 544
+  },
+  "7": {
+   "n": 544,
+   "max_dp": 0.015195518750864223,
+   "n_ungleich": 544
+  },
+  "15": {
+   "n": 544,
+   "max_dp": 0.0,
+   "n_ungleich": 0
+  },
+  "31": {
+   "n": 272,
+   "max_dp": 0.0,
+   "n_ungleich": 0
+  }
+ },
+ "erwartete_abweichung_stufen": [
+  3,
+  7
+ ],
+ "unerwartete_abweichung": {},
+ "urteil": "ok"
+}

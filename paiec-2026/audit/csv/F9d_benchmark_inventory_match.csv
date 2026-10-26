@@ -1,0 +1,278 @@
+benchmark,name,response_type,n_responses,found_in_inventory_sheet,paper_url,catalog_release_date
+abstract_reason,Abstract-Reason,binary,9095,True,https://arxiv.org/abs/2505.23833,2025-05
+adaptivestep,AdaptiveStep candidate pools,binary,988160,False,https://proceedings.mlr.press/v267/liu25aq.html,2025-02
+advprompter,AdvPrompter,binary,100,False,https://arxiv.org/abs/2404.16873,2024-04
+aegis,AEGIS 2.0 response safety,binary,11608,False,https://aclanthology.org/2025.naacl-long.306/,2025-01
+afrieval,MasakhaNER 1.0 and 2.0: released NER predictions,binary,1403380,False,https://doi.org/10.1162/tacl_a_00416,2021-03
+afrimedqa,AfriMed-QA,binary,302354,False,https://aclanthology.org/2025.acl-long.96/,2024-11
+agc_bench,AGC-Bench,mixed,449942,False,https://arxiv.org/abs/2607.01152,2026-07
+agentdojo,AgentDojo,mixed,69798,True,https://arxiv.org/abs/2406.13352,2024-06
+agentic_review_perturbation,Agentic Review Systems — Perturbation Benchmark,binary,315,False,https://arxiv.org/abs/2606.19749,2026-06
+agi_elo,AGI-Elo,binary,277106,False,https://openreview.net/forum?id=hYVhxKGD8Y,2025-12
+ai2d_test,AI2D_TEST,binary,784352,False,https://arxiv.org/abs/1603.07396,2016-03
+aider,Aider C++ prompting study,binary,5356,False,,
+algotune,AlgoTune,binary,2772,True,https://openreview.net/forum?id=dF1tD9hjvn,2025-07
+alignment_faking,Alignment Faking (RL),binary,2138969,False,https://alignment.anthropic.com/2025/alignment-faking-mitigations/,2025-12-16
+alpacaeval,AlpacaEval 2.0 weighted preferences,continuous_bounded,177892,False,https://arxiv.org/abs/2404.04475,2024-01-03
+alpha_sql,Alpha-SQL (BIRD dev),binary,1534,False,https://arxiv.org/abs/2502.17248,2025-02
+annotating_errors_wcf,Annotating Errors in English Learners' Written Language (WCF),mixed,15344,False,https://arxiv.org/abs/2508.06810,2025-08
+appworld,AppWorld,binary,10530,False,https://arxiv.org/abs/2407.18901,2024-07
+arcagi,ARC-AGI,continuous_bounded,35260,False,https://arxiv.org/abs/1911.01547,2019-11
+atmossci_bench,AtmosSci-Bench,continuous,37421,True,https://openreview.net/forum?id=vDm8VWYYuX,
+auditing_sabotage_bench,Auditing Sabotage Bench,binary,1869,False,https://arxiv.org/abs/2604.16286,2026-04
+autoresearchbench,AutoResearchBench,continuous,115,False,https://arxiv.org/abs/2604.25256,2026-04
+averimatec,AVerImaTeC,binary,152,True,https://arxiv.org/abs/2505.17978,2025-05
+babilong,BABILong,binary,2020951,True,https://arxiv.org/abs/2406.10149,2024-06
+bbq,BBQ,binary,380198,False,https://aclanthology.org/2022.findings-acl.165/,2021-10
+beavertails,BeaverTails,binary,1680,False,https://arxiv.org/abs/2307.04657,2023-06
+bedd_basalt,BEDD: MineRL BASALT Evaluation Dataset,mixed,50951,False,https://arxiv.org/abs/2312.02405,2023-06-14
+benger,BenGER,binary,9328,False,https://arxiv.org/abs/2605.28183,2026-06-01
+bertaqa,BertaQA,binary,57072,True,https://arxiv.org/abs/2406.07302,2024-06
+bigfinancebench,BigFinanceBench,mixed,9000,False,https://arxiv.org/abs/2606.03829,2026-06-02
+biggen,BiGGen-Bench,likert_5,979855,False,https://arxiv.org/abs/2406.05761,2024-06
+bird_sql,BIRD (text-to-SQL),binary,43200,False,https://arxiv.org/abs/2305.03111,2023-05
+brace,BRACE (CAF-Score decisions),binary,202096,True,https://openreview.net/forum?id=MdEkxa6PV9,2025-12
+braveguard,BraveGuard (historical guard decisions),binary,536,False,https://arxiv.org/abs/2606.01166,2026-05
+bridging_gap,Bridging-the-Gap African Languages,binary,4706881,False,https://arxiv.org/abs/2412.12417,2024-12
+care_enzymes,CARE: Classification and Retrieval of Enzymes,continuous_bounded,16817,True,https://arxiv.org/abs/2406.15669,2024-06
+causal_axioms,Causal Axioms (Axiomatic Training),binary,9000,False,https://arxiv.org/abs/2407.07612,2024-07
+cellverse,CellVerse,binary,748,True,https://arxiv.org/abs/2505.07865,2025-05
+ceobench,CEO-Bench,mixed,162,False,https://arxiv.org/abs/2606.18543,2026-06
+ceval,C-Eval,binary,14806,False,https://arxiv.org/abs/2305.08322,2023-05
+chartmuseum,ChartMuseum,binary,162,True,https://arxiv.org/abs/2505.13444,2025-05
+chatgpt_drift,ChatGPT Drift (LLMDrift),mixed,46832,False,https://arxiv.org/abs/2307.09009,2023-07
+chi_bench,CHI-Bench,binary,7700,False,https://arxiv.org/abs/2605.16679,2026-05
+chipbench,ChiPBench,mixed,1470,True,https://openreview.net/forum?id=gDkQ5iesrI,2025-12
+clasheval,ClashEval,binary,75216,True,https://arxiv.org/abs/2404.10198,2024-04
+classroom_ai,Classroom AI,ordinal,10360,False,https://arxiv.org/abs/2601.06225,2026-01
+cmmlu,CMMLU,binary,254804,False,https://arxiv.org/abs/2306.09212,2023-06
+coffeebench,CoffeeBench,continuous_unbounded,21,False,https://arxiv.org/abs/2606.16613,2026-06
+complexbench,ComplexBench,fraction,17250,True,https://arxiv.org/abs/2407.03978,2024-07
+confagents,ConfAgents,binary,64,False,https://arxiv.org/abs/2508.04915,2025-08
+corebench,CORE-Bench,fraction,1956,False,https://arxiv.org/abs/2409.11363,2024-09
+critic_discernment_game,Critic-Discernment Game,binary,7276,False,https://arxiv.org/abs/2506.22920,2025-06
+crow,CROW,binary,5900,False,https://arxiv.org/abs/2411.12768,2024-11
+cruxeval,CRUXEval,binary,992000,True,https://arxiv.org/abs/2401.03065,2024-01
+csedb,CSEDB,fraction,41922,False,https://arxiv.org/abs/2507.23486,2025-07
+cseo_bench,C-SEO Bench,ordinal,259128,True,https://arxiv.org/abs/2506.11097,2025-06
+das_med_hallucination,DAS Medical Hallucination,ordinal,1965,False,https://arxiv.org/abs/2508.00923,2025-07
+data_juicer2,Data-Juicer 2.0,continuous_unbounded,22,False,https://arxiv.org/abs/2501.14755v3,2024-12-23
+dataclawbench,DataClawBench,fraction,3936,False,https://arxiv.org/abs/2605.02503,2026-05
+dave,DAVE,binary,19248,True,https://openreview.net/forum?id=4ZAX1NT0ms,2025-12
+dbpa,DBPA (Distribution-Based Perturbation Analysis),binary,409,False,https://arxiv.org/abs/2506.07947,2025-06-10
+decodingtrust,DecodingTrust,mixed,2456958,False,https://arxiv.org/abs/2306.11698,2023-06-20
+decompile_bench,Decompile-Bench: released IDA and Ghidra outputs,continuous,141131,True,https://openreview.net/forum?id=vZ7fJntf0a,
+devbench,DevBench,binary,5149,True,https://arxiv.org/abs/2406.10215,
+disco,DIS-CO (MovieTection),binary,111906,True,https://proceedings.mlr.press/v267/duarte25a.html,2025-02
+donotanswer,Do-Not-Answer,mixed,11268,False,https://arxiv.org/abs/2308.13387,2023-08
+doris_mae,DORIS-MAE,ordinal,165144,False,https://arxiv.org/abs/2310.04678,2023-08-29
+dpai,DPAI Arena,mixed,4590,False,https://dpaia.dev/,
+dqvis,DQVis expert-reviewed generations,ordinal,357,True,https://openreview.net/forum?id=AnJaRzEZZs,
+dtap_bench,DTap-Bench,mixed,106570,False,https://arxiv.org/abs/2605.04808,
+editbench,EDIT-Bench,binary,23328,True,https://arxiv.org/abs/2511.04486,2025-11
+edu_circuit_hw,EDU-CIRCUIT-HW,binary,3078,False,https://arxiv.org/abs/2602.00095,2026-01
+eduguardbench,EduGuardBench,mixed,189873,False,https://arxiv.org/abs/2511.06890,
+edumath,EDUMATH,mixed,16720,False,https://arxiv.org/abs/2510.06965,
+egoschema,EgoSchema (released LLoVi configurations),binary,5500,False,https://arxiv.org/abs/2308.09126,2023-08
+ehrflowbench,EHRFlowBench,binary,140,False,https://arxiv.org/abs/2508.02621,2025-08
+elicitation_game,The Elicitation Game,binary,14070,False,https://arxiv.org/abs/2502.02180,2025-02-04
+embodied_agent_interface,Embodied Agent Interface,continuous_bounded,2500,True,https://arxiv.org/abs/2410.07166,2024-10
+emoji_attack,Emoji Attack (released EasyJailbreak results),binary,58860,False,https://arxiv.org/abs/2411.01077,2024-11
+engdesign,EngDesign,binary,5394,True,https://arxiv.org/abs/2509.16204,
+engibench,EngiBench,continuous_unbounded,18,True,https://openreview.net/forum?id=YowD33Q89V,2025-12
+enginemt_qa,EngineMT-QA (unambiguous single-choice release subset),binary,676,False,https://arxiv.org/abs/2506.20093,2025-06
+erbench,ERBench,binary,213110,True,https://arxiv.org/abs/2403.05266,2024-03
+evouna,EVOUNA,binary,27548,False,https://arxiv.org/abs/2305.12421,2023-05
+exploitgym,ExploitGym,binary,6357,False,https://arxiv.org/abs/2605.11086,2026-05
+faithcot,FaithCoT-Bench (released FINE-CoT generator measurements),binary,2728,True,https://arxiv.org/abs/2510.04040,2025-10
+felm,FELM (released ChatGPT segment annotations),binary,4426,False,https://arxiv.org/abs/2310.00741,2023-10
+fetv,FETV,mixed,41576,False,https://arxiv.org/abs/2311.01813,2023-11
+fewshot_ttt_bbh,Few-Shot TTT (BIG-Bench Hard),binary,7425,False,https://arxiv.org/abs/2411.07279,2024-11
+fgbench,FGBench,mixed,57168,True,https://openreview.net/forum?id=VIsPHMMiW8,2025-12
+financebench,FinanceBench,binary,2400,False,https://arxiv.org/abs/2311.11944v1,2023-11
+find_interp,FIND,mixed,10397,False,https://arxiv.org/abs/2309.03886,2023-06-13
+finegrain_t2i,FineGRAIN (T2I),binary,12861,True,https://arxiv.org/abs/2512.02161,2025-05-15
+frontieror,FrontierOR,ordinal,2230,False,https://arxiv.org/abs/2605.25246,2026-05
+genai_learning,GenAI Learning,mixed,29013,False,https://www.pnas.org/doi/10.1073/pnas.2422633122,2025-06-25
+ghosts_math,GHOSTS,likert_5,1066,False,https://arxiv.org/abs/2301.13867,2023-01-31
+goodai_ltm_benchmark,GoodAI LTM Benchmark,mixed,3507,True,https://arxiv.org/abs/2409.20222,2024-09
+haiid,HAIID,binary,71364,False,https://arxiv.org/abs/2107.07015,2021-07-14
+hallusionbench,HallusionBench,binary,240857,False,https://arxiv.org/abs/2310.14566,2023-10-23
+harmbench,HarmBench,binary,107274,False,https://arxiv.org/abs/2402.04249,2024-02-06
+healthadminbench,HealthAdminBench,binary,7020,False,https://arxiv.org/abs/2604.09937,2026-04
+helm_afr,HELM African MMLU + Winogrande,binary,745360,False,https://arxiv.org/abs/2412.12417,
+helm_airbench,AIR-Bench 2024,continuous_bounded,375804,True,https://arxiv.org/abs/2407.17436,2024-07
+helm_anthropic_redteam,Anthropic Red Team,continuous_bounded,81000,False,https://arxiv.org/abs/2209.07858,2022-08
+helm_bbq,BBQ,binary,81000,False,https://arxiv.org/abs/2110.08193,2021-10
+helm_bold,BOLD,fraction,42000,False,https://arxiv.org/abs/2101.11718,2021-01
+helm_cleva,HELM CLEVA (Chinese),mixed,28724,False,https://arxiv.org/abs/2308.04813,2023-08
+helm_harmbench,HarmBench,continuous_bounded,32400,False,https://arxiv.org/abs/2402.04249,2024-02
+helm_real_toxicity_prompts,RealToxicityPrompts,fraction,42000,False,https://arxiv.org/abs/2009.11462,2020-09
+helm_simple_safety_tests,SimpleSafetyTests,continuous_bounded,8100,False,https://arxiv.org/abs/2311.08370,2023-11
+helm_thaiexam,HELM Thai Exam,binary,23730,False,https://arxiv.org/abs/2312.13951,2023-12
+helm_xstest,XSTest,continuous_bounded,36450,False,https://arxiv.org/abs/2308.01263,2023-08
+hivmedqa,HIVMedQA,continuous,52900,False,https://arxiv.org/abs/2507.18143,2025-07
+hle,Humanity's Last Exam,binary,14588,False,https://arxiv.org/abs/2501.14249,2025-01
+icpc2_code_selector,ICPC-2 Code Selector,binary,70905,False,https://arxiv.org/abs/2507.14681,2025-07
+igakuqa,IgakuQA,binary,7355,False,https://arxiv.org/abs/2303.18027,2023-03-31
+igakuqa119,IgakuQA119,binary,400,False,https://github.com/naoto-iwase/IgakuQA119,
+ikp,IKP,binary,268351,False,https://arxiv.org/abs/2604.24827,2026-04
+image2struct,Image2Struct,mixed,142968,True,https://arxiv.org/abs/2410.22456,2024-10-29
+imgedit,ImgEdit-Bench: released BAGEL single-turn evaluation,continuous,737,True,https://openreview.net/forum?id=uUCSrMlfD3,2025-05
+indeterminacy,Indeterminacy Experiments,mixed,386240,False,https://arxiv.org/abs/2503.05965,
+ineqmath,IneqMath,binary,1000,True,https://arxiv.org/abs/2506.07927,
+infibench,InfiBench,continuous_unbounded,699042,True,https://arxiv.org/abs/2404.07940,2024-08-15
+interchangeable_token_embeddings,Interchangeable Token Embeddings: released LTL alpha-renaming runs,binary,399956,False,https://arxiv.org/abs/2410.17161,2024-10
+intercode,InterCode,mixed,17740,False,https://arxiv.org/abs/2306.14898,2023-06
+jailbreakbench,JailbreakBench,binary,3074,True,https://arxiv.org/abs/2404.01318,
+jetts,JETTS generator response pool,mixed,328685,True,https://arxiv.org/abs/2504.15253,
+judgetuning,JudgeTuning LMSys human agreement,binary,21000,False,https://arxiv.org/abs/2501.17178,
+katakomba,Katakomba,continuous_unbounded,28600,False,https://arxiv.org/abs/2306.08772,
+kernelbench,KernelBench,binary,73998,True,https://arxiv.org/abs/2502.10517,2025-02
+kmmlu,KMMLU,binary,1012300,False,https://arxiv.org/abs/2402.11548,2024-02
+kormedmcqa,KorMedMCQA,binary,21391,False,https://arxiv.org/abs/2403.01469,2024-03
+kris_bench,KRIS-Bench,likert_5,130192,True,https://arxiv.org/abs/2505.16707,2025-05
+lambda_fp_course,Functional Programming Course LLM Evaluation,mixed,6798,False,https://arxiv.org/abs/2603.05646,2026-02-03
+lawbench,LawBench,mixed,918000,False,https://arxiv.org/abs/2309.16289,2023-09
+legal_rag_bench,Legal RAG Bench,binary,1800,False,https://arxiv.org/abs/2603.01710,2026-03
+legalbench,LegalBench,binary,63457,False,https://arxiv.org/abs/2308.11462,2023-08
+lexeval,LexEval,mixed,1076280,True,https://arxiv.org/abs/2409.20288,2024-09
+lingoly,LINGOLY,binary,24926,False,https://arxiv.org/abs/2406.06196,2024-06
+live_agent_risk,Live-Agent Risk,binary,256,False,https://arxiv.org/abs/2605.22238,2026-05
+liveaopsbench,LiveAoPSBench,binary,69264,True,https://arxiv.org/abs/2501.14275,2025-01
+livebench,LiveBench,continuous,165334,True,https://arxiv.org/abs/2406.19314,2024-06
+llm4ir,LLM4IR (LaMIR),mixed,5348,False,https://arxiv.org/abs/2502.06854,2025-02
+llm_bp_tag,LLM-BP TAG node-classification results,binary,158596,False,https://arxiv.org/abs/2502.11836,2025-02
+llm_survey_simulation,LLM survey-simulation responses (EEDI and OpinionQA),mixed,669350,False,https://arxiv.org/abs/2502.17773,2025-02
+llm_uncertainty_bench,LLM-Uncertainty-Bench,binary,5100000,True,https://arxiv.org/abs/2401.12794,2024-01
+llmail_inject,LLMail-Inject,binary,461593,False,https://arxiv.org/abs/2506.09956,2025-06
+llms_lean_formalization,LLMs-Lean historical evaluations of miniF2F and miniCTX,binary,64960,False,https://arxiv.org/abs/2606.05632,2026-03-16
+lohi_drug_discovery,Lo-Hi Drug Discovery Benchmark,mixed,1246925,False,https://arxiv.org/abs/2310.06399,2023-10
+matharena,MathArena,mixed,92944,True,https://arxiv.org/abs/2505.23281,2025-05
+matharena_platform,MathArena Platform,mixed,32503,False,https://arxiv.org/abs/2605.00674,2026-05
+mathconstraint,MathConstraint,binary,11862,False,https://arxiv.org/abs/2605.08498,2026-05
+mathvista_mini,MathVista MINI,binary,285000,True,https://arxiv.org/abs/2310.02255,2023-10
+medagentboard,MedAgentBoard,mixed,16847,True,https://arxiv.org/abs/2505.12371,2025-05
+medhelm_ehr_sql,MedHELM EHRSQL,binary,13000,False,https://arxiv.org/abs/2505.23802,2023-01
+medhelm_head_qa,MedHELM HEAD-QA,binary,13000,False,https://arxiv.org/abs/2505.23802,2019-06
+medhelm_med_mcqa,MedHELM MedMCQA,binary,13000,False,https://arxiv.org/abs/2505.23802,2022-03
+medhelm_med_qa,MedHELM MedQA,binary,13000,False,https://arxiv.org/abs/2505.23802,2020-09
+medhelm_medbullets,MedHELM Medbullets,binary,4004,False,https://arxiv.org/abs/2505.23802,2024-02
+medhelm_medcalc_bench,MedHELM MedCalc-Bench,binary,13000,True,https://arxiv.org/abs/2505.23802,2024-06
+medhelm_medec,MedHELM MEDEC,binary,7761,False,https://arxiv.org/abs/2505.23802,2024-12
+medhelm_medhallu,MedHELM MedHallu,binary,13000,False,https://arxiv.org/abs/2505.23802,2025-02
+medhelm_pubmed_qa,MedHELM PubMedQA,binary,11000,False,https://arxiv.org/abs/2505.23802,2019-09
+medhelm_race_based_med,MedHELM RaceBasedMed,binary,2171,False,https://arxiv.org/abs/2505.23802,2023-07
+medwatermark_fws,MedWatermark-FWS,likert_5,24200,False,https://arxiv.org/abs/2509.07755,2025-09
+mergebench,MergeBench,mixed,3638,True,https://openreview.net/forum?id=rw50iUoyLu,2025-05-16
+mind2web,Mind2Web candidate generation,binary,17153,False,https://arxiv.org/abs/2306.06070,2023-06-10
+mj_bench,MJ-Bench released judge observations,binary,209509,True,https://arxiv.org/abs/2407.04842,2024-07
+mlip_arena,MLIP Arena,mixed,122640,True,https://openreview.net/forum?id=SAT0KPA5UO,2025-12
+mlrbench,MLR-Bench,likert_10,31356,True,https://openreview.net/forum?id=JX9DE6colf,
+mmbench_v11,MMBench V1.1 recorded answers,binary,3262900,False,https://arxiv.org/abs/2307.06281,2023-07
+mmdocrag,MMDocRAG,fraction,342695,True,https://openreview.net/forum?id=W4b3v9jx1p,2025-12
+mmedbench,MMedBench (MedS-Ins rationale examples),continuous,300,False,https://arxiv.org/abs/2402.13963,2024-02
+mmlu,MMLU,binary,2106300,False,https://arxiv.org/abs/2009.03300,2020-09
+mmlupro,MMLU-Pro,binary,575807,True,https://arxiv.org/abs/2406.01574,2024-06
+mmmu_dev_val,MMMU_DEV_VAL,binary,265650,False,https://arxiv.org/abs/2311.16502,2023-11
+mmoral_bench,MMOral-Bench recorded policies,mixed,28679,True,https://arxiv.org/abs/2509.09254,2025-09
+mochi,MOCHI,continuous_bounded,48456,True,https://arxiv.org/abs/2409.05862,2024-09
+moe_cap,MoE-CAP,mixed,65238,True,https://arxiv.org/abs/2505.11415,2024-12
+monkey_power_laws,Large Language Monkeys: Monkey Business,binary,28780000,False,https://arxiv.org/abs/2407.21787,2024-07
+morphkv,MorphKV results on LongGenBench,binary,4105,False,https://arxiv.org/abs/2503.00979,2025-03
+morqa,MORQA evaluator ratings,continuous_bounded,17136,False,https://arxiv.org/abs/2509.12405,2025-09
+mtbbench,MTBBench,binary,8412,True,https://openreview.net/forum?id=anzoPBV4jI,2025-11
+mtbench,MT-Bench,continuous_bounded,5440,False,https://arxiv.org/abs/2306.05685,2023-06
+multi_moe,Multi-MoE,mixed,9620,False,https://arxiv.org/abs/2505.06481,2025-05
+multi_swebench,Multi-SWE-bench,binary,57975,True,https://openreview.net/forum?id=MhBZzkz4h9,2025-04
+multimodal_stem_ai,Multimodal STEM Assessments (Human-AI),continuous_bounded,4335,False,https://arxiv.org/abs/2507.03013,2025-07
+mypcbench,MyPCBench,binary,118,False,https://arxiv.org/abs/2606.16748,2026-06
+naep_llm_students,NAEP LLM-as-Student,binary,53680,False,https://arxiv.org/abs/2507.08232,2025-07
+nanobaselib,NanoBaseLib RNA Modification Detection,continuous_bounded,319289,True,https://papers.neurips.cc/paper_files/paper/2024/file/8bce223b376f52fb86a148097eebb10d-Paper-Datasets_and_Benchmarks_Track.pdf,
+naturalreasoning,NaturalReasoning,binary,1145824,False,https://arxiv.org/abs/2502.13124,2025-02
+naturebench,NatureBench,binary,2070,False,https://arxiv.org/abs/2606.24530,2026-06
+nester,NESTER,binary,1128,False,https://proceedings.mlr.press/v267/li25cj.html,2024-10
+nis3d,NIS3D,continuous,180,False,https://proceedings.neurips.cc/paper_files/paper/2023/hash/0f2cd3d09a132757555b602e2dd43784-Abstract-Datasets_and_Benchmarks.html,2023-12
+nyu_ctf_bench,NYU CTF Bench,binary,2979,True,https://arxiv.org/abs/2406.05590,2024-06
+oasst,OpenAssistant OASST1: model-attributed assistant replies,ordinal,7575,False,https://arxiv.org/abs/2304.07327,2023-04-12
+ocrbench_v2,OCRBench v2,continuous,10000,True,https://arxiv.org/abs/2501.00321,2025-01
+ood_prediction,OOD-Prediction,binary,142805,False,https://arxiv.org/abs/2505.11770,2025-05
+openbiorq,OpenBioRQ,binary,7227,False,https://arxiv.org/abs/2606.21959,2026-06
+os_harm,OS-Harm,binary,1740,True,https://openreview.net/forum?id=Di30GwhQSX,2025-06
+perfcodebench,PerfCodeBench,binary,23854,False,https://arxiv.org/abs/2605.15222,2026-05
+perumedqa,PeruMedQA,binary,92180,False,https://arxiv.org/abs/2509.11517,2025-09
+phyblock,PhyBlock,continuous,9524,True,https://arxiv.org/abs/2506.08708,2025-06-04
+pku_saferlhf,PKU-SafeRLHF,binary,164236,False,https://arxiv.org/abs/2406.15513,2024-06
+planbench,PlanBench,binary,38061,False,https://arxiv.org/abs/2206.10498,2022-06
+preference_dissection,Preference Dissection,nominal,167680,False,https://arxiv.org/abs/2402.11296,2024-02
+prism,PRISM Alignment,mixed,136742,False,https://arxiv.org/abs/2404.16019,2024-04
+prm800k,PRM800K,ordinal,1701771,False,https://arxiv.org/abs/2305.20050,2023-05
+programbench,ProgramBench,continuous_bounded,4965,False,https://arxiv.org/abs/2605.03546,2026-05
+proteininvbench,ProteinInvBench,continuous_bounded,23872,False,https://openreview.net/forum?id=bqXduvuW5E,2023-06-13
+prox,ProX Math CPT Evals,binary,24298,False,https://arxiv.org/abs/2409.17115,2024-09
+psychosis_bench,Psychosis-bench,mixed,2688,False,https://arxiv.org/abs/2509.10970v1,2025-09
+putnam_axiom,Putnam-AXIOM,ordinal,5000,True,https://openreview.net/forum?id=kqj2Cn3Sxr,2024-10
+pxplore,Pxplore,binary,4079,False,https://arxiv.org/abs/2510.13215,2025-10
+qatch,QATCH,continuous,61384,False,https://proceedings.neurips.cc/paper_files/paper/2023/hash/62a24b69b820d30e9e5ad4f15ff7bf72-Abstract-Datasets_and_Benchmarks.html,2023-06-15
+radar,RADAR,binary,1,True,https://arxiv.org/abs/2506.08249,
+rakuda,Rakuda,continuous,64360,False,https://www.passaglia.jp/llm-ranking/,2023-07
+rclicks,RClicks: released clickability-model measurements,mixed,251820,True,https://arxiv.org/abs/2410.11722,
+real_pocqi,Real-POCQi,win_rate,11560,False,https://arxiv.org/abs/2606.28960,2026-06
+real_webagents,REAL,binary,4449,True,https://openreview.net/forum?id=Un1sWxmZuI,2025-04
+realtimeqa,RealTime QA,binary,64822,False,https://arxiv.org/abs/2207.13332,2022-07
+reasoning_gym,Reasoning Gym: original zero-shot completions,continuous_bounded,186250,True,https://openreview.net/forum?id=GqYSunGmp7,
+refgrader,RefGrader,ordinal,6046,False,https://arxiv.org/abs/2510.09021,2025-10
+reliancescope,RelianceScope,binary,7200,False,https://arxiv.org/abs/2602.16251,2026-02
+researchclawbench,ResearchClawBench,continuous,1432,False,https://arxiv.org/abs/2606.07591,2026-05
+researchcodebench,ResearchCodeBench,binary,6784,True,https://openreview.net/forum?id=3k70Vt0YFS,2025-06
+revolve,REVOLVE,binary,3100,False,https://arxiv.org/abs/2412.03092,2024-12
+rewardbench,RewardBench,ordinal,491343,False,https://arxiv.org/abs/2403.13787,2024-03
+risebench,RISEBench,binary,8280,True,https://openreview.net/forum?id=T3UksaPK64,2025-05
+robust_reasoning_benchmark,Robust Reasoning Benchmark,binary,146160,False,https://arxiv.org/abs/2604.08571,2026-04
+safeagentbench,SafeAgentBench (TRIDENT instruction decisions),binary,4500,False,https://arxiv.org/abs/2412.13178,2024-12
+scale_mrt,Scale MRT (Monitor Red Teaming),mixed,51491,False,https://arxiv.org/abs/2508.19461,2025-08
+scbench_long,scBench-Long,binary,346,False,https://arxiv.org/abs/2606.26563,2026-06
+sciarena,SciArena,win_rate,26408,True,https://arxiv.org/abs/2507.01001,2025-07-01
+scigym,SciGym,mixed,5754,True,https://arxiv.org/abs/2507.02083,2025-05-19
+sgrades,S-GRADES,binary,1444320,False,https://arxiv.org/abs/2603.10233,2026-03
+sib200,SIB-200,binary,765204,False,https://arxiv.org/abs/2309.07445,2023-09
+sketchjudge,SketchJudge,binary,38564,False,https://arxiv.org/abs/2601.06944,2026-01
+software_world_models,Software World Models (DL4C'26),binary,7830,False,https://arxiv.org/abs/2606.27406,2026-06
+stanford_orb,Stanford-ORB,mixed,5670,False,https://arxiv.org/abs/2310.16044,2023-10
+statqa,StatQA,binary,53498,True,https://proceedings.neurips.cc/paper_files/paper/2024/file/729786203d330da046dd8091c2d92a66-Paper-Datasets_and_Benchmarks_Track.pdf,2024-06
+subjective_qa,SubjECTive-QA,binary,16168,True,https://arxiv.org/abs/2410.20651,2024-10
+sugarcrepe,SugarCrepe,binary,15024,False,https://arxiv.org/abs/2306.14610,2023-06
+summeval,SummEval,likert_5,51200,False,https://arxiv.org/abs/2007.12626,2020-07
+sustainable_food,Sustainable Food Recipe Preference Prediction,binary,3000,False,https://arxiv.org/abs/2503.04734,2025-02
+svrpbench,SVRPBench,mixed,160,True,https://openreview.net/forum?id=yADrJyaBJl,2025-12
+swe_rebench,SWE-rebench,binary,67074,True,https://openreview.net/forum?id=nMpJoVmRy1,2025-05
+swe_smith,SWE-smith,binary,49897,False,https://openreview.net/forum?id=63iVrXc8cC,2025-04
+swebench_live,SWE-bench-Live,binary,14613,True,https://openreview.net/forum?id=OGWkr7gXka,2025-05-21
+swepolybench,SWE-PolyBench,binary,1871,False,https://arxiv.org/abs/2504.08703,2025-04
+synthpai,SynthPAI,ordinal,12578,True,https://arxiv.org/abs/2406.07217,2024-06
+tabarena,TabArena,mixed,2457106,True,https://openreview.net/forum?id=jZqCqpCLdU,2025-06
+tau2_bench,tau2-bench,binary,23342,True,https://arxiv.org/abs/2506.07982,2025-06
+taubench,tau-bench,binary,4330,True,https://arxiv.org/abs/2406.12045,2024-06
+tengu,Tengu-Bench,ordinal,192575,False,https://huggingface.co/datasets/lightblue/tengu_bench,
+tensortrust,Tensor Trust,binary,681726,True,https://arxiv.org/abs/2311.01011,2023-11
+theagentcompany,TheAgentCompany,fraction,3057,True,https://arxiv.org/abs/2412.14161,2024-12
+threeeed,3EED,continuous,17232,True,https://arxiv.org/abs/2511.01755,2025-10
+truthfulqa_mc,TruthfulQA-MC,binary,122550,False,https://arxiv.org/abs/2109.07958,2021-09
+tulu_human_eval,Tulu Human Evaluation,binary,2300,False,https://arxiv.org/abs/2306.04751,2023-06
+tumlu,TUMLU,binary,143316,False,https://arxiv.org/abs/2502.11020,2025-02
+txbench_pp,TxBench-PP,binary,576,False,https://latch.bio/txbench-pp,2026-06
+ultrafeedback,UltraFeedback,likert_5,1023456,False,https://arxiv.org/abs/2310.01377,2023-09-26
+vhelm,VHELM,mixed,931478,True,https://arxiv.org/abs/2410.07112,2024-10
+visit_bench,VisIT-Bench,mixed,71406,False,https://arxiv.org/abs/2308.06595,2023-08
+visual_riddles,Visual Riddles,binary,3186,True,https://arxiv.org/abs/2407.19474,2024-07
+visualwebarena,VisualWebArena,binary,600,False,https://arxiv.org/abs/2401.13649,2024-01
+vl_rewardbench,VL-RewardBench,binary,111452,False,https://arxiv.org/abs/2411.17451,2024-11
+weavebench,WeaveBench,binary,114,False,https://arxiv.org/abs/2606.09426,2026-06
+wikihow_agent,WikiHowAgent,binary,171412,False,https://arxiv.org/abs/2507.05528,2025-07
+wildvision,WildVision-Bench,ordinal,11000,True,https://arxiv.org/abs/2406.11069,2024-06
+wmt_mqm,WMT MQM: per-rater error indicators,binary,4879368,False,https://arxiv.org/abs/2104.14478,2021-04
+wonderbread,WONDERBREAD,mixed,21231,True,https://arxiv.org/abs/2406.13264,2024-06
+workarena,WorkArena,binary,475,True,https://arxiv.org/abs/2403.07718,2024-03
+workbench_revisited,WorkBench Revisited,binary,16560,False,https://arxiv.org/abs/2606.13715,2026-06
+worldcentralbanks,WorldCentralBanks: released LLM classifications,binary,405600,True,https://openreview.net/forum?id=cU5W9Z3r8p,2025-05
+xstest,XSTest,nominal,11250,False,https://aclanthology.org/2024.naacl-long.301/,2023-08

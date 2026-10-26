@@ -1,0 +1,41 @@
+{
+ "protokoll": [
+  {
+   "test": "Budgettreue_31_je_Paar",
+   "ok": true
+  },
+  {
+   "test": "F3_numpy_bool",
+   "ausgeloest": true
+  },
+  {
+   "test": "F4_append_only_verletzt",
+   "neu_aufgebaut": true
+  },
+  {
+   "test": "F5_fallback",
+   "fallbacks": 1,
+   "rueckgabe_bool": true
+  },
+  {
+   "test": "F6_leck",
+   "ausgeloest": true
+  },
+  {
+   "test": "Lemma1_ohne_Fremdlabels",
+   "abweichungen": 0
+  },
+  {
+   "test": "H4_S1_bitgleich",
+   "kandidaten": 14626,
+   "abweichungen": 0,
+   "alc_diff": 0.0
+  },
+  {
+   "test": "H4_Gegenprobe_S3_abweichungen",
+   "abweichungen": 17
+  }
+ ],
+ "tests": 8,
+ "fehler": 0
+}

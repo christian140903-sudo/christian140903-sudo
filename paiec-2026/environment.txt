@@ -1,0 +1,9 @@
+Python 3.13.16
+numpy 2.5.3
+scipy 1.18.1
+pandas 2.3.3
+pyarrow 26.0.0
+requests (nur scripts/download_data.py und modell/basis/)
+matplotlib (nur modell/plots.py; getestet mit 3.11.2)
+Das eingereichte Paket (modell/dist/model.py) braucht nur die Python-Standardbibliothek.
+Rechner der Autorenlaeufe: 4 CPU-Kerne, 16 GiB RAM, Linux. OMP_NUM_THREADS=OPENBLAS_NUM_THREADS=MKL_NUM_THREADS=1.

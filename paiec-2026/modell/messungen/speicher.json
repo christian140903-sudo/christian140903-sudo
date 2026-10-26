@@ -1,0 +1,30 @@
+{
+ "model_dir": "./dist",
+ "n_labels": 300000,
+ "limit_mb": 500.0,
+ "zeit_utc": "2026-10-20T20:23:13Z",
+ "tracemalloc_mb": {
+  "nach_import": 0.3571481704711914,
+  "spitze_gesamt": 62.00096893310547,
+  "aktuell_ende": 61.99613571166992
+ },
+ "rss_mb": {
+  "vor_modell_mit_labels": 439.3125,
+  "nach": 493.25,
+  "zuwachs": 53.9375
+ },
+ "zeiten_s": {
+  "import": 0.008108056999844848,
+  "erster_predict": 3.4945583190001344,
+  "50_weitere_predict": 0.03182935599943448
+ },
+ "p_erster": 0.5608613904057744,
+ "zaehler": {
+  "aufrufe": 51,
+  "hier": 51,
+  "beta_binomial": 0,
+  "konstant": 0
+ },
+ "urteil": "ok",
+ "kehrseite": "Falsch, wenn die Plattform labeled als etwas anderes als eine Liste von [[subject, item], label] \u00fcbergibt oder weit mehr als 3e5 Labels je Checkpoint anfallen (hier: 100 Paare x 31 je Benchmark-Lauf w\u00e4re 3 100; 3e5 entspricht ~9 700 Paaren). Die RSS-Spitze enth\u00e4lt auch Interpreter und Label-Liste; der Modellanteil ist die tracemalloc-Zahl."
+}

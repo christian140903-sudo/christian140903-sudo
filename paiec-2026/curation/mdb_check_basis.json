@@ -1,0 +1,1611 @@
+{
+ "basis": "$PAIEC_WORK/basis",
+ "zeit_utc": "2026-10-20T20:47:52Z",
+ "info_kurz": {
+  "benchmarks": 281,
+  "subjects": 23048,
+  "antworten_gepruefte_benchmarks": 92580425
+ },
+ "rc": 0,
+ "fehler": [],
+ "befunde": [
+  "Polarit\u00e4t: 7 bin\u00e4re Benchmarks lower_is_better (1 = unerw\u00fcnscht): ['advprompter', 'crow', 'emoji_attack', 'harmbench', 'jailbreakbench', 'llmail_inject', 'wmt_mqm']",
+  "Polarit\u00e4t: 5 bin\u00e4re Benchmarks unordered: ['alignment_faking', 'braveguard', 'dbpa', 'safeagentbench', 'tensortrust']",
+  "Polarit\u00e4t: 2 bin\u00e4re Benchmarks ohne direction: ['os_harm', 'researchcodebench']",
+  "Identit\u00e4t: 119 Subjekte in 25 Gruppen (13 Benchmarks) erhalten identischen Wettbewerbs-Input (alle acht Felder gleich); Benchmarks: ['ceval', 'chipbench', 'csedb', 'devbench', 'dpai', 'edumath', 'elicitation_game', 'emoji_attack', 'fgbench', 'intercode', 'qatch', 'theagentcompany', 'vl_rewardbench']",
+  "Loader-Abdeckung: 96 von 156 eligible Benchmarks au\u00dferhalb der Sichtbarkeit des Baseline-Loaders (Spalte seen_by_baseline_script)"
+ ],
+ "info": {
+  "benchmarks": 281,
+  "subjects": 23048,
+  "polaritaet": {
+   "binaer": 163,
+   "higher_is_better": 149,
+   "lower_is_better": [
+    "advprompter",
+    "crow",
+    "emoji_attack",
+    "harmbench",
+    "jailbreakbench",
+    "llmail_inject",
+    "wmt_mqm"
+   ],
+   "unordered": [
+    "alignment_faking",
+    "braveguard",
+    "dbpa",
+    "safeagentbench",
+    "tensortrust"
+   ],
+   "ohne_direction": [
+    "os_harm",
+    "researchcodebench"
+   ]
+  },
+  "identitaet": {
+   "gruppen": 25,
+   "subjekte": 119,
+   "benchmarks": [
+    "ceval",
+    "chipbench",
+    "csedb",
+    "devbench",
+    "dpai",
+    "edumath",
+    "elicitation_game",
+    "emoji_attack",
+    "fgbench",
+    "intercode",
+    "qatch",
+    "theagentcompany",
+    "vl_rewardbench"
+   ],
+   "anteil_normalized_name_leer": 0.5801371051718154
+  },
+  "loader_abdeckung": {
+   "eligible": 156,
+   "im_loader": 60,
+   "fehlend": 96,
+   "fehlend_liste": [
+    "helm_bbq",
+    "helm_thaiexam",
+    "hle",
+    "icpc2_code_selector",
+    "igakuqa",
+    "igakuqa119",
+    "ikp",
+    "interchangeable_token_embeddings",
+    "jailbreakbench",
+    "judgetuning",
+    "kernelbench",
+    "kmmlu",
+    "kormedmcqa",
+    "legal_rag_bench",
+    "legalbench",
+    "lingoly",
+    "live_agent_risk",
+    "liveaopsbench",
+    "llm_bp_tag",
+    "llm_uncertainty_bench",
+    "llmail_inject",
+    "llms_lean_formalization",
+    "mathconstraint",
+    "mathvista_mini",
+    "medhelm_ehr_sql",
+    "medhelm_head_qa",
+    "medhelm_med_mcqa",
+    "medhelm_med_qa",
+    "medhelm_medbullets",
+    "medhelm_medcalc_bench",
+    "medhelm_medec",
+    "medhelm_medhallu",
+    "medhelm_pubmed_qa",
+    "medhelm_race_based_med",
+    "mind2web",
+    "mj_bench",
+    "mmbench_v11",
+    "mmlu",
+    "mmlupro",
+    "monkey_power_laws",
+    "morphkv",
+    "mtbbench",
+    "multi_swebench",
+    "mypcbench",
+    "naep_llm_students",
+    "naturebench",
+    "nester",
+    "nyu_ctf_bench",
+    "ood_prediction",
+    "openbiorq",
+    "os_harm",
+    "perfcodebench",
+    "perumedqa",
+    "pku_saferlhf",
+    "planbench",
+    "proofaug",
+    "prox",
+    "pxplore",
+    "radar",
+    "real_webagents",
+    "realtimeqa",
+    "reliancescope",
+    "researchcodebench",
+    "revolve",
+    "risebench",
+    "robust_reasoning_benchmark",
+    "safeagentbench",
+    "scbench_long",
+    "sgrades",
+    "sib200",
+    "sketchjudge",
+    "software_world_models",
+    "statqa",
+    "subjective_qa",
+    "sugarcrepe",
+    "sustainable_food",
+    "swe_rebench",
+    "swe_smith",
+    "swebench_live",
+    "swepolybench",
+    "tau2_bench",
+    "taubench",
+    "tensortrust",
+    "truthfulqa_mc",
+    "tulu_human_eval",
+    "tumlu",
+    "txbench_pp",
+    "visual_riddles",
+    "visualwebarena",
+    "vl_rewardbench",
+    "weavebench",
+    "wikihow_agent",
+    "wmt_mqm",
+    "workarena",
+    "workbench_revisited",
+    "worldcentralbanks"
+   ],
+   "quelle": "Spalte seen_by_baseline_script"
+  },
+  "antworten_gepruefte_benchmarks": 92580425,
+  "wiederholung": {
+   "benchmarks_binaer_gepruefte": 159,
+   "benchmarks_mit_wiederholung": 82,
+   "anteil_zellen_n_ge2_gesamt": 0.09912092637052075,
+   "L10_median_bm_mit_>=100_wdh_zellen": 0.04932483120780195,
+   "je_benchmark": [
+    {
+     "benchmark_id": "abstract_reason",
+     "zellen": 9089,
+     "zellen_n_ge2": 5,
+     "anteil_zellen_n_ge2": 0.0005501155242600946,
+     "antworten": 9095,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 3
+    },
+    {
+     "benchmark_id": "adaptivestep",
+     "zellen": 3638,
+     "zellen_n_ge2": 3638,
+     "anteil_zellen_n_ge2": 1.0,
+     "antworten": 931328,
+     "L10_antwortgewichtet": 0.07796205746935937,
+     "n_max": 256
+    },
+    {
+     "benchmark_id": "advprompter",
+     "zellen": 100,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 100,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "aegis",
+     "zellen": 11500,
+     "zellen_n_ge2": 105,
+     "anteil_zellen_n_ge2": 0.009130434782608696,
+     "antworten": 11608,
+     "L10_antwortgewichtet": 0.03755868544600939,
+     "n_max": 3
+    },
+    {
+     "benchmark_id": "afrieval",
+     "zellen": 1392222,
+     "zellen_n_ge2": 9114,
+     "anteil_zellen_n_ge2": 0.006546369759995173,
+     "antworten": 1403380,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 19
+    },
+    {
+     "benchmark_id": "afrimedqa",
+     "zellen": 268425,
+     "zellen_n_ge2": 9929,
+     "anteil_zellen_n_ge2": 0.036989848188507035,
+     "antworten": 281354,
+     "L10_antwortgewichtet": 0.03836731122582903,
+     "n_max": 3
+    },
+    {
+     "benchmark_id": "agentic_review_perturbation",
+     "zellen": 315,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 315,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "agi_elo",
+     "zellen": 277106,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 277106,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "ai2d_test",
+     "zellen": 784094,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 784094,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "aider",
+     "zellen": 442,
+     "zellen_n_ge2": 260,
+     "anteil_zellen_n_ge2": 0.5882352941176471,
+     "antworten": 5356,
+     "L10_antwortgewichtet": 0.10434312814635481,
+     "n_max": 20
+    },
+    {
+     "benchmark_id": "algotune",
+     "zellen": 2772,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 2772,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "alignment_faking",
+     "zellen": 2044242,
+     "zellen_n_ge2": 49607,
+     "anteil_zellen_n_ge2": 0.024266696408742214,
+     "antworten": 2093849,
+     "L10_antwortgewichtet": 0.0689721208700385,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "alpha_sql",
+     "zellen": 1533,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 1533,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "appworld",
+     "zellen": 10530,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 10530,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "auditing_sabotage_bench",
+     "zellen": 384,
+     "zellen_n_ge2": 380,
+     "anteil_zellen_n_ge2": 0.9895833333333334,
+     "antworten": 1869,
+     "L10_antwortgewichtet": 0.10461721775394696,
+     "n_max": 10
+    },
+    {
+     "benchmark_id": "averimatec",
+     "zellen": 152,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 152,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "babilong",
+     "zellen": 2010223,
+     "zellen_n_ge2": 8498,
+     "anteil_zellen_n_ge2": 0.004227391687389907,
+     "antworten": 2020951,
+     "L10_antwortgewichtet": 0.00015603869759700406,
+     "n_max": 11
+    },
+    {
+     "benchmark_id": "bbq",
+     "zellen": 379335,
+     "zellen_n_ge2": 752,
+     "anteil_zellen_n_ge2": 0.001982416597466619,
+     "antworten": 380089,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 3
+    },
+    {
+     "benchmark_id": "beavertails",
+     "zellen": 1680,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 1680,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "benger",
+     "zellen": 9295,
+     "zellen_n_ge2": 7,
+     "anteil_zellen_n_ge2": 0.0007530930607853685,
+     "antworten": 9302,
+     "L10_antwortgewichtet": 0.5,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "bertaqa",
+     "zellen": 57072,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 57072,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "bird_sql",
+     "zellen": 43200,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 43200,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "brace",
+     "zellen": 202096,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 202096,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "braveguard",
+     "zellen": 536,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 536,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "bridging_gap",
+     "zellen": 2152778,
+     "zellen_n_ge2": 1287651,
+     "anteil_zellen_n_ge2": 0.59813459632159,
+     "antworten": 4706881,
+     "L10_antwortgewichtet": 0.1085111123721092,
+     "n_max": 4
+    },
+    {
+     "benchmark_id": "causal_axioms",
+     "zellen": 9000,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 9000,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "cellverse",
+     "zellen": 748,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 748,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "ceval",
+     "zellen": 14806,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 14806,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "chi_bench",
+     "zellen": 3395,
+     "zellen_n_ge2": 2174,
+     "anteil_zellen_n_ge2": 0.6403534609720176,
+     "antworten": 7667,
+     "L10_antwortgewichtet": 0.052280484021098354,
+     "n_max": 3
+    },
+    {
+     "benchmark_id": "clasheval",
+     "zellen": 74970,
+     "zellen_n_ge2": 144,
+     "anteil_zellen_n_ge2": 0.0019207683073229293,
+     "antworten": 75216,
+     "L10_antwortgewichtet": 0.02222222222222222,
+     "n_max": 10
+    },
+    {
+     "benchmark_id": "cmmlu",
+     "zellen": 254760,
+     "zellen_n_ge2": 44,
+     "anteil_zellen_n_ge2": 0.00017271157167530224,
+     "antworten": 254804,
+     "L10_antwortgewichtet": 0.022727272727272728,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "confagents",
+     "zellen": 64,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 64,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "critic_discernment_game",
+     "zellen": 3638,
+     "zellen_n_ge2": 3638,
+     "anteil_zellen_n_ge2": 1.0,
+     "antworten": 7276,
+     "L10_antwortgewichtet": 0.08905992303463442,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "crow",
+     "zellen": 3862,
+     "zellen_n_ge2": 39,
+     "anteil_zellen_n_ge2": 0.01009839461418954,
+     "antworten": 4976,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 45
+    },
+    {
+     "benchmark_id": "cruxeval",
+     "zellen": 49600,
+     "zellen_n_ge2": 49600,
+     "anteil_zellen_n_ge2": 1.0,
+     "antworten": 992000,
+     "L10_antwortgewichtet": 0.07226326400679119,
+     "n_max": 20
+    },
+    {
+     "benchmark_id": "dave",
+     "zellen": 19248,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 19248,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "dbpa",
+     "zellen": 409,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 409,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "devbench",
+     "zellen": 5149,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 5149,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "disco",
+     "zellen": 111906,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 111906,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "editbench",
+     "zellen": 23328,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 23328,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "edu_circuit_hw",
+     "zellen": 2886,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 2886,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "egoschema",
+     "zellen": 5500,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 5500,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "ehrflowbench",
+     "zellen": 140,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 140,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "elicitation_game",
+     "zellen": 14070,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 14070,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "emoji_attack",
+     "zellen": 53395,
+     "zellen_n_ge2": 847,
+     "anteil_zellen_n_ge2": 0.015862908512032963,
+     "antworten": 58860,
+     "L10_antwortgewichtet": 0.09485899873257288,
+     "n_max": 28
+    },
+    {
+     "benchmark_id": "engdesign",
+     "zellen": 1462,
+     "zellen_n_ge2": 1401,
+     "anteil_zellen_n_ge2": 0.9582763337893296,
+     "antworten": 5393,
+     "L10_antwortgewichtet": 0.04932483120780195,
+     "n_max": 10
+    },
+    {
+     "benchmark_id": "enginemt_qa",
+     "zellen": 676,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 676,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "erbench",
+     "zellen": 212288,
+     "zellen_n_ge2": 767,
+     "anteil_zellen_n_ge2": 0.003613016279770877,
+     "antworten": 213110,
+     "L10_antwortgewichtet": 0.004405286343612335,
+     "n_max": 3
+    },
+    {
+     "benchmark_id": "evouna",
+     "zellen": 25354,
+     "zellen_n_ge2": 5,
+     "anteil_zellen_n_ge2": 0.0001972075412163761,
+     "antworten": 25359,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "exploitgym",
+     "zellen": 4344,
+     "zellen_n_ge2": 1177,
+     "anteil_zellen_n_ge2": 0.27094843462246776,
+     "antworten": 6357,
+     "L10_antwortgewichtet": 0.14660397074190176,
+     "n_max": 4
+    },
+    {
+     "benchmark_id": "faithcot",
+     "zellen": 2515,
+     "zellen_n_ge2": 4,
+     "anteil_zellen_n_ge2": 0.0015904572564612327,
+     "antworten": 2519,
+     "L10_antwortgewichtet": 0.125,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "felm",
+     "zellen": 4412,
+     "zellen_n_ge2": 14,
+     "anteil_zellen_n_ge2": 0.003173164097914778,
+     "antworten": 4426,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "fewshot_ttt_bbh",
+     "zellen": 7141,
+     "zellen_n_ge2": 284,
+     "anteil_zellen_n_ge2": 0.039770340288475,
+     "antworten": 7425,
+     "L10_antwortgewichtet": 0.11443661971830986,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "financebench",
+     "zellen": 2400,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 2400,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "finegrain_t2i",
+     "zellen": 3750,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 3750,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "haiid",
+     "zellen": 35694,
+     "zellen_n_ge2": 35670,
+     "anteil_zellen_n_ge2": 0.9993276180870735,
+     "antworten": 71364,
+     "L10_antwortgewichtet": 0.07352116624614521,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "hallusionbench",
+     "zellen": 239475,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 239475,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "harmbench",
+     "zellen": 107258,
+     "zellen_n_ge2": 16,
+     "anteil_zellen_n_ge2": 0.00014917302205896065,
+     "antworten": 107274,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "healthadminbench",
+     "zellen": 2430,
+     "zellen_n_ge2": 1890,
+     "anteil_zellen_n_ge2": 0.7777777777777778,
+     "antworten": 7020,
+     "L10_antwortgewichtet": 0.11270576131687242,
+     "n_max": 4
+    },
+    {
+     "benchmark_id": "helm_afr",
+     "zellen": 745118,
+     "zellen_n_ge2": 242,
+     "anteil_zellen_n_ge2": 0.0003247807729782397,
+     "antworten": 745360,
+     "L10_antwortgewichtet": 0.002066115702479339,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "helm_bbq",
+     "zellen": 81000,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 81000,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "helm_thaiexam",
+     "zellen": 23730,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 23730,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "hle",
+     "zellen": 13777,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 13777,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "icpc2_code_selector",
+     "zellen": 70470,
+     "zellen_n_ge2": 435,
+     "anteil_zellen_n_ge2": 0.006172839506172839,
+     "antworten": 70905,
+     "L10_antwortgewichtet": 0.21839080459770116,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "igakuqa",
+     "zellen": 7355,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 7355,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "igakuqa119",
+     "zellen": 400,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 400,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "ikp",
+     "zellen": 226211,
+     "zellen_n_ge2": 41086,
+     "anteil_zellen_n_ge2": 0.1816268881707786,
+     "antworten": 268351,
+     "L10_antwortgewichtet": 0.04110494316679884,
+     "n_max": 3
+    },
+    {
+     "benchmark_id": "imagenet_hard",
+     "zellen": 97448,
+     "zellen_n_ge2": 52,
+     "anteil_zellen_n_ge2": 0.0005336179295624333,
+     "antworten": 97500,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "interchangeable_token_embeddings",
+     "zellen": 399731,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 399731,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "jailbreakbench",
+     "zellen": 3074,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 3074,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "judgetuning",
+     "zellen": 21000,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 21000,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "kernelbench",
+     "zellen": 4474,
+     "zellen_n_ge2": 2750,
+     "anteil_zellen_n_ge2": 0.6146624944121591,
+     "antworten": 73984,
+     "L10_antwortgewichtet": 0.05955068655193079,
+     "n_max": 100
+    },
+    {
+     "benchmark_id": "kmmlu",
+     "zellen": 1006796,
+     "zellen_n_ge2": 434,
+     "anteil_zellen_n_ge2": 0.00043107044525405344,
+     "antworten": 1007230,
+     "L10_antwortgewichtet": 0.03341013824884793,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "kormedmcqa",
+     "zellen": 18002,
+     "zellen_n_ge2": 3209,
+     "anteil_zellen_n_ge2": 0.17825797133651816,
+     "antworten": 21391,
+     "L10_antwortgewichtet": 0.04622612913003941,
+     "n_max": 4
+    },
+    {
+     "benchmark_id": "legal_rag_bench",
+     "zellen": 1800,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 1800,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "legalbench",
+     "zellen": 63433,
+     "zellen_n_ge2": 8,
+     "anteil_zellen_n_ge2": 0.00012611732063752307,
+     "antworten": 63457,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 4
+    },
+    {
+     "benchmark_id": "lingoly",
+     "zellen": 24926,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 24926,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "live_agent_risk",
+     "zellen": 224,
+     "zellen_n_ge2": 32,
+     "anteil_zellen_n_ge2": 0.14285714285714285,
+     "antworten": 256,
+     "L10_antwortgewichtet": 0.25,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "liveaopsbench",
+     "zellen": 69199,
+     "zellen_n_ge2": 65,
+     "anteil_zellen_n_ge2": 0.0009393199323689649,
+     "antworten": 69264,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "llm_bp_tag",
+     "zellen": 152139,
+     "zellen_n_ge2": 2648,
+     "anteil_zellen_n_ge2": 0.017405136092652113,
+     "antworten": 158596,
+     "L10_antwortgewichtet": 0.04987177308017506,
+     "n_max": 146
+    },
+    {
+     "benchmark_id": "llm_uncertainty_bench",
+     "zellen": 5092962,
+     "zellen_n_ge2": 7038,
+     "anteil_zellen_n_ge2": 0.001381907031703751,
+     "antworten": 5100000,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "llmail_inject",
+     "zellen": 224445,
+     "zellen_n_ge2": 31295,
+     "anteil_zellen_n_ge2": 0.13943282318608122,
+     "antworten": 461016,
+     "L10_antwortgewichtet": 0.004106708169751575,
+     "n_max": 2821
+    },
+    {
+     "benchmark_id": "llms_lean_formalization",
+     "zellen": 64092,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 64092,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "mathconstraint",
+     "zellen": 5810,
+     "zellen_n_ge2": 5810,
+     "anteil_zellen_n_ge2": 1.0,
+     "antworten": 11862,
+     "L10_antwortgewichtet": 0.12697128084078008,
+     "n_max": 6
+    },
+    {
+     "benchmark_id": "mathvista_mini",
+     "zellen": 261897,
+     "zellen_n_ge2": 6923,
+     "anteil_zellen_n_ge2": 0.026434056136572775,
+     "antworten": 268820,
+     "L10_antwortgewichtet": 0.048317203524483605,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "medhelm_ehr_sql",
+     "zellen": 13000,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 13000,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "medhelm_head_qa",
+     "zellen": 13000,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 13000,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "medhelm_med_mcqa",
+     "zellen": 13000,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 13000,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "medhelm_med_qa",
+     "zellen": 13000,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 13000,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "medhelm_medbullets",
+     "zellen": 3874,
+     "zellen_n_ge2": 130,
+     "anteil_zellen_n_ge2": 0.03355704697986577,
+     "antworten": 4004,
+     "L10_antwortgewichtet": 0.0038461538461538464,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "medhelm_medcalc_bench",
+     "zellen": 12896,
+     "zellen_n_ge2": 91,
+     "anteil_zellen_n_ge2": 0.007056451612903226,
+     "antworten": 13000,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 3
+    },
+    {
+     "benchmark_id": "medhelm_medec",
+     "zellen": 7761,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 7761,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "medhelm_medhallu",
+     "zellen": 13000,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 13000,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "medhelm_pubmed_qa",
+     "zellen": 11000,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 11000,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "medhelm_race_based_med",
+     "zellen": 2171,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 2171,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "mind2web",
+     "zellen": 17153,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 17153,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "mj_bench",
+     "zellen": 81231,
+     "zellen_n_ge2": 19931,
+     "anteil_zellen_n_ge2": 0.2453619923428248,
+     "antworten": 102859,
+     "L10_antwortgewichtet": 0.1020300456379284,
+     "n_max": 6
+    },
+    {
+     "benchmark_id": "mmbench_v11",
+     "zellen": 2937844,
+     "zellen_n_ge2": 129731,
+     "anteil_zellen_n_ge2": 0.04415857343003917,
+     "antworten": 3115891,
+     "L10_antwortgewichtet": 0.037988420224967345,
+     "n_max": 3
+    },
+    {
+     "benchmark_id": "mmlu",
+     "zellen": 2102250,
+     "zellen_n_ge2": 4050,
+     "anteil_zellen_n_ge2": 0.0019265073135925795,
+     "antworten": 2106300,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "mmlupro",
+     "zellen": 528667,
+     "zellen_n_ge2": 7623,
+     "anteil_zellen_n_ge2": 0.01441928472932867,
+     "antworten": 536290,
+     "L10_antwortgewichtet": 0.014823560278105732,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "monkey_power_laws",
+     "zellen": 2878,
+     "zellen_n_ge2": 2878,
+     "anteil_zellen_n_ge2": 1.0,
+     "antworten": 28780000,
+     "L10_antwortgewichtet": 0.03516185663389133,
+     "n_max": 10000
+    },
+    {
+     "benchmark_id": "morphkv",
+     "zellen": 3674,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 3674,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "mtbbench",
+     "zellen": 8397,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 8397,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "multi_swebench",
+     "zellen": 57835,
+     "zellen_n_ge2": 140,
+     "anteil_zellen_n_ge2": 0.0024206795193222096,
+     "antworten": 57975,
+     "L10_antwortgewichtet": 0.0035714285714285713,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "mypcbench",
+     "zellen": 118,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 118,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "naep_llm_students",
+     "zellen": 5368,
+     "zellen_n_ge2": 5368,
+     "anteil_zellen_n_ge2": 1.0,
+     "antworten": 53680,
+     "L10_antwortgewichtet": 0.09460382513661203,
+     "n_max": 10
+    },
+    {
+     "benchmark_id": "naturebench",
+     "zellen": 2070,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 2070,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "nester",
+     "zellen": 1068,
+     "zellen_n_ge2": 60,
+     "anteil_zellen_n_ge2": 0.056179775280898875,
+     "antworten": 1128,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "nyu_ctf_bench",
+     "zellen": 2979,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 2979,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "ood_prediction",
+     "zellen": 142805,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 142805,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "openbiorq",
+     "zellen": 7213,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 7213,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "os_harm",
+     "zellen": 1740,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 1740,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "perfcodebench",
+     "zellen": 23854,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 23854,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "perumedqa",
+     "zellen": 83878,
+     "zellen_n_ge2": 1229,
+     "anteil_zellen_n_ge2": 0.014652233005078804,
+     "antworten": 85107,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "pku_saferlhf",
+     "zellen": 79124,
+     "zellen_n_ge2": 79124,
+     "anteil_zellen_n_ge2": 1.0,
+     "antworten": 164236,
+     "L10_antwortgewichtet": 0.0728857807014865,
+     "n_max": 996
+    },
+    {
+     "benchmark_id": "planbench",
+     "zellen": 38061,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 38061,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "proofaug",
+     "zellen": 244,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 244,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "prox",
+     "zellen": 24104,
+     "zellen_n_ge2": 180,
+     "anteil_zellen_n_ge2": 0.007467640225688682,
+     "antworten": 24298,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 4
+    },
+    {
+     "benchmark_id": "pxplore",
+     "zellen": 3966,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 3966,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "radar",
+     "zellen": 1,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 1,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "real_webagents",
+     "zellen": 3759,
+     "zellen_n_ge2": 334,
+     "anteil_zellen_n_ge2": 0.088853418462357,
+     "antworten": 4449,
+     "L10_antwortgewichtet": 0.09814453125,
+     "n_max": 5
+    },
+    {
+     "benchmark_id": "realtimeqa",
+     "zellen": 63402,
+     "zellen_n_ge2": 218,
+     "anteil_zellen_n_ge2": 0.0034383773382543137,
+     "antworten": 63620,
+     "L10_antwortgewichtet": 0.0389908256880734,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "reliancescope",
+     "zellen": 7200,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 7200,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "researchcodebench",
+     "zellen": 6572,
+     "zellen_n_ge2": 212,
+     "anteil_zellen_n_ge2": 0.03225806451612903,
+     "antworten": 6784,
+     "L10_antwortgewichtet": 0.06367924528301887,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "revolve",
+     "zellen": 620,
+     "zellen_n_ge2": 620,
+     "anteil_zellen_n_ge2": 1.0,
+     "antworten": 3100,
+     "L10_antwortgewichtet": 0.07451612903225806,
+     "n_max": 5
+    },
+    {
+     "benchmark_id": "risebench",
+     "zellen": 8271,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 8271,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "robust_reasoning_benchmark",
+     "zellen": 13290,
+     "zellen_n_ge2": 10400,
+     "anteil_zellen_n_ge2": 0.782543265613243,
+     "antworten": 146040,
+     "L10_antwortgewichtet": 0.05267481662591687,
+     "n_max": 16
+    },
+    {
+     "benchmark_id": "safeagentbench",
+     "zellen": 3990,
+     "zellen_n_ge2": 510,
+     "anteil_zellen_n_ge2": 0.12781954887218044,
+     "antworten": 4500,
+     "L10_antwortgewichtet": 0.008823529411764706,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "scbench_long",
+     "zellen": 116,
+     "zellen_n_ge2": 116,
+     "anteil_zellen_n_ge2": 1.0,
+     "antworten": 346,
+     "L10_antwortgewichtet": 0.10115606936416185,
+     "n_max": 3
+    },
+    {
+     "benchmark_id": "sgrades",
+     "zellen": 542656,
+     "zellen_n_ge2": 62787,
+     "anteil_zellen_n_ge2": 0.11570313421394032,
+     "antworten": 673768,
+     "L10_antwortgewichtet": 0.016286872590154194,
+     "n_max": 22
+    },
+    {
+     "benchmark_id": "sib200",
+     "zellen": 681564,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 681564,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "sketchjudge",
+     "zellen": 38486,
+     "zellen_n_ge2": 76,
+     "anteil_zellen_n_ge2": 0.0019747440627760743,
+     "antworten": 38562,
+     "L10_antwortgewichtet": 0.046052631578947366,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "software_world_models",
+     "zellen": 7812,
+     "zellen_n_ge2": 18,
+     "anteil_zellen_n_ge2": 0.002304147465437788,
+     "antworten": 7830,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "statqa",
+     "zellen": 44004,
+     "zellen_n_ge2": 190,
+     "anteil_zellen_n_ge2": 0.004317789291882556,
+     "antworten": 44194,
+     "L10_antwortgewichtet": 0.007894736842105263,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "subjective_qa",
+     "zellen": 16163,
+     "zellen_n_ge2": 1,
+     "anteil_zellen_n_ge2": 6.186970240673143e-05,
+     "antworten": 16164,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "sugarcrepe",
+     "zellen": 15024,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 15024,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "sustainable_food",
+     "zellen": 2999,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 2999,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "swe_rebench",
+     "zellen": 6306,
+     "zellen_n_ge2": 6282,
+     "anteil_zellen_n_ge2": 0.9961941008563273,
+     "antworten": 67074,
+     "L10_antwortgewichtet": 0.05074159710953093,
+     "n_max": 34
+    },
+    {
+     "benchmark_id": "swe_smith",
+     "zellen": 16305,
+     "zellen_n_ge2": 16305,
+     "anteil_zellen_n_ge2": 1.0,
+     "antworten": 49897,
+     "L10_antwortgewichtet": 0.025182808564224436,
+     "n_max": 22
+    },
+    {
+     "benchmark_id": "swe_together",
+     "zellen": 2179,
+     "zellen_n_ge2": 2162,
+     "anteil_zellen_n_ge2": 0.992198256080771,
+     "antworten": 4341,
+     "L10_antwortgewichtet": 0.10962072155411656,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "swebench_live",
+     "zellen": 8656,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 8656,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "swepolybench",
+     "zellen": 1870,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 1870,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "tau2_bench",
+     "zellen": 6044,
+     "zellen_n_ge2": 5766,
+     "anteil_zellen_n_ge2": 0.9540039708802118,
+     "antworten": 23210,
+     "L10_antwortgewichtet": 0.08516483516483515,
+     "n_max": 4
+    },
+    {
+     "benchmark_id": "taubench",
+     "zellen": 2662,
+     "zellen_n_ge2": 328,
+     "anteil_zellen_n_ge2": 0.12321562734785875,
+     "antworten": 4314,
+     "L10_antwortgewichtet": 0.12195767195767195,
+     "n_max": 16
+    },
+    {
+     "benchmark_id": "tensortrust",
+     "zellen": 573470,
+     "zellen_n_ge2": 54909,
+     "anteil_zellen_n_ge2": 0.09574868781278881,
+     "antworten": 681726,
+     "L10_antwortgewichtet": 0.005846373486371916,
+     "n_max": 896
+    },
+    {
+     "benchmark_id": "truthfulqa_mc",
+     "zellen": 122550,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 122550,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "tulu_human_eval",
+     "zellen": 2169,
+     "zellen_n_ge2": 118,
+     "anteil_zellen_n_ge2": 0.054402950668510835,
+     "antworten": 2300,
+     "L10_antwortgewichtet": 0.07228915662650602,
+     "n_max": 4
+    },
+    {
+     "benchmark_id": "tumlu",
+     "zellen": 137387,
+     "zellen_n_ge2": 1,
+     "anteil_zellen_n_ge2": 7.278709048163217e-06,
+     "antworten": 137388,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "txbench_pp",
+     "zellen": 192,
+     "zellen_n_ge2": 192,
+     "anteil_zellen_n_ge2": 1.0,
+     "antworten": 576,
+     "L10_antwortgewichtet": 0.10416666666666667,
+     "n_max": 3
+    },
+    {
+     "benchmark_id": "visual_memory",
+     "zellen": 237500,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 237500,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "visual_riddles",
+     "zellen": 3186,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 3186,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "visualwebarena",
+     "zellen": 600,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 600,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "vl_rewardbench",
+     "zellen": 22875,
+     "zellen_n_ge2": 22346,
+     "anteil_zellen_n_ge2": 0.9768743169398907,
+     "antworten": 105697,
+     "L10_antwortgewichtet": 0.018862563662312634,
+     "n_max": 10
+    },
+    {
+     "benchmark_id": "weavebench",
+     "zellen": 114,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 114,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "wikihow_agent",
+     "zellen": 171412,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 171412,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "wmt_mqm",
+     "zellen": 2711322,
+     "zellen_n_ge2": 1089810,
+     "anteil_zellen_n_ge2": 0.40194783209076607,
+     "antworten": 4879368,
+     "L10_antwortgewichtet": 0.03660720424721044,
+     "n_max": 3
+    },
+    {
+     "benchmark_id": "workarena",
+     "zellen": 472,
+     "zellen_n_ge2": 3,
+     "anteil_zellen_n_ge2": 0.006355932203389831,
+     "antworten": 475,
+     "L10_antwortgewichtet": 0.0,
+     "n_max": 2
+    },
+    {
+     "benchmark_id": "workbench_revisited",
+     "zellen": 16560,
+     "zellen_n_ge2": 0,
+     "anteil_zellen_n_ge2": 0.0,
+     "antworten": 16560,
+     "L10_antwortgewichtet": null,
+     "n_max": 1
+    },
+    {
+     "benchmark_id": "worldcentralbanks",
+     "zellen": 349596,
+     "zellen_n_ge2": 53255,
+     "anteil_zellen_n_ge2": 0.15233297863819953,
+     "antworten": 405558,
+     "L10_antwortgewichtet": 0.009247644597452778,
+     "n_max": 5
+    }
+   ]
+  }
+ },
+ "kehrseite": "rc 0 belegt Selbstkonsistenz (Schema, Zeilenzahlen, Schl\u00fcssel, Wertebereich) und das Fehlen bekannter Befundklassen, nicht die Richtigkeit der Labels (z. B. bird_sql-Konfigurationen mit 0/360 sind formal g\u00fcltig). Wiederholungs-Statistik hier ohne Modell-Ausschl\u00fcsse (F3/F4) und inkl. withheld-Benchmarks; die Modellzahl steht in wiederholung_b.json."
+}

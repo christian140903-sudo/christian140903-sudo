@@ -1,0 +1,105 @@
+{
+ "zeit_utc": "2026-10-20T20:34:54Z",
+ "weg": "B: pandas groupby var(ddof=1) auf Roh-Antworten",
+ "benchmarks_mit_daten": 156,
+ "zeilen_gesamt": 31389917,
+ "antworten_gesamt": 68268267,
+ "zeilen_mit_wiederholung": 3144967,
+ "anteil_zeilen_wdh": 0.10019035730486321,
+ "anteil_antworten_in_wdh_zellen": 0.5862653141612633,
+ "schranke_antwortgewichtet_nur_wdh": 0.04438518476157831,
+ "schranke_zellgewichtet_nur_wdh": 0.06714050909573208,
+ "orakel_kn_alle_zellen": 0.022928480583034882,
+ "benchmarks_mit_>=100_wdh_zellen": 62,
+ "schranke_je_bm_quantile": {
+  "0.1": 0.00034704639808523854,
+  "0.25": 0.010641623517616015,
+  "0.5": 0.04882101736614278,
+  "0.75": 0.0880861510671846,
+  "0.9": 0.10812172291029297
+ },
+ "schranke_bm_balanciert_mittel": 0.05418274728688718,
+ "orakel_kn_alle_zellen_ohne_monkey_power_laws": 0.014015064177086855,
+ "schranke_antwortgewichtet_ohne_monkey_power_laws": 0.06799453274267957,
+ "anteil_antworten_monkey_power_laws": 0.4215721485943096,
+ "l9_abgleich": {
+  "paare_ge80": 12918,
+  "benchmarks_paare_ge80": 142,
+  "kn_paargewichtet_alle_paare_ge80": 0.0038197403083639688,
+  "kn_antwortgewichtet_alle_paare_ge80": 0.022908019215094205,
+  "anteil_paare_mit_wdh_zellen": 0.5017030500077412,
+  "testpaare": 2142,
+  "testpaare_benchmarks": 142,
+  "kn_paargewichtet_testpaare_alle_items": 0.006490170611777598,
+  "kn_antwortgewichtet_testpaare": 0.027664895141589593,
+  "L10_paargewichtet_testpaare_nur_wdh": 0.03775015376767043,
+  "testpaare_mit_wdh_zellen": 813,
+  "kn_paargewichtet_testpaare_je_benchmark_balanciert": 0.007744762477290184
+ },
+ "vergleich_mit_erstweg": {
+  "zeilen_gesamt": {
+   "A": 31389917,
+   "B": 31389917,
+   "gleich": true
+  },
+  "antworten_gesamt": {
+   "A": 68268267,
+   "B": 68268267,
+   "gleich": true
+  },
+  "zeilen_mit_wiederholung": {
+   "A": 3144967,
+   "B": 3144967,
+   "gleich": true
+  },
+  "benchmarks_mit_>=100_wdh_zellen": {
+   "A": 62,
+   "B": 62,
+   "gleich": true
+  },
+  "schranke_antwortgewichtet_nur_wdh": {
+   "A": 0.044385184761578315,
+   "B": 0.04438518476157831,
+   "rel_abw": 1.5633355907338314e-16,
+   "innerhalb_toleranz": true
+  },
+  "schranke_zellgewichtet_nur_wdh": {
+   "A": 0.06714050909573205,
+   "B": 0.06714050909573208,
+   "rel_abw": 4.133953702384611e-16,
+   "innerhalb_toleranz": true
+  },
+  "orakel_kn_alle_zellen": {
+   "A": 0.022928480583034882,
+   "B": 0.022928480583034882,
+   "rel_abw": 0.0,
+   "innerhalb_toleranz": true
+  },
+  "schranke_bm_balanciert_mittel": {
+   "A": 0.05418274728688718,
+   "B": 0.05418274728688718,
+   "rel_abw": 0.0,
+   "innerhalb_toleranz": true
+  },
+  "quantil_0.25": {
+   "A": 0.010641623517616015,
+   "B": 0.010641623517616015,
+   "rel_abw": 0.0,
+   "innerhalb_toleranz": true
+  },
+  "quantil_0.5": {
+   "A": 0.04882101736614278,
+   "B": 0.04882101736614278,
+   "rel_abw": 0.0,
+   "innerhalb_toleranz": true
+  },
+  "quantil_0.75": {
+   "A": 0.0880861510671846,
+   "B": 0.0880861510671846,
+   "rel_abw": 0.0,
+   "innerhalb_toleranz": true
+  }
+ },
+ "urteil": "zwei Rechenwege innerhalb Toleranz",
+ "kehrseite": "Falsch, wenn die Population nicht dieselbe ist (Kontrollsummen oben) oder wenn beide Wege denselben Fehler teilen: Wiederholungen gibt es nur, wo Kuratoren Trials erfasst haben (10 % der Zellen, 59 % der Antworten, bridging_gap/monkey_power_laws dominieren die Antwortgewichtung); L10 ist eine Schranke auf dieser Teilmenge."
+}

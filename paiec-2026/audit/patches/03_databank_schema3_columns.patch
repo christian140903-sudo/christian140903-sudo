@@ -1,0 +1,20 @@
+--- a/ble/comp_pipeline/script/databank.py
++++ b/ble/comp_pipeline/script/databank.py
+@@ -158,7 +158,7 @@
+                 + more
+             )
+         lines.append(
+-            f"Responses per item pair (trials): {bench['n_trials']}; "
++            f"Responses per item pair (trials): {bench['max_trial']}; "
+             f"total responses: {bench['n_responses']}"
+         )
+         if bench.get("saturation") is not None:
+@@ -170,7 +170,7 @@
+             + ", ".join(t for t in ("items", "response", "traces") if self._has(d, t))
+             + (
+                 "; item ground-truth answers included"
+-                if bench["has_ground_truth"]
++                if bench["has_reference_answer"]
+                 else ""
+             )
+         )

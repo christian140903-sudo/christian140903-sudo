@@ -1,0 +1,110 @@
+{
+ "zeit_utc": "2026-10-20T20:40:42Z",
+ "n_benchmarks": 142,
+ "n_merkmale": 50,
+ "var_R": 0.05062840009043966,
+ "r2_lobo_ridge_nested": -0.0330538272575136,
+ "r2_lobo_knn5": -0.2548373326605915,
+ "r2_lobo_konstante": -0.0142346964438409,
+ "lambda_gewaehlt_haeufigkeit": {
+  "1000.0": 142
+ },
+ "B0_sq_konstante_lobo": 0.0513490799971644,
+ "B0_sq_ridge": 0.05230186248135334,
+ "B0_sq_knn5": 0.06353040652636055,
+ "n_extrem": 18,
+ "extrem_mittlerer_abs_fehler_ridge": 0.4102690033293068,
+ "extrem_mittlerer_abs_fehler_konstante": 0.4085659032950886,
+ "lower_is_better": [
+  {
+   "benchmark_id": "crow",
+   "R": 0.086,
+   "pred_ridge": 0.525,
+   "pred_knn5": 0.494
+  },
+  {
+   "benchmark_id": "emoji_attack",
+   "R": 0.288,
+   "pred_ridge": 0.516,
+   "pred_knn5": 0.463
+  },
+  {
+   "benchmark_id": "harmbench",
+   "R": 0.459,
+   "pred_ridge": 0.517,
+   "pred_knn5": 0.353
+  },
+  {
+   "benchmark_id": "jailbreakbench",
+   "R": 0.693,
+   "pred_ridge": 0.514,
+   "pred_knn5": 0.4
+  },
+  {
+   "benchmark_id": "llmail_inject",
+   "R": 0.007,
+   "pred_ridge": 0.53,
+   "pred_knn5": 0.402
+  },
+  {
+   "benchmark_id": "wmt_mqm",
+   "R": 0.046,
+   "pred_ridge": 0.576,
+   "pred_knn5": 0.561
+  }
+ ],
+ "merkmale": [
+  "len_q10",
+  "len_q25",
+  "len_q50",
+  "len_q75",
+  "len_q90",
+  "len_sd",
+  "log_n_items",
+  "anteil_mit_features",
+  "n_keys",
+  "max_werte_je_key",
+  "hat:input_scope",
+  "nwerte:input_scope",
+  "hat:category",
+  "nwerte:category",
+  "hat:task",
+  "nwerte:task",
+  "hat:lang",
+  "nwerte:lang",
+  "hat:split",
+  "nwerte:split",
+  "hat:dataset",
+  "nwerte:dataset",
+  "hat:domain",
+  "nwerte:domain",
+  "hat:difficulty",
+  "nwerte:difficulty",
+  "hat:source_task_id",
+  "nwerte:source_task_id",
+  "hat:reference_tags",
+  "nwerte:reference_tags",
+  "hat:scenario",
+  "nwerte:scenario",
+  "hat:input_mode",
+  "nwerte:input_mode",
+  "hat:dimension",
+  "nwerte:dimension",
+  "hat:source_file",
+  "nwerte:source_file",
+  "hat:shot",
+  "nwerte:shot",
+  "hat:task_type",
+  "nwerte:task_type",
+  "hat:database_id",
+  "nwerte:database_id",
+  "hat:source_image_path",
+  "nwerte:source_image_path",
+  "hat:prompt_origin",
+  "nwerte:prompt_origin",
+  "hat:component",
+  "nwerte:component"
+ ],
+ "urteil": "Negativbefund best\u00e4tigt: kein LOBO-R\u00b2 > 0 f\u00fcr Ridge (verschachtelt) oder kNN",
+ "kehrseite": "Falsch, wenn semantischer Item-Text (Embedding/LLM) die Lage tr\u00e4gt \u2013 das ist hier nicht gepr\u00fcft, weil kein Text geladen ist; der Befund gilt nur f\u00fcr L\u00e4ngen- und Schl\u00fcssel-Aggregate. Falsch auch, wenn die Plattform Testbenchmarks mit anderen Schl\u00fcsselkonventionen ausliefert."
+}

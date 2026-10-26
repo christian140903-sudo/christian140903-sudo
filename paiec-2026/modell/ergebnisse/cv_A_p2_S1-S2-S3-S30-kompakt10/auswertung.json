@@ -1,0 +1,2876 @@
+{
+ "design": "REG2",
+ "falten_gelesen": 10,
+ "primaer_S": "S3",
+ "tabelle_alle": {
+  "S1": {
+   "beta_binomial": {
+    "alc_paare": 0.21315,
+    "alc_benchmark_balanciert": 0.21215,
+    "ece_paare": 0.13371,
+    "brier_je_budget": {
+     "B0": 0.25062,
+     "B1": 0.23294,
+     "B3": 0.21586,
+     "B7": 0.20266,
+     "B15": 0.19428,
+     "B31": 0.1894
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.24792,
+    "alc_benchmark_balanciert": 0.24641,
+    "ece_paare": 0.18442,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.3676,
+     "B3": 0.24588,
+     "B7": 0.21007,
+     "B15": 0.19613,
+     "B31": 0.18988
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_item": {
+    "alc_paare": 0.21286,
+    "alc_benchmark_balanciert": 0.21259,
+    "ece_paare": 0.13339,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.23209,
+     "B3": 0.21597,
+     "B7": 0.20278,
+     "B15": 0.19447,
+     "B31": 0.1895
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.21286,
+    "alc_benchmark_balanciert": 0.21259,
+    "ece_paare": 0.13339,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.23209,
+     "B3": 0.21597,
+     "B7": 0.20278,
+     "B15": 0.19447,
+     "B31": 0.1895
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.21286,
+    "alc_benchmark_balanciert": 0.21259,
+    "ece_paare": 0.13339,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.23209,
+     "B3": 0.21597,
+     "B7": 0.20278,
+     "B15": 0.19447,
+     "B31": 0.1895
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_kal": {
+    "alc_paare": 0.21286,
+    "alc_benchmark_balanciert": 0.21259,
+    "ece_paare": 0.13339,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.23209,
+     "B3": 0.21597,
+     "B7": 0.20278,
+     "B15": 0.19447,
+     "B31": 0.1895
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21559,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   }
+  },
+  "S2": {
+   "beta_binomial": {
+    "alc_paare": 0.2133,
+    "alc_benchmark_balanciert": 0.21231,
+    "ece_paare": 0.13406,
+    "brier_je_budget": {
+     "B0": 0.25062,
+     "B1": 0.23307,
+     "B3": 0.21598,
+     "B7": 0.20283,
+     "B15": 0.19451,
+     "B31": 0.18964
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.24753,
+    "alc_benchmark_balanciert": 0.24595,
+    "ece_paare": 0.18387,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.36576,
+     "B3": 0.24542,
+     "B7": 0.21009,
+     "B15": 0.19632,
+     "B31": 0.19011
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_item": {
+    "alc_paare": 0.21034,
+    "alc_benchmark_balanciert": 0.21012,
+    "ece_paare": 0.12706,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.2277,
+     "B3": 0.21195,
+     "B7": 0.20028,
+     "B15": 0.19329,
+     "B31": 0.1885
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.21039,
+    "alc_benchmark_balanciert": 0.21017,
+    "ece_paare": 0.12706,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.2277,
+     "B3": 0.21196,
+     "B7": 0.20031,
+     "B15": 0.19337,
+     "B31": 0.18868
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.21032,
+    "alc_benchmark_balanciert": 0.2101,
+    "ece_paare": 0.12706,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.2277,
+     "B3": 0.21194,
+     "B7": 0.20027,
+     "B15": 0.19326,
+     "B31": 0.18842
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_kal": {
+    "alc_paare": 0.21056,
+    "alc_benchmark_balanciert": 0.21036,
+    "ece_paare": 0.12706,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.22772,
+     "B3": 0.21202,
+     "B7": 0.20045,
+     "B15": 0.19369,
+     "B31": 0.18938
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21559,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   }
+  },
+  "S3": {
+   "beta_binomial": {
+    "alc_paare": 0.21342,
+    "alc_benchmark_balanciert": 0.2124,
+    "ece_paare": 0.13439,
+    "brier_je_budget": {
+     "B0": 0.25062,
+     "B1": 0.23311,
+     "B3": 0.21614,
+     "B7": 0.203,
+     "B15": 0.19465,
+     "B31": 0.1898
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.24747,
+    "alc_benchmark_balanciert": 0.24587,
+    "ece_paare": 0.18389,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.36506,
+     "B3": 0.24549,
+     "B7": 0.21019,
+     "B15": 0.19646,
+     "B31": 0.19027
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_item": {
+    "alc_paare": 0.20867,
+    "alc_benchmark_balanciert": 0.20836,
+    "ece_paare": 0.12309,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.22446,
+     "B3": 0.2092,
+     "B7": 0.19906,
+     "B15": 0.19257,
+     "B31": 0.18764
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.20876,
+    "alc_benchmark_balanciert": 0.20846,
+    "ece_paare": 0.12309,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.22447,
+     "B3": 0.20923,
+     "B7": 0.19913,
+     "B15": 0.19274,
+     "B31": 0.18801
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.20864,
+    "alc_benchmark_balanciert": 0.20833,
+    "ece_paare": 0.12309,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.22445,
+     "B3": 0.20919,
+     "B7": 0.19904,
+     "B15": 0.19251,
+     "B31": 0.18749
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_kal": {
+    "alc_paare": 0.20912,
+    "alc_benchmark_balanciert": 0.20881,
+    "ece_paare": 0.12309,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.22451,
+     "B3": 0.20935,
+     "B7": 0.1994,
+     "B15": 0.19338,
+     "B31": 0.18939
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21559,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   }
+  },
+  "S30": {
+   "beta_binomial": {
+    "alc_paare": 0.21348,
+    "alc_benchmark_balanciert": 0.21247,
+    "ece_paare": 0.13459,
+    "brier_je_budget": {
+     "B0": 0.25062,
+     "B1": 0.23316,
+     "B3": 0.21613,
+     "B7": 0.20303,
+     "B15": 0.19478,
+     "B31": 0.18997
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.24703,
+    "alc_benchmark_balanciert": 0.2454,
+    "ece_paare": 0.18329,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.36334,
+     "B3": 0.24496,
+     "B7": 0.21009,
+     "B15": 0.19656,
+     "B31": 0.19042
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_item": {
+    "alc_paare": 0.20051,
+    "alc_benchmark_balanciert": 0.20244,
+    "ece_paare": 0.10808,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.20994,
+     "B3": 0.2009,
+     "B7": 0.19322,
+     "B15": 0.18567,
+     "B31": 0.17716
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.20115,
+    "alc_benchmark_balanciert": 0.20292,
+    "ece_paare": 0.10808,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.21005,
+     "B3": 0.20121,
+     "B7": 0.19387,
+     "B15": 0.18685,
+     "B31": 0.17908
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.20026,
+    "alc_benchmark_balanciert": 0.20224,
+    "ece_paare": 0.10808,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.20989,
+     "B3": 0.20077,
+     "B7": 0.19297,
+     "B15": 0.18522,
+     "B31": 0.17641
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "hier_kal": {
+    "alc_paare": 0.20418,
+    "alc_benchmark_balanciert": 0.20513,
+    "ece_paare": 0.10808,
+    "brier_je_budget": {
+     "B0": 0.24849,
+     "B1": 0.21046,
+     "B3": 0.20246,
+     "B7": 0.19665,
+     "B15": 0.19243,
+     "B31": 0.18927
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21559,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 2142,
+    "n_benchmarks": 142
+   }
+  },
+  "kompakt10": {
+   "beta_binomial": {
+    "alc_paare": 0.21581,
+    "alc_benchmark_balanciert": 0.21189,
+    "ece_paare": 0.14151,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.23464,
+     "B3": 0.21854,
+     "B7": 0.20607,
+     "B15": 0.19814,
+     "B31": 0.19334
+    },
+    "n_paare": 1148,
+    "n_benchmarks": 84
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.25036,
+    "alc_benchmark_balanciert": 0.24465,
+    "ece_paare": 0.19086,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.36834,
+     "B3": 0.24818,
+     "B7": 0.21347,
+     "B15": 0.19993,
+     "B31": 0.19377
+    },
+    "n_paare": 1148,
+    "n_benchmarks": 84
+   },
+   "hier_item": {
+    "alc_paare": 0.19678,
+    "alc_benchmark_balanciert": 0.19564,
+    "ece_paare": 0.12196,
+    "brier_je_budget": {
+     "B0": 0.2465,
+     "B1": 0.21691,
+     "B3": 0.20168,
+     "B7": 0.18905,
+     "B15": 0.17446,
+     "B31": 0.15709
+    },
+    "n_paare": 1148,
+    "n_benchmarks": 84
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.19863,
+    "alc_benchmark_balanciert": 0.19728,
+    "ece_paare": 0.12196,
+    "brier_je_budget": {
+     "B0": 0.2465,
+     "B1": 0.21723,
+     "B3": 0.20265,
+     "B7": 0.19114,
+     "B15": 0.178,
+     "B31": 0.1618
+    },
+    "n_paare": 1148,
+    "n_benchmarks": 84
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.19611,
+    "alc_benchmark_balanciert": 0.19498,
+    "ece_paare": 0.12196,
+    "brier_je_budget": {
+     "B0": 0.2465,
+     "B1": 0.21677,
+     "B3": 0.20132,
+     "B7": 0.1883,
+     "B15": 0.17321,
+     "B31": 0.15542
+    },
+    "n_paare": 1148,
+    "n_benchmarks": 84
+   },
+   "hier_kal": {
+    "alc_paare": 0.20827,
+    "alc_benchmark_balanciert": 0.20515,
+    "ece_paare": 0.12196,
+    "brier_je_budget": {
+     "B0": 0.2465,
+     "B1": 0.21858,
+     "B3": 0.20669,
+     "B7": 0.20039,
+     "B15": 0.19606,
+     "B31": 0.19277
+    },
+    "n_paare": 1148,
+    "n_benchmarks": 84
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21892,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 1148,
+    "n_benchmarks": 84
+   }
+  }
+ },
+ "tabelle_bekannt": {
+  "S1": {
+   "beta_binomial": {
+    "alc_paare": 0.21149,
+    "alc_benchmark_balanciert": 0.2165,
+    "ece_paare": 0.13322,
+    "brier_je_budget": {
+     "B0": 0.24916,
+     "B1": 0.23095,
+     "B3": 0.21367,
+     "B7": 0.20104,
+     "B15": 0.19312,
+     "B31": 0.18814
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.24574,
+    "alc_benchmark_balanciert": 0.25281,
+    "ece_paare": 0.18379,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.36299,
+     "B3": 0.24287,
+     "B7": 0.20855,
+     "B15": 0.195,
+     "B31": 0.18863
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_item": {
+    "alc_paare": 0.21098,
+    "alc_benchmark_balanciert": 0.21706,
+    "ece_paare": 0.13232,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.22955,
+     "B3": 0.21335,
+     "B7": 0.20108,
+     "B15": 0.19327,
+     "B31": 0.18823
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.21098,
+    "alc_benchmark_balanciert": 0.21706,
+    "ece_paare": 0.13232,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.22955,
+     "B3": 0.21335,
+     "B7": 0.20108,
+     "B15": 0.19327,
+     "B31": 0.18823
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.21098,
+    "alc_benchmark_balanciert": 0.21706,
+    "ece_paare": 0.13232,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.22955,
+     "B3": 0.21335,
+     "B7": 0.20108,
+     "B15": 0.19327,
+     "B31": 0.18823
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_kal": {
+    "alc_paare": 0.21098,
+    "alc_benchmark_balanciert": 0.21706,
+    "ece_paare": 0.13232,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.22955,
+     "B3": 0.21335,
+     "B7": 0.20108,
+     "B15": 0.19327,
+     "B31": 0.18823
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21987,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   }
+  },
+  "S2": {
+   "beta_binomial": {
+    "alc_paare": 0.21149,
+    "alc_benchmark_balanciert": 0.2165,
+    "ece_paare": 0.13322,
+    "brier_je_budget": {
+     "B0": 0.24916,
+     "B1": 0.23095,
+     "B3": 0.21367,
+     "B7": 0.20104,
+     "B15": 0.19312,
+     "B31": 0.18814
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.24574,
+    "alc_benchmark_balanciert": 0.25281,
+    "ece_paare": 0.18379,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.36299,
+     "B3": 0.24287,
+     "B7": 0.20855,
+     "B15": 0.195,
+     "B31": 0.18863
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_item": {
+    "alc_paare": 0.208,
+    "alc_benchmark_balanciert": 0.21441,
+    "ece_paare": 0.12477,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.22494,
+     "B3": 0.20893,
+     "B7": 0.19784,
+     "B15": 0.1915,
+     "B31": 0.18651
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.20807,
+    "alc_benchmark_balanciert": 0.21448,
+    "ece_paare": 0.12477,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.22494,
+     "B3": 0.20895,
+     "B7": 0.19789,
+     "B15": 0.19161,
+     "B31": 0.18678
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.20797,
+    "alc_benchmark_balanciert": 0.21438,
+    "ece_paare": 0.12477,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.22494,
+     "B3": 0.20893,
+     "B7": 0.19782,
+     "B15": 0.19145,
+     "B31": 0.18638
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_kal": {
+    "alc_paare": 0.20832,
+    "alc_benchmark_balanciert": 0.21472,
+    "ece_paare": 0.12477,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.22497,
+     "B3": 0.20904,
+     "B7": 0.1981,
+     "B15": 0.19207,
+     "B31": 0.18776
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21987,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   }
+  },
+  "S3": {
+   "beta_binomial": {
+    "alc_paare": 0.21149,
+    "alc_benchmark_balanciert": 0.2165,
+    "ece_paare": 0.13322,
+    "brier_je_budget": {
+     "B0": 0.24916,
+     "B1": 0.23095,
+     "B3": 0.21367,
+     "B7": 0.20104,
+     "B15": 0.19312,
+     "B31": 0.18814
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.24574,
+    "alc_benchmark_balanciert": 0.25281,
+    "ece_paare": 0.18379,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.36299,
+     "B3": 0.24287,
+     "B7": 0.20855,
+     "B15": 0.195,
+     "B31": 0.18863
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_item": {
+    "alc_paare": 0.20618,
+    "alc_benchmark_balanciert": 0.21235,
+    "ece_paare": 0.12074,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.22202,
+     "B3": 0.20578,
+     "B7": 0.19652,
+     "B15": 0.19045,
+     "B31": 0.1851
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.20631,
+    "alc_benchmark_balanciert": 0.21247,
+    "ece_paare": 0.12074,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.22203,
+     "B3": 0.20582,
+     "B7": 0.19663,
+     "B15": 0.1907,
+     "B31": 0.18565
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.20612,
+    "alc_benchmark_balanciert": 0.2123,
+    "ece_paare": 0.12074,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.22202,
+     "B3": 0.20577,
+     "B7": 0.19648,
+     "B15": 0.19034,
+     "B31": 0.18484
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_kal": {
+    "alc_paare": 0.20682,
+    "alc_benchmark_balanciert": 0.21291,
+    "ece_paare": 0.12074,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.22208,
+     "B3": 0.20599,
+     "B7": 0.19703,
+     "B15": 0.19165,
+     "B31": 0.18764
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21987,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   }
+  },
+  "S30": {
+   "beta_binomial": {
+    "alc_paare": 0.21149,
+    "alc_benchmark_balanciert": 0.2165,
+    "ece_paare": 0.13322,
+    "brier_je_budget": {
+     "B0": 0.24916,
+     "B1": 0.23095,
+     "B3": 0.21367,
+     "B7": 0.20104,
+     "B15": 0.19312,
+     "B31": 0.18814
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.24574,
+    "alc_benchmark_balanciert": 0.25281,
+    "ece_paare": 0.18379,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.36299,
+     "B3": 0.24287,
+     "B7": 0.20855,
+     "B15": 0.195,
+     "B31": 0.18863
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_item": {
+    "alc_paare": 0.19659,
+    "alc_benchmark_balanciert": 0.20575,
+    "ece_paare": 0.10378,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.2066,
+     "B3": 0.19672,
+     "B7": 0.18908,
+     "B15": 0.18129,
+     "B31": 0.17143
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.19745,
+    "alc_benchmark_balanciert": 0.20635,
+    "ece_paare": 0.10378,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.20674,
+     "B3": 0.19714,
+     "B7": 0.19,
+     "B15": 0.18287,
+     "B31": 0.1739
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.19622,
+    "alc_benchmark_balanciert": 0.20549,
+    "ece_paare": 0.10378,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.20654,
+     "B3": 0.19653,
+     "B7": 0.18866,
+     "B15": 0.18064,
+     "B31": 0.17036
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "hier_kal": {
+    "alc_paare": 0.20153,
+    "alc_benchmark_balanciert": 0.20909,
+    "ece_paare": 0.10378,
+    "brier_je_budget": {
+     "B0": 0.2471,
+     "B1": 0.20731,
+     "B3": 0.19887,
+     "B7": 0.19389,
+     "B15": 0.19038,
+     "B31": 0.1873
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21987,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 968,
+    "n_benchmarks": 88
+   }
+  },
+  "kompakt10": {
+   "beta_binomial": {
+    "alc_paare": 0.21163,
+    "alc_benchmark_balanciert": 0.21367,
+    "ece_paare": 0.13947,
+    "brier_je_budget": {
+     "B0": 0.24904,
+     "B1": 0.23098,
+     "B3": 0.21428,
+     "B7": 0.20146,
+     "B15": 0.19284,
+     "B31": 0.18815
+    },
+    "n_paare": 666,
+    "n_benchmarks": 62
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.24576,
+    "alc_benchmark_balanciert": 0.24923,
+    "ece_paare": 0.18915,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.36311,
+     "B3": 0.24324,
+     "B7": 0.20862,
+     "B15": 0.1945,
+     "B31": 0.18861
+    },
+    "n_paare": 666,
+    "n_benchmarks": 62
+   },
+   "hier_item": {
+    "alc_paare": 0.19158,
+    "alc_benchmark_balanciert": 0.19689,
+    "ece_paare": 0.11736,
+    "brier_je_budget": {
+     "B0": 0.24477,
+     "B1": 0.21172,
+     "B3": 0.19623,
+     "B7": 0.18343,
+     "B15": 0.16855,
+     "B31": 0.15118
+    },
+    "n_paare": 666,
+    "n_benchmarks": 62
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.19358,
+    "alc_benchmark_balanciert": 0.19872,
+    "ece_paare": 0.11736,
+    "brier_je_budget": {
+     "B0": 0.24477,
+     "B1": 0.21207,
+     "B3": 0.19723,
+     "B7": 0.18568,
+     "B15": 0.17239,
+     "B31": 0.1563
+    },
+    "n_paare": 666,
+    "n_benchmarks": 62
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.19072,
+    "alc_benchmark_balanciert": 0.19605,
+    "ece_paare": 0.11736,
+    "brier_je_budget": {
+     "B0": 0.24477,
+     "B1": 0.21156,
+     "B3": 0.19579,
+     "B7": 0.18243,
+     "B15": 0.16689,
+     "B31": 0.14904
+    },
+    "n_paare": 666,
+    "n_benchmarks": 62
+   },
+   "hier_kal": {
+    "alc_paare": 0.2033,
+    "alc_benchmark_balanciert": 0.20699,
+    "ece_paare": 0.11736,
+    "brier_je_budget": {
+     "B0": 0.24477,
+     "B1": 0.21342,
+     "B3": 0.20125,
+     "B7": 0.19505,
+     "B15": 0.19063,
+     "B31": 0.18758
+    },
+    "n_paare": 666,
+    "n_benchmarks": 62
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.22622,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 666,
+    "n_benchmarks": 62
+   }
+  }
+ },
+ "tabelle_unbekannt": {
+  "S1": {
+   "beta_binomial": {
+    "alc_paare": 0.21452,
+    "alc_benchmark_balanciert": 0.21255,
+    "ece_paare": 0.1341,
+    "brier_je_budget": {
+     "B0": 0.25182,
+     "B1": 0.23458,
+     "B3": 0.21766,
+     "B7": 0.20399,
+     "B15": 0.19524,
+     "B31": 0.19043
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.24972,
+    "alc_benchmark_balanciert": 0.24713,
+    "ece_paare": 0.18495,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.3714,
+     "B3": 0.24836,
+     "B7": 0.21132,
+     "B15": 0.19706,
+     "B31": 0.1909
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_item": {
+    "alc_paare": 0.21441,
+    "alc_benchmark_balanciert": 0.21309,
+    "ece_paare": 0.13428,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.23419,
+     "B3": 0.21813,
+     "B7": 0.20418,
+     "B15": 0.19545,
+     "B31": 0.19054
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.21441,
+    "alc_benchmark_balanciert": 0.21309,
+    "ece_paare": 0.13428,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.23419,
+     "B3": 0.21813,
+     "B7": 0.20418,
+     "B15": 0.19545,
+     "B31": 0.19054
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.21441,
+    "alc_benchmark_balanciert": 0.21309,
+    "ece_paare": 0.13428,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.23419,
+     "B3": 0.21813,
+     "B7": 0.20418,
+     "B15": 0.19545,
+     "B31": 0.19054
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_kal": {
+    "alc_paare": 0.21441,
+    "alc_benchmark_balanciert": 0.21309,
+    "ece_paare": 0.13428,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.23419,
+     "B3": 0.21813,
+     "B7": 0.20418,
+     "B15": 0.19545,
+     "B31": 0.19054
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21205,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   }
+  },
+  "S2": {
+   "beta_binomial": {
+    "alc_paare": 0.2148,
+    "alc_benchmark_balanciert": 0.21275,
+    "ece_paare": 0.13475,
+    "brier_je_budget": {
+     "B0": 0.25182,
+     "B1": 0.23481,
+     "B3": 0.21788,
+     "B7": 0.20431,
+     "B15": 0.19565,
+     "B31": 0.19088
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.249,
+    "alc_benchmark_balanciert": 0.24642,
+    "ece_paare": 0.18394,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.36805,
+     "B3": 0.24752,
+     "B7": 0.21136,
+     "B15": 0.19741,
+     "B31": 0.19134
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_item": {
+    "alc_paare": 0.21227,
+    "alc_benchmark_balanciert": 0.21122,
+    "ece_paare": 0.12896,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.22997,
+     "B3": 0.21443,
+     "B7": 0.20229,
+     "B15": 0.19476,
+     "B31": 0.19014
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.2123,
+    "alc_benchmark_balanciert": 0.21126,
+    "ece_paare": 0.12896,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.22997,
+     "B3": 0.21444,
+     "B7": 0.20231,
+     "B15": 0.19481,
+     "B31": 0.19025
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.21226,
+    "alc_benchmark_balanciert": 0.21121,
+    "ece_paare": 0.12896,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.22997,
+     "B3": 0.21443,
+     "B7": 0.20229,
+     "B15": 0.19474,
+     "B31": 0.19009
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_kal": {
+    "alc_paare": 0.21241,
+    "alc_benchmark_balanciert": 0.21139,
+    "ece_paare": 0.12896,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.22999,
+     "B3": 0.21448,
+     "B7": 0.20239,
+     "B15": 0.19503,
+     "B31": 0.19071
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21205,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   }
+  },
+  "S3": {
+   "beta_binomial": {
+    "alc_paare": 0.21501,
+    "alc_benchmark_balanciert": 0.21286,
+    "ece_paare": 0.13535,
+    "brier_je_budget": {
+     "B0": 0.25182,
+     "B1": 0.23488,
+     "B3": 0.21817,
+     "B7": 0.20461,
+     "B15": 0.19591,
+     "B31": 0.19117
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.24889,
+    "alc_benchmark_balanciert": 0.24624,
+    "ece_paare": 0.18397,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.36677,
+     "B3": 0.24764,
+     "B7": 0.21155,
+     "B15": 0.19766,
+     "B31": 0.19162
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_item": {
+    "alc_paare": 0.21073,
+    "alc_benchmark_balanciert": 0.20981,
+    "ece_paare": 0.12503,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.22647,
+     "B3": 0.21202,
+     "B7": 0.20115,
+     "B15": 0.19432,
+     "B31": 0.18974
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.21078,
+    "alc_benchmark_balanciert": 0.20988,
+    "ece_paare": 0.12503,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.22648,
+     "B3": 0.21204,
+     "B7": 0.20119,
+     "B15": 0.19441,
+     "B31": 0.18995
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.21071,
+    "alc_benchmark_balanciert": 0.20978,
+    "ece_paare": 0.12503,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.22646,
+     "B3": 0.21201,
+     "B7": 0.20115,
+     "B15": 0.19429,
+     "B31": 0.18967
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_kal": {
+    "alc_paare": 0.21101,
+    "alc_benchmark_balanciert": 0.21016,
+    "ece_paare": 0.12503,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.2265,
+     "B3": 0.21212,
+     "B7": 0.20136,
+     "B15": 0.19482,
+     "B31": 0.19084
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21205,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   }
+  },
+  "S30": {
+   "beta_binomial": {
+    "alc_paare": 0.21512,
+    "alc_benchmark_balanciert": 0.21294,
+    "ece_paare": 0.13571,
+    "brier_je_budget": {
+     "B0": 0.25182,
+     "B1": 0.23498,
+     "B3": 0.21816,
+     "B7": 0.20468,
+     "B15": 0.19615,
+     "B31": 0.19147
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.24809,
+    "alc_benchmark_balanciert": 0.24551,
+    "ece_paare": 0.18288,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.36363,
+     "B3": 0.24669,
+     "B7": 0.21137,
+     "B15": 0.19784,
+     "B31": 0.19191
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_item": {
+    "alc_paare": 0.20375,
+    "alc_benchmark_balanciert": 0.20485,
+    "ece_paare": 0.11164,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.2127,
+     "B3": 0.20435,
+     "B7": 0.19664,
+     "B15": 0.18928,
+     "B31": 0.18189
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.2042,
+    "alc_benchmark_balanciert": 0.20527,
+    "ece_paare": 0.11164,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.21277,
+     "B3": 0.20457,
+     "B7": 0.19705,
+     "B15": 0.19013,
+     "B31": 0.18335
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.20359,
+    "alc_benchmark_balanciert": 0.20469,
+    "ece_paare": 0.11164,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.21266,
+     "B3": 0.20427,
+     "B7": 0.19652,
+     "B15": 0.18899,
+     "B31": 0.1814
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "hier_kal": {
+    "alc_paare": 0.20636,
+    "alc_benchmark_balanciert": 0.20718,
+    "ece_paare": 0.11164,
+    "brier_je_budget": {
+     "B0": 0.24964,
+     "B1": 0.21306,
+     "B3": 0.20541,
+     "B7": 0.19893,
+     "B15": 0.19412,
+     "B31": 0.1909
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.21205,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 1174,
+    "n_benchmarks": 106
+   }
+  },
+  "kompakt10": {
+   "beta_binomial": {
+    "alc_paare": 0.22159,
+    "alc_benchmark_balanciert": 0.21615,
+    "ece_paare": 0.14433,
+    "brier_je_budget": {
+     "B0": 0.25132,
+     "B1": 0.23969,
+     "B3": 0.22443,
+     "B7": 0.21245,
+     "B15": 0.20546,
+     "B31": 0.20051
+    },
+    "n_paare": 482,
+    "n_benchmarks": 55
+   },
+   "empirischer_mittelwert": {
+    "alc_paare": 0.25672,
+    "alc_benchmark_balanciert": 0.25006,
+    "ece_paare": 0.19323,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.37556,
+     "B3": 0.255,
+     "B7": 0.22017,
+     "B15": 0.20743,
+     "B31": 0.20089
+    },
+    "n_paare": 482,
+    "n_benchmarks": 55
+   },
+   "hier_item": {
+    "alc_paare": 0.20396,
+    "alc_benchmark_balanciert": 0.20191,
+    "ece_paare": 0.12831,
+    "brier_je_budget": {
+     "B0": 0.2489,
+     "B1": 0.22407,
+     "B3": 0.20922,
+     "B7": 0.19683,
+     "B15": 0.18263,
+     "B31": 0.16525
+    },
+    "n_paare": 482,
+    "n_benchmarks": 55
+   },
+   "hier_item_t05": {
+    "alc_paare": 0.20562,
+    "alc_benchmark_balanciert": 0.20334,
+    "ece_paare": 0.12831,
+    "brier_je_budget": {
+     "B0": 0.2489,
+     "B1": 0.22437,
+     "B3": 0.21013,
+     "B7": 0.19868,
+     "B15": 0.18575,
+     "B31": 0.16939
+    },
+    "n_paare": 482,
+    "n_benchmarks": 55
+   },
+   "hier_item_t2": {
+    "alc_paare": 0.20356,
+    "alc_benchmark_balanciert": 0.20148,
+    "ece_paare": 0.12831,
+    "brier_je_budget": {
+     "B0": 0.2489,
+     "B1": 0.22396,
+     "B3": 0.20895,
+     "B7": 0.1964,
+     "B15": 0.18194,
+     "B31": 0.16422
+    },
+    "n_paare": 482,
+    "n_benchmarks": 55
+   },
+   "hier_kal": {
+    "alc_paare": 0.21513,
+    "alc_benchmark_balanciert": 0.21105,
+    "ece_paare": 0.12831,
+    "brier_je_budget": {
+     "B0": 0.2489,
+     "B1": 0.22571,
+     "B3": 0.2142,
+     "B7": 0.20776,
+     "B15": 0.20355,
+     "B31": 0.19995
+    },
+    "n_paare": 482,
+    "n_benchmarks": 55
+   },
+   "konstant_0.5": {
+    "alc_paare": 0.25,
+    "alc_benchmark_balanciert": 0.25,
+    "ece_paare": 0.20884,
+    "brier_je_budget": {
+     "B0": 0.25,
+     "B1": 0.25,
+     "B3": 0.25,
+     "B7": 0.25,
+     "B15": 0.25,
+     "B31": 0.25
+    },
+    "n_paare": 482,
+    "n_benchmarks": 55
+   }
+  }
+ },
+ "vergleiche": [
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.000289,
+   "se": 0.000409,
+   "z": -0.706254,
+   "ki95": [
+    -0.00108935139348679,
+    0.0005122429634608788
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "kein Unterschied belegt",
+   "modell": "hier_item",
+   "referenz": "beta_binomial",
+   "S": "S1",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.002962,
+   "se": 0.000586,
+   "z": -5.051645,
+   "ki95": [
+    -0.004111774250088896,
+    -0.0018130046748913694
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "beta_binomial",
+   "S": "S2",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.004749,
+   "se": 0.000733,
+   "z": -6.475772,
+   "ki95": [
+    -0.006185867703402218,
+    -0.003311370567315749
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "beta_binomial",
+   "S": "S3",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.012968,
+   "se": 0.001254,
+   "z": -10.338016,
+   "ki95": [
+    -0.01542637724659062,
+    -0.010509210315794248
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "beta_binomial",
+   "S": "S30",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 1148,
+   "n_cluster": 84,
+   "mittel": -0.019031,
+   "se": 0.001432,
+   "z": -13.293661,
+   "ki95": [
+    -0.021837050375510102,
+    -0.016225201693246743
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "beta_binomial",
+   "S": "kompakt10",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 142,
+   "n_cluster": 142,
+   "mittel": -0.00403,
+   "se": 0.000639,
+   "z": -6.30254,
+   "ki95": [
+    -0.0052836131813928855,
+    -0.002776906604412534
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "beta_binomial",
+   "S": "S3",
+   "gewichtung": "benchmark"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.000289,
+   "se": 0.000409,
+   "z": -0.706254,
+   "ki95": [
+    -0.00108935139348679,
+    0.0005122429634608788
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "kein Unterschied belegt",
+   "modell": "hier_kal",
+   "referenz": "beta_binomial",
+   "S": "S1",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.00274,
+   "se": 0.000589,
+   "z": -4.650245,
+   "ki95": [
+    -0.0038948961117185607,
+    -0.0015851492063013563
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "beta_binomial",
+   "S": "S2",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.004303,
+   "se": 0.000738,
+   "z": -5.826793,
+   "ki95": [
+    -0.005749899157280825,
+    -0.002855305218820157
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "beta_binomial",
+   "S": "S3",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.009304,
+   "se": 0.00115,
+   "z": -8.089809,
+   "ki95": [
+    -0.011557795576608925,
+    -0.007049594753415626
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "beta_binomial",
+   "S": "S30",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 1148,
+   "n_cluster": 84,
+   "mittel": -0.007541,
+   "se": 0.001026,
+   "z": -7.348459,
+   "ki95": [
+    -0.009552024637571429,
+    -0.005529453588500474
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "beta_binomial",
+   "S": "kompakt10",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 142,
+   "n_cluster": 142,
+   "mittel": -0.003582,
+   "se": 0.000637,
+   "z": -5.625922,
+   "ki95": [
+    -0.004830138887424375,
+    -0.002334180514645899
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "beta_binomial",
+   "S": "S3",
+   "gewichtung": "benchmark"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.035064,
+   "se": 0.002388,
+   "z": -14.681112,
+   "ki95": [
+    -0.03974481180124836,
+    -0.030382476877764818
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "empirischer_mittelwert",
+   "S": "S1",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.03719,
+   "se": 0.002124,
+   "z": -17.505638,
+   "ki95": [
+    -0.04135365043660045,
+    -0.033025831444318456
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "empirischer_mittelwert",
+   "S": "S2",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.038795,
+   "se": 0.002007,
+   "z": -19.331209,
+   "ki95": [
+    -0.04272835112646765,
+    -0.0348614827684847
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "empirischer_mittelwert",
+   "S": "S3",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.046521,
+   "se": 0.002065,
+   "z": -22.528439,
+   "ki95": [
+    -0.05056809090353526,
+    -0.04247337680815928
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "empirischer_mittelwert",
+   "S": "S30",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 1148,
+   "n_cluster": 84,
+   "mittel": -0.053579,
+   "se": 0.002838,
+   "z": -18.879533,
+   "ki95": [
+    -0.05914165300540015,
+    -0.04801687025888122
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "empirischer_mittelwert",
+   "S": "kompakt10",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 142,
+   "n_cluster": 142,
+   "mittel": -0.037505,
+   "se": 0.001831,
+   "z": -20.484758,
+   "ki95": [
+    -0.04109324240718747,
+    -0.0339162655733052
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "empirischer_mittelwert",
+   "S": "S3",
+   "gewichtung": "benchmark"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.035064,
+   "se": 0.002388,
+   "z": -14.681112,
+   "ki95": [
+    -0.03974481180124836,
+    -0.030382476877764818
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "empirischer_mittelwert",
+   "S": "S1",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.036967,
+   "se": 0.002119,
+   "z": -17.446436,
+   "ki95": [
+    -0.041120431608443385,
+    -0.03281431666551516
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "empirischer_mittelwert",
+   "S": "S2",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.038349,
+   "se": 0.001997,
+   "z": -19.207911,
+   "ki95": [
+    -0.04226207114104783,
+    -0.03443572885928752
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "empirischer_mittelwert",
+   "S": "S3",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.042857,
+   "se": 0.001866,
+   "z": -22.961227,
+   "ki95": [
+    -0.04651493296514082,
+    -0.039198337514193396
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "empirischer_mittelwert",
+   "S": "S30",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 1148,
+   "n_cluster": 84,
+   "mittel": -0.042089,
+   "se": 0.002027,
+   "z": -20.762521,
+   "ki95": [
+    -0.046062101094708395,
+    -0.03811564832688804
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "empirischer_mittelwert",
+   "S": "kompakt10",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 142,
+   "n_cluster": 142,
+   "mittel": -0.037057,
+   "se": 0.001817,
+   "z": -20.38931,
+   "ki95": [
+    -0.040618865678053874,
+    -0.03349444191870366
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "empirischer_mittelwert",
+   "S": "S3",
+   "gewichtung": "benchmark"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.03714,
+   "se": 0.004219,
+   "z": -8.803872,
+   "ki95": [
+    -0.04540833040816017,
+    -0.028871468760177793
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "konstant_0.5",
+   "S": "S1",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.039659,
+   "se": 0.004509,
+   "z": -8.796287,
+   "ki95": [
+    -0.048496367934929924,
+    -0.030822446602385006
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "konstant_0.5",
+   "S": "S2",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.041329,
+   "se": 0.004671,
+   "z": -8.848799,
+   "ki95": [
+    -0.05048277847927577,
+    -0.0321743156710144
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "konstant_0.5",
+   "S": "S3",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.049488,
+   "se": 0.004956,
+   "z": -9.984681,
+   "ki95": [
+    -0.05920242244178911,
+    -0.03977339797432361
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "konstant_0.5",
+   "S": "S30",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 1148,
+   "n_cluster": 84,
+   "mittel": -0.05322,
+   "se": 0.004885,
+   "z": -10.894193,
+   "ki95": [
+    -0.06279541782963258,
+    -0.043645399656160926
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "konstant_0.5",
+   "S": "kompakt10",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 142,
+   "n_cluster": 142,
+   "mittel": -0.041635,
+   "se": 0.003907,
+   "z": -10.657811,
+   "ki95": [
+    -0.049291990071810024,
+    -0.033978351304188775
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "konstant_0.5",
+   "S": "S3",
+   "gewichtung": "benchmark"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.03714,
+   "se": 0.004219,
+   "z": -8.803872,
+   "ki95": [
+    -0.04540833040816017,
+    -0.028871468760177793
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "konstant_0.5",
+   "S": "S1",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.039437,
+   "se": 0.004515,
+   "z": -8.734983,
+   "ki95": [
+    -0.04828612460071618,
+    -0.030587956329638406
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "konstant_0.5",
+   "S": "S2",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.040883,
+   "se": 0.004681,
+   "z": -8.733247,
+   "ki95": [
+    -0.050057783580360324,
+    -0.031707276675312854
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "konstant_0.5",
+   "S": "S3",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.045824,
+   "se": 0.005029,
+   "z": -9.111494,
+   "ki95": [
+    -0.05568110467592499,
+    -0.03596651850782741
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "konstant_0.5",
+   "S": "S30",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 1148,
+   "n_cluster": 84,
+   "mittel": -0.04173,
+   "se": 0.005242,
+   "z": -7.961156,
+   "ki95": [
+    -0.052003760920337386,
+    -0.031456282722771164
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "konstant_0.5",
+   "S": "kompakt10",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 142,
+   "n_cluster": 142,
+   "mittel": -0.041187,
+   "se": 0.003916,
+   "z": -10.517092,
+   "ki95": [
+    -0.048862829313178646,
+    -0.033511311679085
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_kal",
+   "referenz": "konstant_0.5",
+   "S": "S3",
+   "gewichtung": "benchmark"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 0.0,
+   "se": 0.0,
+   "z": null,
+   "ki95": [
+    0.0,
+    0.0
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "kein Unterschied belegt",
+   "modell": "hier_item",
+   "referenz": "hier_kal",
+   "S": "S1",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.000222,
+   "se": 3.8e-05,
+   "z": -5.788828,
+   "ki95": [
+    -0.0002976564695526447,
+    -0.00014707713740770396
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "hier_kal",
+   "S": "S2",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.000446,
+   "se": 8.2e-05,
+   "z": -5.42237,
+   "ki95": [
+    -0.0006072367067523894,
+    -0.0002847971878645963
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "hier_kal",
+   "S": "S3",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.003664,
+   "se": 0.000611,
+   "z": -5.999264,
+   "ki95": [
+    -0.0048611844046397516,
+    -0.002467012827720566
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "hier_kal",
+   "S": "S30",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 1148,
+   "n_cluster": 84,
+   "mittel": -0.01149,
+   "se": 0.001018,
+   "z": -11.290424,
+   "ki95": [
+    -0.013485100226138913,
+    -0.009495673616546029
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "hier_kal",
+   "S": "kompakt10",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 142,
+   "n_cluster": 142,
+   "mittel": -0.000448,
+   "se": 6.9e-05,
+   "z": -6.452134,
+   "ki95": [
+    -0.0005842220460507915,
+    -0.0003119783376843527
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "hier_kal",
+   "S": "S3",
+   "gewichtung": "benchmark"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 0.0,
+   "se": 0.0,
+   "z": null,
+   "ki95": [
+    0.0,
+    0.0
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "kein Unterschied belegt",
+   "modell": "hier_item",
+   "referenz": "hier_item_t05",
+   "S": "S1",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -4.6e-05,
+   "se": 1e-05,
+   "z": -4.753406,
+   "ki95": [
+    -6.440671321730651e-05,
+    -2.6799228473198956e-05
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "hier_item_t05",
+   "S": "S2",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -9.1e-05,
+   "se": 2e-05,
+   "z": -4.508954,
+   "ki95": [
+    -0.00013056388638696696,
+    -5.144592307879514e-05
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "hier_item_t05",
+   "S": "S3",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": -0.00064,
+   "se": 0.000117,
+   "z": -5.4856,
+   "ki95": [
+    -0.0008692643521357834,
+    -0.0004116093532677084
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "hier_item_t05",
+   "S": "S30",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 1148,
+   "n_cluster": 84,
+   "mittel": -0.001854,
+   "se": 0.000239,
+   "z": -7.7662,
+   "ki95": [
+    -0.002322357106897253,
+    -0.0013863656833546635
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "hier_item_t05",
+   "S": "kompakt10",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 142,
+   "n_cluster": 142,
+   "mittel": -9.4e-05,
+   "se": 1.7e-05,
+   "z": -5.419934,
+   "ki95": [
+    -0.00012761959692146222,
+    -5.983188814400882e-05
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "besser",
+   "modell": "hier_item",
+   "referenz": "hier_item_t05",
+   "S": "S3",
+   "gewichtung": "benchmark"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 0.0,
+   "se": 0.0,
+   "z": null,
+   "ki95": [
+    0.0,
+    0.0
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "kein Unterschied belegt",
+   "modell": "hier_kal",
+   "referenz": "hier_item_t05",
+   "S": "S1",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 0.000177,
+   "se": 2.9e-05,
+   "z": 6.065771,
+   "ki95": [
+    0.00011964708874547195,
+    0.00023388057652437124
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_kal",
+   "referenz": "hier_item_t05",
+   "S": "S2",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 0.000355,
+   "se": 6.3e-05,
+   "z": 5.667815,
+   "ki95": [
+    0.00023224452037974997,
+    0.0004777795647714735
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_kal",
+   "referenz": "hier_item_t05",
+   "S": "S3",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 0.003024,
+   "se": 0.0005,
+   "z": 6.050275,
+   "ki95": [
+    0.002044139885236165,
+    0.0040031836417206606
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_kal",
+   "referenz": "hier_item_t05",
+   "S": "S30",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 1148,
+   "n_cluster": 84,
+   "mittel": 0.009636,
+   "se": 0.000789,
+   "z": 12.206196,
+   "ki95": [
+    0.008088728623151544,
+    0.011183322429281481
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_kal",
+   "referenz": "hier_item_t05",
+   "S": "kompakt10",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 142,
+   "n_cluster": 142,
+   "mittel": 0.000354,
+   "se": 5.3e-05,
+   "z": 6.720843,
+   "ki95": [
+    0.0002510282032940807,
+    0.0004577206953755924
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_kal",
+   "referenz": "hier_item_t05",
+   "S": "S3",
+   "gewichtung": "benchmark"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 0.0,
+   "se": 0.0,
+   "z": null,
+   "ki95": [
+    0.0,
+    0.0
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "kein Unterschied belegt",
+   "modell": "hier_item",
+   "referenz": "hier_item_t2",
+   "S": "S1",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 1.8e-05,
+   "se": 7e-06,
+   "z": 2.480337,
+   "ki95": [
+    3.6998414318389232e-06,
+    3.1572890669527865e-05
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_item",
+   "referenz": "hier_item_t2",
+   "S": "S2",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 3.6e-05,
+   "se": 1.5e-05,
+   "z": 2.445591,
+   "ki95": [
+    7.110976148244096e-06,
+    6.451532341504877e-05
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_item",
+   "referenz": "hier_item_t2",
+   "S": "S3",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 0.000252,
+   "se": 8.1e-05,
+   "z": 3.124371,
+   "ki95": [
+    9.408242362967509e-05,
+    0.0004108227474137287
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_item",
+   "referenz": "hier_item_t2",
+   "S": "S30",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 1148,
+   "n_cluster": 84,
+   "mittel": 0.000669,
+   "se": 0.000198,
+   "z": 3.389395,
+   "ki95": [
+    0.00028230846304851386,
+    0.0010565163621176915
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_item",
+   "referenz": "hier_item_t2",
+   "S": "kompakt10",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 142,
+   "n_cluster": 142,
+   "mittel": 3.9e-05,
+   "se": 1.3e-05,
+   "z": 3.005981,
+   "ki95": [
+    1.342510892156695e-05,
+    6.373811179609585e-05
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_item",
+   "referenz": "hier_item_t2",
+   "S": "S3",
+   "gewichtung": "benchmark"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 0.0,
+   "se": 0.0,
+   "z": null,
+   "ki95": [
+    0.0,
+    0.0
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "kein Unterschied belegt",
+   "modell": "hier_kal",
+   "referenz": "hier_item_t2",
+   "S": "S1",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 0.00024,
+   "se": 4.4e-05,
+   "z": 5.395886,
+   "ki95": [
+    0.00015282449246072386,
+    0.0003271818466009915
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_kal",
+   "referenz": "hier_item_t2",
+   "S": "S2",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 0.000482,
+   "se": 9.5e-05,
+   "z": 5.06466,
+   "ki95": [
+    0.00029536408447291944,
+    0.0006682961097073591
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_kal",
+   "referenz": "hier_item_t2",
+   "S": "S3",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 2142,
+   "n_cluster": 142,
+   "mittel": 0.003917,
+   "se": 0.000679,
+   "z": 5.768584,
+   "ki95": [
+    0.002585818923266871,
+    0.005247283480136851
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_kal",
+   "referenz": "hier_item_t2",
+   "S": "S30",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 1148,
+   "n_cluster": 84,
+   "mittel": 0.01216,
+   "se": 0.001198,
+   "z": 10.146155,
+   "ki95": [
+    0.00981081035552465,
+    0.014508788312326498
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_kal",
+   "referenz": "hier_item_t2",
+   "S": "kompakt10",
+   "gewichtung": "paar"
+  },
+  {
+   "n_paare": 142,
+   "n_cluster": 142,
+   "mittel": 0.000487,
+   "se": 8e-05,
+   "z": 6.048436,
+   "ki95": [
+    0.00032897220772832637,
+    0.0006443913967244806
+   ],
+   "schwelle": "mittel + 2.0*SE < 0",
+   "p_fehlentscheidung_bei_nulleffekt": 0.02275,
+   "grauzone_breite_in_se": 4.0,
+   "urteil": "schlechter",
+   "modell": "hier_kal",
+   "referenz": "hier_item_t2",
+   "S": "S3",
+   "gewichtung": "benchmark"
+  }
+ ],
+ "kalibrierung_stufen": {},
+ "platt_paket": {},
+ "platt_alle_stufen": {},
+ "platt_je_falte": {}
+}

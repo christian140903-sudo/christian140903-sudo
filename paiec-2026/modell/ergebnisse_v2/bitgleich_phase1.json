@@ -1,0 +1,140 @@
+{
+ "neu": "$PAIEC_WORK/modell/cv_V2K1",
+ "alt": "$PAIEC_WORK/modell/cv_REG1",
+ "zeit_utc": "2026-10-20T20:24:29Z",
+ "falten": {
+  "0": {
+   "zeilen": 131040,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": true,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "1": {
+   "zeilen": 121464,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": true,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "2": {
+   "zeilen": 66024,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": true,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "3": {
+   "zeilen": 97776,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": true,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "4": {
+   "zeilen": 100800,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": true,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "5": {
+   "zeilen": 93240,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": true,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "6": {
+   "zeilen": 100800,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": true,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "7": {
+   "zeilen": 94752,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": true,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "8": {
+   "zeilen": 161784,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": true,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  },
+  "9": {
+   "zeilen": 111888,
+   "max_dq": 0.0,
+   "max_dbrier": 0.0,
+   "n_items_angepasst_ungleich": 0,
+   "zustand_kanonisch_gleich": true,
+   "max_dq_ohne_erlaubte": 0.0,
+   "unerlaubt_abweichend": []
+  }
+ },
+ "urteil": "bitgleich",
+ "je_praediktor": {
+  "beta_binomial": {
+   "zeilen": 154224,
+   "max_dq": 0.0,
+   "n_ungleich_q": 0
+  },
+  "empirischer_mittelwert": {
+   "zeilen": 154224,
+   "max_dq": 0.0,
+   "n_ungleich_q": 0
+  },
+  "globale_quote": {
+   "zeilen": 154224,
+   "max_dq": 0.0,
+   "n_ungleich_q": 0
+  },
+  "hier": {
+   "zeilen": 154224,
+   "max_dq": 0.0,
+   "n_ungleich_q": 0
+  },
+  "hier_ohne_steigung": {
+   "zeilen": 154224,
+   "max_dq": 0.0,
+   "n_ungleich_q": 0
+  },
+  "hier_ohne_subjekt": {
+   "zeilen": 154224,
+   "max_dq": 0.0,
+   "n_ungleich_q": 0
+  },
+  "konstant_0.5": {
+   "zeilen": 154224,
+   "max_dq": 0.0,
+   "n_ungleich_q": 0
+  }
+ },
+ "zeilen_gesamt": 1079568,
+ "max_dq": 0.0,
+ "max_dbrier": 0.0,
+ "rc": 0,
+ "erlaubt": []
+}

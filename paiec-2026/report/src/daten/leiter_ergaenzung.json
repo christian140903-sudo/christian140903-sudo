@@ -1,0 +1,54 @@
+{
+ "L3' F\u00e4higkeit allein, ehrliches Falten-\u03b8, Achse+Steigung in-sample (2 Par.)": {
+  "(q-R)^2": 0.06473272413506038,
+  "Brier_B0": 0.24801205114189234,
+  "R2": 0.029675326878681796,
+  "ab": [
+   -0.08071193663919729,
+   0.363574742270704
+  ],
+  "bekannt": 0.06400078337815476,
+  "unbekannt": 0.06558764279241773
+ },
+ "L3'' F\u00e4higkeit allein, in-sample \u03b8 (Namen \u22652 Bm), Achse+Steigung in-sample (2 Par.)": {
+  "(q-R)^2": 0.06274276490458845,
+  "Brier_B0": 0.24602209191142038,
+  "R2": 0.05950423591399023,
+  "ab": [
+   -0.11152014163080072,
+   0.61880651654199
+  ],
+  "bekannt": 0.06044430022166086,
+  "unbekannt": 0.065427408876348
+ },
+ "L2b Orakel Lage c_b (ALS in-sample, Logit-Skala)": {
+  "(q-R)^2": 0.03782296063993777,
+  "Brier_B0": 0.2211022876467697,
+  "R2": 0.4330448407693315
+ },
+ "L4' Orakel-Lage (LOO-Mittel) + ehrliches \u03b8, Steigung in-sample (1 Par.)": {
+  "(q-R)^2": 0.023204466502800638,
+  "Brier_B0": 0.20648379350963258,
+  "R2": 0.6521718083838586,
+  "a": 0.12705078124999966,
+  "bekannt": 0.021310144891094403,
+  "unbekannt": 0.025417064822546586
+ },
+ "L5' Orakel-Lage (LOO-Mittel) + in-sample \u03b8 (Namen \u22652 Bm), Steigung in-sample (1 Par.)": {
+  "(q-R)^2": 0.022180932380035847,
+  "Brier_B0": 0.2054602593868678,
+  "R2": 0.6675142866492272,
+  "a": 0.3517578124999999,
+  "bekannt": 0.019410309456985055,
+  "unbekannt": 0.025417064822546586
+ },
+ "L2 Orakel-Lage LOO-Mittel (Kontrolle)": {
+  "(q-R)^2": 0.02342556812353197,
+  "bekannt": 0.021720543220042857,
+  "unbekannt": 0.025417064822546583
+ },
+ "anteil_test_paare_name_leer": 0.4612511671335201,
+ "anteil_test_paare_name_multi": 0.48366013071895425,
+ "korr_th_fold_th_in_namen_multi": 0.6476324109183573,
+ "n_paare_namen_multi": 3108
+}
