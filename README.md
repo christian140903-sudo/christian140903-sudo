@@ -2,7 +2,7 @@
 
 <p align="center"><strong>I direct AI coding agents to ship tested software — and I measure whether what I build actually works.</strong></p>
 
-<p align="center">Claude Code · MCP · evals · Vienna</p>
+<p align="center">Claude Code · MCP · evals · data audits · Vienna</p>
 
 <p align="center"><a href="https://www.npmjs.com/~mr_bucher003">npm</a></p>
 
@@ -20,6 +20,29 @@ Before a number or a plan is accepted, a separate review round with adversarial
 instructions tries to break it; that is how the withdrawn result under
 *Measurement* was caught. I have not yet run this setup inside an engineering
 team — that is the job I am looking for.
+
+## Contributions to research code and data
+
+Made the same way (coding agents under my direction); each entry links to the
+public result.
+
+- **[CAM-LDS analysis scripts](https://github.com/ait-aecid/attack-manifestations-interpretation/commits/main?author=christian140903-sudo)**
+  (AIT Austrian Institute of Technology, Oct 2026): three commits, accepted
+  into `main` — a prompt script that samples the log lines again in every
+  repetition, as Sect. 5.1.2 of the CAM-LDS paper describes; a script that
+  reproduces the numbers in the repository README's clarification of the
+  paper's stability results (identical prompts in 89 of 198 attack steps); and
+  README notes on data set versions and `attack_times.csv`.
+- **[PAIEC 2026](https://github.com/christian140903-sudo/christian140903-sudo/tree/claude/technosignatures-archive-analysis-nxoino/paiec-2026)**
+  (NeurIPS 2026 competition, Stanford AIMS, Oct 2026): competition entry with
+  report and code — a text-free predictor of whether an AI system answers a
+  benchmark item correctly, with a confirmatory re-run on fresh seeds under
+  rules frozen before the runs. It includes an audit of the training data
+  release: the public baseline loader saw only 60 of 156 graded benchmarks,
+  because the Hugging Face Hub file listing returns the first 100,000 of
+  385,266 files. I reported this to the organisers and prepared evidence packs
+  and patches at their request; the public part (lists and three proposed
+  patches) is in `audit/`.
 
 ## Evidence
 
@@ -74,4 +97,5 @@ non-experts is my day job. I started building with Claude Code in February
 ## Contact
 
 If a number on this page does not reproduce, please open an issue in that
+repository — for the contributions to research code and data, in this profile
 repository.
