@@ -1,0 +1,1521 @@
+{
+ "inputs": {
+  "plates": {
+   "file": "SurveyPlateListLatest.csv",
+   "sha256": "62947dc69bf2de3903ff6c7c038e5db49d36ae21bb121c2c7c9960aded706834",
+   "rows": 8192
+  },
+  "nposs": {
+   "file": "nposs.dat",
+   "sha256": "77be67e26ce95d34f46c82650252473eb6e13ea4c8c815b70d74356ac8180991",
+   "records": 1037
+  },
+  "asteroids": {
+   "file": "asteroid_checks.csv",
+   "sha256": "b90a1209664118f0c8ae1f4bb62a8c72ca568bc431e054d2cd3e454a192dca4c"
+  },
+  "external": {
+   "file": "external_checks.json",
+   "sha256": "fdea99b3dbdddb61b654d3b5f4f00449e1bd5139ec2e307ae6444f17093b93d3"
+  }
+ },
+ "rules": {
+  "max_sep_deg": 0.5,
+  "clock_tol_min": 2.0,
+  "ha_identity_tol_min": 1.5,
+  "ha_peak_tol_min": 1.5,
+  "ha_max_abs_dec": 80.0,
+  "neighbour_days": 28,
+  "run_days": 7,
+  "sidereal_shift_per_day_min": 3.9426
+ },
+ "ha_peaks_E": {
+  "peak_no_shift_min": 0.498,
+  "peak_one_day_min": -3.479,
+  "peak_separation_min": 3.977,
+  "expected_separation_min": 3.9426,
+  "lon_w_deg": 116.862999
+ },
+ "ha_peaks_O": {
+  "peak_no_shift_min": 0.408,
+  "peak_one_day_min": -3.454,
+  "peak_separation_min": 3.862,
+  "expected_separation_min": 3.9426,
+  "lon_w_deg": 116.862999
+ },
+ "counts_E": {
+  "rows": 937,
+  "distinct_regions": 936,
+  "exposures": 935,
+  "match_rule": {
+   "number+field": 723,
+   "number-1": 157,
+   "ES/S spelling": 57
+  },
+  "class_rows": {
+   "evening_date": 704,
+   "correct": 216,
+   "clock_mismatch": 9,
+   "gross_error": 8
+  },
+  "evidence_rows": {
+   "catalogue+HA": 857,
+   "unresolved": 4,
+   "asteroid-confirmed": 30,
+   "catalogue date+HA, listed clock": 6,
+   "catalogue-only": 33,
+   "indirect": 2,
+   "catalogue+Epoch": 5
+  },
+  "ha_verdict_listed_rows": {
+   "listed date 1 d early": 683,
+   "listed date consistent": 216,
+   "unclear": 26,
+   "n/a (|Dec| >= 80)": 12
+  },
+  "regular_exposures": 918,
+  "evening_date": 702,
+  "correct": 216,
+  "evening_share": 0.7647,
+  "evening_share_wilson95": [
+   0.7362,
+   0.791
+  ],
+  "by_zone_evening_correct": {
+   "001-722": [
+    527,
+    183
+   ],
+   "723-936": [
+    175,
+    33
+   ]
+  },
+  "by_true_UT_year_evening_correct": {
+   "1949": [
+    2,
+    9
+   ],
+   "1950": [
+    94,
+    0
+   ],
+   "1951": [
+    92,
+    0
+   ],
+   "1952": [
+    57,
+    0
+   ],
+   "1953": [
+    0,
+    187
+   ],
+   "1954": [
+    235,
+    8
+   ],
+   "1955": [
+    172,
+    0
+   ],
+   "1956": [
+    33,
+    0
+   ],
+   "1957": [
+    3,
+    12
+   ],
+   "1958": [
+    14,
+    0
+   ]
+  },
+  "declination_range_by_zone": {
+   "001-722": [
+    -12.2,
+    89.8
+   ],
+   "723-936": [
+    -30.7,
+    -0.1
+   ]
+  },
+  "class_x_ha_verdict_exposures": {
+   "clock_mismatch|listed date 1 d early": 4,
+   "clock_mismatch|listed date consistent": 3,
+   "clock_mismatch|unclear": 2,
+   "correct|listed date 1 d early": 4,
+   "correct|listed date consistent": 205,
+   "correct|n/a (|Dec| >= 80)": 4,
+   "correct|unclear": 3,
+   "evening_date|listed date 1 d early": 671,
+   "evening_date|listed date consistent": 6,
+   "evening_date|n/a (|Dec| >= 80)": 8,
+   "evening_date|unclear": 17,
+   "gross_error|listed date 1 d early": 2,
+   "gross_error|listed date consistent": 2,
+   "gross_error|unclear": 4
+  },
+  "ha_identity_ok_rows": 931,
+  "clock_ok_rows": 924,
+  "asteroid_decisive_agree": [
+   30,
+   30
+  ],
+  "asteroid_disagreement_rate_upper95": 0.1157,
+  "ha_identity_mismatch": [
+   [
+    "XE200",
+    -60
+   ],
+   [
+    "XE217",
+    6
+   ],
+   [
+    "XE723",
+    50
+   ],
+   [
+    "XE692",
+    -282
+   ],
+   [
+    "XE856",
+    -56
+   ],
+   [
+    "XE864",
+    26
+   ]
+  ],
+  "clock_mismatch": [
+   [
+    "XE342",
+    60.2
+   ],
+   [
+    "XE389",
+    24.0
+   ],
+   [
+    "XE400",
+    60.0
+   ],
+   [
+    "XE176",
+    -60.2
+   ],
+   [
+    "XE274",
+    59.8
+   ],
+   [
+    "XE484",
+    -60.2
+   ],
+   [
+    "XE750",
+    60.2
+   ],
+   [
+    "XE787",
+    480.0
+   ],
+   [
+    "XE915",
+    60.0
+   ]
+  ],
+  "gross_error": [
+   [
+    "XE098",
+    "1955-03-16T11:15:00",
+    "1955-05-17T07:15"
+   ],
+   [
+    "XE128",
+    "1955-02-13T09:13:48",
+    "1953-02-14T09:14"
+   ],
+   [
+    "XE217",
+    "1952-08-22T05:31:48",
+    "1950-05-16T05:03"
+   ],
+   [
+    "XE498",
+    "1954-03-31T08:48:00",
+    "1954-06-01T04:48"
+   ],
+   [
+    "XE603",
+    "1953-01-01T08:43:12",
+    "1954-01-01T08:43"
+   ],
+   [
+    "XE666",
+    "1953-01-01T09:51:00",
+    "1954-01-01T09:51"
+   ],
+   [
+    "XE730",
+    "1953-01-01T10:43:12",
+    "1954-01-01T10:43"
+   ],
+   [
+    "XE864",
+    "1952-08-22T05:31:48",
+    "1950-07-19T05:34"
+   ]
+  ],
+  "alt_night_used": [
+   "XE098",
+   "XE128"
+  ],
+  "alt_night_flagged_not_used": [
+   "XE787"
+  ],
+  "unpaired": [],
+  "unresolved": [
+   "XE321",
+   "XE723",
+   "XE787",
+   "XE915"
+  ],
+  "run_context_downgraded": [
+   "XE471",
+   "XE472"
+  ],
+  "partner_downgraded": [
+   "XE802",
+   "XE819"
+  ],
+  "number_minus_1_by_zone": {
+   "723-936": 157
+  },
+  "sep_deg_max": 0.3373,
+  "matched_is_nearest_field_rows": 936,
+  "second_nearest_field_min_deg": 0.046,
+  "ha_resid_true_minus_peak": {
+   "n": 906,
+   "median": -0.018,
+   "robust_sigma": 0.427,
+   "frac_abs_gt_1p5": 0.0309,
+   "frac_abs_gt_half_shift": 0.0243
+  },
+  "epoch_vs_start_exposures": {
+   "correct|fits UT start": 209,
+   "correct|fits neither": 2,
+   "correct|fits start - 1 d (evening date)": 5,
+   "evening_date|fits UT start": 668,
+   "evening_date|fits neither": 6,
+   "evening_date|fits start - 1 d (evening date)": 28
+  },
+  "epoch_3_decimals_vs_start_exposures": {
+   "fits UT start": 686,
+   "fits evening date": 33,
+   "fits neither": 7
+  },
+  "action_rows": {
+   "date_plus_1d": 706,
+   "review_keep_listed": 4,
+   "no_change": 218,
+   "replace_time": 1,
+   "replace_date_time": 8
+  },
+  "epoch_action_rows": {
+   "keep": 889,
+   "no proposal": 4,
+   "recompute": 44
+  },
+  "plateID_source_rows": {
+   "list = FitsArchive file name": 892,
+   "FitsArchive file name (printed value mangled by a spreadsheet)": 44,
+   "list (no FitsArchive file with this plateID)": 1
+  },
+  "plateID_restored_from_file_name": [
+   [
+    "XE366",
+    "725",
+    "0725"
+   ],
+   [
+    "XE367",
+    "726",
+    "0726"
+   ],
+   [
+    "XE368",
+    "727",
+    "0727"
+   ],
+   [
+    "XE369",
+    "728",
+    "0728"
+   ],
+   [
+    "XE370",
+    "729",
+    "0729"
+   ],
+   [
+    "XE400",
+    "730",
+    "0730"
+   ],
+   [
+    "XE401",
+    "731",
+    "0731"
+   ],
+   [
+    "XE402",
+    "732",
+    "0732"
+   ],
+   [
+    "XE403",
+    "733",
+    "0733"
+   ],
+   [
+    "XE223",
+    "830",
+    "0830"
+   ],
+   [
+    "XE224",
+    "831",
+    "0831"
+   ],
+   [
+    "XE229",
+    "897",
+    "0897"
+   ],
+   [
+    "XE230",
+    "899",
+    "0899"
+   ],
+   [
+    "XE269",
+    "8.00E+00",
+    "08E0"
+   ],
+   [
+    "XE270",
+    "8.00E+01",
+    "08E1"
+   ],
+   [
+    "XE271",
+    "8.00E+02",
+    "08E2"
+   ],
+   [
+    "XE272",
+    "8.00E+03",
+    "08E3"
+   ],
+   [
+    "XE273",
+    "8.00E+04",
+    "08E4"
+   ],
+   [
+    "XE274",
+    "8.00E+05",
+    "08E5"
+   ],
+   [
+    "XE275",
+    "8.00E+06",
+    "08E6"
+   ],
+   [
+    "XE276",
+    "8.00E+07",
+    "08E7"
+   ],
+   [
+    "XE277",
+    "8.00E+08",
+    "08E8"
+   ],
+   [
+    "XE278",
+    "8.00E+09",
+    "08E9"
+   ],
+   [
+    "XE536",
+    "910",
+    "0910"
+   ],
+   [
+    "XE538",
+    "911",
+    "0911"
+   ],
+   [
+    "XE594",
+    "920",
+    "0920"
+   ],
+   [
+    "XE595",
+    "921",
+    "0921"
+   ],
+   [
+    "XE596",
+    "922",
+    "0922"
+   ],
+   [
+    "XE597",
+    "923",
+    "0923"
+   ],
+   [
+    "XE598",
+    "924",
+    "0924"
+   ],
+   [
+    "XE599",
+    "925",
+    "0925"
+   ],
+   [
+    "XE600",
+    "926",
+    "0926"
+   ],
+   [
+    "XE601",
+    "927",
+    "0927"
+   ],
+   [
+    "XE602",
+    "928",
+    "0928"
+   ],
+   [
+    "XE691",
+    "0.00E+00",
+    "0E20"
+   ],
+   [
+    "XE692",
+    "0.00E+00",
+    "0E21"
+   ],
+   [
+    "XE693",
+    "0.00E+00",
+    "0E22"
+   ],
+   [
+    "XE694",
+    "0.00E+00",
+    "0E23"
+   ],
+   [
+    "XE695",
+    "0.00E+00",
+    "0E24"
+   ],
+   [
+    "XE696",
+    "0.00E+00",
+    "0E25"
+   ],
+   [
+    "XE697",
+    "0.00E+00",
+    "0E26"
+   ],
+   [
+    "XE698",
+    "0.00E+00",
+    "0E27"
+   ],
+   [
+    "XE699",
+    "0.00E+00",
+    "0E28"
+   ],
+   [
+    "XE700",
+    "0.00E+00",
+    "0E29"
+   ]
+  ],
+  "clock_mismatch_resolved_by_hour_angle": [
+   [
+    "XE342",
+    "listed clock",
+    "1954-09-22T06:28:00"
+   ],
+   [
+    "XE389",
+    "VI/25 clock",
+    "1951-06-28T06:36:00"
+   ],
+   [
+    "XE400",
+    "listed clock",
+    "1953-09-15T08:12:00"
+   ],
+   [
+    "XE176",
+    "listed clock",
+    "1953-03-15T11:59:00"
+   ],
+   [
+    "XE274",
+    "listed clock",
+    "1950-04-13T10:20:00"
+   ],
+   [
+    "XE484",
+    "listed clock",
+    "1951-03-28T03:56:00"
+   ],
+   [
+    "XE750",
+    "listed clock",
+    "1952-05-24T10:40:00"
+   ]
+  ],
+  "clock_mismatch_unresolved": [
+   "XE787",
+   "XE915"
+  ],
+  "vi25_ha_fits_with_EW_swapped": [
+   [
+    "XE856",
+    "00:22 E",
+    1.1
+   ]
+  ],
+  "neighbour_night_second_solution": [
+   [
+    "XE098",
+    {
+     "t": "1955-03-17T11:15",
+     "ha_resid": 1.23,
+     "ha_fits": true,
+     "epoch_d": 60.7,
+     "days": 61,
+     "clock_min": -240
+    }
+   ],
+   [
+    "XE128",
+    {
+     "t": "1955-02-14T09:14",
+     "ha_resid": -1.52,
+     "ha_fits": false,
+     "epoch_d": -730.4,
+     "days": -730,
+     "clock_min": 0
+    }
+   ]
+  ],
+  "hourangle_beyond_12h": [
+   [
+    "XE389",
+    "23.33413",
+    "modulo 24 h with the sign flipped",
+    0.66587
+   ]
+  ],
+  "proposed_field_replacements": [
+   [
+    "XE389",
+    "0.66587",
+    "",
+    ""
+   ],
+   [
+    "XE217",
+    "-0.2333333",
+    "8.250337",
+    "1.010438"
+   ],
+   [
+    "XE864",
+    "-0.5666667",
+    "58.14178",
+    "1.890083"
+   ]
+  ],
+  "evening_date_exposures_started_after_local_midnight": [
+   300,
+   702
+  ],
+  "fields_vs_hourangle": {
+   "rows": 935,
+   "zd_minus_computed_deg_p1_p50_p99": [
+    -0.16,
+    -0.005,
+    0.134
+   ],
+   "zd_rows_abs_gt_0p2_deg": [
+    [
+     "XE374",
+     -0.251
+    ],
+    [
+     "XE026",
+     0.267
+    ]
+   ],
+   "airmass_minus_hardie_max_abs": 0.0012,
+   "airmass_minus_secz_max_abs": 0.0115,
+   "copied_rows_excluded": [
+    "XE217",
+    "XE864"
+   ]
+  },
+  "standard_time_test": {
+   "Apr-Sep": {
+    "n": 461,
+    "within_1p5_of_peak": 448,
+    "within_1p5_of_peak_plus_or_minus_60": 0
+   },
+   "Oct-Mar": {
+    "n": 445,
+    "within_1p5_of_peak": 430,
+    "within_1p5_of_peak_plus_or_minus_60": 0
+   }
+  },
+  "by_UT_year_mod4_evening_correct": {
+   "0": [
+    90,
+    0
+   ],
+   "1": [
+    5,
+    208
+   ],
+   "2": [
+    343,
+    8
+   ],
+   "3": [
+    264,
+    0
+   ]
+  },
+  "by_UT_year_mod4_eq1_vs_other_evening_correct": {
+   "mod4 = 1": [
+    5,
+    208
+   ],
+   "mod4 != 1": [
+    697,
+    8
+   ]
+  },
+  "year_mod4_exceptions_night_class_exposures": [
+   [
+    "1949-12-21",
+    "evening_date",
+    2
+   ],
+   [
+    "1954-01-02",
+    "correct",
+    4
+   ],
+   [
+    "1954-01-04",
+    "correct",
+    4
+   ],
+   [
+    "1957-12-19",
+    "evening_date",
+    3
+   ]
+  ],
+  "asteroid_sample": {
+   "rows": 35,
+   "decisive": 30,
+   "regions_min_max": [
+    "XE055",
+    "XE641"
+   ],
+   "by_zone": {
+    "001-722": 35
+   }
+  },
+  "asteroid_disagreement_rate_upper95_one_sided": 0.095,
+  "epoch_definition_test_within_0p25d": {
+   "n": 724,
+   "calendar_year_fraction|start": 682,
+   "calendar_year_fraction|start-1d": 33,
+   "julian_epoch|start": 421,
+   "julian_epoch|start-1d": 19,
+   "besselian_epoch|start": 470,
+   "besselian_epoch|start-1d": 24
+  },
+  "proposal_basis_rows": {
+   "date +1 d; time = VI/25 minute": 702,
+   "manual: witnesses disagree": 2,
+   "date unchanged; time = VI/25 minute": 216,
+   "UT date of the VI/25 start; time = listed clock time to the minute (the log hour angle supports it)": 6,
+   "VI/25 start, date and time (the log hour angle supports the VI/25 clock)": 1,
+   "VI/25 start (neighbours' night)": 2,
+   "VI/25 start": 6,
+   "manual: listed clock time differs from VI/25; the hour angle does not decide": 2
+  },
+  "rows_with_proposal": 933,
+  "rows_date_change_proposed": 714,
+  "epoch_decimals_rows": {
+   "3": 741,
+   "2": 173,
+   "1": 22,
+   "0": 1
+  },
+  "asteroid_rows": {
+   "asteroid-confirmed|agree=True": 30,
+   "catalogue-only|agree=True": 2,
+   "catalogue+HA|agree=None": 2,
+   "catalogue-only|agree=None": 1
+  }
+ },
+ "counts_O": {
+  "rows": 933,
+  "distinct_regions": 930,
+  "exposures": 930,
+  "match_rule": {
+   "number+field": 716,
+   "ES/S spelling": 55,
+   "number-1": 161,
+   "field only": 1
+  },
+  "class_rows": {
+   "evening_date": 698,
+   "correct": 217,
+   "clock_mismatch": 10,
+   "gross_error": 8
+  },
+  "evidence_rows": {
+   "catalogue+HA": 875,
+   "catalogue-only": 38,
+   "unresolved": 5,
+   "catalogue date+HA, listed clock": 8,
+   "indirect": 2,
+   "catalogue+Epoch": 5
+  },
+  "ha_verdict_listed_rows": {
+   "listed date 1 d early": 683,
+   "n/a (|Dec| >= 80)": 12,
+   "listed date consistent": 220,
+   "unclear": 18
+  },
+  "regular_exposures": 912,
+  "evening_date": 697,
+  "correct": 215,
+  "evening_share": 0.7643,
+  "evening_share_wilson95": [
+   0.7356,
+   0.7907
+  ],
+  "by_zone_evening_correct": {
+   "001-722": [
+    521,
+    183
+   ],
+   "723-936": [
+    176,
+    32
+   ]
+  },
+  "by_true_UT_year_evening_correct": {
+   "1949": [
+    1,
+    9
+   ],
+   "1950": [
+    93,
+    0
+   ],
+   "1951": [
+    92,
+    0
+   ],
+   "1952": [
+    57,
+    0
+   ],
+   "1953": [
+    0,
+    186
+   ],
+   "1954": [
+    235,
+    8
+   ],
+   "1955": [
+    169,
+    0
+   ],
+   "1956": [
+    32,
+    0
+   ],
+   "1957": [
+    3,
+    12
+   ],
+   "1958": [
+    15,
+    0
+   ]
+  },
+  "declination_range_by_zone": {
+   "001-722": [
+    -12.2,
+    89.8
+   ],
+   "723-936": [
+    -30.8,
+    -11.2
+   ]
+  },
+  "class_x_ha_verdict_exposures": {
+   "clock_mismatch|listed date 1 d early": 5,
+   "clock_mismatch|listed date consistent": 3,
+   "clock_mismatch|unclear": 2,
+   "correct|listed date 1 d early": 5,
+   "correct|listed date consistent": 203,
+   "correct|n/a (|Dec| >= 80)": 4,
+   "correct|unclear": 3,
+   "evening_date|listed date 1 d early": 669,
+   "evening_date|listed date consistent": 10,
+   "evening_date|n/a (|Dec| >= 80)": 8,
+   "evening_date|unclear": 10,
+   "gross_error|listed date 1 d early": 3,
+   "gross_error|listed date consistent": 2,
+   "gross_error|unclear": 3
+  },
+  "ha_identity_ok_rows": 929,
+  "clock_ok_rows": 919,
+  "asteroid_decisive_agree": [
+   0,
+   0
+  ],
+  "asteroid_disagreement_rate_upper95": null,
+  "ha_identity_mismatch": [
+   [
+    "XO321",
+    -27
+   ],
+   [
+    "XO057",
+    -60
+   ],
+   [
+    "XO217",
+    58
+   ],
+   [
+    "XO576",
+    60
+   ]
+  ],
+  "clock_mismatch": [
+   [
+    "XO827",
+    60.2
+   ],
+   [
+    "XO032",
+    -60.2
+   ],
+   [
+    "XO079",
+    240.2
+   ],
+   [
+    "XO118",
+    180.2
+   ],
+   [
+    "XO175",
+    59.8
+   ],
+   [
+    "XO388",
+    -59.8
+   ],
+   [
+    "XO394",
+    60.0
+   ],
+   [
+    "XO617",
+    179.8
+   ],
+   [
+    "XO780",
+    60.2
+   ],
+   [
+    "XO787",
+    479.8
+   ]
+  ],
+  "gross_error": [
+   [
+    "XO098",
+    "1955-03-16T10:55:48",
+    "1955-05-17T06:56"
+   ],
+   [
+    "XO128",
+    "1955-02-13T08:58:12",
+    "1953-02-14T08:58"
+   ],
+   [
+    "XO217",
+    "1952-08-22T05:31:48",
+    "1950-05-16T05:55"
+   ],
+   [
+    "XO498",
+    "1954-03-31T08:30:00",
+    "1954-06-01T04:30"
+   ],
+   [
+    "XO603",
+    "1953-01-01T08:25:48",
+    "1954-01-01T08:26"
+   ],
+   [
+    "XO666",
+    "1953-01-01T09:34:12",
+    "1954-01-01T09:34"
+   ],
+   [
+    "XO730",
+    "1953-01-01T11:31:48",
+    "1954-01-01T11:32"
+   ],
+   [
+    "XO864",
+    "1956-05-10T10:58:12",
+    "1950-07-19T06:28"
+   ]
+  ],
+  "alt_night_used": [
+   "XO098",
+   "XO128"
+  ],
+  "alt_night_flagged_not_used": [
+   "XO787"
+  ],
+  "unpaired": [],
+  "unresolved": [
+   "XO321",
+   "XO617",
+   "XO683",
+   "XO687",
+   "XO787"
+  ],
+  "run_context_downgraded": [
+   "XO471",
+   "XO472"
+  ],
+  "partner_downgraded": [
+   "XO023",
+   "XO024",
+   "XO222",
+   "XO464",
+   "XO468",
+   "XO489",
+   "XO823",
+   "XO858",
+   "XO863",
+   "XO931"
+  ],
+  "number_minus_1_by_zone": {
+   "723-936": 157,
+   "001-722": 4
+  },
+  "sep_deg_max": 0.3289,
+  "matched_is_nearest_field_rows": 932,
+  "second_nearest_field_min_deg": 0.046,
+  "ha_resid_true_minus_peak": {
+   "n": 900,
+   "median": 0.06,
+   "robust_sigma": 0.409,
+   "frac_abs_gt_1p5": 0.0311,
+   "frac_abs_gt_half_shift": 0.0267
+  },
+  "epoch_vs_start_exposures": {
+   "correct|fits UT start": 215,
+   "evening_date|fits UT start": 696,
+   "evening_date|fits start - 1 d (evening date)": 1
+  },
+  "epoch_3_decimals_vs_start_exposures": {
+   "fits UT start": 817,
+   "fits evening date": 1
+  },
+  "action_rows": {
+   "date_plus_1d": 700,
+   "no_change": 220,
+   "review_keep_listed": 5,
+   "replace_date_time": 8
+  },
+  "epoch_action_rows": {
+   "keep": 926,
+   "recompute": 2,
+   "no proposal": 5
+  },
+  "plateID_source_rows": {
+   "list = FitsArchive file name": 830,
+   "list (no FitsArchive file for this Region)": 100,
+   "list (no FitsArchive file with this plateID)": 3
+  },
+  "plateID_restored_from_file_name": [],
+  "clock_mismatch_resolved_by_hour_angle": [
+   [
+    "XO827",
+    "listed clock",
+    "1954-09-05T10:31:00"
+   ],
+   [
+    "XO032",
+    "listed clock",
+    "1953-10-14T11:17:00"
+   ],
+   [
+    "XO079",
+    "listed clock",
+    "1952-09-16T07:28:00"
+   ],
+   [
+    "XO118",
+    "listed clock",
+    "1953-10-08T12:01:00"
+   ],
+   [
+    "XO175",
+    "listed clock",
+    "1955-03-25T09:08:00"
+   ],
+   [
+    "XO388",
+    "listed clock",
+    "1951-07-05T05:55:00"
+   ],
+   [
+    "XO394",
+    "listed clock",
+    "1951-07-14T10:15:00"
+   ],
+   [
+    "XO780",
+    "listed clock",
+    "1953-11-12T11:19:00"
+   ]
+  ],
+  "clock_mismatch_unresolved": [
+   "XO617",
+   "XO787"
+  ],
+  "vi25_ha_fits_with_EW_swapped": [
+   [
+    "XO617",
+    "01:25 W",
+    -0.2
+   ]
+  ],
+  "neighbour_night_second_solution": [
+   [
+    "XO098",
+    {
+     "t": "1955-03-17T10:56",
+     "ha_resid": 0.69,
+     "ha_fits": true,
+     "epoch_d": 60.7,
+     "days": 61,
+     "clock_min": -240
+    }
+   ],
+   [
+    "XO128",
+    {
+     "t": "1955-02-14T08:58",
+     "ha_resid": -1.89,
+     "ha_fits": false,
+     "epoch_d": -730.3,
+     "days": -730,
+     "clock_min": 0
+    }
+   ]
+  ],
+  "hourangle_beyond_12h": [],
+  "proposed_field_replacements": [
+   [
+    "XO217",
+    "-1.1",
+    "15.23544",
+    "1.036356"
+   ]
+  ],
+  "evening_date_exposures_started_after_local_midnight": [
+   312,
+   697
+  ],
+  "fields_vs_hourangle": {
+   "rows": 932,
+   "zd_minus_computed_deg_p1_p50_p99": [
+    -0.143,
+    -0.002,
+    0.118
+   ],
+   "zd_rows_abs_gt_0p2_deg": [
+    [
+     "XO026",
+     0.266
+    ],
+    [
+     "XO374",
+     -0.248
+    ]
+   ],
+   "airmass_minus_hardie_max_abs": 0.0014,
+   "airmass_minus_secz_max_abs": 0.013,
+   "copied_rows_excluded": [
+    "XO217"
+   ]
+  },
+  "standard_time_test": {
+   "Apr-Sep": {
+    "n": 459,
+    "within_1p5_of_peak": 444,
+    "within_1p5_of_peak_plus_or_minus_60": 0
+   },
+   "Oct-Mar": {
+    "n": 441,
+    "within_1p5_of_peak": 428,
+    "within_1p5_of_peak_plus_or_minus_60": 0
+   }
+  },
+  "by_UT_year_mod4_evening_correct": {
+   "0": [
+    89,
+    0
+   ],
+   "1": [
+    4,
+    207
+   ],
+   "2": [
+    343,
+    8
+   ],
+   "3": [
+    261,
+    0
+   ]
+  },
+  "by_UT_year_mod4_eq1_vs_other_evening_correct": {
+   "mod4 = 1": [
+    4,
+    207
+   ],
+   "mod4 != 1": [
+    693,
+    8
+   ]
+  },
+  "year_mod4_exceptions_night_class_exposures": [
+   [
+    "1949-12-21",
+    "evening_date",
+    1
+   ],
+   [
+    "1954-01-02",
+    "correct",
+    4
+   ],
+   [
+    "1954-01-04",
+    "correct",
+    4
+   ],
+   [
+    "1957-12-19",
+    "evening_date",
+    3
+   ]
+  ],
+  "asteroid_sample": {
+   "rows": 0,
+   "decisive": 0,
+   "regions_min_max": null,
+   "by_zone": {}
+  },
+  "asteroid_disagreement_rate_upper95_one_sided": null,
+  "epoch_definition_test_within_0p25d": {
+   "n": 816,
+   "calendar_year_fraction|start": 815,
+   "calendar_year_fraction|start-1d": 1,
+   "julian_epoch|start": 486,
+   "julian_epoch|start-1d": 0,
+   "besselian_epoch|start": 568,
+   "besselian_epoch|start-1d": 0
+  },
+  "proposal_basis_rows": {
+   "date +1 d; time = VI/25 minute": 695,
+   "date unchanged; time = VI/25 minute": 217,
+   "manual: witnesses disagree": 3,
+   "UT date of the VI/25 start; time = listed clock time to the minute (the log hour angle supports it)": 8,
+   "VI/25 start (neighbours' night)": 2,
+   "VI/25 start": 6,
+   "manual: listed clock time differs from VI/25; the hour angle does not decide": 2
+  },
+  "rows_with_proposal": 928,
+  "rows_date_change_proposed": 708,
+  "epoch_decimals_rows": {
+   "3": 838,
+   "2": 83,
+   "1": 12
+  },
+  "asteroid_rows": {}
+ },
+ "night_blocks_E": {
+  "nights": 374,
+  "nights_mixed_E": [],
+  "nights_mixed_E_or_O": [],
+  "O_only_nights": [
+   "1951-03-27",
+   "1951-06-27",
+   "1953-09-14",
+   "1958-04-16"
+  ],
+  "blocks": 10
+ },
+ "reconciliation_E": {
+  "rule": "Rule of the earlier count (2026-10-14): 'north' = number+field pairs, counted by date only (listed date = VI/25 Obs or Obs+1); 'south' = the other pairs, counted only where clock (+-2 min) AND hourangle (+-1.5 min) match VI/25. Rows, not exposures; VI/25 records taken as given.",
+  "north": [
+   533,
+   186
+  ],
+  "south": [
+   174,
+   33
+  ],
+  "total": [
+   707,
+   219
+  ],
+  "n": 926,
+  "share": 0.7635,
+  "wilson95": [
+   0.7351,
+   0.7897
+  ],
+  "difference_to_table": {
+   "second row": 2,
+   "clock_mismatch": 6,
+   "VI/25 record corrected": 2,
+   "added: clock ok, hour angle differs": 2
+  },
+  "only_in_earlier_count": [
+   [
+    "XE876",
+    "second row"
+   ],
+   [
+    "XE342",
+    "clock_mismatch"
+   ],
+   [
+    "XE389",
+    "clock_mismatch"
+   ],
+   [
+    "XE400",
+    "clock_mismatch"
+   ],
+   [
+    "XE098",
+    "VI/25 record corrected"
+   ],
+   [
+    "XE128",
+    "VI/25 record corrected"
+   ],
+   [
+    "XE176",
+    "clock_mismatch"
+   ],
+   [
+    "XE274",
+    "clock_mismatch"
+   ],
+   [
+    "XE484",
+    "clock_mismatch"
+   ],
+   [
+    "XE884",
+    "second row"
+   ]
+  ],
+  "only_in_table": [
+   "XE723",
+   "XE856"
+  ]
+ },
+ "reconciliation_O": {
+  "rule": "Rule of the earlier count (2026-10-14): 'north' = number+field pairs, counted by date only (listed date = VI/25 Obs or Obs+1); 'south' = the other pairs, counted only where clock (+-2 min) AND hourangle (+-1.5 min) match VI/25. Rows, not exposures; VI/25 records taken as given.",
+  "north": [
+   529,
+   183
+  ],
+  "south": [
+   176,
+   36
+  ],
+  "total": [
+   705,
+   219
+  ],
+  "n": 924,
+  "share": 0.763,
+  "wilson95": [
+   0.7345,
+   0.7893
+  ],
+  "difference_to_table": {
+   "second row": 3,
+   "clock_mismatch": 7,
+   "VI/25 record corrected": 2
+  },
+  "only_in_earlier_count": [
+   [
+    "XO093",
+    "second row"
+   ],
+   [
+    "XO094",
+    "second row"
+   ],
+   [
+    "XO095",
+    "second row"
+   ],
+   [
+    "XO032",
+    "clock_mismatch"
+   ],
+   [
+    "XO079",
+    "clock_mismatch"
+   ],
+   [
+    "XO098",
+    "VI/25 record corrected"
+   ],
+   [
+    "XO118",
+    "clock_mismatch"
+   ],
+   [
+    "XO128",
+    "VI/25 record corrected"
+   ],
+   [
+    "XO175",
+    "clock_mismatch"
+   ],
+   [
+    "XO388",
+    "clock_mismatch"
+   ],
+   [
+    "XO394",
+    "clock_mismatch"
+   ],
+   [
+    "XO617",
+    "clock_mismatch"
+   ]
+  ],
+  "only_in_table": []
+ },
+ "listed_time_rounding": {
+  "E": {
+   "rows": 920,
+   "equals_vi25_minute_rounded_to_0p01h": 920,
+   "clock_resid_p1_p50_p99": [
+    -0.2,
+    0.0,
+    0.2
+   ]
+  },
+  "O": {
+   "rows": 915,
+   "equals_vi25_minute_rounded_to_0p01h": 915,
+   "clock_resid_p1_p50_p99": [
+    -0.2,
+    0.0,
+    0.2
+   ]
+  }
+ },
+ "vi25": {
+  "records": 1037,
+  "poss_i_proper": 937,
+  "fobs_inconsistent": [
+   "1079"
+  ],
+  "numbers_used_twice_in_poss_i_proper": 59,
+  "neighbour_flags": [
+   [
+    "1425",
+    "1955-03-16",
+    "1955-05-16"
+   ],
+   [
+    "673",
+    "1955-02-13",
+    "1953-02-13"
+   ],
+   [
+    "1010",
+    "1954-11-26",
+    "1954-03-26"
+   ]
+  ],
+  "records_beyond_poss_i_proper": {
+   "n": 100,
+   "mlp_range": [
+    938,
+    1037
+   ],
+   "with_E_start_time": 0,
+   "paired_list_rows": 0
+  }
+ },
+ "epoch_one_day_shift_mas_per_arcsec_per_yr": 2.738,
+ "known_anomalies_rows": 84
+}

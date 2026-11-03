@@ -1,0 +1,43 @@
+column,type,unit_or_values,description
+Survey,text,POSSI-E | POSSI-O,as listed
+Region,text,,as listed
+plateID,text,,as printed in the 2024 CSV (44 E values were mangled by a spreadsheet; use plateID_restored)
+plateID_restored,text,4 characters,plateID from the FitsArchive file name x<e|o><region>_<plateID>_nn_nn.fits where the printed value is mangled; else as listed. Join key: Survey + Region + plateID_restored
+plateID_source,text,,where plateID_restored comes from
+plateLabel,text,,as listed
+zone,text,001-722 | 723-936,"Region number 001-722 (label number = VI/25 number) or 723-936 (label = VI/25 number + 1, or ES/S spelling of the -30 deg zone); XO1001, the blue plate of the second polar field, counts as 001-722"
+Declination,deg,J2000,as listed
+listed_UTobservation,UT,YYYY-MM-DDThh:mm:ss,as listed
+listed_hourangle,h,east-positive,as listed
+listed_Epoch,yr,,as listed
+duplicate,text,'' | first row | second row,rows describing one exposure (same VI/25 record); first = lowest Region name
+same_exposure_as,text,Region:plateID,the other row(s) of the same exposure
+vi25_POSS,text,,VI/25 POSS number of the paired record
+vi25_MLP,int,,VI/25 MLP number
+vi25_match_rule,text,number+field | number-1 | ES/S spelling | field only,how the row was paired
+vi25_sep_deg,deg,,list field centre to VI/25 field centre (B1950 -> ICRS)
+vi25_Obs,date,YYYY-MM-DD,"VI/25 Obs = date on which the night began, as printed (for 1425 and 673 the record's own night; the neighbours' night used is in true_UT_start)"
+vi25_ObsE_PST / vi25_ObsO_PST,PST,hh:mm,"VI/25 exposure start, Pacific Standard Time"
+vi25_EHA / vi25_OHA,text,hh:mm E|W,VI/25 starting hour angle
+vi25_exp_min,min,,VI/25 exposure time
+true_UT_start,UT,YYYY-MM-DDThh:mm,VI/25 start in UT: night date + PST + 8 h (+24 h if PST < 12 h); minute precision as in VI/25
+day_offset_listed_minus_true,d,,listed date minus UT date of true_UT_start
+clock_resid_min,min,,"listed clock time minus true_UT_start clock time, wrapped to +-12 h"
+hourangle_minus_vi25_HA_min,min,east-positive,"listed hourangle (signed, see note for values beyond +-12 h) minus VI/25 starting hour angle"
+class,text,evening_date | correct | clock_mismatch | gross_error | unpaired,"date offset checked first: -1 d evening_date, 0 correct, other gross_error; then a clock difference > 2 min makes clock_mismatch"
+ha_resid_listed_min,min,,"listed hourangle minus the hour angle computed from the listed date and time (both east-positive); no-shift peak +0.50 (E) / +0.41 (O), one-day peak 3.94 min lower"
+ha_resid_true_min,min,,same with true_UT_start
+ha_verdict_listed,text,listed date consistent | listed date 1 d early | unclear | n/a (|Dec| >= 80),VI/25-independent: ha_resid_listed within 1.5 min of the no-shift peak or of that peak minus 3.94 min (not used at |Dec| >= 80)
+epoch_minus_true_days,d,,"listed Epoch minus calendar-year fraction of true_UT_start, in days"
+asteroid_verdict,text,,"from inputs/asteroid_checks.csv (35 E plates, not a random sample)"
+evidence_level,text,"asteroid-confirmed | catalogue+HA | catalogue date+HA, listed clock | catalogue+Epoch | indirect | catalogue-only | unresolved",what supports the proposal (README)
+action,text,date_plus_1d | no_change | replace_time | replace_date_time | review_keep_listed,what to do with UTobservation/DATE-OBS of this row
+proposed_UTobservation,UT,YYYY-MM-DDThh:mm:ss,proposed exposure start (= DATE-OBS); empty = no proposal
+time_refinement_s,s,-18..+18,"for date_plus_1d / no_change: proposed minus listed clock time; the list stores 0.01 h, this restores the VI/25 minute and is not an error"
+proposed_basis,text,,how the proposal was formed
+proposed_Epoch,yr,3 decimals,calendar-year fraction of proposed_UTobservation
+epoch_action,text,keep | recompute | '' (empty),keep = listed Epoch agrees with proposed_Epoch within half a unit of its last decimal plus 0.25 d (a kept value can differ from proposed_Epoch by up to that amount); recompute = use proposed_Epoch; empty = no proposal (action review_keep_listed). The script would write 'set' for an empty listed Epoch; that does not occur in the 2024 list
+proposed_hourangle,h,"east-positive, signed",only where the listed value must change (copied entries: VI/25 starting hour angle; values beyond +-12 h: signed value)
+proposed_zenithdistance,deg,,"only for copied entries: from proposed_hourangle, Declination and latitude"
+proposed_airmass,,,"only for copied entries: Hardie (1962) of proposed_zenithdistance, as the list does"
+note,text,,"free text, '; '-separated"
