@@ -1,6 +1,6 @@
 # POSS-I plate dates in the MAST plate list (2024): corrections for the DSS database and FITS headers
 
-Christian Bucher, independent researcher, Vienna (christian140903@gmail.com). Version of 2026-10-14 20:38 UTC.
+Christian Bucher, independent researcher, Vienna. Version of 2026-10-14 20:38 UTC.
 Follow-up to MAST helpdesk ticket INC0227319 (2026-10-13).
 
 **Purpose.** For each of the 937 POSSI-E and 933 POSSI-O rows of `SurveyPlateListLatest.csv` (2024) the tables give
