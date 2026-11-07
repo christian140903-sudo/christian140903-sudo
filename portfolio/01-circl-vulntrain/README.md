@@ -3,8 +3,8 @@
 [← Back to overview](../README.md) · [Part 1: vulnerability-scores](#part-1-vulnerability-scores-october-2026) · [Part 2: Vulnerability-FSTEC](#part-2-vulnerability-fstec-november-2026) · [What I delivered](./delivered/)
 
 **Status: accepted.** Part 1: four commits in VulnTrain 3.4.0 (29 October 2026); CIRCL rebuilt the dataset, retrained
-its classifier and published a technical report. Part 2: three commits merged into `main` on 3 November 2026 and listed
-under "Unreleased" in the CHANGELOG; CIRCL rebuilt the dataset `CIRCL/Vulnerability-FSTEC` (revision `a104085`).
+its classifier and published a technical report. Part 2: three commits in VulnTrain 3.5.0 (4 November 2026); CIRCL rebuilt
+the dataset `CIRCL/Vulnerability-FSTEC` (revision `a104085`) and retrained its classifier for Russian on it.
 
 ## Who they are
 
@@ -170,13 +170,20 @@ Verbatim quotes, with place and date:
    [`42131f4`](https://github.com/vulnerability-lookup/VulnTrain/commit/42131f4de01333e2ee3320a1cfa78a41b040eed8),
    committed 2026-10-29: authored under my GitHub account (git author "Christian Bucher"), committed by Cédric Bonhomme.
 
+8. **Blog post on vulnerability-lookup.org**, 2026-10-29
+   ([*Leakage-Free Splits and Consistent CVSS 4.0 Scoring for the VLAI Severity Classifiers*](https://www.vulnerability-lookup.org/2026/10/29/improving-vulnerability-scores/)),
+   section "Thanks":
+
+   > These improvements come from a careful external review by Christian Bucher, who measured both problems and
+   > contributed the fixes and the leakage check. Thank you!
+
 ### Timeline
 
 | Date | Event |
 |---|---|
 | 2026-10-14 | Dataset revision `34e6a14` published on Hugging Face; the previous classifier (`10d9861`) is trained on it. |
 | 2026-10-28 | Package delivered to CIRCL: three patches, two scripts, unit tests, README. |
-| 2026-10-29 | The three patches and the leakage check committed by Cédric Bonhomme (CIRCL); dataset rebuilt as `55a886a`; pull request #27 merged; VulnTrain 3.4.0 released; technical report published on Zenodo; RoBERTa classifier retrained (`064daa2`); model card updated. |
+| 2026-10-29 | The three patches and the leakage check committed by Cédric Bonhomme (CIRCL); dataset rebuilt as `55a886a`; pull request #27 merged; VulnTrain 3.4.0 released; technical report published on Zenodo; RoBERTa classifier retrained (`064daa2`); model card updated; blog post on vulnerability-lookup.org. |
 | 2026-10-30 | Publishing runbook: run the leakage check after each push (`dbd0de0`). |
 
 ### Status
@@ -187,9 +194,10 @@ published. The other files of the delivery (`eval_seen_unseen.py`, the unit test
 ### How to verify
 
 1. **Credit:** open the [CHANGELOG at tag v3.4.0](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.4.0/CHANGELOG.md)
-   (lines 7–8) and search the
+   (lines 7–8), search the
    [report](https://vulnerability-lookup.github.io/VulnTrain/vulnerability-scores-leakage-report.html) for "Bucher"
-   (six mentions).
+   (six mentions) and read the section "Thanks" of the
+   [blog post](https://www.vulnerability-lookup.org/2026/10/29/improving-vulnerability-scores/).
 2. **The delivered patches are the code CIRCL committed.** In a clone of VulnTrain, compare patch IDs:
 
    ```bash
@@ -221,8 +229,8 @@ published. The other files of the delivery (`eval_seen_unseen.py`, the unit test
 In `CIRCL/Vulnerability-FSTEC`, the CVSS v3 and v4 scores were empty in every row, so every severity label came from
 CVSS 2.0. On 3 November 2026 I delivered three patches, a list of the affected rows and the scripts behind it. CIRCL
 committed the three patches, added two changes of its own, merged them into `main` with pull request #28 on 3 November
-2026 and rebuilt the dataset. The CHANGELOG lists the fix under "Unreleased" and says "reported and fixed
-by Christian Bucher".
+2026 and rebuilt the dataset. On 4 November 2026 it released the fix in VulnTrain 3.5.0, with the words "reported and
+fixed by Christian Bucher", and retrained its classifier for Russian on the corrected dataset.
 
 ### What I found
 
@@ -231,8 +239,9 @@ prefix. The parser rejected these vectors and stored no score, without a message
 in every row of `CIRCL/Vulnerability-FSTEC` and every severity label came from CVSS 2.0 (commit message of
 [`483f4ee`](https://github.com/vulnerability-lookup/VulnTrain/commit/483f4ee9fc8b09216cac67d580852abb3063b798)).
 According to CIRCL's
-[CHANGELOG](https://github.com/vulnerability-lookup/VulnTrain/blob/8a770c608f87f7815814db8ca822ec3687d196a8/CHANGELOG.md),
-reading the vectors changes 21,458 of the 82,960 labels (25.9%). The delivered list has
+[release notes](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.5.0/CHANGELOG.md), reading the vectors changes 21,457 of
+the 82,960 labels (25.9%); my list and the earlier "Unreleased" entry give 21,458 (see
+[What changed](#what-changed-1)). The delivered list has
 one row for each of the 65,618 rows of revision `5bd7fba` whose BDU record has a v3 or v4 vector.
 
 ### What I delivered
@@ -265,19 +274,38 @@ The other files in `data/` hold the counts as JSON and the column descriptions o
   [dataset] treat no-impact FSTEC vectors (score 0.0) as missing" and
   [`df989e1`](https://github.com/vulnerability-lookup/VulnTrain/commit/df989e1b111011229ad44d47e4fab24da24f9ee0) "chg:
   [tools] leakage check reads cve_id and cve_ids, as the group split does", which also adds the CHANGELOG entry.
-- **Not released yet:** the CHANGELOG lists the fix under "Unreleased"; the latest release is still 3.4.0 (as of
-  3 November 2026).
+- **Released:** [VulnTrain 3.5.0](https://github.com/vulnerability-lookup/VulnTrain/releases/tag/v3.5.0), 4 November 2026. Its
+  [release notes](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.5.0/CHANGELOG.md) count 21,457 changed labels,
+  one fewer than the 21,458 of the earlier "Unreleased" entry and of my list. The difference matches CIRCL's own
+  addition `c064c97`, which treats a score of 0.0 as missing: two rows of my list then keep their published label, and
+  one row has no score left and loses its label ([How to verify](#how-to-verify-1), step 7).
 - **Dataset rebuilt:** revision
   [`a104085`](https://huggingface.co/datasets/CIRCL/Vulnerability-FSTEC/commit/a1040858f08db3bbfd0d23cfc24126f638e0637d)
   of `CIRCL/Vulnerability-FSTEC` (3 November 2026), "Read CVSS v3/v4 vectors, CVSS-B for v4, group split (80/10/10),
   clean cve_id". The [dataset card](https://huggingface.co/datasets/CIRCL/Vulnerability-FSTEC) has a note at the top:
   "Revision a104085 (2026-11-03) fixes the CVSS scores."
+- **Classifier for Russian retrained:** revision
+  [`5268240`](https://huggingface.co/CIRCL/vulnerability-severity-classification-russian-ruRoberta-large/commit/526824012c84950e8f82a6f9511fc35c483ab9b7)
+  of `CIRCL/vulnerability-severity-classification-russian-ruRoberta-large` (4 November 2026), trained on the corrected
+  dataset, scores 69.95% test accuracy (macro F1 0.585, release notes). The
+  [model card](https://huggingface.co/CIRCL/vulnerability-severity-classification-russian-ruRoberta-large) says in its
+  "Note (November 2026)":
+
+  > Accuracy is lower than before (70.0% against 74.2%), but the two figures are not comparable: the labels and the
+  > split both changed.
 
 ### Where my name appears
 
 Verbatim quotes, with place and date:
 
-1. **CHANGELOG, section "Unreleased"**, 2026-11-03
+1. **Release notes of VulnTrain 3.5.0**, 2026-11-04:
+   [CHANGELOG at tag v3.5.0](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.5.0/CHANGELOG.md) (lines 7–8),
+   [GitHub release page](https://github.com/vulnerability-lookup/VulnTrain/releases/tag/v3.5.0) and the message of the
+   annotated tag `v3.5.0` (tagger Cédric Bonhomme):
+
+   > CVSS scores in `CIRCL/Vulnerability-FSTEC`, reported and fixed by Christian Bucher.
+
+2. **CHANGELOG, section "Unreleased"**, before the release, 2026-11-03
    ([CHANGELOG at commit `8a770c6`](https://github.com/vulnerability-lookup/VulnTrain/blob/8a770c608f87f7815814db8ca822ec3687d196a8/CHANGELOG.md),
    lines 7–11):
 
@@ -285,11 +313,11 @@ Verbatim quotes, with place and date:
    > vectors without the `CVSS:3.x/` / `CVSS:4.0/` prefix, the parser rejected them silently, and every published row
    > was labelled from CVSS 2.0. Reading them changes 21,458 of the 82,960 labels (25.9%).
 
-2. **Pull request #28**, merged 2026-11-03 ([link](https://github.com/vulnerability-lookup/VulnTrain/pull/28)):
+3. **Pull request #28**, merged 2026-11-03 ([link](https://github.com/vulnerability-lookup/VulnTrain/pull/28)):
 
    > Fixes the CVSS scores of `CIRCL/Vulnerability-FSTEC`, reported by Christian Bucher …
 
-3. **Dataset card of `CIRCL/Vulnerability-FSTEC`** on Hugging Face, 2026-11-03
+4. **Dataset card of `CIRCL/Vulnerability-FSTEC`** on Hugging Face, 2026-11-03
    ([card](https://huggingface.co/datasets/CIRCL/Vulnerability-FSTEC);
    [as of revision `808245d`](https://huggingface.co/datasets/CIRCL/Vulnerability-FSTEC/blob/808245d581fea9a9f01f1c50d546b01e96fade49/README.md)),
    two mentions:
@@ -301,11 +329,23 @@ Verbatim quotes, with place and date:
 
      > Thanks to Christian Bucher (christian140903-sudo) for finding and fixing the CVSS reading …
 
-4. **Commit pages** of [`483f4ee`](https://github.com/vulnerability-lookup/VulnTrain/commit/483f4ee9fc8b09216cac67d580852abb3063b798),
+5. **Model card of `CIRCL/vulnerability-severity-classification-russian-ruRoberta-large`** on Hugging Face,
+   2026-11-04 ([card](https://huggingface.co/CIRCL/vulnerability-severity-classification-russian-ruRoberta-large);
+   [as of revision `55abf65`](https://huggingface.co/CIRCL/vulnerability-severity-classification-russian-ruRoberta-large/blob/55abf65f1403a89af7a88fe1b6ca7d62991249b2/README.md)),
+   two mentions:
+   - "Note (November 2026)":
+
+     > The issue was reported and fixed by Christian Bucher, see VulnTrain #28.
+
+   - "Acknowledgements":
+
+     > Thanks to Christian Bucher (christian140903-sudo) for finding and fixing the CVSS reading of the FSTEC dataset.
+
+6. **Commit pages** of [`483f4ee`](https://github.com/vulnerability-lookup/VulnTrain/commit/483f4ee9fc8b09216cac67d580852abb3063b798),
    [`947e608`](https://github.com/vulnerability-lookup/VulnTrain/commit/947e608a982580359773437cced1694748143af5) and
    [`765d7b6`](https://github.com/vulnerability-lookup/VulnTrain/commit/765d7b667cdd933a758fbc40cedb003844841f0c),
    committed 2026-11-03: authored under my GitHub account (git author "Christian Bucher"), committed by Cédric Bonhomme.
-5. **Commit list** of my VulnTrain commits
+7. **Commit list** of my VulnTrain commits
    ([`commits?author=christian140903-sudo`](https://github.com/vulnerability-lookup/VulnTrain/commits?author=christian140903-sudo)):
    seven commits, the four of part 1 and these three.
 
@@ -320,20 +360,27 @@ Verbatim quotes, with place and date:
 | 2026-11-03 12:53 | Pull request #28 merged into `main` (`8a770c6`). |
 | 2026-11-03 12:56 | Dataset rebuilt: revision `a104085`. |
 | 2026-11-03 12:59 | Dataset card updated (`808245d`), with the note and the acknowledgement naming me. |
+| 2026-11-04 15:26 | Classifier for Russian retrained on the corrected dataset: revision `5268240`. |
+| 2026-11-04 16:01 | Model card updated (`55abf65`), with the note and the acknowledgement naming me. |
+| 2026-11-04 16:07 | Tag `v3.5.0` by Cédric Bonhomme, containing the three commits. |
+| 2026-11-04 16:10 | GitHub release "VulnTrain 3.5.0" published. |
 
 ### Status
 
-**Accepted.** Three commits merged into `main` (pull request #28) and listed under "Unreleased" in the CHANGELOG; no
-release contains them yet (as of 3 November 2026). The dataset was rebuilt (revision `a104085`). The scripts and data
+**Accepted and released.** Three commits merged into `main` (pull request #28) and released in VulnTrain 3.5.0
+(4 November 2026). The dataset was rebuilt (revision `a104085`) and the classifier for Russian retrained on it
+(revision `5268240`). The scripts and data
 files of the delivery are not part of the repository.
 
 ### How to verify
 
 1. **Credit:** open the
-   [CHANGELOG at commit `8a770c6`](https://github.com/vulnerability-lookup/VulnTrain/blob/8a770c608f87f7815814db8ca822ec3687d196a8/CHANGELOG.md)
-   (lines 7–11, under "Unreleased"), [pull request #28](https://github.com/vulnerability-lookup/VulnTrain/pull/28) and
-   the [dataset card](https://huggingface.co/datasets/CIRCL/Vulnerability-FSTEC) (note at the top and
-   "Acknowledgements").
+   [CHANGELOG at tag v3.5.0](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.5.0/CHANGELOG.md) (lines 7–8),
+   the [release page](https://github.com/vulnerability-lookup/VulnTrain/releases/tag/v3.5.0),
+   [pull request #28](https://github.com/vulnerability-lookup/VulnTrain/pull/28), the
+   [dataset card](https://huggingface.co/datasets/CIRCL/Vulnerability-FSTEC) (note at the top and "Acknowledgements")
+   and the [model card](https://huggingface.co/CIRCL/vulnerability-severity-classification-russian-ruRoberta-large)
+   ("Note (November 2026)" and "Acknowledgements").
 2. **The delivered patches are the code CIRCL committed.** In a clone of VulnTrain, compare patch IDs:
 
    ```bash
@@ -345,8 +392,8 @@ files of the delivery are not part of the repository.
    Both loops print the same three patch IDs (`c49bb5bba942…`, `54d4ec1372f0…`, `5aa22820d0ad…`).
 3. **Authorship, merge and release:** `git log -1 --format='%an | %cn' 483f4ee` prints
    `Christian Bucher | Cédric Bonhomme` (likewise for `947e608` and `765d7b6`);
-   `git merge-base --is-ancestor 765d7b6 main && echo yes` prints `yes`; `git tag --contains 765d7b6` prints nothing,
-   because no release tag contains these commits yet (as of 3 November 2026).
+   `git merge-base --is-ancestor 765d7b6 main && echo yes` and
+   `git merge-base --is-ancestor 765d7b6 v3.5.0 && echo yes` both print `yes` (likewise for `483f4ee` and `947e608`).
 4. **CIRCL's own additions:** `git log -1 --format='%an | %s' c064c97` prints
    `Cédric Bonhomme | fix: [dataset] treat no-impact FSTEC vectors (score 0.0) as missing`, and for `df989e1`
    `Cédric Bonhomme | chg: [tools] leakage check reads cve_id and cve_ids, as the group split does`.
@@ -355,10 +402,17 @@ files of the delivery are not part of the repository.
 6. **Effect on the data:** dataset commit
    [`a104085`](https://huggingface.co/datasets/CIRCL/Vulnerability-FSTEC/commit/a1040858f08db3bbfd0d23cfc24126f638e0637d)
    and the note at the top of the [dataset card](https://huggingface.co/datasets/CIRCL/Vulnerability-FSTEC).
+7. **The count in the release notes:** in
+   [`affected_rows.csv.gz`](./delivered/vulnerability-fstec-fix/data/affected_rows.csv.gz), take for each row the first
+   of `cvss_v4_0_cvss_b`, `cvss_v3_0` and `cvss_v2_0` that is neither empty nor 0.0 and map it to a severity
+   (9.0 and above Critical, 7.0 and above High, 4.0 and above Medium, otherwise Low). 21,456 rows get a severity other
+   than `severity_label_published`; one more row (`BDU:2025-01575`: v3 and v2 scores 0.0, no v4 score) has no score
+   left and so loses its label: 21,457, as in the release notes.
+   Without skipping 0.0, 21,458 rows change (column `label_changed`), as in the earlier "Unreleased" entry.
 
 Related: [4. OASIS CSAF TC and BSI](../04-oasis-bsi-csaf/README.md). The CSAF documents counted there come from CIRCL's
 Vulnerability-Lookup dumps.
 
 ---
 
-Last checked: 3 November 2026 · [← Back to overview](../README.md)
+Last checked: 7 November 2026 · [← Back to overview](../README.md)

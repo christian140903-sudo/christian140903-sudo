@@ -1,6 +1,6 @@
 # Portfolio: what I found, delivered, and where I am credited
 
-Christian Bucher, Vienna · [GitHub profile](https://github.com/christian140903-sudo) · Last checked: 3 November 2026
+Christian Bucher, Vienna · [GitHub profile](https://github.com/christian140903-sudo) · Last checked: 7 November 2026 (each detail page gives its own date)
 
 This collection lists my contributions to public research data, code and standards: what I found, what I delivered to
 the people who maintain them, what changed, and where they name me. Every claim links to a public source; every
@@ -10,24 +10,24 @@ delivery is in its own folder.
 train/test leakage and two readings of CVSS 4.0, and delivered three patches and a leakage check. CIRCL released them
 as four commits in VulnTrain 3.4.0 on 29 October 2026, rebuilt the dataset, retrained its RoBERTa classifier and
 published a technical report; the release notes say "reported and fixed by Christian Bucher". A second fix, for
-`CIRCL/Vulnerability-FSTEC`, the dataset behind CIRCL's VLAI severity classifier for Russian, was merged on
-3 November 2026. According to its
-[changelog entry](https://github.com/vulnerability-lookup/VulnTrain/blob/8a770c608f87f7815814db8ca822ec3687d196a8/CHANGELOG.md),
-every published row had been labelled from CVSS 2.0, and reading the v3 and v4 vectors changes 21,458 of the 82,960
-labels (25.9%); the entry also says "reported and fixed by Christian Bucher".
+`CIRCL/Vulnerability-FSTEC`, the dataset behind CIRCL's VLAI severity classifier for Russian, was released in
+VulnTrain 3.5.0 on 4 November 2026, and CIRCL retrained that classifier on the corrected labels. According to the
+[release notes](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.5.0/CHANGELOG.md), every published row had
+been labelled from CVSS 2.0, and reading the v3 and v4 vectors changes 21,457 of the 82,960 labels (25.9%); they also
+say "reported and fixed by Christian Bucher".
 
 → [CIRCL details](./01-circl-vulntrain/README.md) · [Delivered files](./01-circl-vulntrain/delivered/) ·
 [Technical report](https://vulnerability-lookup.github.io/VulnTrain/vulnerability-scores-leakage-report.html) ·
-[Release notes](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.4.0/CHANGELOG.md) ·
-[Second fix (FSTEC)](./01-circl-vulntrain/README.md#part-2-vulnerability-fstec-november-2026)
+[Release notes 3.4.0](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.4.0/CHANGELOG.md) ·
+[Release notes 3.5.0](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.5.0/CHANGELOG.md) · [Second fix (FSTEC)](./01-circl-vulntrain/README.md#part-2-vulnerability-fstec-november-2026)
 
 ## At a glance
 
 - **7 contributions:** two to CIRCL, and one each to AIT, AIP, the OASIS CSAF Technical Committee with BSI, STScI/MAST
   and the NeurIPS 2026 competition PAIEC. In addition, other projects' documentation refers to **2 of my tools**.
-- **10 commits accepted** into the maintainers' repositories: 7 in CIRCL's VulnTrain (4 released in 3.4.0, 3 merged
-  into `main` on 3 November 2026), 3 in AIT's CAM-LDS repository.
-- **13 public pages on which the institutions name me:** 9 at CIRCL, 2 at AIP, 2 at OASIS/BSI. Each one is linked
+- **10 commits accepted** into the maintainers' repositories: 7 in CIRCL's VulnTrain (4 released in 3.4.0, 3 in
+  3.5.0), 3 in AIT's CAM-LDS repository.
+- **16 public pages on which the institutions name me:** 12 at CIRCL, 2 at AIP, 2 at OASIS/BSI. Each one is linked
   below. A page counts once, however often it names me (CIRCL's changelog names me in two entries); commits authored
   under my GitHub account are counted in the line above, not here.
 - **Status:** accepted 3 (CIRCL twice, AIT) · acknowledged in errata 1 (AIP) · open 1 (OASIS/BSI) · delivered, no
@@ -51,12 +51,12 @@ labels (25.9%); the entry also says "reported and fixed by Christian Bucher".
 
 | # | Institution (who) | Project | What I found | What I delivered | Where I am credited | Status |
 |---|---|---|---|---|---|---|
-| [1a](#1a-vulnerability-scores-october-2026) | [CIRCL](https://www.circl.lu/mission/), Luxembourg | [VulnTrain](https://github.com/vulnerability-lookup/VulnTrain): dataset `CIRCL/vulnerability-scores` for the VLAI severity classifiers | Train/test leakage; two readings of CVSS 4.0 | [3 patches, 2 scripts, tests](./01-circl-vulntrain/delivered/README.md#1-october-2026-vulnerability-scores-fix) | [Release notes](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.4.0/CHANGELOG.md), [technical report](https://vulnerability-lookup.github.io/VulnTrain/vulnerability-scores-leakage-report.html), [5 more](#1a-vulnerability-scores-october-2026) | **Accepted:** 4 commits in VulnTrain 3.4.0 (October 2026) |
-| [1b](#1b-vulnerability-fstec-november-2026) | [CIRCL](https://www.circl.lu/mission/), Luxembourg | [VulnTrain](https://github.com/vulnerability-lookup/VulnTrain): dataset `CIRCL/Vulnerability-FSTEC` for the Russian VLAI severity classifier | CVSS v3 and v4 vectors were not read, so every row was labelled from CVSS 2.0 | [3 patches, 3 scripts, list of affected rows](./01-circl-vulntrain/delivered/README.md#2-november-2026-vulnerability-fstec-fix) | [Changelog](https://github.com/vulnerability-lookup/VulnTrain/blob/8a770c608f87f7815814db8ca822ec3687d196a8/CHANGELOG.md), [pull request #28](https://github.com/vulnerability-lookup/VulnTrain/pull/28), [dataset card](https://huggingface.co/datasets/CIRCL/Vulnerability-FSTEC) | **Accepted:** 3 commits merged into `main` (November 2026), listed as "Unreleased" |
+| [1a](#1a-vulnerability-scores-october-2026) | [CIRCL](https://www.circl.lu/mission/), Luxembourg | [VulnTrain](https://github.com/vulnerability-lookup/VulnTrain): dataset `CIRCL/vulnerability-scores` for the VLAI severity classifiers | Train/test leakage; two readings of CVSS 4.0 | [3 patches, 2 scripts, tests](./01-circl-vulntrain/delivered/README.md#1-october-2026-vulnerability-scores-fix) | [Release notes](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.4.0/CHANGELOG.md), [technical report](https://vulnerability-lookup.github.io/VulnTrain/vulnerability-scores-leakage-report.html), [6 more](#1a-vulnerability-scores-october-2026) | **Accepted:** 4 commits in VulnTrain 3.4.0 (October 2026) |
+| [1b](#1b-vulnerability-fstec-november-2026) | [CIRCL](https://www.circl.lu/mission/), Luxembourg | [VulnTrain](https://github.com/vulnerability-lookup/VulnTrain): dataset `CIRCL/Vulnerability-FSTEC` for the Russian VLAI severity classifier | CVSS v3 and v4 vectors were not read, so every row was labelled from CVSS 2.0 | [3 patches, 3 scripts, list of affected rows](./01-circl-vulntrain/delivered/README.md#2-november-2026-vulnerability-fstec-fix) | [Release notes 3.5.0](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.5.0/CHANGELOG.md), [pull request #28](https://github.com/vulnerability-lookup/VulnTrain/pull/28), [dataset card](https://huggingface.co/datasets/CIRCL/Vulnerability-FSTEC), [model card](https://huggingface.co/CIRCL/vulnerability-severity-classification-russian-ruRoberta-large), [1 more](#1b-vulnerability-fstec-november-2026) | **Accepted:** 3 commits in VulnTrain 3.5.0 (November 2026) |
 | [2](#2-ait-cam-lds-analysis-scripts) | [AIT](https://www.ait.ac.at/en/), Vienna | [CAM-LDS analysis scripts](https://github.com/ait-aecid/attack-manifestations-interpretation) | Addressed an issue described in AIT's README: identical prompts in 89 of 198 attack steps | [3 commits](./02-ait-cam-lds/delivered/) | [Commit history](https://github.com/ait-aecid/attack-manifestations-interpretation/commits?author=christian140903-sudo) (GitHub account) | **Accepted:** 3 commits on `main` |
 | [3](#3-aip-applause-plate-archive) | [AIP](https://www.aip.de/en/), Potsdam | [APPLAUSE](https://www.plate-archive.org/) plate archive, DR3 and DR4 | Swapped site latitude and longitude columns for two plate archives | [Report to the maintainers](./03-aip-applause/delivered/) | Errata [DR4](https://www.plate-archive.org/metadata/applause_dr4/plate/), [DR3](https://www.plate-archive.org/metadata/applause_dr3/plate/) | **Acknowledged:** correction announced |
-| [4](#4-oasis-csaf-tc-and-bsi-csaf-21-review) | [OASIS](https://www.oasis-open.org/) [CSAF TC](https://www.oasis-open.org/committees/csaf/); [BSI](https://www.bsi.bund.de/EN/Home/home_node.html) | [CSAF](https://www.csaf.io/) 2.1, public review of CSD04 | Under the new date rule, a converter would replace the date in 12,765 of 40,882 published CSAF 2.0 documents, moving 2,041 of them into a later year folder | [Review comment, counting script](./04-oasis-bsi-csaf/delivered/) | [Issue #1724](https://github.com/oasis-tcs/csaf/issues/1724), [BSI reply](https://groups.oasis-open.org/discussion/csd04-6-1-66-9-1-18-converted-documents-can-change-their-year-folder-requirement-11-1) | **Open:** tracked as issue #1724 |
-| [5](#5-stsci-and-mast-poss-i-plate-dates) | [STScI](https://github.com/spacetelescope) / MAST, Baltimore | POSS-I plate list of the [Digitized Sky Survey](https://gsss.stsci.edu/SkySurveys/Surveys.htm) | About three quarters of the listed POSS-I dates are one day early | [Correction package](./05-stsci-mast-poss1/delivered/) | Not credited publicly | **Delivered:** adoption not publicly documented |
+| [4](#4-oasis-csaf-tc-and-bsi-csaf-21-review) | [OASIS](https://www.oasis-open.org/) [CSAF TC](https://www.oasis-open.org/committees/csaf/); [BSI](https://www.bsi.bund.de/EN/Home/home_node.html) | [CSAF](https://www.csaf.io/) 2.1, public review of CSD04 | Under the new date rule, a converter would replace the date in 12,765 of 40,882 published CSAF 2.0 documents, moving 2,041 of them into a later year folder | [Review comment, counting script](./04-oasis-bsi-csaf/delivered/) | [Issue #1724](https://github.com/oasis-tcs/csaf/issues/1724), [BSI reply](https://groups.oasis-open.org/discussion/csd04-6-1-66-9-1-18-converted-documents-can-change-their-year-folder-requirement-11-1) | **Open:** tracked as issue #1724; the converter/date feedback is listed for 9 November (draft minutes) |
+| [5](#5-stsci-and-mast-poss-i-plate-dates) | [STScI](https://github.com/spacetelescope) / MAST, Baltimore | POSS-I plate list of the [Digitized Sky Survey](https://gsss.stsci.edu/SkySurveys/Surveys.htm) | About three quarters of the listed POSS-I dates are one day early; a paper by other authors ([arXiv:2611.02371](https://arxiv.org/abs/2611.02371)) also finds the dates one day early | [Correction package](./05-stsci-mast-poss1/delivered/) | Not credited publicly | **Delivered:** adoption not publicly documented |
 | [6](#6-paiec-2026-competition-entry) | [Stanford AIMS](https://aims.stanford.edu/) | [PAIEC](https://aims.stanford.edu/competition), a NeurIPS 2026 competition | The baseline loader sees 60 of 156 eligible graded benchmarks | [Code, report, 3 patches](./06-paiec-2026/delivered/) | Not credited publicly | **Delivered:** no public result yet |
 | [7](#7-tools-cited-by-others) | [agent-proven](https://github.com/MediaPlural/agent-proven), [ContextOS](https://github.com/contextosai/ContextOS) | Their documentation | — | [behaviorlock](https://github.com/christian140903-sudo/behaviorlock), [agent-invariants](https://github.com/christian140903-sudo/agent-invariants) | Links to my GitHub account | **Cited:** no usage documented |
 
@@ -88,6 +88,7 @@ split.
   - [GitHub release v3.4.0](https://github.com/vulnerability-lookup/VulnTrain/releases/tag/v3.4.0), 2026-10-29
   - [Technical report, web page (six mentions)](https://vulnerability-lookup.github.io/VulnTrain/vulnerability-scores-leakage-report.html), 2026-10-29: "the result of a careful external review by Christian Bucher"
   - [Technical report on Zenodo, doi:10.5281/zenodo.23760802](https://doi.org/10.5281/zenodo.23760802), 2026-10-29
+  - [Blog post on vulnerability-lookup.org](https://www.vulnerability-lookup.org/2026/10/29/improving-vulnerability-scores/), 2026-10-29: "These improvements come from a careful external review by Christian Bucher …"
   - [Pull request #27](https://github.com/vulnerability-lookup/VulnTrain/pull/27), merged 2026-10-29
   - [Docstring of `tools/dataset/check_split_leakage.py`](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.4.0/tools/dataset/check_split_leakage.py#L31), 2026-10-29
   - [Commit message of the commit that adds the technical report, `4dd7913`](https://github.com/vulnerability-lookup/VulnTrain/commit/4dd791365666e476953fab0c8994b625ad795c86), 2026-10-29: "… crediting Christian Bucher."
@@ -105,28 +106,31 @@ FSTEC of Russia, extracted via Vulnerability-Lookup. It is used to train the VLA
 ([dataset card](https://huggingface.co/datasets/CIRCL/Vulnerability-FSTEC))
 
 **What happened.** In CIRCL's words
-([CHANGELOG](https://github.com/vulnerability-lookup/VulnTrain/blob/8a770c608f87f7815814db8ca822ec3687d196a8/CHANGELOG.md)):
+([release notes of VulnTrain 3.5.0](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.5.0/CHANGELOG.md)):
 "BDU stores its v3 and v4 vectors without the `CVSS:3.x/` / `CVSS:4.0/` prefix,
-the parser rejected them silently, and every published row was labelled from CVSS 2.0. Reading them changes 21,458 of
-the 82,960 labels (25.9%)." On 3 November 2026 I delivered three patches (the stored v3 and v4 vectors are read; v4.0
+the parser rejected them silently, and every published row was labelled from CVSS 2.0. Reading them changes 21,457 of
+the 82,960 labels of the previous revision (25.9%)." On 3 November 2026 I delivered three patches (the stored v3 and v4 vectors are read; v4.0
 is scored as CVSS-B, like the other sources; `cve_id` holds one CVE id), the list of the 65,618 rows whose BDU record
 has a v3 or v4 vector, and the scripts behind it. CIRCL committed the three patches, added two changes of its own,
 merged all five commits into `main` with pull request #28 on 3 November 2026 and rebuilt the dataset (revision
-`a104085`).
+`a104085`). On 4 November 2026 it released them in VulnTrain 3.5.0 and retrained its classifier for Russian on the
+corrected dataset.
 
 - **What I delivered:** [`01-circl-vulntrain/delivered/vulnerability-fstec-fix/`](./01-circl-vulntrain/delivered/vulnerability-fstec-fix/):
   three patches, the list of affected rows with its counts, three scripts,
   [README](./01-circl-vulntrain/delivered/vulnerability-fstec-fix/README-EN.md).
 - **Where my name appears:**
-  - [CHANGELOG, section "Unreleased"](https://github.com/vulnerability-lookup/VulnTrain/blob/8a770c608f87f7815814db8ca822ec3687d196a8/CHANGELOG.md), 2026-11-03: "CVSS scores in `CIRCL/Vulnerability-FSTEC`, reported and fixed by Christian Bucher."
+  - [Release notes of VulnTrain 3.5.0 (CHANGELOG)](https://github.com/vulnerability-lookup/VulnTrain/blob/v3.5.0/CHANGELOG.md), 2026-11-04: "CVSS scores in `CIRCL/Vulnerability-FSTEC`, reported and fixed by Christian Bucher." Before the release, an earlier version of the entry stood [under "Unreleased"](https://github.com/vulnerability-lookup/VulnTrain/blob/8a770c608f87f7815814db8ca822ec3687d196a8/CHANGELOG.md) (2026-11-03).
+  - [GitHub release v3.5.0](https://github.com/vulnerability-lookup/VulnTrain/releases/tag/v3.5.0), 2026-11-04
   - [Pull request #28](https://github.com/vulnerability-lookup/VulnTrain/pull/28), merged 2026-11-03: "Fixes the CVSS scores of `CIRCL/Vulnerability-FSTEC`, reported by Christian Bucher …"
   - [Dataset card of `CIRCL/Vulnerability-FSTEC` (two mentions)](https://huggingface.co/datasets/CIRCL/Vulnerability-FSTEC), 2026-11-03: "Reported and fixed by Christian Bucher, see VulnTrain #28."
+  - [Model card of the retrained classifier for Russian (two mentions)](https://huggingface.co/CIRCL/vulnerability-severity-classification-russian-ruRoberta-large), 2026-11-04: "Thanks to Christian Bucher (christian140903-sudo) for finding and fixing the CVSS reading of the FSTEC dataset."
   - Commits authored under my GitHub account, committed 2026-11-03:
     [`483f4ee`](https://github.com/vulnerability-lookup/VulnTrain/commit/483f4ee9fc8b09216cac67d580852abb3063b798),
     [`947e608`](https://github.com/vulnerability-lookup/VulnTrain/commit/947e608a982580359773437cced1694748143af5),
     [`765d7b6`](https://github.com/vulnerability-lookup/VulnTrain/commit/765d7b667cdd933a758fbc40cedb003844841f0c);
     all seven of my VulnTrain commits are in the [commit list](https://github.com/vulnerability-lookup/VulnTrain/commits?author=christian140903-sudo)
-- **Status:** merged into `main` on 3 November 2026; listed under "Unreleased" in the CHANGELOG, not yet in a release.
+- **Status:** merged into `main` on 3 November 2026 and released in VulnTrain 3.5.0 on 4 November 2026.
 - **Full details:** [`01-circl-vulntrain/README.md`, part 2](./01-circl-vulntrain/README.md#part-2-vulnerability-fstec-november-2026)
 
 ## 2. AIT: CAM-LDS analysis scripts
@@ -189,7 +193,10 @@ its new `initial_release_date` rule (clause 9.1.18, test 6.1.66), under which a 
 date when it converts a published document. For 40,882 published CSAF 2.0 documents from 50 publishers, the date would be replaced in
 12,765 and move into a later year in 2,041, so that Requirement 11 files the converted document in a different year
 folder than the original. Thomas Schmidt (BSI) replied on the comment list, and the committee opened issue #1724,
-"created on behalf of Christian Bucher". The issue is open.
+"created on behalf of Christian Bucher". The issue is open. The draft minutes of the committee's meeting on
+28 October 2026 ([pull request #1730](https://github.com/oasis-tcs/csaf/pull/1730), not yet approved) record the discussion of a review
+comment on the converter's treatment of `initial_release_date` and list the converter/date feedback for discussion on
+9 November. The minutes do not name the comment's author.
 
 - **What I delivered:** [`04-oasis-bsi-csaf/delivered/`](./04-oasis-bsi-csaf/delivered/): the review comment as
   posted, and a counting script that reproduces its numbers from the public CIRCL dumps.
@@ -210,7 +217,10 @@ surveys of the Digitized Sky Survey, among them the first Palomar Observatory Sk
 plates in the Digitized Sky Survey. On about three quarters of the plates the listed date is one day early: it is the
 date on which the night began, not the UT date of the exposure. I reported this to the MAST helpdesk on 13 October 2026
 and published a correction package with one row per list row (1,870 POSS-I rows), evidence and scripts, under CC BY
-4.0. Whether STScI has adopted it is not publicly documented.
+4.0. Whether STScI has adopted it is not publicly documented. A paper by other authors (J. Murtagh, C. O. Chandler,
+M. Jurić et al., [arXiv:2611.02371](https://arxiv.org/abs/2611.02371), 2 November 2026) also reports the offset: "we found that the
+dates listed for the SSS/SHS plates and STScI scans of the first Palomar Observatory Sky Survey (POSS-I …) are one day
+early." The paper does not refer to my package.
 
 - **What I delivered:** [`05-stsci-mast-poss1/delivered/`](./05-stsci-mast-poss1/delivered/): the correction package.
 - **Where my name appears:** no public text by STScI names me; my name is in the package itself.

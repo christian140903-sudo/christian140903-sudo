@@ -4,9 +4,10 @@ Vienna, Austria
 
 ### [Portfolio: what I found, delivered, and where I am credited →](https://github.com/christian140903-sudo/christian140903-sudo/tree/main/portfolio)
 
-First example: **CIRCL** (Computer Incident Response Center Luxembourg) released four commits from me in VulnTrain
-3.4.0. They fix train/test leakage and the CVSS 4.0 reading in the dataset behind CIRCL's VLAI severity classifiers;
-the release notes say "reported and fixed by Christian Bucher".
+First example: **CIRCL** (Computer Incident Response Center Luxembourg) released seven commits from me in VulnTrain
+3.4.0 and 3.5.0. They fix two datasets of CIRCL's VLAI severity classifiers: train/test leakage and the CVSS 4.0
+reading in one, the CVSS scores in the one for Russian. Both release notes say "reported and fixed by Christian
+Bucher".
 [Details →](https://github.com/christian140903-sudo/christian140903-sudo/blob/main/portfolio/01-circl-vulntrain/README.md)
 
 ## Contributions
@@ -15,7 +16,8 @@ Each entry links to its page in the portfolio, with the public record, the deliv
 
 - **CIRCL**: train/test leakage and two readings of CVSS 4.0 in the dataset `CIRCL/vulnerability-scores`. Four
   commits accepted into VulnTrain 3.4.0; CIRCL rebuilt the dataset, retrained its RoBERTa classifier and published a
-  technical report. A second fix, for the CVSS scores in `CIRCL/Vulnerability-FSTEC`, was merged on 3 November 2026
+  technical report. A second fix, for the CVSS scores in `CIRCL/Vulnerability-FSTEC`, was released in VulnTrain 3.5.0
+  on 4 November 2026, and CIRCL retrained its classifier for Russian on the corrected dataset
   ([details of the second fix](https://github.com/christian140903-sudo/christian140903-sudo/blob/main/portfolio/01-circl-vulntrain/README.md#part-2-vulnerability-fstec-november-2026)).
   [Details](https://github.com/christian140903-sudo/christian140903-sudo/blob/main/portfolio/01-circl-vulntrain/README.md)
 - **AIT Austrian Institute of Technology**: three commits accepted into `main` of the repository that accompanies the
@@ -29,11 +31,13 @@ Each entry links to its page in the portfolio, with the public record, the deliv
   [Details](https://github.com/christian140903-sudo/christian140903-sudo/blob/main/portfolio/03-aip-applause/README.md)
 - **OASIS CSAF Technical Committee and BSI**: public review comment on CSAF 2.1. Under the new `initial_release_date`
   rule, a converter would replace that date in 12,765 of 40,882 published CSAF 2.0 documents. Tracked as issue #1724,
-  "created on behalf of Christian Bucher"; open.
+  "created on behalf of Christian Bucher"; open. The committee's draft minutes of 28 October list the
+  converter/date feedback for discussion on 9 November.
   [Details](https://github.com/christian140903-sudo/christian140903-sudo/blob/main/portfolio/04-oasis-bsi-csaf/README.md)
 - **Space Telescope Science Institute (STScI) / MAST**: correction package for the POSS-I plate dates in the MAST plate
   list of the Digitized Sky Survey; about three quarters of the listed dates are one day early. Reported to the MAST
-  helpdesk; adoption not publicly documented.
+  helpdesk; adoption not publicly documented. A paper by other authors (arXiv:2611.02371, November 2026) also
+  finds the POSS-I dates one day early.
   [Details](https://github.com/christian140903-sudo/christian140903-sudo/blob/main/portfolio/05-stsci-mast-poss1/README.md)
 - **NeurIPS 2026 Predictive AI Evaluation Competition (PAIEC, Stanford AIMS)**: competition entry with code and report,
   including a data-quality audit of the competition data: the public baseline loader sees only 60 of 156 eligible graded

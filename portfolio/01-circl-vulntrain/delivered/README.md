@@ -9,8 +9,8 @@ public copy with a note at the top.
   check, an evaluation script and unit tests for `CIRCL/vulnerability-scores`. CIRCL released the patches and the
   leakage check in VulnTrain 3.4.0. [Details below](#1-october-2026-vulnerability-scores-fix).
 - [`vulnerability-fstec-fix/`](./vulnerability-fstec-fix/), delivered on 3 November 2026: three patches, the list of
-  affected rows with its counts, and three scripts for `CIRCL/Vulnerability-FSTEC`. CIRCL merged the patches into
-  `main` on 3 November 2026. [Details below](#2-november-2026-vulnerability-fstec-fix).
+  affected rows with its counts, and three scripts for `CIRCL/Vulnerability-FSTEC`. CIRCL released the patches in
+  VulnTrain 3.5.0 on 4 November 2026. [Details below](#2-november-2026-vulnerability-fstec-fix).
 
 ## 1. October 2026: `vulnerability-scores-fix/`
 
@@ -48,9 +48,9 @@ Vulnerability-Lookup dump `fstec.ndjson` of 2026-10-04.
 
 | File | What it is | Public today |
 |---|---|---|
-| [`patches/0001-fix-dataset-read-the-FSTEC-CVSS-v3-and-v4-vectors-mi.patch`](./vulnerability-fstec-fix/patches/0001-fix-dataset-read-the-FSTEC-CVSS-v3-and-v4-vectors-mi.patch) | Reads the stored v3 and v4 vectors: adds the missing `CVSS:3.0/` / `CVSS:4.0/` prefix and reports a vector that still cannot be read (`git format-patch`) | Same code in commit [`483f4ee`](https://github.com/vulnerability-lookup/VulnTrain/commit/483f4ee9fc8b09216cac67d580852abb3063b798), merged into `main` |
-| [`patches/0002-fix-dataset-score-the-FSTEC-CVSS-4.0-vectors-as-CVSS.patch`](./vulnerability-fstec-fix/patches/0002-fix-dataset-score-the-FSTEC-CVSS-4.0-vectors-as-CVSS.patch) | Scores the FSTEC v4.0 vectors with `cvss4_score()`, i.e. CVSS-B like every other source | Same code in commit [`947e608`](https://github.com/vulnerability-lookup/VulnTrain/commit/947e608a982580359773437cced1694748143af5), merged into `main` |
-| [`patches/0003-chg-dataset-FSTEC-cve_id-one-CVE-id-other-identifier.patch`](./vulnerability-fstec-fix/patches/0003-chg-dataset-FSTEC-cve_id-one-CVE-id-other-identifier.patch) | `cve_id` holds the first CVE id; the BDU field of other identifiers is kept in a new column `other_identifiers` | Same code in commit [`765d7b6`](https://github.com/vulnerability-lookup/VulnTrain/commit/765d7b667cdd933a758fbc40cedb003844841f0c), merged into `main` |
+| [`patches/0001-fix-dataset-read-the-FSTEC-CVSS-v3-and-v4-vectors-mi.patch`](./vulnerability-fstec-fix/patches/0001-fix-dataset-read-the-FSTEC-CVSS-v3-and-v4-vectors-mi.patch) | Reads the stored v3 and v4 vectors: adds the missing `CVSS:3.0/` / `CVSS:4.0/` prefix and reports a vector that still cannot be read (`git format-patch`) | Same code in commit [`483f4ee`](https://github.com/vulnerability-lookup/VulnTrain/commit/483f4ee9fc8b09216cac67d580852abb3063b798), VulnTrain 3.5.0 |
+| [`patches/0002-fix-dataset-score-the-FSTEC-CVSS-4.0-vectors-as-CVSS.patch`](./vulnerability-fstec-fix/patches/0002-fix-dataset-score-the-FSTEC-CVSS-4.0-vectors-as-CVSS.patch) | Scores the FSTEC v4.0 vectors with `cvss4_score()`, i.e. CVSS-B like every other source | Same code in commit [`947e608`](https://github.com/vulnerability-lookup/VulnTrain/commit/947e608a982580359773437cced1694748143af5), VulnTrain 3.5.0 |
+| [`patches/0003-chg-dataset-FSTEC-cve_id-one-CVE-id-other-identifier.patch`](./vulnerability-fstec-fix/patches/0003-chg-dataset-FSTEC-cve_id-one-CVE-id-other-identifier.patch) | `cve_id` holds the first CVE id; the BDU field of other identifiers is kept in a new column `other_identifiers` | Same code in commit [`765d7b6`](https://github.com/vulnerability-lookup/VulnTrain/commit/765d7b667cdd933a758fbc40cedb003844841f0c), VulnTrain 3.5.0 |
 | [`data/affected_rows.csv.gz`](./vulnerability-fstec-fix/data/affected_rows.csv.gz) | The 65,618 rows of revision `5bd7fba` whose BDU record has a v3 or v4 vector, with identifiers, stored vectors, scores and labels; `label_changed` = `yes` for 21,458 (783 KB; no titles or descriptions) | Not in the repository |
 | [`data/affected_rows_summary.json`](./vulnerability-fstec-fix/data/affected_rows_summary.json) | Column descriptions of the list, sources with checksums, the counts | Not in the repository |
 | [`data/count_output.json`](./vulnerability-fstec-fix/data/count_output.json) | Output of `count_fstec_labels.py`, to compare a rerun with | Not in the repository |

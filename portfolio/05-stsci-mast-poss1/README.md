@@ -3,7 +3,7 @@
 [← Back to overview](../README.md) · [What I delivered](./delivered/) · [Where my name appears](#where-my-name-appears) · [How to verify](#how-to-verify)
 
 **Status: delivered.** Correction package public under CC BY 4.0; adoption by STScI is not publicly documented
-(as of 3 November 2026).
+(as of 3 November 2026). A paper by other authors ([arXiv:2611.02371](https://arxiv.org/abs/2611.02371)) also finds the POSS-I dates one day early.
 
 ## Who they are
 
@@ -66,6 +66,16 @@ The package `poss1-plate-dates`, in [`delivered/poss1-plate-dates/`](./delivered
 Not publicly documented. Whether STScI has changed the plate list, the DSS database or the FITS headers is not recorded
 in any public source I know of (as of 3 November 2026).
 
+**A paper by other authors.** On 2 November 2026, J. Murtagh, C. O. Chandler, M. Jurić and co-authors wrote in
+[arXiv:2611.02371](https://arxiv.org/abs/2611.02371), Sect. 2.1:
+
+> In doing so, we found that the dates listed for the SSS/SHS plates and STScI scans of the first Palomar Observatory
+> Sky Survey (POSS-I; R. L. Pennington et al. 1993) are one day early. Known asteroids recorded on these plates appear
+> at the positions predicted for the listed date plus one day – 2026 ED<sub>138</sub> was found on these plates only
+> after this correction was applied.
+
+The paper does not refer to my package.
+
 ## Where my name appears
 
 No public text by STScI names me. My name appears only in the package itself: its author line and the suggested credit
@@ -78,10 +88,12 @@ line "C. Bucher (2026), POSS-I plate dates in the MAST plate list".
 | 2026-10-13 | Findings reported to the MAST helpdesk (according to the package README). |
 | 2026-10-14 | Version date of the package. |
 | 2026-10-17 | Package published in this repository. |
+| 2026-11-02 | arXiv:2611.02371 (other authors) reports that the POSS-I dates of the STScI scans are one day early. |
 
 ## Status
 
-**Delivered.** Public under CC BY 4.0; adoption by STScI not publicly documented.
+**Delivered.** Public under CC BY 4.0; adoption by STScI not publicly documented. A paper by other authors
+(arXiv:2611.02371) also finds the POSS-I dates one day early.
 
 ## How to verify
 
@@ -93,9 +105,10 @@ line "C. Bucher (2026), POSS-I plate dates in the MAST plate list".
 3. **Rebuild:** `bash scripts/run_all.sh workdir` downloads the two public inputs (the 2024 MAST plate list and VizieR
    catalogue VI/25), checks their SHA-256, rebuilds the tables (Python ≥ 3.8, numpy, astropy) and compares every output
    byte by byte with the package (README, section 5).
+4. **The paper by other authors:** [arXiv:2611.02371](https://arxiv.org/abs/2611.02371), Sect. 2.1.
 
 Related: [3. AIP](../03-aip-applause/README.md), another archive of photographic plates.
 
 ---
 
-Last checked: 3 November 2026 · [← Back to overview](../README.md)
+Last checked: 7 November 2026 (STScI's own pages: 3 November 2026) · [← Back to overview](../README.md)

@@ -3,7 +3,8 @@
 [← Back to overview](../README.md) · [What I delivered](./delivered/) · [Where my name appears](#where-my-name-appears) · [How to verify](#how-to-verify)
 
 **Status: open.** The review comment is tracked as [issue #1724](https://github.com/oasis-tcs/csaf/issues/1724); the
-committee has not decided yet.
+committee has not decided yet. The draft minutes of its meeting on 28 October 2026 list the converter/date feedback
+for discussion on 9 November.
 
 ## Who they are
 
@@ -58,6 +59,16 @@ per-document list and the counting script. In [`delivered/`](./delivered/):
 
 - Thomas Schmidt (BSI) replied on the comment list, and the committee opened
   [issue #1724](https://github.com/oasis-tcs/csaf/issues/1724) to track the comment (label `csdpr04-v-2-1-feedback`).
+- The draft minutes of the TC meeting on 28 October 2026
+  ([pull request #1730](https://github.com/oasis-tcs/csaf/pull/1730), file `meeting_minutes/2026/2026-10-28.md`, opened
+  2026-11-03, not yet approved) record the discussion of a review comment that "concerned the converter's treatment of
+  an advisory whose `initial_release_date` differs from the initial entry in its revision history". The section ends:
+
+  > Members were asked to consider the trade-off before the **November 9** meeting.
+  > **No resolution or change to the conversion rules was approved at this meeting.**
+
+  Among the action items: "**TC members** to review the converter/date feedback and prepare their positions for
+  discussion on November 9". The minutes do not name the author of the comment.
 - Nothing has been decided: the issue is open, and no change to the specification is documented.
 
 ## Where my name appears
@@ -81,13 +92,17 @@ My own comment in the same thread is signed with my name.
 
 | Date | Event |
 |---|---|
+| October 2026 | Comment on the `csaf-comment` list; the list shows relative dates only. |
+| 2026-10-28 | TC meeting: a review comment on the converter and `initial_release_date` is discussed; according to the draft minutes (pull request #1730, opened 2026-11-03), it "had not yet been transferred into the GitHub issue list". |
 | 2026-10-28 | Issue #1724 opened in the CSAF TC's repository to track the comment. |
-| October 2026 | Comment on the `csaf-comment` list and reply from Thomas Schmidt (BSI); the list shows relative dates only. |
+| October 2026 | Reply from Thomas Schmidt (BSI) on the list, with the link to issue #1724. |
+| 2026-11-09 | TC meeting ("the next additional TC meeting" in the draft minutes); the converter/date feedback is listed for discussion. |
 | — | Decision by the committee: pending. |
 
 ## Status
 
-**Open.** No decision by the committee yet.
+**Open.** No decision by the committee yet; the draft minutes of 28 October list the converter/date feedback for
+discussion on 9 November.
 
 ## How to verify
 
@@ -98,9 +113,11 @@ My own comment in the same thread is signed with my name.
    [CSAF 2.1 CSD04 document](https://docs.oasis-open.org/csaf/csaf/v2.1/csd04/csaf-v2.1-csd04.html).
 4. Recount the numbers from the public dumps with the [counting script](./delivered/count_6_1_66.py); the steps are in
    [`delivered/README.md`](./delivered/README.md).
+5. Open [pull request #1730](https://github.com/oasis-tcs/csaf/pull/1730), file `meeting_minutes/2026/2026-10-28.md`, section
+   "CSAF 2.1 CSD04 Public Review".
 
 Related: [1. CIRCL](../01-circl-vulntrain/README.md), whose Vulnerability-Lookup dumps provided the documents.
 
 ---
 
-Last checked: 3 November 2026 · [← Back to overview](../README.md)
+Last checked: 7 November 2026 · [← Back to overview](../README.md)
