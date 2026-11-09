@@ -31,8 +31,9 @@ Each entry links to its page in the portfolio, with the public record, the deliv
   [Details](https://github.com/christian140903-sudo/christian140903-sudo/blob/main/portfolio/03-aip-applause/README.md)
 - **OASIS CSAF Technical Committee and BSI**: public review comment on CSAF 2.1. Under the new `initial_release_date`
   rule, a converter would replace that date in 12,765 of 40,882 published CSAF 2.0 documents. Tracked as issue #1724,
-  "created on behalf of Christian Bucher"; open. The committee's draft minutes of 28 October list the
-  converter/date feedback for discussion on 9 November.
+  "created on behalf of Christian Bucher". On 9 November 2026 the comment was resolved with an informative note on the
+  year-folder change, merged for CSAF 2.1 CS01, the next stage of the standard; the committee's comment resolution
+  log lists "CB = Christian Bucher" and marks the comment "Completed". CS01 is not published yet.
   [Details](https://github.com/christian140903-sudo/christian140903-sudo/blob/main/portfolio/04-oasis-bsi-csaf/README.md)
 - **Space Telescope Science Institute (STScI) / MAST**: correction package for the POSS-I plate dates in the MAST plate
   list of the Digitized Sky Survey; about three quarters of the listed dates are one day early. Reported to the MAST

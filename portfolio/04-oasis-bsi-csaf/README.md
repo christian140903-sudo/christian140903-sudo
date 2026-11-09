@@ -2,9 +2,12 @@
 
 [← Back to overview](../README.md) · [What I delivered](./delivered/) · [Where my name appears](#where-my-name-appears) · [How to verify](#how-to-verify)
 
-**Status: open.** The review comment is tracked as [issue #1724](https://github.com/oasis-tcs/csaf/issues/1724); the
-committee has not decided yet. The draft minutes of its meeting on 28 October 2026 list the converter/date feedback
-for discussion on 9 November.
+**Status: resolved, merged for CSAF 2.1 CS01.** On 9 November 2026,
+[pull request #1739](https://github.com/oasis-tcs/csaf/pull/1739), "Comment Resolution CSD04PR: #1724", was merged into
+the committee's editor revision, and the editor revision into `master`. It adds an informative note on the year-folder
+change in three places of the specification. At its meeting that day, the committee passed a motion to accept this and
+other pull requests "as comment resolution to the respective issues"; its comment resolution log marks the comment
+"Completed", and issue #1724 was closed as completed. CSAF 2.1 CS01 is not published yet.
 
 ## Who they are
 
@@ -26,7 +29,10 @@ Public review comment on the committee's comment list `csaf-comment`: under the 
 CSAF 2.1 CSD04 (clause 9.1.18, test 6.1.66), a converter from CSAF 2.0 would replace that date in 12,765 of 40,882
 published CSAF 2.0 documents and move it into a later year in 2,041 of them, so that a converted document can end up in
 a different year folder than the original. Thomas Schmidt (BSI) replied, and the committee tracks the comment as issue
-#1724, "created on behalf of Christian Bucher". The issue is open.
+#1724, "created on behalf of Christian Bucher". On 9 November 2026 the comment was resolved, and the change was merged
+for CS01: an informative note now states that the conversion or the quick fix can move a document from one
+year folder to another, and advises issuing parties to check whether that reflects the facts. The committee's comment
+resolution log lists "CB = Christian Bucher" and marks the comment "Completed".
 
 ## What I found
 
@@ -57,19 +63,54 @@ per-document list and the counting script. In [`delivered/`](./delivered/):
 
 ## What changed
 
-- Thomas Schmidt (BSI) replied on the comment list, and the committee opened
-  [issue #1724](https://github.com/oasis-tcs/csaf/issues/1724) to track the comment (label `csdpr04-v-2-1-feedback`).
-- The draft minutes of the TC meeting on 28 October 2026
-  ([pull request #1730](https://github.com/oasis-tcs/csaf/pull/1730), file `meeting_minutes/2026/2026-10-28.md`, opened
-  2026-11-03, not yet approved) record the discussion of a review comment that "concerned the converter's treatment of
-  an advisory whose `initial_release_date` differs from the initial entry in its revision history". The section ends:
+- **Resolution merged, 9 November 2026.** [Pull request #1739](https://github.com/oasis-tcs/csaf/pull/1739),
+  "Comment Resolution CSD04PR: #1724", was merged into the branch `editor-revision-2026-11-09` (merge commit
+  [`5425f92`](https://github.com/oasis-tcs/csaf/commit/5425f92370d40ea73c022cb239bfd401eed751f4)). Its description
+  includes: "add informative comment to point out year change problem and recommend fixing mistakes to reflect facts". It
+  adds the same note to the rules of both converters, the CVRF CSAF Converter (clause 9.1.5) and the CSAF 2.0 to
+  CSAF 2.1 Converter (clause 9.1.18):
 
-  > Members were asked to consider the trade-off before the **November 9** meeting.
-  > **No resolution or change to the conversion rules was approved at this meeting.**
+  > If the year of the `initial_release_date` changed during this conversion step
+  > it can lead to a situation where a CSAF document moves from one year folder to another
+  > (see `[sec](#requirement-11-one-folder-per-year)`).
+  > Issuing parties are strongly advised to double-check whether that conversion reflects the facts.
+  > If that is not the case, the issuing party should correct the mistake in the input file.
 
-  Among the action items: "**TC members** to review the converter/date feedback and prepare their positions for
-  discussion on November 9". The minutes do not name the author of the comment.
-- Nothing has been decided: the issue is open, and no change to the specification is documented.
+  and a matching note after the quick fix of test 6.1.66:
+
+  > If the year of the `initial_release_date` changed during the quick fix
+  > this can lead to a situation where a CSAF document moves from one year folder to another (see `[sec](#requirement-11-one-folder-per-year)`).
+  > Issuing parties are strongly advised to double-check whether this reflects the facts.
+  > If that is not the case, the issuing party should correct the mistake by updating the revision history.
+
+  `[sec](#requirement-11-one-folder-per-year)` is the source text's cross-reference to Requirement 11. The conversion
+  rule itself and its warning are unchanged.
+- **Accepted as comment resolution, 9 November 2026.** The minutes of that day's TC meeting
+  ([issue #1743](https://github.com/oasis-tcs/csaf/issues/1743), "Meeting minutes 2026-11-09") record a "Super Motion":
+
+  > Motion to accept the PRs as comment resolution to the respective issues and mark them as "Completed", …
+
+  The same motion classifies the changes as non-material. Its list includes "Comment Resolution CSD04PR: #1724 #1739",
+  and the result reads "… no objections, discussions, concerns => motion passed". A second motion, "to request a ballot
+  to promote CSAF 2.1 CSD04 with the non-material changes from the editor revision" to CSAF 2.1 CS01, also passed.
+  Pull requests #1739 and #1747 carry the label `motion_passed`.
+- **Editor revision merged into `master`, 9 November 2026.** The editor revision is
+  [pull request #1747](https://github.com/oasis-tcs/csaf/pull/1747), "CSAF 2.1 CSD04 Public Feedback Resolution and
+  Editor revision for TC meeting 2026-11-09". It renames the draft from CSD04 to CS01 and lists under "Editorial
+  Changes": "fixes CSD04 6.1.66 / 9.1.18: converted documents can change their year folder (Requirement 11) #1724
+  (#1739)". It was merged into `master` that evening (merge commit
+  [`c74c79a`](https://github.com/oasis-tcs/csaf/commit/c74c79aeae3bb847a1ef394ba456bd597dd49a0d)), which is tagged
+  `csaf-2.1-cs-01-20261109-rc1`. CSAF 2.1 CS01 is not published yet: the
+  [CSAF 2.1 folder on docs.oasis-open.org](https://docs.oasis-open.org/csaf/csaf/v2.1/) lists the stages up to CSD04.
+- **Issue #1724** was closed as completed with pull request #1747 on 9 November 2026. Since 7 November 2026 it has
+  been assigned to `tschmidtb51` and carries the labels `editor-revision` ("already worked on in the editor revision")
+  and `csaf 2.1`.
+- **Before that:** Thomas Schmidt (BSI) replied on the comment list, and the committee opened issue #1724 to track the
+  comment (label `csdpr04-v-2-1-feedback`). The draft minutes of the TC meeting on 28 October 2026
+  ([pull request #1730](https://github.com/oasis-tcs/csaf/pull/1730);
+  [file at commit `694df97`](https://github.com/oasis-tcs/csaf/blob/694df97606c36576920e08964a0a1ae1248e6aa3/meeting_minutes/2026/2026-10-28.md))
+  record the discussion of a review comment on the converter's treatment of `initial_release_date`; TC members were to
+  prepare their positions for 9 November.
 
 ## Where my name appears
 
@@ -86,38 +127,73 @@ per-document list and the counting script. In [`delivered/`](./delivered/):
    > thank you for commenting on CSAF 2.1 CSD04. We have opened an issue to track your comment:
    > https://github.com/oasis-tcs/csaf/issues/1724
 
-My own comment in the same thread is signed with my name.
+3. **Comment resolution log** of the CSD04 public review, `csaf_2.1/comment_resolution/log_from_csd04pr.md`: drafted
+   on 2026-11-07 in [pull request #1735](https://github.com/oasis-tcs/csaf/pull/1735)
+   ([commit `17ee1e5`](https://github.com/oasis-tcs/csaf/commit/17ee1e59d562d580d453ee80cd43a0110dc2cd95)), and part of
+   the committee's editor revision, now merged into `master`, since 9 November 2026; with the decisions of that day at
+   [commit `74ec423`](https://github.com/oasis-tcs/csaf/blob/74ec4239480ce5d83f9a56053ec4559b6d5b93a6/csaf_2.1/comment_resolution/log_from_csd04pr.md).
+   Among the abbreviations:
+
+   > CB = Christian Bucher
+
+   Item 4 of the table, dated 2026-10-28, has the commenter "CB" and links to issue #1724, "CSD04 6.1.66 / 9.1.18:
+   converted documents can change their year folder (Requirement 11)". Since 9 November 2026 it lists the resolution
+   "Comment Resolution CSD04PR: #1724" (pull request #1739) and the disposition "Completed", which, according to the
+   log, "indicates that the editors have implemented the changes on which the TC decided".
+
+My own comment in the `csaf-comment` thread (item 2) is signed with my name.
 
 ## Timeline
 
 | Date | Event |
 |---|---|
-| October 2026 | Comment on the `csaf-comment` list; the list shows relative dates only. |
-| 2026-10-28 | TC meeting: a review comment on the converter and `initial_release_date` is discussed; according to the draft minutes (pull request #1730, opened 2026-11-03), it "had not yet been transferred into the GitHub issue list". |
+| 2026-10-28 | Comment on the `csaf-comment` list (date as given in the committee's comment resolution log). |
+| 2026-10-28 | TC meeting: a review comment on the converter's treatment of `initial_release_date` is discussed (draft minutes, pull request #1730). |
 | 2026-10-28 | Issue #1724 opened in the CSAF TC's repository to track the comment. |
 | October 2026 | Reply from Thomas Schmidt (BSI) on the list, with the link to issue #1724. |
-| 2026-11-09 | TC meeting ("the next additional TC meeting" in the draft minutes); the converter/date feedback is listed for discussion. |
-| — | Decision by the committee: pending. |
+| 2026-11-07 | Comment resolution log drafted in pull request #1735 ([`17ee1e5`](https://github.com/oasis-tcs/csaf/commit/17ee1e59d562d580d453ee80cd43a0110dc2cd95)); it lists "CB = Christian Bucher". Issue #1724 assigned to `tschmidtb51` and labelled `editor-revision`. First commit of the resolution ([`8f06f33`](https://github.com/oasis-tcs/csaf/commit/8f06f33fab3e28420f14e5b6188885b3caf7e83b)). |
+| 2026-11-09 | Second commit of the resolution ([`0f014c2`](https://github.com/oasis-tcs/csaf/commit/0f014c2262c319b235d0c776f43e00a3866fc58a), "make year change explicit"). |
+| 2026-11-09 | TC meeting: motions passed to accept the resolution pull requests, among them #1739 for #1724, as comment resolutions, and to request a ballot to promote CSD04 with these changes to CS01 (minutes in issue #1743). |
+| 2026-11-09 | Pull request #1735 merged into the editor revision: the comment resolution log is now part of it. |
+| 2026-11-09 | Pull request #1739 merged into the editor revision (merge commit `5425f92`). |
+| 2026-11-09 | Comment resolution log updated with the decisions of that day's meeting: item 4 acknowledged on 2026-11-09, resolution "Comment Resolution CSD04PR: #1724" (pull request #1739), disposition "Completed" ([commit `74ec423`](https://github.com/oasis-tcs/csaf/commit/74ec4239480ce5d83f9a56053ec4559b6d5b93a6)). |
+| 2026-11-09 | Editor revision merged into `master` with pull request #1747 (merge commit `c74c79a`); issue #1724 closed as completed; the merge commit is tagged `csaf-2.1-cs-01-20261109-rc1`. |
+| — | Ballot on CS01 and publication: pending. |
 
 ## Status
 
-**Open.** No decision by the committee yet; the draft minutes of 28 October list the converter/date feedback for
-discussion on 9 November.
+**Resolved, merged for CSAF 2.1 CS01.** The resolution (pull request #1739) is merged into the editor revision and,
+with pull request #1747, into `master`; the committee accepted it as comment resolution on 9 November 2026 (minutes in
+issue #1743); the committee's comment resolution log marks item 4 "Completed"; issue #1724 is closed as completed.
+Not done yet: the ballot on CS01 and its publication.
 
 ## How to verify
 
 1. Open the [comment thread](https://groups.oasis-open.org/discussion/csd04-6-1-66-9-1-18-converted-documents-can-change-their-year-folder-requirement-11-1):
    the comment, the reply and its signature.
-2. Open [issue #1724](https://github.com/oasis-tcs/csaf/issues/1724): first sentence, label, status.
-3. The rules referred to (clause 9.1.18, test 6.1.66, Requirement 11, section 7.4) are in the
+2. Open [issue #1724](https://github.com/oasis-tcs/csaf/issues/1724): first sentence, labels, assignee, status.
+3. Open [pull request #1739](https://github.com/oasis-tcs/csaf/pull/1739): merged into `editor-revision-2026-11-09`,
+   two commits, label `motion_passed`. The note as merged, at merge commit `5425f92`:
+   [CVRF CSAF Converter](https://github.com/oasis-tcs/csaf/blob/5425f92370d40ea73c022cb239bfd401eed751f4/csaf_2.1/prose/edit/src/conformance-01-cls-05-cvrf-converter.md?plain=1#L238-L242),
+   [CSAF 2.0 to CSAF 2.1 Converter](https://github.com/oasis-tcs/csaf/blob/5425f92370d40ea73c022cb239bfd401eed751f4/csaf_2.1/prose/edit/src/conformance-01-cls-18-csaf-2-0-converter.md?plain=1#L408-L412),
+   [test 6.1.66](https://github.com/oasis-tcs/csaf/blob/5425f92370d40ea73c022cb239bfd401eed751f4/csaf_2.1/prose/edit/src/tests-01-mndtr-66-non-draft-initial-release-date.md?plain=1#L37-L41).
+4. Open the [comment resolution log at commit `74ec423`](https://github.com/oasis-tcs/csaf/blob/74ec4239480ce5d83f9a56053ec4559b6d5b93a6/csaf_2.1/comment_resolution/log_from_csd04pr.md?plain=1#L13):
+   line 13 ("CB = Christian Bucher") and item 4 in line 24, with "Completed" in the last column.
+5. Open [issue #1743](https://github.com/oasis-tcs/csaf/issues/1743), "Meeting minutes 2026-11-09": the "Super Motion"
+   with the line "Comment Resolution CSD04PR: #1724 #1739", and the motion on CS01.
+6. Open [pull request #1747](https://github.com/oasis-tcs/csaf/pull/1747): merged into `master` on 9 November 2026,
+   section "Editorial Changes". The
+   [CSAF 2.1 folder on docs.oasis-open.org](https://docs.oasis-open.org/csaf/csaf/v2.1/) shows the published stages.
+7. The rules referred to (clause 9.1.18, test 6.1.66, Requirement 11, section 7.4) are in the
    [CSAF 2.1 CSD04 document](https://docs.oasis-open.org/csaf/csaf/v2.1/csd04/csaf-v2.1-csd04.html).
-4. Recount the numbers from the public dumps with the [counting script](./delivered/count_6_1_66.py); the steps are in
+8. Recount the numbers from the public dumps with the [counting script](./delivered/count_6_1_66.py); the steps are in
    [`delivered/README.md`](./delivered/README.md).
-5. Open [pull request #1730](https://github.com/oasis-tcs/csaf/pull/1730), file `meeting_minutes/2026/2026-10-28.md`, section
-   "CSAF 2.1 CSD04 Public Review".
+9. Open [pull request #1730](https://github.com/oasis-tcs/csaf/pull/1730) (draft minutes of 28 October 2026) or the
+   [file at commit `694df97`](https://github.com/oasis-tcs/csaf/blob/694df97606c36576920e08964a0a1ae1248e6aa3/meeting_minutes/2026/2026-10-28.md),
+   section "CSAF 2.1 CSD04 Public Review".
 
 Related: [1. CIRCL](../01-circl-vulntrain/README.md), whose Vulnerability-Lookup dumps provided the documents.
 
 ---
 
-Last checked: 7 November 2026 · [← Back to overview](../README.md)
+Last checked: 9 November 2026 · [← Back to overview](../README.md)

@@ -5,7 +5,9 @@
 **Delivered:** a public review comment on CSAF 2.1 Committee Specification Draft 04, posted on the OASIS `csaf-comment`
 list in October 2026.
 **Public today:** tracked as [issue #1724](https://github.com/oasis-tcs/csaf/issues/1724) in the CSAF TC's repository
-("The below issue was created on behalf of Christian Bucher:"); open.
+("The below issue was created on behalf of Christian Bucher:"); resolved on 9 November 2026 and merged for CS01
+([pull request #1739](https://github.com/oasis-tcs/csaf/pull/1739); details under
+[What changed](../README.md#what-changed)).
 
 | File | What it is | Public today |
 |---|---|---|
