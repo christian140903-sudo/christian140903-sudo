@@ -78,9 +78,11 @@ says about them: "the per-row flags match his on all 82,314 test rows".
   of `CIRCL/vulnerability-scores` (29 October 2026), "Leakage-free group split (80/10/10) and CVSS-B scoring for CVSS 4.0".
 - **Classifier retrained:** revision
   [`064daa2`](https://huggingface.co/CIRCL/vulnerability-severity-classification-roberta-base/commit/064daa20420f89e47cf1667cc7228e4ae09b0918)
-  (29 October 2026) scores 74.15% on the leakage-free test split (macro F1 0.646). The
-  [model card](https://huggingface.co/CIRCL/vulnerability-severity-classification-roberta-base) explains the new split in
-  a "Note (October 2026)". From the report:
+  (29 October 2026) scores 74.15% on the leakage-free test split (macro F1 0.646). The model card explains the new
+  split in a note, headed "Note (October 2026)"
+  ([at revision `d5cd435`](https://huggingface.co/CIRCL/vulnerability-severity-classification-roberta-base/blob/d5cd435c9c172b44e53d2133c6957455e0be0df9/README.md))
+  and "Note:" in the [current card](https://huggingface.co/CIRCL/vulnerability-severity-classification-roberta-base).
+  From the report:
 
   > Figures reported on the previous split are about 7 points higher for RoBERTa than the leakage-free figures, and are
   > superseded by the new ones.
@@ -218,7 +220,7 @@ published. The other files of the delivery (`eval_seen_unseen.py`, the unit test
    model commit
    [`064daa2`](https://huggingface.co/CIRCL/vulnerability-severity-classification-roberta-base/commit/064daa20420f89e47cf1667cc7228e4ae09b0918)
    and the "Note (October 2026)" in the
-   [model card](https://huggingface.co/CIRCL/vulnerability-severity-classification-roberta-base).
+   [model card as of revision `d5cd435`](https://huggingface.co/CIRCL/vulnerability-severity-classification-roberta-base/blob/d5cd435c9c172b44e53d2133c6957455e0be0df9/README.md).
 
 ## Part 2: Vulnerability-FSTEC, November 2026
 
@@ -415,4 +417,4 @@ Vulnerability-Lookup dumps.
 
 ---
 
-Last checked: 7 November 2026 · [← Back to overview](../README.md)
+Last checked: 21 November 2026 · [← Back to overview](../README.md)

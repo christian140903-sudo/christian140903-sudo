@@ -8,8 +8,8 @@
 
 - **agent-proven** (MediaPlural), in its own words: "Full-suite verification and quality tooling for AI coding agents —
   every claim backed by evidence." ([repository](https://github.com/MediaPlural/agent-proven))
-- **ContextOS**, in its own words: "Shared business limits for AI agents."
-  ([repository](https://github.com/contextosai/ContextOS))
+- **ContextOS**, in its own words: "A gate in front of the tools your AI agents cannot take back."
+  ([README at commit `4fa2357`](https://github.com/contextosai/ContextOS/blob/4fa23575ea078a490a4c64c91a0cf847edfeeb46/README.md))
 
 ## Summary
 
@@ -64,4 +64,4 @@ Open the two documents linked above and search for "christian140903-sudo".
 
 ---
 
-Last checked: 3 November 2026 · [← Back to overview](../README.md)
+Last checked: 21 November 2026 · [← Back to overview](../README.md)

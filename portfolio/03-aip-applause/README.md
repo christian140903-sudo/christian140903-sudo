@@ -79,4 +79,4 @@ Related: [5. STScI and MAST](../05-stsci-mast-poss1/README.md), another archive 
 
 ---
 
-Last checked: 3 November 2026 · [← Back to overview](../README.md)
+Last checked: 21 November 2026 · [← Back to overview](../README.md)

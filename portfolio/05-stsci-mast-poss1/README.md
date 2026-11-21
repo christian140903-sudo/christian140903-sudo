@@ -92,8 +92,8 @@ line "C. Bucher (2026), POSS-I plate dates in the MAST plate list".
 
 ## Status
 
-**Delivered.** Public under CC BY 4.0; adoption by STScI not publicly documented. A paper by other authors
-(arXiv:2611.02371) also finds the POSS-I dates one day early.
+**Delivered.** Public under CC BY 4.0; adoption by STScI not publicly documented (as of 3 November 2026). A paper by
+other authors (arXiv:2611.02371) also finds the POSS-I dates one day early.
 
 ## How to verify
 
@@ -111,4 +111,4 @@ Related: [3. AIP](../03-aip-applause/README.md), another archive of photographic
 
 ---
 
-Last checked: 7 November 2026 (STScI's own pages: 3 November 2026) · [← Back to overview](../README.md)
+Last checked: 21 November 2026 · [← Back to overview](../README.md)

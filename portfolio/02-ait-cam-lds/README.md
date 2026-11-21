@@ -79,7 +79,6 @@ All three commits are also in one git mailbox,
 | 2026-10-20 | Clarification of the stability results added to the README by the maintainers (`61af22b`). |
 | 2026-10-20 | Three commits delivered to the maintainers (author date 14:31 UTC); the same patch set published in this repository at 14:32 UTC (commit `dbad253`). |
 | 2026-10-21 | The three commits committed to `main` (06:56 UTC). |
-| 2026-11-03 | `42bbd2c` is still the latest commit on `main`. |
 
 ## Status
 
@@ -109,4 +108,4 @@ All three commits are also in one git mailbox,
 
 ---
 
-Last checked: 3 November 2026 · [← Back to overview](../README.md)
+Last checked: 21 November 2026 (AIT's website: 3 November 2026) · [← Back to overview](../README.md)
